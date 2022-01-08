@@ -1,12 +1,9 @@
-import { Row, Col, Divider } from "antd";
-import IconFont from "../../component/Icon/index";
-
-import "./index.less";
+import { Outlet } from "react-router-dom";
 
 export default function About() {
   return (
-    <div className="about">
-      <div className="about-header"></div>
+    <div>
+      <Outlet />
     </div>
   );
 }

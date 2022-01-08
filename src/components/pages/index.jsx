@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, Suspense, lazy } from "react";
 import {
   HashRouter as Router,
   Route,
@@ -7,13 +7,11 @@ import {
   Link,
 } from "react-router-dom";
 import { Row, Col, Menu } from "antd";
-import Index from "@pages/index/index";
-import AboutMe from "@pages/aboutMe/index";
-import Classify from "@pages/classify/index";
-import Footer from "@pages/footer/index";
-import Mark from "@pages/footer/index";
-import Bilibili from "@pages/bilibili/index";
 import { STATION, ROTER } from "@utils/variable";
+import { RoutersList } from "@/router/router";
+import AboutMe from "@pages/aboutMe/index";
+import Footer from "@pages/footer/index";
+import Classify from "@pages/classify/index";
 import "./index.less";
 const { SubMenu } = Menu;
 const App = () => {
@@ -50,9 +48,29 @@ const App = () => {
             <Col flex="auto">
               <div className="content">
                 <Routes>
-                  <Route path="/bilibili" element={<Bilibili />}></Route>
-                  <Route path="/mark" element={<Mark />}></Route>
-                  <Route path="/index" element={<Index />}></Route>
+                  {RoutersList.map((item, index) => (
+                    <Route
+                      path={item.path}
+                      key={index}
+                      element={
+                        <Suspense fallback={<div>text</div>}>
+                          <item.element />
+                        </Suspense>
+                      }
+                    >
+                      {item.child?.map((childItem, childIndex) => (
+                        <Route
+                          path={childItem.path}
+                          key={childIndex}
+                          element={
+                            <Suspense fallback={<div>text</div>}>
+                              <childItem.element />
+                            </Suspense>
+                          }
+                        />
+                      ))}
+                    </Route>
+                  ))}
                   <Route path="/" element={<Navigate to="/index" />} />
                 </Routes>
               </div>

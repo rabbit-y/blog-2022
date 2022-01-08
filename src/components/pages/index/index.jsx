@@ -1,9 +1,14 @@
 import { Row, Col, Divider } from "antd";
+import { useNavigate } from "react-router-dom";
 import IconFont from "../../component/Icon/index";
 
 import "./index.less";
 
 export default function Index() {
+  const navigate = useNavigate();
+  const jumpDtl = () => {
+    navigate("/mark/pmp/1");
+  };
   return (
     <div className="index">
       <div className="index-say">
@@ -36,7 +41,7 @@ export default function Index() {
           <IconFont type="h-wenjianjia" />
           PMP
         </div>
-        <div className="index-page-dec">
+        <div className="index-page-dec" onClick={jumpDtl}>
           值观：责任、尊重、公正、诚实项目的特点独特性：独特性带来不确定性，可能存在重复的元素临时性：有明确的起点和终点，可交付成果可能回在项目终止后依然存在项目驱动变更：推动组织从当前状态转变为未来状态项目创造商业价值：为相关方带来有型或无形的效益项目终止达成目标不会或不能达
         </div>
       </div>

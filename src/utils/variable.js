@@ -1,5 +1,5 @@
 module.exports = {
-  ICON_URL: '//at.alicdn.com/t/font_3116948_al2tgy4lq6h.js',
+  ICON_URL: '//at.alicdn.com/t/font_3116948_1hn0mciayyl.js',
 
   STATION: {
     name: '花呗の',
@@ -20,15 +20,15 @@ module.exports = {
       child: []
     }, {
       key: 'index',
-      path: '/web',
+      path: '/mark',
       name: '小前端',
       child: [{
         key: 'pmp',
-        path: '/web',
+        path: '/mark/pmp',
         name: 'PMP',
       }, {
         key: 'xcx',
-        path: '/web',
+        path: '/mark/xcx',
         name: '小程序',
       }]
     }, {
