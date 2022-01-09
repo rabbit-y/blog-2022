@@ -12,18 +12,21 @@
     "axios": "^0.24.0",
     "craco-less": "^2.0.0",
     "moment": "^2.29.1",
+    "pont-engine": "^1.0.13",
     "qs": "^6.10.2",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-router": "^6.2.1",
     "react-router-dom": "^6.2.1",
     "react-scripts": "5.0.0",
+    "swr": "^1.1.2",
     "web-vitals": "^2.1.0"
   },
   "scripts": {
     "start": "craco start",
     "build": "craco build",
-    "test": "craco test"
+    "test": "craco test",
+    "pont": "npx pont start"
   },
   "eslintConfig": {
     "extends": [

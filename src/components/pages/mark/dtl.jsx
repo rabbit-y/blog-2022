@@ -1,6 +1,7 @@
-import { Divider, Form, Input, Button, Select } from "antd";
+import { Divider, Form, Input, Button } from "antd";
 import moment from "moment";
 import { useState } from "react";
+import { api } from "../../../api/index";
 import IconFont from "../../component/Icon/index";
 import "./index.less";
 
@@ -8,9 +9,16 @@ const layout = {
   labelCol: { span: 2 },
   wrapperCol: { span: 10 },
 };
-const Footer = () => {
+const Dtl = () => {
   const [form] = Form.useForm();
   const [isLogin, setIsLogin] = useState(false);
+  const onFinish = async (values) => {
+    console.log(values);
+    const data = await api.other.doLogin.request(null, {
+      data: values,
+    });
+    console.log(data);
+  };
   return (
     <div className="mark-dtl">
       <div className="mark-dtl-all">
@@ -51,15 +59,12 @@ const Footer = () => {
         </span>
       </Divider>
       <div className="mark-login">
-        <Form {...layout} form={form} name="control-hooks">
-          <Form.Item
-            name="name"
-            label="昵称"
-            rules={[{ required: true }]}
-            hidden={isLogin}
-          >
-            <Input />
-          </Form.Item>
+        <Form {...layout} form={form} onFinish={onFinish} autoComplete="off">
+          {isLogin && (
+            <Form.Item name="name" label="昵称" rules={[{ required: true }]}>
+              <Input />
+            </Form.Item>
+          )}
           <Form.Item
             name="email"
             label="邮箱"
@@ -67,38 +72,33 @@ const Footer = () => {
           >
             <Input />
           </Form.Item>
-          <Form.Item label="密码" name="password" rules={[{ required: true }]}>
+          <Form.Item label="密码" name="pwd" rules={[{ required: true }]}>
             <Input.Password />
           </Form.Item>
-          <Form.Item name="note" label="站点" hidden={isLogin}>
-            <Input prefix="https://" suffix=".com" />
-          </Form.Item>
-          <div className="mark-login-btn">
-            <Form.Item>
-              {isLogin ? (
-                <div className="mark-login-btn-item">
-                  <Button type="primary" htmlType="submit">
-                    登录
-                  </Button>
-                  <span className="mark-login-btn-item-tip">
-                    还没账号？去注册
-                  </span>
-                </div>
-              ) : (
-                <div className="mark-login-btn-item">
-                  <Button type="primary" htmlType="submit">
-                    注册
-                  </Button>
-                  <span className="mark-login-btn-item-tip">
-                    已有账号？直接登录
-                  </span>
-                </div>
-              )}
+          {isLogin && (
+            <Form.Item name="note" label="站点">
+              <Input prefix="https://" suffix=".com" />
             </Form.Item>
-          </div>
+          )}
+          <Form.Item
+            wrapperCol={{
+              offset: 2,
+              span: 8,
+            }}
+          >
+            <Button type="primary" htmlType="submit">
+              {!isLogin ? "登录" : "注册"}
+            </Button>
+            <span
+              className="mark-login-btn-item-tip"
+              onClick={() => setIsLogin(!isLogin)}
+            >
+              {!isLogin ? "还没账号？去注册" : "已有账号？直接登录"}
+            </span>
+          </Form.Item>
         </Form>
       </div>
     </div>
   );
 };
-export default Footer;
+export default Dtl;

@@ -20,3 +20,13 @@ export const RoutersList = [
     element: lazy(() => import("@pages/bilibili/index"))
   }
 ]
+export const AdminRoutersList = [
+  {
+    path: '/admin',
+    element: lazy(() => import("@pages/admin/index/index"))
+  },
+  {
+    path: '/admin/profile',
+    element: lazy(() => import("@pages/admin/profile/index"))
+  }
+]

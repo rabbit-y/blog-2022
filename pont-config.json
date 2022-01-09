@@ -1,0 +1,11 @@
+{
+  "name": "api",
+  "originUrl": "http://82.157.146.87:1234/v3/api-docs",
+  "templatePath": "./pontTemplate",
+  "outDir": "./src/api",
+  "surrounding": "javaScript",
+  "mocks": {
+    "enable": true
+  },
+  "templateType": "fetch"
+}

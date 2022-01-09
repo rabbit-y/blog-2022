@@ -5,6 +5,7 @@ import { ConfigProvider } from 'antd';
 import zhCN from 'antd/lib/locale/zh_CN';
 import 'moment/locale/zh-cn';
 import moment from 'moment';
+import './utils/main'
 
 import reportWebVitals from './reportWebVitals';
 import "antd/dist/antd.variable.min.css"
