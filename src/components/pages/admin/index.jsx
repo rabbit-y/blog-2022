@@ -33,7 +33,9 @@ export default function Admin() {
           </SubMenu>
           <SubMenu key="sub2" icon={<DesktopOutlined />} title="文章管理">
             <Menu.Item key="4">碎碎念</Menu.Item>
-            <Menu.Item key="5">文档</Menu.Item>
+            <Menu.Item key="5">
+              <Link to="/admin/mark">文档</Link>
+            </Menu.Item>
           </SubMenu>
           <SubMenu key="sub3" icon={<SettingOutlined />} title="参数管理">
             <Menu.Item key="6">分类管理</Menu.Item>

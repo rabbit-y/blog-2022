@@ -28,5 +28,16 @@ export const AdminRoutersList = [
   {
     path: '/admin/profile',
     element: lazy(() => import("@pages/admin/profile/index"))
+  },
+  {
+    path: 'mark',
+    element: lazy(() => import("@pages/admin/mark/index")),
+    child: [{
+      path: '/admin/mark',
+      element: lazy(() => import("@pages/admin/mark/list"))
+    },{
+      path: '/admin/mark/:id',
+      element: lazy(() => import("@pages/admin/mark/dtl"))
+    }]
   }
 ]
