@@ -16,7 +16,7 @@ axiosInstanceForDing.defaults.headers.common['X-Requested-With'] = 'XMLHttpReque
 axiosInstanceForDing.defaults.baseURL = '/api'
 axiosInstanceForDing.interceptors.response.use(
   response => {
-    if (response.data.code === 200) {
+    if (response.data.code === 0) {
       return Promise.resolve(response.data);
     } else if (response.data.code === 401) {
       return Promise.reject('');
