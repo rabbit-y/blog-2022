@@ -24,7 +24,7 @@ axiosInstanceForDing.interceptors.response.use(
       if (response.data.aaData) {
         return Promise.resolve(response.data);
       } else {
-        message.error(response.data.message)
+        message.error(response.data.msg)
         return Promise.resolve('');
       }
     }
