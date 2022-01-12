@@ -22,7 +22,7 @@ export default function Index() {
             <div className="index-say-cont">
               <div>-- 2022-01-03 --</div>
               随便说说吧The tough road often leads to the top.
-              艰难的道路经常通往高处
+              艰难的道路经常通往高处！
             </div>
           </Col>
           <Col flex="100px">
