@@ -2,7 +2,7 @@ module.exports = {
   ICON_URL: '//at.alicdn.com/t/font_3116948_1hn0mciayyl.js',
 
   STATION: {
-    name: '花呗の',
+    name: '花呗呃呃呃の',
     dec: 'he tough road often leads to the top. 艰难的道路经常通往高处',
     putOnRecord: '京ICP备2021005859号'
   },
