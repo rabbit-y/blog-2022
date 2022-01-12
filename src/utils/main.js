@@ -1,5 +1,4 @@
 import axios from 'axios';
-// import { PontCore } from '@api/pontCore';
 import { message } from 'antd'
 const { PontCore } = require('@api/pontCore')
 // axios请求拦截
@@ -8,9 +7,14 @@ const { PontCore } = require('@api/pontCore')
 // });
 
 
+// 访问丁sb服务器的axios实例
+const axiosInstanceForDing = axios.create();
+
+
 // axios响应拦截
-axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest'
-axios.interceptors.response.use(
+axiosInstanceForDing.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest'
+axiosInstanceForDing.defaults.baseURL = '/api'
+axiosInstanceForDing.interceptors.response.use(
   response => {
     if (response.data.code === 200) {
       return Promise.resolve(response.data);
@@ -32,5 +36,5 @@ axios.interceptors.response.use(
 
 const pontCore = PontCore;
 pontCore.useFetch((url, fetchOption) => {
-  return axios(url, fetchOption);
+  return axiosInstanceForDing(url, fetchOption);
 });

@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { Form, Input, Button, Select } from "antd";
+import Editor from "md-editor-rt";
+import "md-editor-rt/lib/style.css";
 import "./index.less";
 const { Option } = Select;
 
@@ -11,6 +13,7 @@ const layout = {
 const Dtl = () => {
   const searchParams = useParams();
   const [id, setId] = useState();
+  const [text, setText] = useState("");
   useEffect(() => {
     const ids = searchParams.id;
     if (ids == "creat") {
@@ -31,6 +34,13 @@ const Dtl = () => {
               <Option value="male">male</Option>
             </Select>
           </Form.Item>
+          <div className="mark-markdown">
+            <Editor
+              modelValue={text}
+              onChange={setText}
+              previewTheme="github"
+            />
+          </div>
           <Form.Item>
             <Button type="primary" htmlType="submit">
               保存
