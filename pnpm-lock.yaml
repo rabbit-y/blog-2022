@@ -9,7 +9,6 @@ specifiers:
   antd: ^4.18.2
   axios: ^0.24.0
   craco-less: ^2.0.0
-  http-proxy-middleware: ^2.0.1
   md-editor-rt: ^1.4.2
   moment: ^2.29.1
   pont-engine: ^1.0.13
@@ -31,7 +30,6 @@ dependencies:
   antd: registry.npmmirror.com/antd/4.18.2_react-dom@17.0.2+react@17.0.2
   axios: registry.npmmirror.com/axios/0.24.0
   craco-less: registry.npmmirror.com/craco-less/2.0.0_66b49c99af659d7c23050d0db8706453
-  http-proxy-middleware: 2.0.1
   md-editor-rt: 1.4.2
   moment: registry.npmmirror.com/moment/2.29.1
   pont-engine: registry.npmmirror.com/pont-engine/1.0.13

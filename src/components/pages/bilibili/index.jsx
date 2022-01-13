@@ -1,21 +1,69 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
+import { Row, Col, Pagination } from "antd";
 import axios from "axios";
 import moment from "moment";
 
 import "./index.less";
 
 const Bilibili = () => {
+  const [myList, setList] = useState([]);
+  const [current, setCurrent] = useState({ pn: 1 });
   useEffect(() => {
     getList();
   }, []);
-  const getList = async () => {
-    const data = await axios.get(
-      `/bilibili/x/space/bangumi/follow/list?type=1&follow_status=0&pn=1&ps=15&vmid=458066744&ts=${moment().format(
+  const getList = async (page) => {
+    const {
+      data: {
+        code,
+        data: { list, total, pn },
+      },
+    } = await axios.get(
+      `/bilibili/x/space/bangumi/follow/list?type=1&follow_status=0&ps=12&vmid=458066744&ts=${moment().format(
         "X"
-      )}`
+      )}&pn=${page ? page : current.pn}`
     );
-    console.log(data);
+    if (code === 0) {
+      setList(list);
+      setCurrent({ total, pn });
+    }
   };
-  return <div className="">123</div>;
+  return (
+    <div>
+      <Row justify="start" gutter={[36, 24]}>
+        {myList?.map((item, index) => (
+          <Col key={index} span={6}>
+            <div
+              className="bili-list"
+              onClick={() => {
+                return window.open(item.url);
+              }}
+            >
+              <div className="bili-list-img">
+                <img
+                  src={"/bimg" + item.cover.slice(19) + "@198w_264h.webp"}
+                ></img>
+                <div className="bili-list-img-ep">{item.new_ep.index_show}</div>
+                <div className="bili-list-img-type">
+                  {item.season_type_name}
+                </div>
+              </div>
+              <div className="bili-list-name">{item.title}</div>
+              <div className="bili-list-dec">{item.subtitle_14}</div>
+            </div>
+          </Col>
+        ))}
+      </Row>
+      <div className="bili-list-page">
+        <Pagination
+          current={current.pn}
+          onChange={(page) => {
+            getList(page);
+          }}
+          total={current.total}
+          showSizeChanger={false}
+        />
+      </div>
+    </div>
+  );
 };
 export default Bilibili;
