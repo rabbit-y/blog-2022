@@ -5,8 +5,8 @@
         "description": "Basic Error Controller",
         "interfaces": [
           {
-            "description": "error",
-            "name": "error",
+            "description": "errorHtml",
+            "name": "errorHtml",
             "method": "get",
             "path": "/error",
             "response": {
@@ -21,7 +21,7 @@
             "parameters": []
           },
           {
-            "description": "error",
+            "description": "errorHtml",
             "name": "putError",
             "method": "put",
             "path": "/error",
@@ -37,7 +37,7 @@
             "parameters": []
           },
           {
-            "description": "error",
+            "description": "errorHtml",
             "name": "postError",
             "method": "post",
             "path": "/error",
@@ -53,7 +53,7 @@
             "parameters": []
           },
           {
-            "description": "error",
+            "description": "errorHtml",
             "name": "deleteError",
             "method": "delete",
             "path": "/error",
@@ -69,7 +69,7 @@
             "parameters": []
           },
           {
-            "description": "error",
+            "description": "errorHtml",
             "name": "optionsError",
             "method": "options",
             "path": "/error",
@@ -85,7 +85,7 @@
             "parameters": []
           },
           {
-            "description": "error",
+            "description": "errorHtml",
             "name": "headError",
             "method": "head",
             "path": "/error",
@@ -101,7 +101,7 @@
             "parameters": []
           },
           {
-            "description": "error",
+            "description": "errorHtml",
             "name": "patchError",
             "method": "patch",
             "path": "/error",
@@ -117,7 +117,7 @@
             "parameters": []
           },
           {
-            "description": "error",
+            "description": "errorHtml",
             "name": "traceError",
             "method": "trace",
             "path": "/error",
@@ -168,7 +168,38 @@
               "enum": [],
               "typeProperties": []
             },
-            "parameters": []
+            "parameters": [
+              {
+                "in": "query",
+                "description": "email",
+                "name": "email",
+                "required": true,
+                "dataType": {
+                  "typeArgs": [],
+                  "typeName": "",
+                  "isDefsType": false,
+                  "templateIndex": -1,
+                  "compileTemplateKeyword": "#/definitions/",
+                  "enum": [],
+                  "typeProperties": []
+                }
+              },
+              {
+                "in": "query",
+                "description": "pwd",
+                "name": "pwd",
+                "required": true,
+                "dataType": {
+                  "typeArgs": [],
+                  "typeName": "",
+                  "isDefsType": false,
+                  "templateIndex": -1,
+                  "compileTemplateKeyword": "#/definitions/",
+                  "enum": [],
+                  "typeProperties": []
+                }
+              }
+            ]
           },
           {
             "description": "注册\n用于用户注册",

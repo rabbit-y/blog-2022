@@ -6,7 +6,12 @@
 import * as defs from '../../baseClass';
 import { PontCore } from '../../pontCore';
 
-export class Params {}
+export class Params {
+  /** email */
+  email;
+  /** pwd */
+  pwd;
+}
 
 export const init = undefined;
 
