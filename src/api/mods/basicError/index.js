@@ -1,7 +1,7 @@
 /**
  * @description Basic Error Controller
  */
-import * as error from './error';
+import * as errorHtml from './errorHtml';
 import * as putError from './putError';
 import * as postError from './postError';
 import * as deleteError from './deleteError';
@@ -11,7 +11,7 @@ import * as patchError from './patchError';
 import * as traceError from './traceError';
 
 export {
-  error,
+  errorHtml,
   putError,
   postError,
   deleteError,

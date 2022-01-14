@@ -1,6 +1,6 @@
 {
   "name": "api",
-  "originUrl": "http://82.157.146.87:1234/v3/api-docs",
+  "originUrl": "http://han96.com/api/v3/api-docs",
   "templatePath": "./pontTemplate",
   "outDir": "./src/api",
   "surrounding": "javaScript",

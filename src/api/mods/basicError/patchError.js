@@ -1,5 +1,5 @@
 /**
- * @desc error
+ * @desc errorHtml
  */
 
 import * as defs from '../../baseClass';

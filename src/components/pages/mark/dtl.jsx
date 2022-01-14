@@ -12,7 +12,7 @@ const Dtl = () => {
   const [form] = Form.useForm();
   const [isLogin, setIsLogin] = useState(false);
   const onFinish = async (values) => {
-    const { code } = await api.other.doLogin.request(null, { data: values });
+    const { code } = await api.other.doLogin.request(values);
     if (code === 0) {
       const test = await api.other.getUserInfo.request();
     }

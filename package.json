@@ -47,6 +47,6 @@
       "last 1 safari version"
     ]
   },
-  "proxy": "http://www.han96.com",
+  "proxy": "http://localhost:1234/",
   "homepage": "."
 }
