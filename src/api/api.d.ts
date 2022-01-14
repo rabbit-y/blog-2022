@@ -215,5 +215,20 @@ declare namespace api {
 
       export function request(params: Params, options?: any): Promise<Response>;
     }
+
+    /**
+        * 获取当前登录用户信
+获取当前登录用户信
+        * /userInfo
+        */
+    export namespace getUserInfo {
+      export class Params {}
+
+      export type Response = any;
+
+      export const init: Response;
+
+      export function request(params: Params, options?: any): Promise<Response>;
+    }
   }
 }

@@ -1,5 +1,4 @@
 import { Divider, Form, Input, Button } from "antd";
-import moment from "moment";
 import { useState } from "react";
 import { api } from "../../../api/index";
 import IconFont from "../../component/Icon/index";
@@ -13,11 +12,10 @@ const Dtl = () => {
   const [form] = Form.useForm();
   const [isLogin, setIsLogin] = useState(false);
   const onFinish = async (values) => {
-    console.log(values);
-    const data = await api.other.doLogin.request(null, {
-      data: values,
-    });
-    console.log(data);
+    const { code } = await api.other.doLogin.request(null, { data: values });
+    if (code === 0) {
+      const test = await api.other.getUserInfo.request();
+    }
   };
   return (
     <div className="mark-dtl">

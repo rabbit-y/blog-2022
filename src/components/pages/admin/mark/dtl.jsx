@@ -23,7 +23,7 @@ const Dtl = () => {
   }, []);
   const onFinish = () => {};
   return (
-    <div className="mark-dtl">
+    <div className="mark-admin-dtl">
       <div className="mark-dtl-all">
         <Form {...layout} onFinish={onFinish}>
           <Form.Item name="name" label="标题" rules={[{ required: true }]}>

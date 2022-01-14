@@ -233,6 +233,22 @@
               "typeProperties": []
             },
             "parameters": []
+          },
+          {
+            "description": "获取当前登录用户信\n获取当前登录用户信",
+            "name": "getUserInfo",
+            "method": "get",
+            "path": "/userInfo",
+            "response": {
+              "typeArgs": [],
+              "typeName": "",
+              "isDefsType": false,
+              "templateIndex": -1,
+              "compileTemplateKeyword": "#/definitions/",
+              "enum": [],
+              "typeProperties": []
+            },
+            "parameters": []
           }
         ],
         "name": "other"
