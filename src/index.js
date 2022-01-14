@@ -11,7 +11,6 @@ import reportWebVitals from './reportWebVitals';
 import "antd/dist/antd.variable.min.css"
 import './index.less';
 import App from '@/components/pages/index';
-import Loading from "@components/Loading/index";
 
 
 ConfigProvider.config({
@@ -31,7 +30,20 @@ function listen () {
     );
   } else { // 资源加载中
     ReactDOM.render(
-     <Loading/>,
+      <div className="yu-loader">
+        <div className="loader">
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+      </div>
+      ,
       document.getElementById('root')
     );
   }
