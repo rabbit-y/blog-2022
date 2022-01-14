@@ -60,6 +60,7 @@ const Bilibili = () => {
             getList(page);
           }}
           total={current.total}
+          defaultPageSize={12}
           showSizeChanger={false}
         />
       </div>
