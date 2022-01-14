@@ -22,7 +22,7 @@ ConfigProvider.config({
 moment.locale('zh-cn');
 
 function listen () {
-  if (document.readyState == 'complete') { // 资源加载完成
+  if (document.readyState === 'complete') { // 资源加载完成
     ReactDOM.render(
       <ConfigProvider locale={zhCN}>
         <App />
@@ -31,7 +31,7 @@ function listen () {
     );
   } else { // 资源加载中
     ReactDOM.render(
-      <Loading/>,
+     <Loading/>,
       document.getElementById('root')
     );
   }
