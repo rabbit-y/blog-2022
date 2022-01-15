@@ -17,12 +17,12 @@ module.exports = {
     plugins: [
       //打包分析
       // new BundleAnalyzerPlugin(),
-      new CompressionPlugin({
-        algorithm: 'gzip',
-        test: /\.js$|\.css$/,
-        threshold: 10240, // 对超过10k的数据进行压缩
-        minRatio: 0.8, // 只有压缩率小于这个值的资源才会被处理
-      })
+      // new CompressionPlugin({
+      //   algorithm: 'gzip',
+      //   test: /\.js$|\.css$/,
+      //   threshold: 10240, // 对超过10k的数据进行压缩
+      //   minRatio: 0.8, // 只有压缩率小于这个值的资源才会被处理
+      // })
     ],
   },
   plugins: [
