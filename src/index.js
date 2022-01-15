@@ -1,13 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-
 import { ConfigProvider } from 'antd';
 import zhCN from 'antd/lib/locale/zh_CN';
 import 'moment/locale/zh-cn';
 import moment from 'moment';
 import './utils/main'
-
-import reportWebVitals from './reportWebVitals';
 import "antd/dist/antd.variable.min.css"
 import './index.less';
 import App from '@/components/pages/index';
@@ -20,7 +17,7 @@ ConfigProvider.config({
 });
 moment.locale('zh-cn');
 
-function listen () {
+function listen() {
   if (document.readyState === 'complete') { // 资源加载完成
     ReactDOM.render(
       <ConfigProvider locale={zhCN}>
@@ -49,4 +46,3 @@ function listen () {
   }
 }
 document.onreadystatechange = listen
-reportWebVitals();

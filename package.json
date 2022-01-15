@@ -5,9 +5,6 @@
   "dependencies": {
     "@ant-design/icons": "^4.7.0",
     "@craco/craco": "^6.4.3",
-    "@testing-library/jest-dom": "^5.14.1",
-    "@testing-library/react": "^12.0.0",
-    "@testing-library/user-event": "^13.2.1",
     "antd": "^4.18.2",
     "axios": "^0.24.0",
     "craco-less": "^2.0.0",
@@ -21,12 +18,11 @@
     "react-router-dom": "^6.2.1",
     "react-scripts": "5.0.0",
     "swr": "^1.1.2",
-    "web-vitals": "^2.1.0"
+    "webpack-bundle-analyzer": "^4.5.0"
   },
   "scripts": {
     "start": "craco start",
     "build": "craco build",
-    "test": "craco test",
     "pont": "npx pont start"
   },
   "eslintConfig": {
@@ -48,5 +44,8 @@
     ]
   },
   "proxy": "http://localhost:1234/",
-  "homepage": "."
+  "homepage": ".",
+  "devDependencies": {
+    "compression-webpack-plugin": "^9.2.0"
+  }
 }
