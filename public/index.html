@@ -1,24 +1,216 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#000000" />
-    <meta
-      name="description"
-      content="Web site created using create-react-app"
-    />
-    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
-    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-    <title>React App</title>
-  </head>
-  <body>
-    <noscript>You need to enable JavaScript to run this app.</noscript>
-    <div id="root">
-      <div className="yu-loader">
-        test
+
+<head>
+  <meta charset="utf-8" />
+  <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#000000" />
+  <meta name="description" content="Web site created using create-react-app" />
+  <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+  <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+  <title>React App</title>
+  <style>
+    .index-loader-box {
+      height: 100vh;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: #008b8b;
+    }
+
+    .index-loader {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-gap: 8px;
+    }
+
+    .index-loader div {
+      width: 60px;
+      height: 60px;
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #66cdaa;
+      border-radius: 50%;
+    }
+
+    .index-loader div:before,
+    .index-loader div:after {
+      content: '';
+      width: 60px;
+      height: 60px;
+      position: absolute;
+      border-radius: 50%;
+    }
+
+    .index-loader div:before {
+      background-color: #ffdab9;
+      animation: scale-1 2400ms linear infinite;
+    }
+
+    .index-loader div:after {
+      background-color: #66cdaa;
+      animation: scale-2 2400ms linear infinite;
+    }
+
+    .index-loader div:nth-child(2):before,
+    .index-loader div:nth-child(2):after {
+      animation-delay: 300ms;
+    }
+
+    .index-loader div:nth-child(3):before,
+    .index-loader div:nth-child(3):after {
+      animation-delay: 600ms;
+    }
+
+    .index-loader div:nth-child(4):before,
+    .index-loader div:nth-child(4):after {
+      animation-delay: 900ms;
+    }
+
+    .index-loader div:nth-child(5):before,
+    .index-loader div:nth-child(5):after {
+      animation-delay: 1200ms;
+    }
+
+    .index-loader div:nth-child(6):before,
+    .index-loader div:nth-child(6):after {
+      animation-delay: 1500ms;
+    }
+
+    .index-loader div:nth-child(7):before,
+    .index-loader div:nth-child(7):after {
+      animation-delay: 1800ms;
+    }
+
+    .index-loader div:nth-child(8):before,
+    .index-loader div:nth-child(8):after {
+      animation-delay: 2100ms;
+    }
+
+    .index-loader div:nth-child(9):before,
+    .index-loader div:nth-child(9):after {
+      animation-delay: 2400ms;
+    }
+
+    @-moz-keyframes scale-1 {
+      0% {
+        transform: scale(0);
+        z-index: 2;
+      }
+
+      50%,
+      100% {
+        transform: scale(1);
+      }
+    }
+
+    @-webkit-keyframes scale-1 {
+      0% {
+        transform: scale(0);
+        z-index: 2;
+      }
+
+      50%,
+      100% {
+        transform: scale(1);
+      }
+    }
+
+    @-o-keyframes scale-1 {
+      0% {
+        transform: scale(0);
+        z-index: 2;
+      }
+
+      50%,
+      100% {
+        transform: scale(1);
+      }
+    }
+
+    @keyframes scale-1 {
+      0% {
+        transform: scale(0);
+        z-index: 2;
+      }
+
+      50%,
+      100% {
+        transform: scale(1);
+      }
+    }
+
+    @-moz-keyframes scale-2 {
+
+      0%,
+      50% {
+        transform: scale(0);
+      }
+
+      100% {
+        transform: scale(1);
+      }
+    }
+
+    @-webkit-keyframes scale-2 {
+
+      0%,
+      50% {
+        transform: scale(0);
+      }
+
+      100% {
+        transform: scale(1);
+      }
+    }
+
+    @-o-keyframes scale-2 {
+
+      0%,
+      50% {
+        transform: scale(0);
+      }
+
+      100% {
+        transform: scale(1);
+      }
+    }
+
+    @keyframes scale-2 {
+
+      0%,
+      50% {
+        transform: scale(0);
+      }
+
+      100% {
+        transform: scale(1);
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <noscript>You need to enable JavaScript to run this app.</noscript>
+  <div id="root">
+    <div class="index-loader-box">
+      <div class="index-loader">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
       </div>
     </div>
-  </body>
+  </div>
+</body>
+
 </html>
