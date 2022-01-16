@@ -1,7 +1,7 @@
+import { useState, useEffect } from "react";
 import { Divider, Form, Input, Button } from "antd";
-import { useState } from "react";
-import { api } from "../../../api/index";
-import IconFont from "../../component/Icon/index";
+import { api } from "@api/index";
+import IconFont from "@components/Icon/index";
 import "./index.less";
 
 const layout = {
@@ -11,10 +11,19 @@ const layout = {
 const Dtl = () => {
   const [form] = Form.useForm();
   const [isLogin, setIsLogin] = useState(false);
+  const [user, setUser] = useState({});
+  useEffect(() => {
+    const userInfo = localStorage.getItem("userInfo");
+    setUser(userInfo ? JSON.parse(userInfo) : {});
+  }, []);
   const onFinish = async (values) => {
     const { code } = await api.other.doLogin.request(values);
     if (code === 0) {
-      const test = await api.other.getUserInfo.request();
+      const { code: userCode, data: userData } =
+        await api.other.getUserInfo.request();
+      if (userCode === 0) {
+        localStorage.setItem("userInfo", JSON.stringify(userData));
+      }
     }
   };
   return (
@@ -50,52 +59,84 @@ const Dtl = () => {
           <p>(80)</p>
         </div>
       </div>
-      <Divider plain>
-        <span className="mark-dtl-tip">
-          <IconFont type="h-xiaoxiong" />
-          登录后评论可及时收到回复邮件呦~
-        </span>
-      </Divider>
-      <div className="mark-login">
-        <Form {...layout} form={form} onFinish={onFinish} autoComplete="off">
-          {isLogin && (
-            <Form.Item name="name" label="昵称" rules={[{ required: true }]}>
-              <Input />
-            </Form.Item>
-          )}
-          <Form.Item
-            name="email"
-            label="邮箱"
-            rules={[{ required: true, type: "email" }]}
-          >
-            <Input />
-          </Form.Item>
-          <Form.Item label="密码" name="pwd" rules={[{ required: true }]}>
-            <Input.Password />
-          </Form.Item>
-          {isLogin && (
-            <Form.Item name="note" label="站点">
-              <Input prefix="https://" suffix=".com" />
-            </Form.Item>
-          )}
-          <Form.Item
-            wrapperCol={{
-              offset: 2,
-              span: 8,
-            }}
-          >
-            <Button type="primary" htmlType="submit">
-              {!isLogin ? "登录" : "注册"}
-            </Button>
-            <span
-              className="mark-login-btn-item-tip"
-              onClick={() => setIsLogin(!isLogin)}
-            >
-              {!isLogin ? "还没账号？去注册" : "已有账号？直接登录"}
-            </span>
-          </Form.Item>
-        </Form>
-      </div>
+      {
+        // 登录判断
+        user ? (
+          <div>
+            <Divider plain>
+              <span className="mark-dtl-tip">
+                <IconFont type="h-xiaoxiong" />
+                收到回复会有邮件提醒呦~
+              </span>
+            </Divider>
+            <div className="mark-user opacity8">
+              <div className="mark-user-msg">
+                <img src={user.avatar} />
+                <span>@ {user.nickname}</span>
+              </div>
+              <div className="mark-user-comment"></div>
+            </div>
+          </div>
+        ) : (
+          <div>
+            <Divider plain>
+              <span className="mark-dtl-tip">
+                <IconFont type="h-xiaoxiong" />
+                登录后评论可及时收到回复邮件呦~
+              </span>
+            </Divider>
+            <div className="mark-login">
+              <Form
+                {...layout}
+                form={form}
+                onFinish={onFinish}
+                autoComplete="off"
+              >
+                {isLogin && (
+                  <Form.Item
+                    name="name"
+                    label="昵称"
+                    rules={[{ required: true }]}
+                  >
+                    <Input />
+                  </Form.Item>
+                )}
+                <Form.Item
+                  name="email"
+                  label="邮箱"
+                  rules={[{ required: true, type: "email" }]}
+                >
+                  <Input />
+                </Form.Item>
+                <Form.Item label="密码" name="pwd" rules={[{ required: true }]}>
+                  <Input.Password />
+                </Form.Item>
+                {isLogin && (
+                  <Form.Item name="note" label="站点">
+                    <Input prefix="https://" suffix=".com" />
+                  </Form.Item>
+                )}
+                <Form.Item
+                  wrapperCol={{
+                    offset: 2,
+                    span: 8,
+                  }}
+                >
+                  <Button type="primary" htmlType="submit">
+                    {!isLogin ? "登录" : "注册"}
+                  </Button>
+                  <span
+                    className="mark-login-btn-item-tip"
+                    onClick={() => setIsLogin(!isLogin)}
+                  >
+                    {!isLogin ? "还没账号？去注册" : "已有账号？直接登录"}
+                  </span>
+                </Form.Item>
+              </Form>
+            </div>
+          </div>
+        )
+      }
     </div>
   );
 };

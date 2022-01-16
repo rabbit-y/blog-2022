@@ -13,7 +13,7 @@ const axiosInstanceForDing = axios.create();
 
 // axios响应拦截
 axiosInstanceForDing.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest'
-// axiosInstanceForDing.defaults.baseURL = '/api'
+axiosInstanceForDing.defaults.baseURL = '/api'
 axiosInstanceForDing.interceptors.response.use(
   response => {
     if (response.data.code === 0) {

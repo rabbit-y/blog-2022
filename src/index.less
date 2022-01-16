@@ -1,12 +1,32 @@
+@font-face {
+  font-family: hFont;
+  src: url("https://cos.han96.com/blog/font/myfont3.ttf");
+}
+@font-face {
+  font-family: "titleFont";
+  font-display: swap;
+  src: url("//at.alicdn.com/t/webfont_2v3m9f5j65.eot"); /* IE9*/
+  src: url("//at.alicdn.com/t/webfont_2v3m9f5j65.eot?#iefix")
+      format("embedded-opentype"),
+    /* IE6-IE8 */ url("//at.alicdn.com/t/webfont_2v3m9f5j65.woff2")
+      format("woff2"),
+    url("//at.alicdn.com/t/webfont_2v3m9f5j65.woff") format("woff"),
+    /* chrome、firefox */ url("//at.alicdn.com/t/webfont_2v3m9f5j65.ttf")
+      format("truetype"),
+    /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
+      url("//at.alicdn.com/t/webfont_2v3m9f5j65.svg#站酷小薇体") format("svg"); /* iOS 4.1- */
+}
 body,
 h1 {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+  font-family: hFont, -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto",
+    "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  color: #555;
+  color: #666;
+  font-size: 18px;
+  font-weight: 400;
 }
 
 code {
@@ -26,144 +46,7 @@ code {
   opacity: 0.6;
 }
 
-
-.yu-loader{
-    height: 100vh;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: #008b8b;
-  .loader {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-gap: 8px;
-  }
-  .loader div {
-    width: 60px;
-    height: 60px;
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #66cdaa;
-    border-radius: 50%;
-  }
-  .loader div:before,
-  .loader div:after {
-    content: '';
-    width: 60px;
-    height: 60px;
-    position: absolute;
-    border-radius: 50%;
-  }
-  .loader div:before {
-    background-color: #ffdab9;
-    animation: scale-1 2400ms linear infinite;
-  }
-  .loader div:after {
-    background-color: #66cdaa;
-    animation: scale-2 2400ms linear infinite;
-  }
-  .loader div:nth-child(2):before,
-  .loader div:nth-child(2):after {
-    animation-delay: 300ms;
-  }
-  .loader div:nth-child(3):before,
-  .loader div:nth-child(3):after {
-    animation-delay: 600ms;
-  }
-  .loader div:nth-child(4):before,
-  .loader div:nth-child(4):after {
-    animation-delay: 900ms;
-  }
-  .loader div:nth-child(5):before,
-  .loader div:nth-child(5):after {
-    animation-delay: 1200ms;
-  }
-  .loader div:nth-child(6):before,
-  .loader div:nth-child(6):after {
-    animation-delay: 1500ms;
-  }
-  .loader div:nth-child(7):before,
-  .loader div:nth-child(7):after {
-    animation-delay: 1800ms;
-  }
-  .loader div:nth-child(8):before,
-  .loader div:nth-child(8):after {
-    animation-delay: 2100ms;
-  }
-  .loader div:nth-child(9):before,
-  .loader div:nth-child(9):after {
-    animation-delay: 2400ms;
-  }
-  @-moz-keyframes scale-1 {
-    0% {
-      transform: scale(0);
-      z-index: 2;
-    }
-    50%, 100% {
-      transform: scale(1);
-    }
-  }
-  @-webkit-keyframes scale-1 {
-    0% {
-      transform: scale(0);
-      z-index: 2;
-    }
-    50%, 100% {
-      transform: scale(1);
-    }
-  }
-  @-o-keyframes scale-1 {
-    0% {
-      transform: scale(0);
-      z-index: 2;
-    }
-    50%, 100% {
-      transform: scale(1);
-    }
-  }
-  @keyframes scale-1 {
-    0% {
-      transform: scale(0);
-      z-index: 2;
-    }
-    50%, 100% {
-      transform: scale(1);
-    }
-  }
-  @-moz-keyframes scale-2 {
-    0%, 50% {
-      transform: scale(0);
-    }
-    100% {
-      transform: scale(1);
-    }
-  }
-  @-webkit-keyframes scale-2 {
-    0%, 50% {
-      transform: scale(0);
-    }
-    100% {
-      transform: scale(1);
-    }
-  }
-  @-o-keyframes scale-2 {
-    0%, 50% {
-      transform: scale(0);
-    }
-    100% {
-      transform: scale(1);
-    }
-  }
-  @keyframes scale-2 {
-    0%, 50% {
-      transform: scale(0);
-    }
-    100% {
-      transform: scale(1);
-    }
-  }
-  
+// 公共
+.opacity8 {
+  opacity: 0.8;
 }

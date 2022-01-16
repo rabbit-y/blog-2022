@@ -43,7 +43,7 @@
       "last 1 safari version"
     ]
   },
-  "proxy": "http://localhost:1234/",
+  "proxy": "http://www.han96.com",
   "homepage": ".",
   "devDependencies": {
     "compression-webpack-plugin": "^9.2.0"

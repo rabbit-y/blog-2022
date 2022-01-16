@@ -11,7 +11,7 @@ export default function Index() {
   };
   return (
     <div className="index">
-      <div className="index-say">
+      <div className="index-say opacity8">
         <Row align="middle">
           <Col flex="60px">
             <div className="index-say-icon">
@@ -32,7 +32,7 @@ export default function Index() {
           </Col>
         </Row>
       </div>
-      <div className="index-page">
+      <div className="index-page opacity8">
         <div className="index-page-title">项目运行环境+引论</div>
         <div className="index-page-msg">
           <IconFont type="h-shijian" />

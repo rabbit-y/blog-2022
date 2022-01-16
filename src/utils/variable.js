@@ -3,7 +3,7 @@ module.exports = {
 
   STATION: {
     name: '花呗の',
-    dec: 'he tough road often leads to the top. 艰难的道路经常通往高处',
+    dec: 'The tough road often leads to the top. 艰难的道路经常通往高处',
     putOnRecord: '京ICP备2021005859号'
   },
   USER: {
