@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
-import { Form, Input, Button, Select } from "antd";
+import { useParams, useNavigate } from "react-router-dom";
+import { Form, Input, Button, Select, PageHeader } from "antd";
 import Editor from "md-editor-rt";
 import "md-editor-rt/lib/style.css";
 import "./index.less";
@@ -12,11 +12,12 @@ const layout = {
 };
 const Dtl = () => {
   const searchParams = useParams();
+  const navigate = useNavigate();
   const [id, setId] = useState();
   const [text, setText] = useState("");
   useEffect(() => {
     const ids = searchParams.id;
-    if (ids == "creat") {
+    if (ids === "creat") {
     } else {
       setId(ids);
     }
@@ -24,6 +25,9 @@ const Dtl = () => {
   const onFinish = () => {};
   return (
     <div className="mark-admin-dtl">
+      <div className="mark-admin-header">
+        <PageHeader onBack={() => navigate(-1)} title="返回" />
+      </div>
       <div className="mark-dtl-all">
         <Form {...layout} onFinish={onFinish}>
           <Form.Item name="name" label="标题" rules={[{ required: true }]}>
@@ -38,6 +42,7 @@ const Dtl = () => {
             <Editor
               modelValue={text}
               onChange={setText}
+              toolbarsExclude={["catalog", "github"]}
               previewTheme="github"
             />
           </div>

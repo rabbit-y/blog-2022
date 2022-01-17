@@ -1,8 +1,9 @@
 import { Tag, Space, Button } from "antd";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import MyTable from "@components/Table/index";
 import "./index.less";
 export default function Mark() {
+  const navigate = useNavigate();
   const columns = [
     {
       title: "标题",
@@ -36,6 +37,9 @@ export default function Mark() {
       ),
     },
   ];
+  const jumpDtl = () => {
+    navigate("/admin/mark/creat");
+  };
   return (
     <div className="mark-list">
       <MyTable
@@ -50,7 +54,9 @@ export default function Mark() {
         option={{
           title: () => (
             <div>
-              <Button type="primary">新建文档</Button>
+              <Button type="primary" onClick={jumpDtl}>
+                新建文档
+              </Button>
             </div>
           ),
         }}
