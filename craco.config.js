@@ -1,7 +1,7 @@
 const CracoLessPlugin = require('craco-less');
 const path = require("path");
 const resolve = dir => path.resolve(__dirname, dir);
-const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
+// const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
 // const CompressionPlugin = require('compression-webpack-plugin')
 
 module.exports = {
@@ -16,7 +16,7 @@ module.exports = {
     },
     plugins: [
       //打包分析
-      new BundleAnalyzerPlugin(),
+      // new BundleAnalyzerPlugin(),
       // new CompressionPlugin({
       //   algorithm: 'gzip',
       //   test: /\.js$|\.css$/,
