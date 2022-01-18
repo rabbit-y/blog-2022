@@ -6,14 +6,14 @@ declare namespace api {}
 
 declare namespace api {
   /**
-   * Basic Error Controller
+   * Article Controller
    */
-  export namespace basicError {
+  export namespace article {
     /**
-     * errorHtml
-     * /error
+     * 更新文章
+     * /article
      */
-    export namespace errorHtml {
+    export namespace updateById {
       export class Params {}
 
       export type Response = any;
@@ -24,7 +24,88 @@ declare namespace api {
     }
 
     /**
-     * errorHtml
+     * 新增文章
+     * /article
+     */
+    export namespace save {
+      export class Params {}
+
+      export type Response = any;
+
+      export const init: Response;
+
+      export function request(params: Params, options?: any): Promise<Response>;
+    }
+
+    /**
+     * 文章列表
+     * /article/list
+     */
+    export namespace getList {
+      export class Params {}
+
+      export type Response = any;
+
+      export const init: Response;
+
+      export function request(params: Params, options?: any): Promise<Response>;
+    }
+
+    /**
+     * 文章详情
+     * /article/{id}
+     */
+    export namespace getById {
+      export class Params {
+        /** id */
+        id: any;
+      }
+
+      export type Response = any;
+
+      export const init: Response;
+
+      export function request(params: Params, options?: any): Promise<Response>;
+    }
+
+    /**
+     * 删除文章
+     * /article/{id}
+     */
+    export namespace removeById {
+      export class Params {
+        /** id */
+        id: any;
+      }
+
+      export type Response = any;
+
+      export const init: Response;
+
+      export function request(params: Params, options?: any): Promise<Response>;
+    }
+  }
+
+  /**
+   * Basic Error Controller
+   */
+  export namespace basicError {
+    /**
+     * error
+     * /error
+     */
+    export namespace error {
+      export class Params {}
+
+      export type Response = any;
+
+      export const init: Response;
+
+      export function request(params: Params, options?: any): Promise<Response>;
+    }
+
+    /**
+     * error
      * /error
      */
     export namespace putError {
@@ -38,7 +119,7 @@ declare namespace api {
     }
 
     /**
-     * errorHtml
+     * error
      * /error
      */
     export namespace postError {
@@ -52,7 +133,7 @@ declare namespace api {
     }
 
     /**
-     * errorHtml
+     * error
      * /error
      */
     export namespace deleteError {
@@ -66,7 +147,7 @@ declare namespace api {
     }
 
     /**
-     * errorHtml
+     * error
      * /error
      */
     export namespace optionsError {
@@ -80,7 +161,7 @@ declare namespace api {
     }
 
     /**
-     * errorHtml
+     * error
      * /error
      */
     export namespace headError {
@@ -94,7 +175,7 @@ declare namespace api {
     }
 
     /**
-     * errorHtml
+     * error
      * /error
      */
     export namespace patchError {
@@ -108,7 +189,7 @@ declare namespace api {
     }
 
     /**
-     * errorHtml
+     * error
      * /error
      */
     export namespace traceError {
@@ -123,14 +204,94 @@ declare namespace api {
   }
 
   /**
+   * Mood Controller
+   */
+  export namespace mood {
+    /**
+     * 更新说说
+     * /mood
+     */
+    export namespace updateById {
+      export class Params {}
+
+      export type Response = any;
+
+      export const init: Response;
+
+      export function request(params: Params, options?: any): Promise<Response>;
+    }
+
+    /**
+     * 新增说说
+     * /mood
+     */
+    export namespace save {
+      export class Params {}
+
+      export type Response = any;
+
+      export const init: Response;
+
+      export function request(params: Params, options?: any): Promise<Response>;
+    }
+
+    /**
+     * 说说列表
+     * /mood/list
+     */
+    export namespace getList {
+      export class Params {}
+
+      export type Response = any;
+
+      export const init: Response;
+
+      export function request(params: Params, options?: any): Promise<Response>;
+    }
+
+    /**
+     * 说说详情
+     * /mood/{id}
+     */
+    export namespace getById {
+      export class Params {
+        /** id */
+        id: any;
+      }
+
+      export type Response = any;
+
+      export const init: Response;
+
+      export function request(params: Params, options?: any): Promise<Response>;
+    }
+
+    /**
+     * 删除说说
+     * /mood/{id}
+     */
+    export namespace removeById {
+      export class Params {
+        /** id */
+        id: any;
+      }
+
+      export type Response = any;
+
+      export const init: Response;
+
+      export function request(params: Params, options?: any): Promise<Response>;
+    }
+  }
+
+  /**
    * Other Controller
    */
   export namespace other {
     /**
-        * 起始页
-用于用查看后端服务是否启动
-        * /
-        */
+     * 起始页
+     * /
+     */
     export namespace doHome {
       export class Params {}
 
@@ -142,10 +303,9 @@ declare namespace api {
     }
 
     /**
-        * 登录接口
-用于用户登录
-        * /login
-        */
+     * 登录
+     * /login
+     */
     export namespace doLogin {
       export class Params {
         /** email */
@@ -162,10 +322,9 @@ declare namespace api {
     }
 
     /**
-        * 注册
-用于用户注册
-        * /reg
-        */
+     * 注册
+     * /reg
+     */
     export namespace register {
       export class Params {}
 
@@ -177,10 +336,9 @@ declare namespace api {
     }
 
     /**
-        * 发送邮件验证码
-用于用户注册邮箱校验
-        * /sendVerifyCode
-        */
+     * 发送邮件验证码
+     * /sendVerifyCode
+     */
     export namespace sendVerifyCode {
       export class Params {}
 
@@ -192,10 +350,9 @@ declare namespace api {
     }
 
     /**
-        * 测试
-用于测试后台是否可被访问
-        * /test
-        */
+     * 测试
+     * /test
+     */
     export namespace doTest {
       export class Params {}
 
@@ -207,10 +364,9 @@ declare namespace api {
     }
 
     /**
-        * 上传文件
-公共上传文件接口
-        * /uploadFile
-        */
+     * 上传文件
+     * /uploadFile
+     */
     export namespace uploadFile {
       export class Params {}
 
@@ -222,12 +378,92 @@ declare namespace api {
     }
 
     /**
-        * 获取当前登录用户信
-获取当前登录用户信
-        * /userInfo
-        */
+     * 获取当前登录用户信息
+     * /userInfo
+     */
     export namespace getUserInfo {
       export class Params {}
+
+      export type Response = any;
+
+      export const init: Response;
+
+      export function request(params: Params, options?: any): Promise<Response>;
+    }
+  }
+
+  /**
+   * Type Controller
+   */
+  export namespace type {
+    /**
+     * 更新类型
+     * /type
+     */
+    export namespace updateById {
+      export class Params {}
+
+      export type Response = any;
+
+      export const init: Response;
+
+      export function request(params: Params, options?: any): Promise<Response>;
+    }
+
+    /**
+     * 新增类型
+     * /type
+     */
+    export namespace save {
+      export class Params {}
+
+      export type Response = any;
+
+      export const init: Response;
+
+      export function request(params: Params, options?: any): Promise<Response>;
+    }
+
+    /**
+     * 类型列表
+     * /type/list
+     */
+    export namespace getList {
+      export class Params {}
+
+      export type Response = any;
+
+      export const init: Response;
+
+      export function request(params: Params, options?: any): Promise<Response>;
+    }
+
+    /**
+     * 类型详情
+     * /type/{id}
+     */
+    export namespace getById {
+      export class Params {
+        /** id */
+        id: any;
+      }
+
+      export type Response = any;
+
+      export const init: Response;
+
+      export function request(params: Params, options?: any): Promise<Response>;
+    }
+
+    /**
+     * 删除类型
+     * /type/{id}
+     */
+    export namespace removeById {
+      export class Params {
+        /** id */
+        id: any;
+      }
 
       export type Response = any;
 

@@ -1,7 +1,6 @@
 /**
-     * @desc 测试
-用于测试后台是否可被访问
-     */
+ * @desc 测试
+ */
 
 import * as defs from '../../baseClass';
 import { PontCore } from '../../pontCore';

@@ -1,7 +1,6 @@
 /**
-     * @desc 登录接口
-用于用户登录
-     */
+ * @desc 登录
+ */
 
 import * as defs from '../../baseClass';
 import { PontCore } from '../../pontCore';

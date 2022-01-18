@@ -2,11 +2,129 @@
   {
     "mods": [
       {
+        "description": "Article Controller",
+        "interfaces": [
+          {
+            "description": "更新文章",
+            "name": "updateById",
+            "method": "put",
+            "path": "/article",
+            "response": {
+              "typeArgs": [],
+              "typeName": "",
+              "isDefsType": false,
+              "templateIndex": -1,
+              "compileTemplateKeyword": "#/definitions/",
+              "enum": [],
+              "typeProperties": []
+            },
+            "parameters": []
+          },
+          {
+            "description": "新增文章",
+            "name": "save",
+            "method": "post",
+            "path": "/article",
+            "response": {
+              "typeArgs": [],
+              "typeName": "",
+              "isDefsType": false,
+              "templateIndex": -1,
+              "compileTemplateKeyword": "#/definitions/",
+              "enum": [],
+              "typeProperties": []
+            },
+            "parameters": []
+          },
+          {
+            "description": "文章列表",
+            "name": "getList",
+            "method": "get",
+            "path": "/article/list",
+            "response": {
+              "typeArgs": [],
+              "typeName": "",
+              "isDefsType": false,
+              "templateIndex": -1,
+              "compileTemplateKeyword": "#/definitions/",
+              "enum": [],
+              "typeProperties": []
+            },
+            "parameters": []
+          },
+          {
+            "description": "文章详情",
+            "name": "getById",
+            "method": "get",
+            "path": "/article/{id}",
+            "response": {
+              "typeArgs": [],
+              "typeName": "",
+              "isDefsType": false,
+              "templateIndex": -1,
+              "compileTemplateKeyword": "#/definitions/",
+              "enum": [],
+              "typeProperties": []
+            },
+            "parameters": [
+              {
+                "in": "path",
+                "description": "id",
+                "name": "id",
+                "required": true,
+                "dataType": {
+                  "typeArgs": [],
+                  "typeName": "",
+                  "isDefsType": false,
+                  "templateIndex": -1,
+                  "compileTemplateKeyword": "#/definitions/",
+                  "enum": [],
+                  "typeProperties": []
+                }
+              }
+            ]
+          },
+          {
+            "description": "删除文章",
+            "name": "removeById",
+            "method": "delete",
+            "path": "/article/{id}",
+            "response": {
+              "typeArgs": [],
+              "typeName": "",
+              "isDefsType": false,
+              "templateIndex": -1,
+              "compileTemplateKeyword": "#/definitions/",
+              "enum": [],
+              "typeProperties": []
+            },
+            "parameters": [
+              {
+                "in": "path",
+                "description": "id",
+                "name": "id",
+                "required": true,
+                "dataType": {
+                  "typeArgs": [],
+                  "typeName": "",
+                  "isDefsType": false,
+                  "templateIndex": -1,
+                  "compileTemplateKeyword": "#/definitions/",
+                  "enum": [],
+                  "typeProperties": []
+                }
+              }
+            ]
+          }
+        ],
+        "name": "article"
+      },
+      {
         "description": "Basic Error Controller",
         "interfaces": [
           {
-            "description": "errorHtml",
-            "name": "errorHtml",
+            "description": "error",
+            "name": "error",
             "method": "get",
             "path": "/error",
             "response": {
@@ -21,7 +139,7 @@
             "parameters": []
           },
           {
-            "description": "errorHtml",
+            "description": "error",
             "name": "putError",
             "method": "put",
             "path": "/error",
@@ -37,7 +155,7 @@
             "parameters": []
           },
           {
-            "description": "errorHtml",
+            "description": "error",
             "name": "postError",
             "method": "post",
             "path": "/error",
@@ -53,7 +171,7 @@
             "parameters": []
           },
           {
-            "description": "errorHtml",
+            "description": "error",
             "name": "deleteError",
             "method": "delete",
             "path": "/error",
@@ -69,7 +187,7 @@
             "parameters": []
           },
           {
-            "description": "errorHtml",
+            "description": "error",
             "name": "optionsError",
             "method": "options",
             "path": "/error",
@@ -85,7 +203,7 @@
             "parameters": []
           },
           {
-            "description": "errorHtml",
+            "description": "error",
             "name": "headError",
             "method": "head",
             "path": "/error",
@@ -101,7 +219,7 @@
             "parameters": []
           },
           {
-            "description": "errorHtml",
+            "description": "error",
             "name": "patchError",
             "method": "patch",
             "path": "/error",
@@ -117,7 +235,7 @@
             "parameters": []
           },
           {
-            "description": "errorHtml",
+            "description": "error",
             "name": "traceError",
             "method": "trace",
             "path": "/error",
@@ -136,10 +254,128 @@
         "name": "basicError"
       },
       {
+        "description": "Mood Controller",
+        "interfaces": [
+          {
+            "description": "更新说说",
+            "name": "updateById",
+            "method": "put",
+            "path": "/mood",
+            "response": {
+              "typeArgs": [],
+              "typeName": "",
+              "isDefsType": false,
+              "templateIndex": -1,
+              "compileTemplateKeyword": "#/definitions/",
+              "enum": [],
+              "typeProperties": []
+            },
+            "parameters": []
+          },
+          {
+            "description": "新增说说",
+            "name": "save",
+            "method": "post",
+            "path": "/mood",
+            "response": {
+              "typeArgs": [],
+              "typeName": "",
+              "isDefsType": false,
+              "templateIndex": -1,
+              "compileTemplateKeyword": "#/definitions/",
+              "enum": [],
+              "typeProperties": []
+            },
+            "parameters": []
+          },
+          {
+            "description": "说说列表",
+            "name": "getList",
+            "method": "get",
+            "path": "/mood/list",
+            "response": {
+              "typeArgs": [],
+              "typeName": "",
+              "isDefsType": false,
+              "templateIndex": -1,
+              "compileTemplateKeyword": "#/definitions/",
+              "enum": [],
+              "typeProperties": []
+            },
+            "parameters": []
+          },
+          {
+            "description": "说说详情",
+            "name": "getById",
+            "method": "get",
+            "path": "/mood/{id}",
+            "response": {
+              "typeArgs": [],
+              "typeName": "",
+              "isDefsType": false,
+              "templateIndex": -1,
+              "compileTemplateKeyword": "#/definitions/",
+              "enum": [],
+              "typeProperties": []
+            },
+            "parameters": [
+              {
+                "in": "path",
+                "description": "id",
+                "name": "id",
+                "required": true,
+                "dataType": {
+                  "typeArgs": [],
+                  "typeName": "",
+                  "isDefsType": false,
+                  "templateIndex": -1,
+                  "compileTemplateKeyword": "#/definitions/",
+                  "enum": [],
+                  "typeProperties": []
+                }
+              }
+            ]
+          },
+          {
+            "description": "删除说说",
+            "name": "removeById",
+            "method": "delete",
+            "path": "/mood/{id}",
+            "response": {
+              "typeArgs": [],
+              "typeName": "",
+              "isDefsType": false,
+              "templateIndex": -1,
+              "compileTemplateKeyword": "#/definitions/",
+              "enum": [],
+              "typeProperties": []
+            },
+            "parameters": [
+              {
+                "in": "path",
+                "description": "id",
+                "name": "id",
+                "required": true,
+                "dataType": {
+                  "typeArgs": [],
+                  "typeName": "",
+                  "isDefsType": false,
+                  "templateIndex": -1,
+                  "compileTemplateKeyword": "#/definitions/",
+                  "enum": [],
+                  "typeProperties": []
+                }
+              }
+            ]
+          }
+        ],
+        "name": "mood"
+      },
+      {
         "description": "Other Controller",
         "interfaces": [
           {
-            "description": "起始页\n用于用查看后端服务是否启动",
+            "description": "起始页",
             "name": "doHome",
             "method": "get",
             "path": "/",
@@ -155,7 +391,7 @@
             "parameters": []
           },
           {
-            "description": "登录接口\n用于用户登录",
+            "description": "登录",
             "name": "doLogin",
             "method": "post",
             "path": "/login",
@@ -202,7 +438,7 @@
             ]
           },
           {
-            "description": "注册\n用于用户注册",
+            "description": "注册",
             "name": "register",
             "method": "post",
             "path": "/reg",
@@ -218,7 +454,7 @@
             "parameters": []
           },
           {
-            "description": "发送邮件验证码\n用于用户注册邮箱校验",
+            "description": "发送邮件验证码",
             "name": "sendVerifyCode",
             "method": "post",
             "path": "/sendVerifyCode",
@@ -234,7 +470,7 @@
             "parameters": []
           },
           {
-            "description": "测试\n用于测试后台是否可被访问",
+            "description": "测试",
             "name": "doTest",
             "method": "get",
             "path": "/test",
@@ -250,7 +486,7 @@
             "parameters": []
           },
           {
-            "description": "上传文件\n公共上传文件接口",
+            "description": "上传文件",
             "name": "uploadFile",
             "method": "post",
             "path": "/uploadFile",
@@ -266,7 +502,7 @@
             "parameters": []
           },
           {
-            "description": "获取当前登录用户信\n获取当前登录用户信",
+            "description": "获取当前登录用户信息",
             "name": "getUserInfo",
             "method": "get",
             "path": "/userInfo",
@@ -283,6 +519,124 @@
           }
         ],
         "name": "other"
+      },
+      {
+        "description": "Type Controller",
+        "interfaces": [
+          {
+            "description": "更新类型",
+            "name": "updateById",
+            "method": "put",
+            "path": "/type",
+            "response": {
+              "typeArgs": [],
+              "typeName": "",
+              "isDefsType": false,
+              "templateIndex": -1,
+              "compileTemplateKeyword": "#/definitions/",
+              "enum": [],
+              "typeProperties": []
+            },
+            "parameters": []
+          },
+          {
+            "description": "新增类型",
+            "name": "save",
+            "method": "post",
+            "path": "/type",
+            "response": {
+              "typeArgs": [],
+              "typeName": "",
+              "isDefsType": false,
+              "templateIndex": -1,
+              "compileTemplateKeyword": "#/definitions/",
+              "enum": [],
+              "typeProperties": []
+            },
+            "parameters": []
+          },
+          {
+            "description": "类型列表",
+            "name": "getList",
+            "method": "get",
+            "path": "/type/list",
+            "response": {
+              "typeArgs": [],
+              "typeName": "",
+              "isDefsType": false,
+              "templateIndex": -1,
+              "compileTemplateKeyword": "#/definitions/",
+              "enum": [],
+              "typeProperties": []
+            },
+            "parameters": []
+          },
+          {
+            "description": "类型详情",
+            "name": "getById",
+            "method": "get",
+            "path": "/type/{id}",
+            "response": {
+              "typeArgs": [],
+              "typeName": "",
+              "isDefsType": false,
+              "templateIndex": -1,
+              "compileTemplateKeyword": "#/definitions/",
+              "enum": [],
+              "typeProperties": []
+            },
+            "parameters": [
+              {
+                "in": "path",
+                "description": "id",
+                "name": "id",
+                "required": true,
+                "dataType": {
+                  "typeArgs": [],
+                  "typeName": "",
+                  "isDefsType": false,
+                  "templateIndex": -1,
+                  "compileTemplateKeyword": "#/definitions/",
+                  "enum": [],
+                  "typeProperties": []
+                }
+              }
+            ]
+          },
+          {
+            "description": "删除类型",
+            "name": "removeById",
+            "method": "delete",
+            "path": "/type/{id}",
+            "response": {
+              "typeArgs": [],
+              "typeName": "",
+              "isDefsType": false,
+              "templateIndex": -1,
+              "compileTemplateKeyword": "#/definitions/",
+              "enum": [],
+              "typeProperties": []
+            },
+            "parameters": [
+              {
+                "in": "path",
+                "description": "id",
+                "name": "id",
+                "required": true,
+                "dataType": {
+                  "typeArgs": [],
+                  "typeName": "",
+                  "isDefsType": false,
+                  "templateIndex": -1,
+                  "compileTemplateKeyword": "#/definitions/",
+                  "enum": [],
+                  "typeProperties": []
+                }
+              }
+            ]
+          }
+        ],
+        "name": "type"
       }
     ],
     "name": "api",

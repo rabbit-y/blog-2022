@@ -1,7 +1,6 @@
 /**
-     * @desc 发送邮件验证码
-用于用户注册邮箱校验
-     */
+ * @desc 发送邮件验证码
+ */
 
 import * as defs from '../../baseClass';
 import { PontCore } from '../../pontCore';

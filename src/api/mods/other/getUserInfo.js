@@ -1,7 +1,6 @@
 /**
-     * @desc 获取当前登录用户信
-获取当前登录用户信
-     */
+ * @desc 获取当前登录用户信息
+ */
 
 import * as defs from '../../baseClass';
 import { PontCore } from '../../pontCore';

@@ -10,8 +10,8 @@ export class Params {}
 export const init = undefined;
 
 export function request(params, options = {}) {
-  return PontCore.fetch(PontCore.getUrl('/error', params, 'HEAD'), {
-    method: 'HEAD',
+  return PontCore.fetch(PontCore.getUrl('/error', params, 'GET'), {
+    method: 'GET',
 
     ...options,
   });

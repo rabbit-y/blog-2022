@@ -1,13 +1,22 @@
+import { useEffect, useState } from "react";
 import { Row, Col, Divider } from "antd";
 import { useNavigate } from "react-router-dom";
-import IconFont from "../../component/Icon/index";
+import { api } from "@api/index";
+import IconFont from "@components/Icon/index";
 
 import "./index.less";
 
 export default function Index() {
   const navigate = useNavigate();
-  const jumpDtl = () => {
-    navigate("/mark/pmp/1");
+  const [mark, setMark] = useState([]);
+  useEffect(() => {
+    getList();
+  }, []);
+  const getList = async () => {
+    const { code, data } = await api.article.getList.request();
+    if (code === 0) {
+      setMark(data);
+    }
   };
   return (
     <div className="index">
@@ -32,18 +41,27 @@ export default function Index() {
           </Col>
         </Row>
       </div>
-      <div className="index-page opacity8">
-        <div className="index-page-title">项目运行环境+引论</div>
-        <div className="index-page-msg">
-          <IconFont type="h-shijian" />
-          2022-01-04
-          <Divider type="vertical" />
-          <IconFont type="h-wenjianjia" />
-          PMP
-        </div>
-        <div className="index-page-dec" onClick={jumpDtl}>
-          值观：责任、尊重、公正、诚实项目的特点独特性：独特性带来不确定性，可能存在重复的元素临时性：有明确的起点和终点，可交付成果可能回在项目终止后依然存在项目驱动变更：推动组织从当前状态转变为未来状态项目创造商业价值：为相关方带来有型或无形的效益项目终止达成目标不会或不能达
-        </div>
+      <div>
+        {mark?.map((item, index) => (
+          <div className="index-page opacity8" key={index}>
+            <div className="index-page-title">{item.title}</div>
+            <div className="index-page-msg">
+              <IconFont type="h-shijian" />
+              {item.createTime}
+              <Divider type="vertical" />
+              <IconFont type="h-wenjianjia" />
+              PMP
+            </div>
+            <div
+              className="index-page-dec"
+              onClick={() => {
+                navigate("/mark/pmp/" + item.id);
+              }}
+            >
+              {item.description}
+            </div>
+          </div>
+        ))}
       </div>
     </div>
   );

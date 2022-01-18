@@ -1,7 +1,6 @@
 /**
-     * @desc 注册
-用于用户注册
-     */
+ * @desc 注册
+ */
 
 import * as defs from '../../baseClass';
 import { PontCore } from '../../pontCore';

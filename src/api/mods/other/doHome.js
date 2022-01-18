@@ -1,7 +1,6 @@
 /**
-     * @desc 起始页
-用于用查看后端服务是否启动
-     */
+ * @desc 起始页
+ */
 
 import * as defs from '../../baseClass';
 import { PontCore } from '../../pontCore';

@@ -1,5 +1,5 @@
 /**
- * @desc error
+ * @desc 新增文章
  */
 
 import * as defs from '../../baseClass';
@@ -10,8 +10,8 @@ export class Params {}
 export const init = undefined;
 
 export function request(params, options = {}) {
-  return PontCore.fetch(PontCore.getUrl('/error', params, 'HEAD'), {
-    method: 'HEAD',
+  return PontCore.fetch(PontCore.getUrl('/article', params, 'POST'), {
+    method: 'POST',
 
     ...options,
   });

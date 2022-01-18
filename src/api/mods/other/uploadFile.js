@@ -1,7 +1,6 @@
 /**
-     * @desc 上传文件
-公共上传文件接口
-     */
+ * @desc 上传文件
+ */
 
 import * as defs from '../../baseClass';
 import { PontCore } from '../../pontCore';
