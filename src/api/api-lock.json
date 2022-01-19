@@ -123,8 +123,8 @@
         "description": "Basic Error Controller",
         "interfaces": [
           {
-            "description": "error",
-            "name": "error",
+            "description": "errorHtml",
+            "name": "errorHtml",
             "method": "get",
             "path": "/error",
             "response": {
@@ -139,7 +139,7 @@
             "parameters": []
           },
           {
-            "description": "error",
+            "description": "errorHtml",
             "name": "putError",
             "method": "put",
             "path": "/error",
@@ -155,7 +155,7 @@
             "parameters": []
           },
           {
-            "description": "error",
+            "description": "errorHtml",
             "name": "postError",
             "method": "post",
             "path": "/error",
@@ -171,7 +171,7 @@
             "parameters": []
           },
           {
-            "description": "error",
+            "description": "errorHtml",
             "name": "deleteError",
             "method": "delete",
             "path": "/error",
@@ -187,7 +187,7 @@
             "parameters": []
           },
           {
-            "description": "error",
+            "description": "errorHtml",
             "name": "optionsError",
             "method": "options",
             "path": "/error",
@@ -203,7 +203,7 @@
             "parameters": []
           },
           {
-            "description": "error",
+            "description": "errorHtml",
             "name": "headError",
             "method": "head",
             "path": "/error",
@@ -219,7 +219,7 @@
             "parameters": []
           },
           {
-            "description": "error",
+            "description": "errorHtml",
             "name": "patchError",
             "method": "patch",
             "path": "/error",
@@ -235,7 +235,7 @@
             "parameters": []
           },
           {
-            "description": "error",
+            "description": "errorHtml",
             "name": "traceError",
             "method": "trace",
             "path": "/error",

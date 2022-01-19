@@ -91,10 +91,10 @@ declare namespace api {
    */
   export namespace basicError {
     /**
-     * error
+     * errorHtml
      * /error
      */
-    export namespace error {
+    export namespace errorHtml {
       export class Params {}
 
       export type Response = any;
@@ -105,7 +105,7 @@ declare namespace api {
     }
 
     /**
-     * error
+     * errorHtml
      * /error
      */
     export namespace putError {
@@ -119,7 +119,7 @@ declare namespace api {
     }
 
     /**
-     * error
+     * errorHtml
      * /error
      */
     export namespace postError {
@@ -133,7 +133,7 @@ declare namespace api {
     }
 
     /**
-     * error
+     * errorHtml
      * /error
      */
     export namespace deleteError {
@@ -147,7 +147,7 @@ declare namespace api {
     }
 
     /**
-     * error
+     * errorHtml
      * /error
      */
     export namespace optionsError {
@@ -161,7 +161,7 @@ declare namespace api {
     }
 
     /**
-     * error
+     * errorHtml
      * /error
      */
     export namespace headError {
@@ -175,7 +175,7 @@ declare namespace api {
     }
 
     /**
-     * error
+     * errorHtml
      * /error
      */
     export namespace patchError {
@@ -189,7 +189,7 @@ declare namespace api {
     }
 
     /**
-     * error
+     * errorHtml
      * /error
      */
     export namespace traceError {
