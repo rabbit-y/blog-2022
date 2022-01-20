@@ -25,7 +25,7 @@
   "scripts": {
     "start": "craco start",
     "build": "craco build",
-    "pont": "pont-plus start"
+    "pont": "shx rm -rf src/api && pont-plus start"
   },
   "eslintConfig": {
     "extends": [
@@ -48,6 +48,7 @@
   "proxy": "http://www.han96.com",
   "homepage": ".",
   "devDependencies": {
-    "compression-webpack-plugin": "^9.2.0"
+    "compression-webpack-plugin": "^9.2.0",
+    "shx": "^0.3.4"
   }
 }
