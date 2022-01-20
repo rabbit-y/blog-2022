@@ -7,13 +7,14 @@ specifiers:
   axios: ^0.24.0
   compression-webpack-plugin: ^9.2.0
   craco-less: ^2.0.0
+  highlight.js: ^11.4.0
+  marked: ^4.0.10
   md-editor-rt: ^1.4.2
   moment: ^2.29.1
   pont-engine-plus: ^0.0.3
   qs: ^6.10.2
   react: ^17.0.2
   react-dom: ^17.0.2
-  react-markdown: ^8.0.0
   react-router: ^6.2.1
   react-router-dom: ^6.2.1
   react-scripts: 5.0.0
@@ -26,13 +27,14 @@ dependencies:
   antd: registry.npmmirror.com/antd/4.18.2_react-dom@17.0.2+react@17.0.2
   axios: registry.npmmirror.com/axios/0.24.0
   craco-less: registry.npmmirror.com/craco-less/2.0.0_66b49c99af659d7c23050d0db8706453
+  highlight.js: 11.4.0
+  marked: 4.0.10
   md-editor-rt: 1.4.2
   moment: registry.npmmirror.com/moment/2.29.1
   pont-engine-plus: 0.0.3
   qs: registry.npmmirror.com/qs/6.10.2
   react: registry.npmmirror.com/react/17.0.2
   react-dom: registry.npmmirror.com/react-dom/17.0.2_react@17.0.2
-  react-markdown: 8.0.0_react@17.0.2
   react-router: registry.npmmirror.com/react-router/6.2.1_react@17.0.2
   react-router-dom: registry.npmmirror.com/react-router-dom/6.2.1_react-dom@17.0.2+react@17.0.2
   react-scripts: registry.npmmirror.com/react-scripts/5.0.0_react@17.0.2

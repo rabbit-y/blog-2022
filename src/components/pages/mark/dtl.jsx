@@ -1,9 +1,12 @@
 import { useState, useEffect } from "react";
 import { Divider, Form, Input, Button } from "antd";
 import { useParams, useNavigate } from "react-router-dom";
-import Markdown from "react-markdown";
+import { marked } from "marked";
+import hljs from "highlight.js";
 import { api } from "@api/index";
 import IconFont from "@components/Icon/index";
+
+import "highlight.js/styles/foundation.css";
 import "./index.less";
 
 const layout = {
@@ -16,6 +19,20 @@ const Dtl = () => {
   const [isLogin, setIsLogin] = useState(false);
   const [user, setUser] = useState({});
   const [dtl, setDtl] = useState({});
+  const [html, setHtml] = useState({});
+  marked.setOptions({
+    renderer: new marked.Renderer(),
+    highlight: function(code) {
+      return hljs.highlightAuto(code).value;
+    },
+    gfm: true,
+    pedantic: false,
+    sanitize: false,
+    tables: true,
+    breaks: true,
+    smartLists: true,
+    smartypants: true,
+  });
   useEffect(() => {
     const userInfo = localStorage.getItem("h-userInfo");
     setUser(userInfo ? JSON.parse(userInfo) : {});
@@ -25,6 +42,8 @@ const Dtl = () => {
   const getDtl = async (id) => {
     const { code, data } = await api.article.getById.request({ id });
     if (code === 0) {
+      const html = marked(data.content);
+      setHtml(html);
       setDtl(data);
     }
   };
@@ -53,7 +72,7 @@ const Dtl = () => {
           {dtl.typeName}
         </div>
         <div className="mark-dtl-cont">
-          <Markdown children={dtl.content} />
+          <div dangerouslySetInnerHTML={{ __html: html }}></div>
         </div>
       </div>
       <div className="mark-dtl-support">

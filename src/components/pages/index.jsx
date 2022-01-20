@@ -1,4 +1,4 @@
-import { Suspense, lazy } from "react";
+import { Suspense, lazy, useEffect, useState } from "react";
 import {
   HashRouter as Router,
   Route,
@@ -7,16 +7,32 @@ import {
   Link,
 } from "react-router-dom";
 import { Row, Col, Menu } from "antd";
+
 import { STATION, ROTER } from "@utils/variable";
 import { RoutersList, AdminRoutersList } from "@/router/router";
+import { api } from "@api/index";
+
 import AboutMe from "@pages/aboutMe/index";
 import Footer from "@pages/footer/index";
 import Classify from "@pages/classify/index";
 import Loading from "@components/Loading/index";
+
 import "./index.less";
 const Admin = lazy(() => import("@pages/admin/index"));
+
 const { SubMenu } = Menu;
 const App = () => {
+  const [typeList, setTypeList] = useState([]);
+  useEffect(() => {
+    getList();
+  }, []);
+  // 获取分类列表
+  const getList = async () => {
+    const { code, data } = await api.type.getList.request();
+    if (code === 0) {
+      setTypeList(data);
+    }
+  };
   return (
     <Router>
       <Routes>
@@ -37,9 +53,11 @@ const App = () => {
                       {ROTER?.map((item) => {
                         return item.child?.length > 0 ? (
                           <SubMenu key="SubMenu" title="小前端">
-                            {item.child.map((cItem) => (
-                              <Menu.Item key={cItem.key}>
-                                <Link to={cItem.path}>{cItem.name}</Link>
+                            {typeList?.map((cItem) => (
+                              <Menu.Item key={cItem.id}>
+                                <Link to={item.path + "/" + cItem.id}>
+                                  {cItem.name}
+                                </Link>
                               </Menu.Item>
                             ))}
                           </SubMenu>
@@ -88,7 +106,7 @@ const App = () => {
                           <AboutMe />
                         </div>
                         <div>
-                          <Classify />
+                          <Classify list={typeList} />
                         </div>
                       </div>
                     </Col>
