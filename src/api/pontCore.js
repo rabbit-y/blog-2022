@@ -4,10 +4,10 @@
  */
 var __assign =
   (this && this.__assign) ||
-  function() {
+  function () {
     __assign =
       Object.assign ||
-      function(t) {
+      function (t) {
         for (var s, i = 1, n = arguments.length; i < n; i++) {
           s = arguments[i];
           for (var p in s)
@@ -18,9 +18,10 @@ var __assign =
     return __assign.apply(this, arguments);
   };
 Object.defineProperty(exports, '__esModule', { value: true });
-var PontCoreManager = /** @class */ (function() {
+exports.PontCore = void 0;
+var PontCoreManager = /** @class */ (function () {
   function PontCoreManager() {}
-  PontCoreManager.getSignleInstance = function() {
+  PontCoreManager.getSignleInstance = function () {
     if (!PontCoreManager.singleInstance) {
       PontCoreManager.singleInstance = new PontCoreManager();
       return PontCoreManager.singleInstance;
@@ -32,45 +33,45 @@ var PontCoreManager = /** @class */ (function() {
    * @param url 请求url
    * @param options fetch 请求配置
    */
-  PontCoreManager.prototype.fetch = function(url, options) {
+  PontCoreManager.prototype.fetch = function (url, options) {
     if (options === void 0) {
       options = {};
     }
-    return fetch(url, options).then(function(res) {
+    return fetch(url, options).then(function (res) {
       return res.json();
     });
   };
   /**
    * 使用外部传入的请求方法替换默认的fetch请求
    */
-  PontCoreManager.prototype.useFetch = function(fetch) {
+  PontCoreManager.prototype.useFetch = function (fetch) {
     if (typeof fetch !== 'function') {
       console.error('fetch should be a function ');
       return;
     }
     this.fetch = fetch;
   };
-  PontCoreManager.prototype.getUrl = function(path, queryParams, method) {
+  PontCoreManager.prototype.getUrl = function (path, queryParams, method) {
     var params = __assign({}, queryParams || {});
-    var url = path.replace(/\{([^\\}]*(?:\\.[^\\}]*)*)\}/gm, function(
-      match,
-      key,
-    ) {
-      // eslint-disable-next-line no-param-reassign
-      key = key.trim();
-      if (params[key] !== undefined) {
-        var value = params[key];
-        delete params[key];
-        return value;
-      }
-      console.warn('Please set value for template key: ', key);
-      return '';
-    });
+    var url = path.replace(
+      /\{([^\\}]*(?:\\.[^\\}]*)*)\}/gm,
+      function (match, key) {
+        // eslint-disable-next-line no-param-reassign
+        key = key.trim();
+        if (params[key] !== undefined) {
+          var value = params[key];
+          delete params[key];
+          return value;
+        }
+        console.warn('Please set value for template key: ', key);
+        return '';
+      },
+    );
     var paramStr = Object.keys(params)
-      .map(function(key) {
+      .map(function (key) {
         return params[key] === undefined ? '' : key + '=' + params[key];
       })
-      .filter(function(id) {
+      .filter(function (id) {
         return id;
       })
       .join('&');

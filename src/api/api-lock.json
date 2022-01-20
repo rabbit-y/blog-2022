@@ -11,8 +11,8 @@
             "path": "/article",
             "response": {
               "typeArgs": [],
-              "typeName": "",
-              "isDefsType": false,
+              "typeName": "JsonResult",
+              "isDefsType": true,
               "templateIndex": -1,
               "compileTemplateKeyword": "#/definitions/",
               "enum": [],
@@ -27,8 +27,8 @@
             "path": "/article",
             "response": {
               "typeArgs": [],
-              "typeName": "",
-              "isDefsType": false,
+              "typeName": "JsonResult",
+              "isDefsType": true,
               "templateIndex": -1,
               "compileTemplateKeyword": "#/definitions/",
               "enum": [],
@@ -42,9 +42,29 @@
             "method": "get",
             "path": "/article/list",
             "response": {
-              "typeArgs": [],
-              "typeName": "",
-              "isDefsType": false,
+              "typeArgs": [
+                {
+                  "typeArgs": [
+                    {
+                      "typeArgs": [],
+                      "typeName": "TheArticleObject",
+                      "isDefsType": true,
+                      "templateIndex": -1,
+                      "compileTemplateKeyword": "#/definitions/",
+                      "enum": [],
+                      "typeProperties": []
+                    }
+                  ],
+                  "typeName": "Array",
+                  "isDefsType": false,
+                  "templateIndex": -1,
+                  "compileTemplateKeyword": "#/definitions/",
+                  "enum": [],
+                  "typeProperties": []
+                }
+              ],
+              "typeName": "JsonResult",
+              "isDefsType": true,
               "templateIndex": -1,
               "compileTemplateKeyword": "#/definitions/",
               "enum": [],
@@ -58,9 +78,19 @@
             "method": "get",
             "path": "/article/{id}",
             "response": {
-              "typeArgs": [],
-              "typeName": "",
-              "isDefsType": false,
+              "typeArgs": [
+                {
+                  "typeArgs": [],
+                  "typeName": "ArticleVOObject",
+                  "isDefsType": true,
+                  "templateIndex": -1,
+                  "compileTemplateKeyword": "#/definitions/",
+                  "enum": [],
+                  "typeProperties": []
+                }
+              ],
+              "typeName": "JsonResult",
+              "isDefsType": true,
               "templateIndex": -1,
               "compileTemplateKeyword": "#/definitions/",
               "enum": [],
@@ -91,8 +121,8 @@
             "path": "/article/{id}",
             "response": {
               "typeArgs": [],
-              "typeName": "",
-              "isDefsType": false,
+              "typeName": "JsonResult",
+              "isDefsType": true,
               "templateIndex": -1,
               "compileTemplateKeyword": "#/definitions/",
               "enum": [],
@@ -123,14 +153,14 @@
         "description": "Basic Error Controller",
         "interfaces": [
           {
-            "description": "error",
-            "name": "error",
+            "description": "errorHtml",
+            "name": "errorHtml",
             "method": "get",
             "path": "/error",
             "response": {
               "typeArgs": [],
-              "typeName": "",
-              "isDefsType": false,
+              "typeName": "ModelAndView",
+              "isDefsType": true,
               "templateIndex": -1,
               "compileTemplateKeyword": "#/definitions/",
               "enum": [],
@@ -139,14 +169,14 @@
             "parameters": []
           },
           {
-            "description": "error",
+            "description": "errorHtml",
             "name": "putError",
             "method": "put",
             "path": "/error",
             "response": {
               "typeArgs": [],
-              "typeName": "",
-              "isDefsType": false,
+              "typeName": "ModelAndView",
+              "isDefsType": true,
               "templateIndex": -1,
               "compileTemplateKeyword": "#/definitions/",
               "enum": [],
@@ -155,14 +185,14 @@
             "parameters": []
           },
           {
-            "description": "error",
+            "description": "errorHtml",
             "name": "postError",
             "method": "post",
             "path": "/error",
             "response": {
               "typeArgs": [],
-              "typeName": "",
-              "isDefsType": false,
+              "typeName": "ModelAndView",
+              "isDefsType": true,
               "templateIndex": -1,
               "compileTemplateKeyword": "#/definitions/",
               "enum": [],
@@ -171,14 +201,14 @@
             "parameters": []
           },
           {
-            "description": "error",
+            "description": "errorHtml",
             "name": "deleteError",
             "method": "delete",
             "path": "/error",
             "response": {
               "typeArgs": [],
-              "typeName": "",
-              "isDefsType": false,
+              "typeName": "ModelAndView",
+              "isDefsType": true,
               "templateIndex": -1,
               "compileTemplateKeyword": "#/definitions/",
               "enum": [],
@@ -187,14 +217,14 @@
             "parameters": []
           },
           {
-            "description": "error",
+            "description": "errorHtml",
             "name": "optionsError",
             "method": "options",
             "path": "/error",
             "response": {
               "typeArgs": [],
-              "typeName": "",
-              "isDefsType": false,
+              "typeName": "ModelAndView",
+              "isDefsType": true,
               "templateIndex": -1,
               "compileTemplateKeyword": "#/definitions/",
               "enum": [],
@@ -203,14 +233,14 @@
             "parameters": []
           },
           {
-            "description": "error",
+            "description": "errorHtml",
             "name": "headError",
             "method": "head",
             "path": "/error",
             "response": {
               "typeArgs": [],
-              "typeName": "",
-              "isDefsType": false,
+              "typeName": "ModelAndView",
+              "isDefsType": true,
               "templateIndex": -1,
               "compileTemplateKeyword": "#/definitions/",
               "enum": [],
@@ -219,14 +249,14 @@
             "parameters": []
           },
           {
-            "description": "error",
+            "description": "errorHtml",
             "name": "patchError",
             "method": "patch",
             "path": "/error",
             "response": {
               "typeArgs": [],
-              "typeName": "",
-              "isDefsType": false,
+              "typeName": "ModelAndView",
+              "isDefsType": true,
               "templateIndex": -1,
               "compileTemplateKeyword": "#/definitions/",
               "enum": [],
@@ -235,14 +265,14 @@
             "parameters": []
           },
           {
-            "description": "error",
+            "description": "errorHtml",
             "name": "traceError",
             "method": "trace",
             "path": "/error",
             "response": {
               "typeArgs": [],
-              "typeName": "",
-              "isDefsType": false,
+              "typeName": "ModelAndView",
+              "isDefsType": true,
               "templateIndex": -1,
               "compileTemplateKeyword": "#/definitions/",
               "enum": [],
@@ -263,8 +293,8 @@
             "path": "/mood",
             "response": {
               "typeArgs": [],
-              "typeName": "",
-              "isDefsType": false,
+              "typeName": "JsonResult",
+              "isDefsType": true,
               "templateIndex": -1,
               "compileTemplateKeyword": "#/definitions/",
               "enum": [],
@@ -279,8 +309,8 @@
             "path": "/mood",
             "response": {
               "typeArgs": [],
-              "typeName": "",
-              "isDefsType": false,
+              "typeName": "JsonResult",
+              "isDefsType": true,
               "templateIndex": -1,
               "compileTemplateKeyword": "#/definitions/",
               "enum": [],
@@ -294,9 +324,29 @@
             "method": "get",
             "path": "/mood/list",
             "response": {
-              "typeArgs": [],
-              "typeName": "",
-              "isDefsType": false,
+              "typeArgs": [
+                {
+                  "typeArgs": [
+                    {
+                      "typeArgs": [],
+                      "typeName": "MoodObject",
+                      "isDefsType": true,
+                      "templateIndex": -1,
+                      "compileTemplateKeyword": "#/definitions/",
+                      "enum": [],
+                      "typeProperties": []
+                    }
+                  ],
+                  "typeName": "Array",
+                  "isDefsType": false,
+                  "templateIndex": -1,
+                  "compileTemplateKeyword": "#/definitions/",
+                  "enum": [],
+                  "typeProperties": []
+                }
+              ],
+              "typeName": "JsonResult",
+              "isDefsType": true,
               "templateIndex": -1,
               "compileTemplateKeyword": "#/definitions/",
               "enum": [],
@@ -310,9 +360,19 @@
             "method": "get",
             "path": "/mood/{id}",
             "response": {
-              "typeArgs": [],
-              "typeName": "",
-              "isDefsType": false,
+              "typeArgs": [
+                {
+                  "typeArgs": [],
+                  "typeName": "MoodObject",
+                  "isDefsType": true,
+                  "templateIndex": -1,
+                  "compileTemplateKeyword": "#/definitions/",
+                  "enum": [],
+                  "typeProperties": []
+                }
+              ],
+              "typeName": "JsonResult",
+              "isDefsType": true,
               "templateIndex": -1,
               "compileTemplateKeyword": "#/definitions/",
               "enum": [],
@@ -343,8 +403,8 @@
             "path": "/mood/{id}",
             "response": {
               "typeArgs": [],
-              "typeName": "",
-              "isDefsType": false,
+              "typeName": "JsonResult",
+              "isDefsType": true,
               "templateIndex": -1,
               "compileTemplateKeyword": "#/definitions/",
               "enum": [],
@@ -381,8 +441,8 @@
             "path": "/",
             "response": {
               "typeArgs": [],
-              "typeName": "",
-              "isDefsType": false,
+              "typeName": "ModelAndView",
+              "isDefsType": true,
               "templateIndex": -1,
               "compileTemplateKeyword": "#/definitions/",
               "enum": [],
@@ -397,8 +457,8 @@
             "path": "/login",
             "response": {
               "typeArgs": [],
-              "typeName": "",
-              "isDefsType": false,
+              "typeName": "JsonResult",
+              "isDefsType": true,
               "templateIndex": -1,
               "compileTemplateKeyword": "#/definitions/",
               "enum": [],
@@ -444,8 +504,8 @@
             "path": "/reg",
             "response": {
               "typeArgs": [],
-              "typeName": "",
-              "isDefsType": false,
+              "typeName": "JsonResult",
+              "isDefsType": true,
               "templateIndex": -1,
               "compileTemplateKeyword": "#/definitions/",
               "enum": [],
@@ -460,8 +520,8 @@
             "path": "/sendVerifyCode",
             "response": {
               "typeArgs": [],
-              "typeName": "",
-              "isDefsType": false,
+              "typeName": "JsonResult",
+              "isDefsType": true,
               "templateIndex": -1,
               "compileTemplateKeyword": "#/definitions/",
               "enum": [],
@@ -476,8 +536,8 @@
             "path": "/test",
             "response": {
               "typeArgs": [],
-              "typeName": "",
-              "isDefsType": false,
+              "typeName": "JsonResult",
+              "isDefsType": true,
               "templateIndex": -1,
               "compileTemplateKeyword": "#/definitions/",
               "enum": [],
@@ -492,8 +552,8 @@
             "path": "/uploadFile",
             "response": {
               "typeArgs": [],
-              "typeName": "",
-              "isDefsType": false,
+              "typeName": "JsonResult",
+              "isDefsType": true,
               "templateIndex": -1,
               "compileTemplateKeyword": "#/definitions/",
               "enum": [],
@@ -507,9 +567,19 @@
             "method": "get",
             "path": "/userInfo",
             "response": {
-              "typeArgs": [],
-              "typeName": "",
-              "isDefsType": false,
+              "typeArgs": [
+                {
+                  "typeArgs": [],
+                  "typeName": "TheUserObject",
+                  "isDefsType": true,
+                  "templateIndex": -1,
+                  "compileTemplateKeyword": "#/definitions/",
+                  "enum": [],
+                  "typeProperties": []
+                }
+              ],
+              "typeName": "JsonResult",
+              "isDefsType": true,
               "templateIndex": -1,
               "compileTemplateKeyword": "#/definitions/",
               "enum": [],
@@ -530,8 +600,8 @@
             "path": "/type",
             "response": {
               "typeArgs": [],
-              "typeName": "",
-              "isDefsType": false,
+              "typeName": "JsonResult",
+              "isDefsType": true,
               "templateIndex": -1,
               "compileTemplateKeyword": "#/definitions/",
               "enum": [],
@@ -546,8 +616,8 @@
             "path": "/type",
             "response": {
               "typeArgs": [],
-              "typeName": "",
-              "isDefsType": false,
+              "typeName": "JsonResult",
+              "isDefsType": true,
               "templateIndex": -1,
               "compileTemplateKeyword": "#/definitions/",
               "enum": [],
@@ -561,9 +631,29 @@
             "method": "get",
             "path": "/type/list",
             "response": {
-              "typeArgs": [],
-              "typeName": "",
-              "isDefsType": false,
+              "typeArgs": [
+                {
+                  "typeArgs": [
+                    {
+                      "typeArgs": [],
+                      "typeName": "TheTypeObject",
+                      "isDefsType": true,
+                      "templateIndex": -1,
+                      "compileTemplateKeyword": "#/definitions/",
+                      "enum": [],
+                      "typeProperties": []
+                    }
+                  ],
+                  "typeName": "Array",
+                  "isDefsType": false,
+                  "templateIndex": -1,
+                  "compileTemplateKeyword": "#/definitions/",
+                  "enum": [],
+                  "typeProperties": []
+                }
+              ],
+              "typeName": "JsonResult",
+              "isDefsType": true,
               "templateIndex": -1,
               "compileTemplateKeyword": "#/definitions/",
               "enum": [],
@@ -577,9 +667,19 @@
             "method": "get",
             "path": "/type/{id}",
             "response": {
-              "typeArgs": [],
-              "typeName": "",
-              "isDefsType": false,
+              "typeArgs": [
+                {
+                  "typeArgs": [],
+                  "typeName": "TheTypeObject",
+                  "isDefsType": true,
+                  "templateIndex": -1,
+                  "compileTemplateKeyword": "#/definitions/",
+                  "enum": [],
+                  "typeProperties": []
+                }
+              ],
+              "typeName": "JsonResult",
+              "isDefsType": true,
               "templateIndex": -1,
               "compileTemplateKeyword": "#/definitions/",
               "enum": [],
@@ -610,8 +710,8 @@
             "path": "/type/{id}",
             "response": {
               "typeArgs": [],
-              "typeName": "",
-              "isDefsType": false,
+              "typeName": "JsonResult",
+              "isDefsType": true,
               "templateIndex": -1,
               "compileTemplateKeyword": "#/definitions/",
               "enum": [],
@@ -640,6 +740,647 @@
       }
     ],
     "name": "api",
-    "baseClasses": []
+    "baseClasses": [
+      {
+        "name": "ArticleVOObject",
+        "properties": [
+          {
+            "dataType": {
+              "typeArgs": [],
+              "typeName": "string",
+              "isDefsType": false,
+              "templateIndex": -1,
+              "compileTemplateKeyword": "#/definitions/",
+              "enum": [],
+              "typeProperties": []
+            },
+            "name": "content",
+            "required": false
+          },
+          {
+            "dataType": {
+              "typeArgs": [],
+              "typeName": "string",
+              "isDefsType": false,
+              "templateIndex": -1,
+              "compileTemplateKeyword": "#/definitions/",
+              "enum": [],
+              "typeProperties": []
+            },
+            "name": "createTime",
+            "required": false
+          },
+          {
+            "dataType": {
+              "typeArgs": [],
+              "typeName": "string",
+              "isDefsType": false,
+              "templateIndex": -1,
+              "compileTemplateKeyword": "#/definitions/",
+              "enum": [],
+              "typeProperties": []
+            },
+            "name": "description",
+            "required": false
+          },
+          {
+            "dataType": {
+              "typeArgs": [],
+              "typeName": "number",
+              "isDefsType": false,
+              "templateIndex": -1,
+              "compileTemplateKeyword": "#/definitions/",
+              "enum": [],
+              "typeProperties": []
+            },
+            "name": "id",
+            "required": false
+          },
+          {
+            "dataType": {
+              "typeArgs": [],
+              "typeName": "string",
+              "isDefsType": false,
+              "templateIndex": -1,
+              "compileTemplateKeyword": "#/definitions/",
+              "enum": [],
+              "typeProperties": []
+            },
+            "name": "title",
+            "required": false
+          },
+          {
+            "dataType": {
+              "typeArgs": [],
+              "typeName": "string",
+              "isDefsType": false,
+              "templateIndex": -1,
+              "compileTemplateKeyword": "#/definitions/",
+              "enum": [],
+              "typeProperties": []
+            },
+            "name": "typeId",
+            "required": false
+          },
+          {
+            "dataType": {
+              "typeArgs": [],
+              "typeName": "string",
+              "isDefsType": false,
+              "templateIndex": -1,
+              "compileTemplateKeyword": "#/definitions/",
+              "enum": [],
+              "typeProperties": []
+            },
+            "name": "typeName",
+            "required": false
+          }
+        ],
+        "templateArgs": []
+      },
+      {
+        "name": "JsonResult",
+        "properties": [
+          {
+            "dataType": {
+              "typeArgs": [],
+              "typeName": "number",
+              "isDefsType": false,
+              "templateIndex": -1,
+              "compileTemplateKeyword": "#/definitions/",
+              "enum": [],
+              "typeProperties": []
+            },
+            "name": "code",
+            "required": false
+          },
+          {
+            "dataType": {
+              "typeArgs": [],
+              "typeName": "ArticleVOObject",
+              "isDefsType": true,
+              "templateIndex": -1,
+              "compileTemplateKeyword": "#/definitions/",
+              "enum": [],
+              "typeProperties": []
+            },
+            "name": "data",
+            "required": false
+          },
+          {
+            "dataType": {
+              "typeArgs": [],
+              "typeName": "string",
+              "isDefsType": false,
+              "templateIndex": -1,
+              "compileTemplateKeyword": "#/definitions/",
+              "enum": [],
+              "typeProperties": []
+            },
+            "name": "msg",
+            "required": false
+          }
+        ],
+        "templateArgs": [
+          {
+            "typeArgs": [],
+            "typeName": "ArticleVOObject",
+            "isDefsType": true,
+            "templateIndex": -1,
+            "compileTemplateKeyword": "#/definitions/",
+            "enum": [],
+            "typeProperties": []
+          }
+        ]
+      },
+      {
+        "name": "ModelAndView",
+        "properties": [
+          {
+            "dataType": {
+              "typeArgs": [],
+              "typeName": "boolean",
+              "isDefsType": false,
+              "templateIndex": -1,
+              "compileTemplateKeyword": "#/definitions/",
+              "enum": [],
+              "typeProperties": []
+            },
+            "name": "empty",
+            "required": false
+          },
+          {
+            "dataType": {
+              "typeArgs": [],
+              "typeName": "object",
+              "isDefsType": false,
+              "templateIndex": -1,
+              "compileTemplateKeyword": "#/definitions/",
+              "enum": [],
+              "typeProperties": []
+            },
+            "name": "model",
+            "required": false
+          },
+          {
+            "dataType": {
+              "typeArgs": [
+                {
+                  "typeArgs": [],
+                  "typeName": "",
+                  "isDefsType": false,
+                  "templateIndex": -1,
+                  "compileTemplateKeyword": "#/definitions/",
+                  "enum": [],
+                  "typeProperties": []
+                },
+                {
+                  "typeArgs": [],
+                  "typeName": "object",
+                  "isDefsType": false,
+                  "templateIndex": -1,
+                  "compileTemplateKeyword": "#/definitions/",
+                  "enum": [],
+                  "typeProperties": []
+                }
+              ],
+              "typeName": "ObjectMap",
+              "isDefsType": false,
+              "templateIndex": -1,
+              "compileTemplateKeyword": "#/definitions/",
+              "enum": [],
+              "typeProperties": []
+            },
+            "name": "modelMap",
+            "required": false
+          },
+          {
+            "dataType": {
+              "typeArgs": [],
+              "typeName": "boolean",
+              "isDefsType": false,
+              "templateIndex": -1,
+              "compileTemplateKeyword": "#/definitions/",
+              "enum": [],
+              "typeProperties": []
+            },
+            "name": "reference",
+            "required": false
+          },
+          {
+            "dataType": {
+              "typeArgs": [],
+              "typeName": "",
+              "isDefsType": false,
+              "templateIndex": -1,
+              "compileTemplateKeyword": "#/definitions/",
+              "enum": [
+                "'ACCEPTED'",
+                "'ALREADY_REPORTED'",
+                "'BAD_GATEWAY'",
+                "'BAD_REQUEST'",
+                "'BANDWIDTH_LIMIT_EXCEEDED'",
+                "'CHECKPOINT'",
+                "'CONFLICT'",
+                "'CONTINUE'",
+                "'CREATED'",
+                "'DESTINATION_LOCKED'",
+                "'EXPECTATION_FAILED'",
+                "'FAILED_DEPENDENCY'",
+                "'FORBIDDEN'",
+                "'FOUND'",
+                "'GATEWAY_TIMEOUT'",
+                "'GONE'",
+                "'HTTP_VERSION_NOT_SUPPORTED'",
+                "'IM_USED'",
+                "'INSUFFICIENT_SPACE_ON_RESOURCE'",
+                "'INSUFFICIENT_STORAGE'",
+                "'INTERNAL_SERVER_ERROR'",
+                "'I_AM_A_TEAPOT'",
+                "'LENGTH_REQUIRED'",
+                "'LOCKED'",
+                "'LOOP_DETECTED'",
+                "'METHOD_FAILURE'",
+                "'METHOD_NOT_ALLOWED'",
+                "'MOVED_PERMANENTLY'",
+                "'MOVED_TEMPORARILY'",
+                "'MULTIPLE_CHOICES'",
+                "'MULTI_STATUS'",
+                "'NETWORK_AUTHENTICATION_REQUIRED'",
+                "'NON_AUTHORITATIVE_INFORMATION'",
+                "'NOT_ACCEPTABLE'",
+                "'NOT_EXTENDED'",
+                "'NOT_FOUND'",
+                "'NOT_IMPLEMENTED'",
+                "'NOT_MODIFIED'",
+                "'NO_CONTENT'",
+                "'OK'",
+                "'PARTIAL_CONTENT'",
+                "'PAYLOAD_TOO_LARGE'",
+                "'PAYMENT_REQUIRED'",
+                "'PERMANENT_REDIRECT'",
+                "'PRECONDITION_FAILED'",
+                "'PRECONDITION_REQUIRED'",
+                "'PROCESSING'",
+                "'PROXY_AUTHENTICATION_REQUIRED'",
+                "'REQUESTED_RANGE_NOT_SATISFIABLE'",
+                "'REQUEST_ENTITY_TOO_LARGE'",
+                "'REQUEST_HEADER_FIELDS_TOO_LARGE'",
+                "'REQUEST_TIMEOUT'",
+                "'REQUEST_URI_TOO_LONG'",
+                "'RESET_CONTENT'",
+                "'SEE_OTHER'",
+                "'SERVICE_UNAVAILABLE'",
+                "'SWITCHING_PROTOCOLS'",
+                "'TEMPORARY_REDIRECT'",
+                "'TOO_EARLY'",
+                "'TOO_MANY_REQUESTS'",
+                "'UNAUTHORIZED'",
+                "'UNAVAILABLE_FOR_LEGAL_REASONS'",
+                "'UNPROCESSABLE_ENTITY'",
+                "'UNSUPPORTED_MEDIA_TYPE'",
+                "'UPGRADE_REQUIRED'",
+                "'URI_TOO_LONG'",
+                "'USE_PROXY'",
+                "'VARIANT_ALSO_NEGOTIATES'"
+              ],
+              "typeProperties": []
+            },
+            "name": "status",
+            "required": false
+          },
+          {
+            "dataType": {
+              "typeArgs": [],
+              "typeName": "View",
+              "isDefsType": true,
+              "templateIndex": -1,
+              "compileTemplateKeyword": "#/definitions/",
+              "enum": [],
+              "typeProperties": []
+            },
+            "name": "view",
+            "required": false
+          },
+          {
+            "dataType": {
+              "typeArgs": [],
+              "typeName": "string",
+              "isDefsType": false,
+              "templateIndex": -1,
+              "compileTemplateKeyword": "#/definitions/",
+              "enum": [],
+              "typeProperties": []
+            },
+            "name": "viewName",
+            "required": false
+          }
+        ],
+        "templateArgs": []
+      },
+      {
+        "name": "MoodObject",
+        "properties": [
+          {
+            "dataType": {
+              "typeArgs": [],
+              "typeName": "string",
+              "isDefsType": false,
+              "templateIndex": -1,
+              "compileTemplateKeyword": "#/definitions/",
+              "enum": [],
+              "typeProperties": []
+            },
+            "name": "content",
+            "required": false
+          },
+          {
+            "dataType": {
+              "typeArgs": [],
+              "typeName": "string",
+              "isDefsType": false,
+              "templateIndex": -1,
+              "compileTemplateKeyword": "#/definitions/",
+              "enum": [],
+              "typeProperties": []
+            },
+            "name": "createTime",
+            "required": false
+          },
+          {
+            "dataType": {
+              "typeArgs": [],
+              "typeName": "number",
+              "isDefsType": false,
+              "templateIndex": -1,
+              "compileTemplateKeyword": "#/definitions/",
+              "enum": [],
+              "typeProperties": []
+            },
+            "name": "id",
+            "required": false
+          }
+        ],
+        "templateArgs": []
+      },
+      {
+        "name": "TheArticleObject",
+        "properties": [
+          {
+            "dataType": {
+              "typeArgs": [],
+              "typeName": "string",
+              "isDefsType": false,
+              "templateIndex": -1,
+              "compileTemplateKeyword": "#/definitions/",
+              "enum": [],
+              "typeProperties": []
+            },
+            "name": "content",
+            "required": false
+          },
+          {
+            "dataType": {
+              "typeArgs": [],
+              "typeName": "string",
+              "isDefsType": false,
+              "templateIndex": -1,
+              "compileTemplateKeyword": "#/definitions/",
+              "enum": [],
+              "typeProperties": []
+            },
+            "name": "createTime",
+            "required": false
+          },
+          {
+            "dataType": {
+              "typeArgs": [],
+              "typeName": "string",
+              "isDefsType": false,
+              "templateIndex": -1,
+              "compileTemplateKeyword": "#/definitions/",
+              "enum": [],
+              "typeProperties": []
+            },
+            "name": "description",
+            "required": false
+          },
+          {
+            "dataType": {
+              "typeArgs": [],
+              "typeName": "number",
+              "isDefsType": false,
+              "templateIndex": -1,
+              "compileTemplateKeyword": "#/definitions/",
+              "enum": [],
+              "typeProperties": []
+            },
+            "name": "id",
+            "required": false
+          },
+          {
+            "dataType": {
+              "typeArgs": [],
+              "typeName": "string",
+              "isDefsType": false,
+              "templateIndex": -1,
+              "compileTemplateKeyword": "#/definitions/",
+              "enum": [],
+              "typeProperties": []
+            },
+            "name": "title",
+            "required": false
+          },
+          {
+            "dataType": {
+              "typeArgs": [],
+              "typeName": "string",
+              "isDefsType": false,
+              "templateIndex": -1,
+              "compileTemplateKeyword": "#/definitions/",
+              "enum": [],
+              "typeProperties": []
+            },
+            "name": "typeId",
+            "required": false
+          }
+        ],
+        "templateArgs": []
+      },
+      {
+        "name": "TheTypeObject",
+        "properties": [
+          {
+            "dataType": {
+              "typeArgs": [],
+              "typeName": "string",
+              "isDefsType": false,
+              "templateIndex": -1,
+              "compileTemplateKeyword": "#/definitions/",
+              "enum": [],
+              "typeProperties": []
+            },
+            "name": "description",
+            "required": false
+          },
+          {
+            "dataType": {
+              "typeArgs": [],
+              "typeName": "number",
+              "isDefsType": false,
+              "templateIndex": -1,
+              "compileTemplateKeyword": "#/definitions/",
+              "enum": [],
+              "typeProperties": []
+            },
+            "name": "id",
+            "required": false
+          },
+          {
+            "dataType": {
+              "typeArgs": [],
+              "typeName": "string",
+              "isDefsType": false,
+              "templateIndex": -1,
+              "compileTemplateKeyword": "#/definitions/",
+              "enum": [],
+              "typeProperties": []
+            },
+            "name": "name",
+            "required": false
+          }
+        ],
+        "templateArgs": []
+      },
+      {
+        "name": "TheUserObject",
+        "properties": [
+          {
+            "dataType": {
+              "typeArgs": [],
+              "typeName": "string",
+              "isDefsType": false,
+              "templateIndex": -1,
+              "compileTemplateKeyword": "#/definitions/",
+              "enum": [],
+              "typeProperties": []
+            },
+            "name": "avatar",
+            "required": false
+          },
+          {
+            "dataType": {
+              "typeArgs": [],
+              "typeName": "string",
+              "isDefsType": false,
+              "templateIndex": -1,
+              "compileTemplateKeyword": "#/definitions/",
+              "enum": [],
+              "typeProperties": []
+            },
+            "name": "blog",
+            "required": false
+          },
+          {
+            "dataType": {
+              "typeArgs": [],
+              "typeName": "string",
+              "isDefsType": false,
+              "templateIndex": -1,
+              "compileTemplateKeyword": "#/definitions/",
+              "enum": [],
+              "typeProperties": []
+            },
+            "name": "email",
+            "required": false
+          },
+          {
+            "dataType": {
+              "typeArgs": [],
+              "typeName": "number",
+              "isDefsType": false,
+              "templateIndex": -1,
+              "compileTemplateKeyword": "#/definitions/",
+              "enum": [],
+              "typeProperties": []
+            },
+            "name": "id",
+            "required": false
+          },
+          {
+            "dataType": {
+              "typeArgs": [],
+              "typeName": "string",
+              "isDefsType": false,
+              "templateIndex": -1,
+              "compileTemplateKeyword": "#/definitions/",
+              "enum": [],
+              "typeProperties": []
+            },
+            "name": "nickname",
+            "required": false
+          },
+          {
+            "dataType": {
+              "typeArgs": [],
+              "typeName": "string",
+              "isDefsType": false,
+              "templateIndex": -1,
+              "compileTemplateKeyword": "#/definitions/",
+              "enum": [],
+              "typeProperties": []
+            },
+            "name": "other",
+            "required": false
+          },
+          {
+            "dataType": {
+              "typeArgs": [],
+              "typeName": "string",
+              "isDefsType": false,
+              "templateIndex": -1,
+              "compileTemplateKeyword": "#/definitions/",
+              "enum": [],
+              "typeProperties": []
+            },
+            "name": "pwd",
+            "required": false
+          },
+          {
+            "dataType": {
+              "typeArgs": [],
+              "typeName": "string",
+              "isDefsType": false,
+              "templateIndex": -1,
+              "compileTemplateKeyword": "#/definitions/",
+              "enum": [],
+              "typeProperties": []
+            },
+            "name": "role",
+            "required": false
+          }
+        ],
+        "templateArgs": []
+      },
+      {
+        "name": "View",
+        "properties": [
+          {
+            "dataType": {
+              "typeArgs": [],
+              "typeName": "string",
+              "isDefsType": false,
+              "templateIndex": -1,
+              "compileTemplateKeyword": "#/definitions/",
+              "enum": [],
+              "typeProperties": []
+            },
+            "name": "contentType",
+            "required": false
+          }
+        ],
+        "templateArgs": []
+      }
+    ]
   }
 ]

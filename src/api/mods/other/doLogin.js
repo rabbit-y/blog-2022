@@ -12,7 +12,7 @@ export class Params {
   pwd;
 }
 
-export const init = undefined;
+export const init = new defs.api.JsonResult();
 
 export function request(params, options = {}) {
   return PontCore.fetch(PontCore.getUrl('/login', params, 'POST'), {

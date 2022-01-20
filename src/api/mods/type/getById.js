@@ -10,7 +10,7 @@ export class Params {
   id;
 }
 
-export const init = undefined;
+export const init = new defs.api.JsonResult();
 
 export function request(params, options = {}) {
   return PontCore.fetch(PontCore.getUrl('/type/{id}', params, 'GET'), {
