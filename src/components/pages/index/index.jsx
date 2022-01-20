@@ -20,7 +20,7 @@ export default function Index() {
   };
   return (
     <div className="index">
-      <div className="index-say opacity8">
+      <div className="index-say h-card opacity8">
         <Row align="middle">
           <Col flex="60px">
             <div className="index-say-icon">
@@ -43,19 +43,21 @@ export default function Index() {
       </div>
       <div>
         {mark?.map((item, index) => (
-          <div className="index-page opacity8" key={index}>
+          <div className="index-page h-card opacity8" key={index}>
             <div className="index-page-title">{item.title}</div>
             <div className="index-page-msg">
               <IconFont type="h-shijian" />
               {item.createTime}
               <Divider type="vertical" />
               <IconFont type="h-wenjianjia" />
-              PMP
+              {item.typeId}
             </div>
             <div
               className="index-page-dec"
               onClick={() => {
-                navigate("/mark/pmp/" + item.id);
+                navigate("/mark/pmp/" + item.id, {
+                  state: { typeName: item.typeId },
+                });
               }}
             >
               {item.description}

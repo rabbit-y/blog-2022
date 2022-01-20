@@ -55,7 +55,10 @@ const App = () => {
                           <SubMenu key="SubMenu" title="小前端">
                             {typeList?.map((cItem) => (
                               <Menu.Item key={cItem.id}>
-                                <Link to={item.path + "/" + cItem.id}>
+                                <Link
+                                  to={item.path + "/" + cItem.id}
+                                  state={{ typeName: cItem.name }}
+                                >
                                   {cItem.name}
                                 </Link>
                               </Menu.Item>

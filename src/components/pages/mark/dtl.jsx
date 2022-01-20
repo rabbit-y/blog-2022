@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
-import { Divider, Form, Input, Button } from "antd";
-import { useParams, useNavigate } from "react-router-dom";
+import { PageHeader, Divider, Form, Input, Button } from "antd";
+import { useParams, useNavigate, useLocation } from "react-router-dom";
 import { marked } from "marked";
 import hljs from "highlight.js";
 import { api } from "@api/index";
@@ -16,10 +16,14 @@ const layout = {
 const Dtl = () => {
   const [form] = Form.useForm();
   const searchParams = useParams();
+  const navigate = useNavigate();
+  const {
+    state: { typeName },
+  } = useLocation();
   const [isLogin, setIsLogin] = useState(false);
   const [user, setUser] = useState({});
   const [dtl, setDtl] = useState({});
-  const [html, setHtml] = useState({});
+  const [html, setHtml] = useState("");
   marked.setOptions({
     renderer: new marked.Renderer(),
     highlight: function(code) {
@@ -62,6 +66,12 @@ const Dtl = () => {
   };
   return (
     <div className="mark-dtl">
+      <div className="mark-title">
+        <PageHeader
+          onBack={() => navigate(-1)}
+          title={typeName ? typeName : "返回"}
+        />
+      </div>
       <div className="mark-dtl-all">
         <h1>{dtl.title}</h1>
         <div className="mark-dtl-title">
