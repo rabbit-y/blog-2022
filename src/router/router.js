@@ -16,6 +16,10 @@ export const RoutersList = [
     }]
   },
   {
+    path: '/say',
+    element: lazy(() => import("@pages/say/index"))
+  },
+  {
     path: '/bilibili',
     element: lazy(() => import("@pages/bilibili/index"))
   }
@@ -35,7 +39,7 @@ export const AdminRoutersList = [
     child: [{
       path: '/admin/mark',
       element: lazy(() => import("@pages/admin/mark/list"))
-    },{
+    }, {
       path: '/admin/mark/:id',
       element: lazy(() => import("@pages/admin/mark/dtl"))
     }]

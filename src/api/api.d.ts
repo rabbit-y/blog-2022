@@ -242,11 +242,44 @@ declare namespace api {
      * /article/list
      */
     export namespace getList {
-      export class Params {}
+      export class Params {
+        /** content */
+        content?: any;
+        /** countId */
+        countId?: any;
+        /** createTime */
+        createTime?: any;
+        /** description */
+        description?: any;
+        /** id */
+        id?: any;
+        /** maxLimit */
+        maxLimit?: any;
+        /** optimizeCountSql */
+        optimizeCountSql?: any;
+        /** asc */
+        asc?: any;
+        /** column */
+        column?: any;
+        /** pages */
+        pages?: any;
+        /** records */
+        records?: any;
+        /** searchCount */
+        searchCount?: any;
+        /** title */
+        title?: any;
+        /** total */
+        total?: any;
+        /** typeId */
+        typeId?: any;
+        /** current */
+        current?: any;
+        /** size */
+        size?: any;
+      }
 
-      export type Response = defs.api.JsonResult<
-        Array<defs.api.TheArticleObject>
-      >;
+      export type Response = defs.api.JsonResult;
 
       export const init: Response;
 
@@ -442,7 +475,12 @@ declare namespace api {
      * /mood/list
      */
     export namespace getList {
-      export class Params {}
+      export class Params {
+        /** current */
+        current?: any;
+        /** size */
+        size?: any;
+      }
 
       export type Response = defs.api.JsonResult<Array<defs.api.MoodObject>>;
 

@@ -5,7 +5,12 @@
 import * as defs from '../../baseClass';
 import { PontCore } from '../../pontCore';
 
-export class Params {}
+export class Params {
+  /** current */
+  current;
+  /** size */
+  size;
+}
 
 export const init = new defs.api.JsonResult();
 

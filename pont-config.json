@@ -1,9 +1,9 @@
 {
-  "name":"api",
+  "name": "api",
   "originUrl": "http://han96.com/api/v3/api-docs",
   "templatePath": "./pontTemplate",
   "outDir": "./src/api",
   "surrounding": "javaScript",
   "templateType": "fetch",
-  "originType":"SwaggerV3"
+  "originType": "SwaggerV3"
 }
