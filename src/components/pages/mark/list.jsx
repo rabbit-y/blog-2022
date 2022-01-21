@@ -1,17 +1,15 @@
 import { useEffect, useState } from "react";
 import { PageHeader, Divider } from "antd";
-import { useParams, useNavigate, useLocation } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import { api } from "@api/index";
 import IconFont from "@components/Icon/index";
+import { getTypeName } from "@/utils";
 
 import "./index.less";
 
 export default function List() {
   const navigate = useNavigate();
   const searchParams = useParams();
-  const {
-    state: { typeName },
-  } = useLocation();
   const [mark, setMark] = useState([]);
   const [typeId, setTypeId] = useState();
   useEffect(() => {
@@ -27,7 +25,7 @@ export default function List() {
   return (
     <div>
       <div className="mark-title">
-        <PageHeader onBack={() => navigate(-1)} title={typeName} />
+        <PageHeader onBack={() => navigate(-1)} title={getTypeName(typeId)} />
       </div>
       <div className="mark-list">
         {mark?.map((item, index) => (
@@ -38,14 +36,12 @@ export default function List() {
               {item.createTime}
               <Divider type="vertical" />
               <IconFont type="h-wenjianjia" />
-              PMP
+              {getTypeName(item.typeId)}
             </div>
             <div
               className="mark-list-page-dec"
               onClick={() => {
-                navigate("/mark/" + typeId + "/" + item.id, {
-                  state: { typeName: item.typeId },
-                });
+                navigate("/mark/" + typeId + "/" + item.id);
               }}
             >
               {item.description}

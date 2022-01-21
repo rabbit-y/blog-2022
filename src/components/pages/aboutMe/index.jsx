@@ -1,4 +1,3 @@
-import { Row, Col, Divider } from "antd";
 import IconFont from "../../component/Icon/index";
 import { USER } from "@utils/variable";
 
@@ -8,7 +7,7 @@ export default function About() {
   return (
     <div className="about">
       <div className="about-header">
-        <img src={USER.header} />
+        <img src={USER.header} alt="头像" />
       </div>
       <div className="about-user">
         <span>{USER.name}</span>

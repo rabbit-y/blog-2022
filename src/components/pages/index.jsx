@@ -16,14 +16,14 @@ import AboutMe from "@pages/aboutMe/index";
 import Footer from "@pages/footer/index";
 import Classify from "@pages/classify/index";
 import Loading from "@components/Loading/index";
-import { useSelector } from 'react-redux';
+import { useSelector } from "react-redux";
 import "./index.less";
 
 const Admin = lazy(() => import("@pages/admin/index"));
 
 const { SubMenu } = Menu;
 const App = () => {
-  const typeList = useSelector(state => state.types);
+  const typeList = useSelector((state) => state.types);
   return (
     <Router>
       <Routes>
@@ -46,10 +46,7 @@ const App = () => {
                           <SubMenu key="SubMenu" title="小前端">
                             {typeList?.map((cItem) => (
                               <Menu.Item key={cItem.id}>
-                                <Link
-                                  to={item.path + "/" + cItem.id}
-                                  state={{ typeName: cItem.name }}
-                                >
+                                <Link to={item.path + "/" + cItem.id}>
                                   {cItem.name}
                                 </Link>
                               </Menu.Item>

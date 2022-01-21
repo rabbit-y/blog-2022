@@ -3,10 +3,8 @@ import { Row, Col, Divider } from "antd";
 import { useNavigate } from "react-router-dom";
 import { api } from "@api/index";
 import IconFont from "@components/Icon/index";
-import { getTypeName } from '@/utils';
+import { getTypeName } from "@/utils";
 import "./index.less";
-
-
 
 export default function Index() {
   const navigate = useNavigate();
@@ -57,9 +55,7 @@ export default function Index() {
             <div
               className="index-page-dec"
               onClick={() => {
-                navigate("/mark/pmp/" + item.id, {
-                  state: { typeName: item.typeId },
-                });
+                navigate("/mark/pmp/" + item.id);
               }}
             >
               {item.description}

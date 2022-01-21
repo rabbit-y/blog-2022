@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { PageHeader, Divider, Form, Input, Button } from "antd";
-import { useParams, useNavigate, useLocation } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import { marked } from "marked";
 import hljs from "highlight.js";
 import { api } from "@api/index";
@@ -17,9 +17,6 @@ const Dtl = () => {
   const [form] = Form.useForm();
   const searchParams = useParams();
   const navigate = useNavigate();
-  const {
-    state: { typeName },
-  } = useLocation();
   const [isLogin, setIsLogin] = useState(false);
   const [user, setUser] = useState({});
   const [dtl, setDtl] = useState({});
@@ -41,7 +38,7 @@ const Dtl = () => {
     const userInfo = localStorage.getItem("h-userInfo");
     setUser(userInfo ? JSON.parse(userInfo) : {});
     getDtl(searchParams.id);
-  }, []);
+  }, [searchParams.id]);
   // 获取文章内容
   const getDtl = async (id) => {
     const { code, data } = await api.article.getById.request({ id });
@@ -69,7 +66,7 @@ const Dtl = () => {
       <div className="mark-title">
         <PageHeader
           onBack={() => navigate(-1)}
-          title={typeName ? typeName : "返回"}
+          title={dtl.typeName ? dtl.typeName : "返回"}
         />
       </div>
       <div className="mark-dtl-all">
@@ -102,7 +99,7 @@ const Dtl = () => {
           </Divider>
           <div className="mark-user opacity8">
             <div className="mark-user-msg">
-              <img src={user.avatar} />
+              <img src={user.avatar} alt="头像" />
               <span>@ {user.nickname}</span>
             </div>
             <div className="mark-user-comment"></div>
