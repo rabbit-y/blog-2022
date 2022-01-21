@@ -8,7 +8,8 @@ import moment from 'moment';
 import './utils/main'
 import './index.less';
 import App from '@/components/pages/index';
-
+import {Provider} from 'react-redux';
+import store from '@/store';
 
 ConfigProvider.config({
   theme: {
@@ -21,7 +22,9 @@ function listen() {
   if (document.readyState === 'complete') { // 资源加载完成
     ReactDOM.render(
       <ConfigProvider locale={zhCN}>
-        <App />
+        <Provider store={store}>
+          <App />
+        </Provider>
       </ConfigProvider>,
       document.getElementById('root')
     );

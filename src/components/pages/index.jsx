@@ -16,23 +16,14 @@ import AboutMe from "@pages/aboutMe/index";
 import Footer from "@pages/footer/index";
 import Classify from "@pages/classify/index";
 import Loading from "@components/Loading/index";
-
+import { useSelector } from 'react-redux';
 import "./index.less";
+
 const Admin = lazy(() => import("@pages/admin/index"));
 
 const { SubMenu } = Menu;
 const App = () => {
-  const [typeList, setTypeList] = useState([]);
-  useEffect(() => {
-    getList();
-  }, []);
-  // 获取分类列表
-  const getList = async () => {
-    const { code, data } = await api.type.getList.request();
-    if (code === 0) {
-      setTypeList(data);
-    }
-  };
+  const typeList = useSelector(state => state.types);
   return (
     <Router>
       <Routes>

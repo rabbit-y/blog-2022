@@ -1,16 +1,12 @@
 import axios from 'axios';
 import { message } from 'antd'
+import store, {fetchTypes} from '@/store';
 const { PontCore } = require('@api/pontCore')
-// axios请求拦截
-// axios.interceptors.request.use((request) => {
 
-// });
+// -----------------axios请求拦截--------------------------------
 
-
-// 访问丁sb服务器的axios实例
+// 访问丁爷爷服务器的axios实例
 const axiosInstanceForDing = axios.create();
-
-
 // axios响应拦截
 axiosInstanceForDing.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest'
 axiosInstanceForDing.defaults.baseURL = '/api'
@@ -38,3 +34,7 @@ const pontCore = PontCore;
 pontCore.useFetch((url, fetchOption) => {
   return axiosInstanceForDing(url, fetchOption);
 });
+
+
+// -------------------一些app全局的redux------------------------------
+store.dispatch(fetchTypes())

@@ -3,8 +3,10 @@ import { Row, Col, Divider } from "antd";
 import { useNavigate } from "react-router-dom";
 import { api } from "@api/index";
 import IconFont from "@components/Icon/index";
-
+import { getTypeName } from '@/utils';
 import "./index.less";
+
+
 
 export default function Index() {
   const navigate = useNavigate();
@@ -50,7 +52,7 @@ export default function Index() {
               {item.createTime}
               <Divider type="vertical" />
               <IconFont type="h-wenjianjia" />
-              {item.typeId}
+              {getTypeName(item.typeId)}
             </div>
             <div
               className="index-page-dec"
