@@ -3,6 +3,7 @@
  */
 import * as doHome from './doHome';
 import * as doLogin from './doLogin';
+import * as getMasterInfo from './getMasterInfo';
 import * as register from './register';
 import * as sendVerifyCode from './sendVerifyCode';
 import * as doTest from './doTest';
@@ -12,6 +13,7 @@ import * as getUserInfo from './getUserInfo';
 export {
   doHome,
   doLogin,
+  getMasterInfo,
   register,
   sendVerifyCode,
   doTest,

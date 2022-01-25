@@ -1,3 +1,14 @@
+class ArticleCountVOObject {
+  /** total */
+  total = undefined;
+
+  /** typeId */
+  typeId = '';
+
+  /** typeName */
+  typeName = '';
+}
+
 class ArticleVOObject {
   /** content */
   content = '';
@@ -98,6 +109,35 @@ class TheTypeObject {
 }
 
 class TheUserObject {
+  /** articleCounts */
+  articleCounts = [];
+
+  /** avatar */
+  avatar = '';
+
+  /** blog */
+  blog = '';
+
+  /** email */
+  email = '';
+
+  /** id */
+  id = undefined;
+
+  /** nickname */
+  nickname = '';
+
+  /** other */
+  other = '';
+
+  /** pwd */
+  pwd = '';
+
+  /** role */
+  role = '';
+}
+
+class TheUserObject0 {
   /** avatar */
   avatar = '';
 
@@ -129,6 +169,7 @@ class View {
 }
 
 export const api = {
+  ArticleCountVOObject,
   ArticleVOObject,
   JsonResult,
   ModelAndView,
@@ -136,5 +177,6 @@ export const api = {
   TheArticleObject,
   TheTypeObject,
   TheUserObject,
+  TheUserObject0,
   View,
 };

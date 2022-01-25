@@ -12,6 +12,8 @@ export class Params {
   countId;
   /** createTime */
   createTime;
+  /** current */
+  current;
   /** description */
   description;
   /** id */
@@ -30,16 +32,16 @@ export class Params {
   records;
   /** searchCount */
   searchCount;
+  /** size */
+  size;
   /** title */
   title;
   /** total */
   total;
   /** typeId */
   typeId;
-  /** current */
-  current;
-  /** size */
-  size;
+  /** typeName */
+  typeName;
 }
 
 export const init = new defs.api.JsonResult();

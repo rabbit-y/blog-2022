@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Row, Col, Divider } from "antd";
+import { Row, Col, Divider, Pagination } from "antd";
 import { useNavigate } from "react-router-dom";
 import { api } from "@api/index";
 import IconFont from "@components/Icon/index";
@@ -9,15 +9,24 @@ import "./index.less";
 export default function Index() {
   const navigate = useNavigate();
   const [mark, setMark] = useState([]);
+  const [pageSize, setPageSize] =  useState(2);
+  const [pageCurrent, setPageCurrent] =  useState(1);
   useEffect(() => {
-    getList();
+    getList({current:1, size:2});
   }, []);
-  const getList = async () => {
-    const { code, data } = await api.article.getList.request();
+  const getList = async (params) => {
+    const { code, data } = await api.article.getList.request(params);
     if (code === 0) {
+      console.log(111, data)
       setMark(data);
     }
   };
+
+const onChange = (current, size)=>{
+  setPageSize(size)
+  setPageCurrent(current)
+  getList({current, size});
+}
   return (
     <div className="index">
       <div className="index-say h-card opacity8">
@@ -42,7 +51,7 @@ export default function Index() {
         </Row>
       </div>
       <div>
-        {mark?.map((item, index) => (
+        {mark.records?.map((item, index) => (
           <div className="index-page h-card opacity8" key={index}>
             <div className="index-page-title">{item.title}</div>
             <div className="index-page-msg">
@@ -63,6 +72,7 @@ export default function Index() {
           </div>
         ))}
       </div>
+      <Pagination current={pageCurrent} total={mark.total} pageSizeOptions={[2,5,10]} onChange={onChange} showSizeChanger pageSize={pageSize}/>
     </div>
   );
 }
