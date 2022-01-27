@@ -1,23 +1,15 @@
 /**
- * @desc 文章列表
+ * @desc 评论列表
  */
 
 import * as defs from '../../baseClass';
 import { PontCore } from '../../pontCore';
 
 export class Params {
-  /** content */
-  content;
   /** countId */
   countId;
-  /** createTime */
-  createTime;
   /** current */
   current;
-  /** description */
-  description;
-  /** id */
-  id;
   /** maxLimit */
   maxLimit;
   /** optimizeCountSql */
@@ -34,20 +26,14 @@ export class Params {
   searchCount;
   /** size */
   size;
-  /** title */
-  title;
   /** total */
   total;
-  /** typeId */
-  typeId;
-  /** typeName */
-  typeName;
 }
 
 export const init = new defs.api.JsonResult();
 
 export function request(params, options = {}) {
-  return PontCore.fetch(PontCore.getUrl('/article', params, 'GET'), {
+  return PontCore.fetch(PontCore.getUrl('/comment', params, 'GET'), {
     method: 'GET',
 
     ...options,

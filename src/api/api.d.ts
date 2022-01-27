@@ -171,6 +171,23 @@ declare namespace defs {
       typeId?: string;
     }
 
+    export class TheCommentObject {
+      /** content */
+      content?: string;
+
+      /** createTime */
+      createTime?: string;
+
+      /** id */
+      id?: number;
+
+      /** replyArticleId */
+      replyArticleId?: number;
+
+      /** replyUserId */
+      replyUserId?: string;
+    }
+
     export class TheTypeObject {
       /** description */
       description?: string;
@@ -250,36 +267,8 @@ declare namespace api {
    */
   export namespace article {
     /**
-     * 更新文章
-     * /article
-     */
-    export namespace updateById {
-      export class Params {}
-
-      export type Response = defs.api.JsonResult;
-
-      export const init: Response;
-
-      export function request(params: Params, options?: any): Promise<Response>;
-    }
-
-    /**
-     * 新增文章
-     * /article
-     */
-    export namespace save {
-      export class Params {}
-
-      export type Response = defs.api.JsonResult;
-
-      export const init: Response;
-
-      export function request(params: Params, options?: any): Promise<Response>;
-    }
-
-    /**
      * 文章列表
-     * /article/list
+     * /article
      */
     export namespace getList {
       export class Params {
@@ -320,6 +309,34 @@ declare namespace api {
         /** typeName */
         typeName?: any;
       }
+
+      export type Response = defs.api.JsonResult;
+
+      export const init: Response;
+
+      export function request(params: Params, options?: any): Promise<Response>;
+    }
+
+    /**
+     * 更新文章
+     * /article
+     */
+    export namespace updateById {
+      export class Params {}
+
+      export type Response = defs.api.JsonResult;
+
+      export const init: Response;
+
+      export function request(params: Params, options?: any): Promise<Response>;
+    }
+
+    /**
+     * 新增文章
+     * /article
+     */
+    export namespace save {
+      export class Params {}
 
       export type Response = defs.api.JsonResult;
 
@@ -481,9 +498,115 @@ declare namespace api {
   }
 
   /**
+   * Comment Controller
+   */
+  export namespace comment {
+    /**
+     * 评论列表
+     * /comment
+     */
+    export namespace getList {
+      export class Params {
+        /** countId */
+        countId?: any;
+        /** current */
+        current?: any;
+        /** maxLimit */
+        maxLimit?: any;
+        /** optimizeCountSql */
+        optimizeCountSql?: any;
+        /** asc */
+        asc?: any;
+        /** column */
+        column?: any;
+        /** pages */
+        pages?: any;
+        /** records */
+        records?: any;
+        /** searchCount */
+        searchCount?: any;
+        /** size */
+        size?: any;
+        /** total */
+        total?: any;
+      }
+
+      export type Response = defs.api.JsonResult;
+
+      export const init: Response;
+
+      export function request(params: Params, options?: any): Promise<Response>;
+    }
+
+    /**
+     * 更新评论
+     * /comment
+     */
+    export namespace updateById {
+      export class Params {}
+
+      export type Response = defs.api.JsonResult;
+
+      export const init: Response;
+
+      export function request(params: Params, options?: any): Promise<Response>;
+    }
+
+    /**
+     * 新增评论
+     * /comment
+     */
+    export namespace save {
+      export class Params {}
+
+      export type Response = defs.api.JsonResult;
+
+      export const init: Response;
+
+      export function request(params: Params, options?: any): Promise<Response>;
+    }
+
+    /**
+     * 删除评论
+     * /comment/{id}
+     */
+    export namespace removeById {
+      export class Params {
+        /** id */
+        id: any;
+      }
+
+      export type Response = defs.api.JsonResult;
+
+      export const init: Response;
+
+      export function request(params: Params, options?: any): Promise<Response>;
+    }
+  }
+
+  /**
    * Mood Controller
    */
   export namespace mood {
+    /**
+     * 说说列表
+     * /mood
+     */
+    export namespace getList {
+      export class Params {
+        /** current */
+        current?: any;
+        /** size */
+        size?: any;
+      }
+
+      export type Response = defs.api.JsonResult<Array<defs.api.MoodObject>>;
+
+      export const init: Response;
+
+      export function request(params: Params, options?: any): Promise<Response>;
+    }
+
     /**
      * 更新说说
      * /mood
@@ -506,25 +629,6 @@ declare namespace api {
       export class Params {}
 
       export type Response = defs.api.JsonResult;
-
-      export const init: Response;
-
-      export function request(params: Params, options?: any): Promise<Response>;
-    }
-
-    /**
-     * 说说列表
-     * /mood/list
-     */
-    export namespace getList {
-      export class Params {
-        /** current */
-        current?: any;
-        /** size */
-        size?: any;
-      }
-
-      export type Response = defs.api.JsonResult<Array<defs.api.MoodObject>>;
 
       export const init: Response;
 
@@ -693,6 +797,20 @@ declare namespace api {
    */
   export namespace type {
     /**
+     * 类型列表
+     * /type
+     */
+    export namespace getList {
+      export class Params {}
+
+      export type Response = defs.api.JsonResult<Array<defs.api.TheTypeObject>>;
+
+      export const init: Response;
+
+      export function request(params: Params, options?: any): Promise<Response>;
+    }
+
+    /**
      * 更新类型
      * /type
      */
@@ -714,20 +832,6 @@ declare namespace api {
       export class Params {}
 
       export type Response = defs.api.JsonResult;
-
-      export const init: Response;
-
-      export function request(params: Params, options?: any): Promise<Response>;
-    }
-
-    /**
-     * 类型列表
-     * /type/list
-     */
-    export namespace getList {
-      export class Params {}
-
-      export type Response = defs.api.JsonResult<Array<defs.api.TheTypeObject>>;
 
       export const init: Response;
 

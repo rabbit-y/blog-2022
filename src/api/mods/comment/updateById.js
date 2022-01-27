@@ -1,5 +1,5 @@
 /**
- * @desc 类型列表
+ * @desc 更新评论
  */
 
 import * as defs from '../../baseClass';
@@ -10,8 +10,8 @@ export class Params {}
 export const init = new defs.api.JsonResult();
 
 export function request(params, options = {}) {
-  return PontCore.fetch(PontCore.getUrl('/type', params, 'GET'), {
-    method: 'GET',
+  return PontCore.fetch(PontCore.getUrl('/comment', params, 'PUT'), {
+    method: 'PUT',
 
     ...options,
   });

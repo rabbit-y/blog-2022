@@ -15,7 +15,7 @@ export class Params {
 export const init = new defs.api.JsonResult();
 
 export function request(params, options = {}) {
-  return PontCore.fetch(PontCore.getUrl('/mood/list', params, 'GET'), {
+  return PontCore.fetch(PontCore.getUrl('/mood', params, 'GET'), {
     method: 'GET',
 
     ...options,

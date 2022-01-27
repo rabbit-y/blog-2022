@@ -97,6 +97,23 @@ class TheArticleObject {
   typeId = '';
 }
 
+class TheCommentObject {
+  /** content */
+  content = '';
+
+  /** createTime */
+  createTime = '';
+
+  /** id */
+  id = undefined;
+
+  /** replyArticleId */
+  replyArticleId = undefined;
+
+  /** replyUserId */
+  replyUserId = '';
+}
+
 class TheTypeObject {
   /** description */
   description = '';
@@ -175,6 +192,7 @@ export const api = {
   ModelAndView,
   MoodObject,
   TheArticleObject,
+  TheCommentObject,
   TheTypeObject,
   TheUserObject,
   TheUserObject0,

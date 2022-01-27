@@ -5,42 +5,10 @@
         "description": "Article Controller",
         "interfaces": [
           {
-            "description": "更新文章",
-            "name": "updateById",
-            "method": "put",
-            "path": "/article",
-            "response": {
-              "typeArgs": [],
-              "typeName": "JsonResult",
-              "isDefsType": true,
-              "templateIndex": -1,
-              "compileTemplateKeyword": "#/definitions/",
-              "enum": [],
-              "typeProperties": []
-            },
-            "parameters": []
-          },
-          {
-            "description": "新增文章",
-            "name": "save",
-            "method": "post",
-            "path": "/article",
-            "response": {
-              "typeArgs": [],
-              "typeName": "JsonResult",
-              "isDefsType": true,
-              "templateIndex": -1,
-              "compileTemplateKeyword": "#/definitions/",
-              "enum": [],
-              "typeProperties": []
-            },
-            "parameters": []
-          },
-          {
             "description": "文章列表",
             "name": "getList",
             "method": "get",
-            "path": "/article/list",
+            "path": "/article",
             "response": {
               "typeArgs": [],
               "typeName": "JsonResult",
@@ -304,6 +272,38 @@
                 }
               }
             ]
+          },
+          {
+            "description": "更新文章",
+            "name": "updateById",
+            "method": "put",
+            "path": "/article",
+            "response": {
+              "typeArgs": [],
+              "typeName": "JsonResult",
+              "isDefsType": true,
+              "templateIndex": -1,
+              "compileTemplateKeyword": "#/definitions/",
+              "enum": [],
+              "typeProperties": []
+            },
+            "parameters": []
+          },
+          {
+            "description": "新增文章",
+            "name": "save",
+            "method": "post",
+            "path": "/article",
+            "response": {
+              "typeArgs": [],
+              "typeName": "JsonResult",
+              "isDefsType": true,
+              "templateIndex": -1,
+              "compileTemplateKeyword": "#/definitions/",
+              "enum": [],
+              "typeProperties": []
+            },
+            "parameters": []
           },
           {
             "description": "文章详情",
@@ -669,13 +669,184 @@
         "name": "basicError"
       },
       {
-        "description": "Mood Controller",
+        "description": "Comment Controller",
         "interfaces": [
           {
-            "description": "更新说说",
+            "description": "评论列表",
+            "name": "getList",
+            "method": "get",
+            "path": "/comment",
+            "response": {
+              "typeArgs": [],
+              "typeName": "JsonResult",
+              "isDefsType": true,
+              "templateIndex": -1,
+              "compileTemplateKeyword": "#/definitions/",
+              "enum": [],
+              "typeProperties": []
+            },
+            "parameters": [
+              {
+                "in": "query",
+                "name": "countId",
+                "required": false,
+                "dataType": {
+                  "typeArgs": [],
+                  "typeName": "",
+                  "isDefsType": false,
+                  "templateIndex": -1,
+                  "compileTemplateKeyword": "#/definitions/",
+                  "enum": [],
+                  "typeProperties": []
+                }
+              },
+              {
+                "in": "query",
+                "name": "current",
+                "required": false,
+                "dataType": {
+                  "typeArgs": [],
+                  "typeName": "",
+                  "isDefsType": false,
+                  "templateIndex": -1,
+                  "compileTemplateKeyword": "#/definitions/",
+                  "enum": [],
+                  "typeProperties": []
+                }
+              },
+              {
+                "in": "query",
+                "name": "maxLimit",
+                "required": false,
+                "dataType": {
+                  "typeArgs": [],
+                  "typeName": "",
+                  "isDefsType": false,
+                  "templateIndex": -1,
+                  "compileTemplateKeyword": "#/definitions/",
+                  "enum": [],
+                  "typeProperties": []
+                }
+              },
+              {
+                "in": "query",
+                "name": "optimizeCountSql",
+                "required": false,
+                "dataType": {
+                  "typeArgs": [],
+                  "typeName": "",
+                  "isDefsType": false,
+                  "templateIndex": -1,
+                  "compileTemplateKeyword": "#/definitions/",
+                  "enum": [],
+                  "typeProperties": []
+                }
+              },
+              {
+                "in": "query",
+                "name": "asc",
+                "required": false,
+                "dataType": {
+                  "typeArgs": [],
+                  "typeName": "",
+                  "isDefsType": false,
+                  "templateIndex": -1,
+                  "compileTemplateKeyword": "#/definitions/",
+                  "enum": [],
+                  "typeProperties": []
+                }
+              },
+              {
+                "in": "query",
+                "name": "column",
+                "required": false,
+                "dataType": {
+                  "typeArgs": [],
+                  "typeName": "",
+                  "isDefsType": false,
+                  "templateIndex": -1,
+                  "compileTemplateKeyword": "#/definitions/",
+                  "enum": [],
+                  "typeProperties": []
+                }
+              },
+              {
+                "in": "query",
+                "name": "pages",
+                "required": false,
+                "dataType": {
+                  "typeArgs": [],
+                  "typeName": "",
+                  "isDefsType": false,
+                  "templateIndex": -1,
+                  "compileTemplateKeyword": "#/definitions/",
+                  "enum": [],
+                  "typeProperties": []
+                }
+              },
+              {
+                "in": "query",
+                "name": "records",
+                "required": false,
+                "dataType": {
+                  "typeArgs": [],
+                  "typeName": "",
+                  "isDefsType": false,
+                  "templateIndex": -1,
+                  "compileTemplateKeyword": "#/definitions/",
+                  "enum": [],
+                  "typeProperties": []
+                }
+              },
+              {
+                "in": "query",
+                "name": "searchCount",
+                "required": false,
+                "dataType": {
+                  "typeArgs": [],
+                  "typeName": "",
+                  "isDefsType": false,
+                  "templateIndex": -1,
+                  "compileTemplateKeyword": "#/definitions/",
+                  "enum": [],
+                  "typeProperties": []
+                }
+              },
+              {
+                "in": "query",
+                "name": "size",
+                "required": false,
+                "dataType": {
+                  "typeArgs": [],
+                  "typeName": "",
+                  "isDefsType": false,
+                  "templateIndex": -1,
+                  "compileTemplateKeyword": "#/definitions/",
+                  "enum": [],
+                  "typeProperties": []
+                }
+              },
+              {
+                "in": "query",
+                "name": "total",
+                "required": false,
+                "dataType": {
+                  "typeArgs": [],
+                  "typeName": "",
+                  "isDefsType": false,
+                  "templateIndex": -1,
+                  "compileTemplateKeyword": "#/definitions/",
+                  "enum": [],
+                  "typeProperties": []
+                }
+              }
+            ]
+          },
+          {
+            "description": "更新评论",
             "name": "updateById",
             "method": "put",
-            "path": "/mood",
+            "path": "/comment",
             "response": {
               "typeArgs": [],
               "typeName": "JsonResult",
@@ -688,10 +859,10 @@
             "parameters": []
           },
           {
-            "description": "新增说说",
+            "description": "新增评论",
             "name": "save",
             "method": "post",
-            "path": "/mood",
+            "path": "/comment",
             "response": {
               "typeArgs": [],
               "typeName": "JsonResult",
@@ -703,11 +874,49 @@
             },
             "parameters": []
           },
+          {
+            "description": "删除评论",
+            "name": "removeById",
+            "method": "delete",
+            "path": "/comment/{id}",
+            "response": {
+              "typeArgs": [],
+              "typeName": "JsonResult",
+              "isDefsType": true,
+              "templateIndex": -1,
+              "compileTemplateKeyword": "#/definitions/",
+              "enum": [],
+              "typeProperties": []
+            },
+            "parameters": [
+              {
+                "in": "path",
+                "description": "id",
+                "name": "id",
+                "required": true,
+                "dataType": {
+                  "typeArgs": [],
+                  "typeName": "",
+                  "isDefsType": false,
+                  "templateIndex": -1,
+                  "compileTemplateKeyword": "#/definitions/",
+                  "enum": [],
+                  "typeProperties": []
+                }
+              }
+            ]
+          }
+        ],
+        "name": "comment"
+      },
+      {
+        "description": "Mood Controller",
+        "interfaces": [
           {
             "description": "说说列表",
             "name": "getList",
             "method": "get",
-            "path": "/mood/list",
+            "path": "/mood",
             "response": {
               "typeArgs": [
                 {
@@ -769,6 +978,38 @@
                 }
               }
             ]
+          },
+          {
+            "description": "更新说说",
+            "name": "updateById",
+            "method": "put",
+            "path": "/mood",
+            "response": {
+              "typeArgs": [],
+              "typeName": "JsonResult",
+              "isDefsType": true,
+              "templateIndex": -1,
+              "compileTemplateKeyword": "#/definitions/",
+              "enum": [],
+              "typeProperties": []
+            },
+            "parameters": []
+          },
+          {
+            "description": "新增说说",
+            "name": "save",
+            "method": "post",
+            "path": "/mood",
+            "response": {
+              "typeArgs": [],
+              "typeName": "JsonResult",
+              "isDefsType": true,
+              "templateIndex": -1,
+              "compileTemplateKeyword": "#/definitions/",
+              "enum": [],
+              "typeProperties": []
+            },
+            "parameters": []
           },
           {
             "description": "说说详情",
@@ -1036,42 +1277,10 @@
         "description": "Type Controller",
         "interfaces": [
           {
-            "description": "更新类型",
-            "name": "updateById",
-            "method": "put",
-            "path": "/type",
-            "response": {
-              "typeArgs": [],
-              "typeName": "JsonResult",
-              "isDefsType": true,
-              "templateIndex": -1,
-              "compileTemplateKeyword": "#/definitions/",
-              "enum": [],
-              "typeProperties": []
-            },
-            "parameters": []
-          },
-          {
-            "description": "新增类型",
-            "name": "save",
-            "method": "post",
-            "path": "/type",
-            "response": {
-              "typeArgs": [],
-              "typeName": "JsonResult",
-              "isDefsType": true,
-              "templateIndex": -1,
-              "compileTemplateKeyword": "#/definitions/",
-              "enum": [],
-              "typeProperties": []
-            },
-            "parameters": []
-          },
-          {
             "description": "类型列表",
             "name": "getList",
             "method": "get",
-            "path": "/type/list",
+            "path": "/type",
             "response": {
               "typeArgs": [
                 {
@@ -1094,6 +1303,38 @@
                   "typeProperties": []
                 }
               ],
+              "typeName": "JsonResult",
+              "isDefsType": true,
+              "templateIndex": -1,
+              "compileTemplateKeyword": "#/definitions/",
+              "enum": [],
+              "typeProperties": []
+            },
+            "parameters": []
+          },
+          {
+            "description": "更新类型",
+            "name": "updateById",
+            "method": "put",
+            "path": "/type",
+            "response": {
+              "typeArgs": [],
+              "typeName": "JsonResult",
+              "isDefsType": true,
+              "templateIndex": -1,
+              "compileTemplateKeyword": "#/definitions/",
+              "enum": [],
+              "typeProperties": []
+            },
+            "parameters": []
+          },
+          {
+            "description": "新增类型",
+            "name": "save",
+            "method": "post",
+            "path": "/type",
+            "response": {
+              "typeArgs": [],
               "typeName": "JsonResult",
               "isDefsType": true,
               "templateIndex": -1,
@@ -1689,6 +1930,77 @@
               "typeProperties": []
             },
             "name": "typeId",
+            "required": false
+          }
+        ],
+        "templateArgs": []
+      },
+      {
+        "name": "TheCommentObject",
+        "properties": [
+          {
+            "dataType": {
+              "typeArgs": [],
+              "typeName": "string",
+              "isDefsType": false,
+              "templateIndex": -1,
+              "compileTemplateKeyword": "#/definitions/",
+              "enum": [],
+              "typeProperties": []
+            },
+            "name": "content",
+            "required": false
+          },
+          {
+            "dataType": {
+              "typeArgs": [],
+              "typeName": "string",
+              "isDefsType": false,
+              "templateIndex": -1,
+              "compileTemplateKeyword": "#/definitions/",
+              "enum": [],
+              "typeProperties": []
+            },
+            "name": "createTime",
+            "required": false
+          },
+          {
+            "dataType": {
+              "typeArgs": [],
+              "typeName": "number",
+              "isDefsType": false,
+              "templateIndex": -1,
+              "compileTemplateKeyword": "#/definitions/",
+              "enum": [],
+              "typeProperties": []
+            },
+            "name": "id",
+            "required": false
+          },
+          {
+            "dataType": {
+              "typeArgs": [],
+              "typeName": "number",
+              "isDefsType": false,
+              "templateIndex": -1,
+              "compileTemplateKeyword": "#/definitions/",
+              "enum": [],
+              "typeProperties": []
+            },
+            "name": "replyArticleId",
+            "required": false
+          },
+          {
+            "dataType": {
+              "typeArgs": [],
+              "typeName": "string",
+              "isDefsType": false,
+              "templateIndex": -1,
+              "compileTemplateKeyword": "#/definitions/",
+              "enum": [],
+              "typeProperties": []
+            },
+            "name": "replyUserId",
             "required": false
           }
         ],
