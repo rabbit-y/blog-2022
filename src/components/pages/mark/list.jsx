@@ -17,10 +17,13 @@ export default function List() {
     getList(searchParams.type);
   }, [searchParams.type]);
   const getList = async (type) => {
-    const { code, data } = await api.article.getList.request({ typeId: type });
+    const {
+      code,
+      data: { records },
+    } = await api.article.getList.request({ typeId: type });
     if (code === 0) {
-      setMark(data);
-    }
+      setMark(records);
+    } 
   };
   return (
     <div>
@@ -36,7 +39,7 @@ export default function List() {
               {item.createTime}
               <Divider type="vertical" />
               <IconFont type="h-wenjianjia" />
-              {getTypeName(item.typeId)}
+              {item.typeName}
             </div>
             <div
               className="mark-list-page-dec"

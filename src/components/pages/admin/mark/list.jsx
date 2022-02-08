@@ -1,42 +1,56 @@
+import { useState } from "react";
 import { Tag, Space, Button } from "antd";
 import { Link, useNavigate } from "react-router-dom";
 import MyTable from "@components/Table/index";
+import { api } from "@api/index";
 import "./index.less";
+import { useEffect } from "react";
 export default function Mark() {
   const navigate = useNavigate();
+  const [mark, setMark] = useState([]);
   const columns = [
     {
       title: "标题",
-      key: "name",
-      dataIndex: "name",
+      key: "title",
+      dataIndex: "title",
     },
     {
       title: "类型",
-      key: "type",
-      dataIndex: "type",
-      render: (tags) => <Tag>PMP</Tag>,
+      key: "typeName",
+      dataIndex: "typeName",
+      render: (tags) => (tags ? <Tag>{tags}</Tag> : ""),
     },
     {
       title: "创建日期",
-      key: "creat",
-      dataIndex: "creat",
-    },
-    {
-      title: "修改日期",
-      key: "time",
-      dataIndex: "time",
+      key: "createTime",
+      dataIndex: "createTime",
     },
     {
       title: "操作",
       key: "action",
-      render: (text, record) => (
-        <Space size="middle">
-          <Link to="/admin/mark/creat">修改</Link>
-          <a>删除</a>
-        </Space>
-      ),
+      render: (text, record) => {
+        const id = "/admin/mark/" + record.id;
+        return (
+          <Space size="middle">
+            <Link to={id}>修改</Link>
+            <a>删除</a>
+          </Space>
+        );
+      },
     },
   ];
+  useEffect(() => {
+    getList();
+  }, []);
+  const getList = async (type) => {
+    const {
+      code,
+      data: { records },
+    } = await api.article.getList.request({ typeId: type });
+    if (code === 0) {
+      setMark(records);
+    }
+  };
   const jumpDtl = () => {
     navigate("/admin/mark/creat");
   };
@@ -44,13 +58,7 @@ export default function Mark() {
     <div className="mark-list">
       <MyTable
         columns={columns}
-        data={[
-          {
-            key: "1",
-            name: "CESHIDE YITAN",
-            type: "PMP",
-          },
-        ]}
+        data={mark}
         option={{
           title: () => (
             <div>
