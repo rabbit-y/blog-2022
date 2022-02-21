@@ -1,4 +1,4 @@
-import { Suspense, lazy, useEffect, useState } from "react";
+import { Suspense, lazy } from "react";
 import {
   HashRouter as Router,
   Route,
@@ -10,7 +10,6 @@ import { Row, Col, Menu } from "antd";
 
 import { STATION, ROTER } from "@utils/variable";
 import { RoutersList, AdminRoutersList } from "@/router/router";
-import { api } from "@api/index";
 
 import AboutMe from "@pages/aboutMe/index";
 import Footer from "@pages/footer/index";
@@ -23,7 +22,7 @@ const Admin = lazy(() => import("@pages/admin/index"));
 
 const { SubMenu } = Menu;
 const App = () => {
-  const typeList = useSelector((state) => state.types);
+  const typeList = useSelector((state) => state.types.articleCounts);
   return (
     <Router>
       <Routes>
@@ -46,8 +45,8 @@ const App = () => {
                           <SubMenu key="SubMenu" title="小前端">
                             {typeList?.map((cItem) => (
                               <Menu.Item key={cItem.id}>
-                                <Link to={item.path + "/" + cItem.id}>
-                                  {cItem.name}
+                                <Link to={item.path + "/" + cItem.typeId}>
+                                  {cItem.typeName ? cItem.typeName : "未分类"}
                                 </Link>
                               </Menu.Item>
                             ))}

@@ -1,11 +1,13 @@
 import { useEffect, useState, createElement } from "react";
 import { List, Avatar, Space } from "antd";
 import { MessageOutlined, LikeOutlined } from "@ant-design/icons";
-import { USER } from "@utils/variable";
+import moment from "moment";
+import { useSelector } from "react-redux";
 import { api } from "@api/index";
 // import "./index.less";
 
 export default function Say() {
+  const USER = useSelector((state) => state.types);
   const [list, setList] = useState([]);
   const [pageList, setPage] = useState({});
   useEffect(() => {
@@ -46,6 +48,11 @@ export default function Say() {
             actions={[
               <IconText
                 icon={LikeOutlined}
+                text={moment(item.createTime).fromNow()}
+                key="list-time"
+              />,
+              <IconText
+                icon={LikeOutlined}
                 text="156"
                 key="list-vertical-like-o"
               />,
@@ -57,8 +64,8 @@ export default function Say() {
             ]}
           >
             <List.Item.Meta
-              avatar={<Avatar src={USER.header} />}
-              title={USER.name}
+              avatar={<Avatar src={USER.avatar} />}
+              title={USER.nickname}
             />
             <div dangerouslySetInnerHTML={{ __html: item.content }}></div>
           </List.Item>

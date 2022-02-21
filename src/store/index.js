@@ -11,7 +11,7 @@ import { api } from "@api/index";
 export const fetchTypes = createAsyncThunk(
   "app/fetchTypes",
   async () => {
-    const { data } = await api.type.getList.request();
+    const { data } = await api.other.getMasterInfo.request();
     return data;
   }
 );
