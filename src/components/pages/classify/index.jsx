@@ -1,15 +1,17 @@
 import { Row, Col } from "antd";
 import IconFont from "../../component/Icon/index";
+import { useSelector } from "react-redux";
 import "./index.less";
 
-export default function Classify({ list }) {
+export default function Classify() {
+  const typeList = useSelector((state) => state.types.articleCounts);
   return (
     <div className="classify">
       <div className="classify-title">
         <IconFont type="h-wenjianjia" />
         <b>分类</b>
       </div>
-      {list?.map((item, index) => (
+      {typeList?.map((item, index) => (
         <div className="classify-list" key={index}>
           <Row>
             <Col flex={"auto"}>

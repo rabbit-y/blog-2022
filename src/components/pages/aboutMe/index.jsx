@@ -11,7 +11,7 @@ export default function About() {
       </div>
       <div className="about-user">
         <span>{USER.nickname}</span>
-        <div>{JSON.parse(USER.other).dec}</div>
+        <div>{USER.other && JSON.parse(USER.other).dec}</div>
       </div>
       <div className="about-link">
         <IconFont type="h-gitee" />

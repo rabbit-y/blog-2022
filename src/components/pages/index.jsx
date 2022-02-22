@@ -96,7 +96,7 @@ const App = () => {
                           <AboutMe />
                         </div>
                         <div>
-                          <Classify list={typeList} />
+                          <Classify />
                         </div>
                       </div>
                     </Col>
