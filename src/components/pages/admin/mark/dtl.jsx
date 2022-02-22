@@ -38,12 +38,16 @@ const Dtl = () => {
     }
   };
   const onFinish = async (e) => {
-    const { code } = await api.article.updateById.request({
-      ...e,
-      id,
-      content: text,
-    });
-    console.log(code);
+    const { code } = (await id)
+      ? api.article.updateById.request({
+          ...e,
+          id,
+          content: text,
+        })
+      : api.article.save.request({
+          ...e,
+          content: text,
+        });
   };
   return (
     <div className="mark-admin-dtl">

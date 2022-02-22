@@ -1,10 +1,12 @@
 import { useState } from "react";
-import { Tag, Space, Button } from "antd";
+import { Tag, Space, Button, Modal } from "antd";
 import { Link, useNavigate } from "react-router-dom";
 import MyTable from "@components/Table/index";
 import { api } from "@api/index";
-import "./index.less";
+import { ExclamationCircleOutlined } from "@ant-design/icons";
 import { useEffect } from "react";
+import moment from "moment";
+import "./index.less";
 export default function Mark() {
   const navigate = useNavigate();
   const [mark, setMark] = useState([]);
@@ -24,6 +26,7 @@ export default function Mark() {
       title: "创建日期",
       key: "createTime",
       dataIndex: "createTime",
+      render: (text) => moment(text).format("YYYY-MM-DD HH:mm:ss"),
     },
     {
       title: "操作",
@@ -33,7 +36,13 @@ export default function Mark() {
         return (
           <Space size="middle">
             <Link to={id}>修改</Link>
-            <a>删除</a>
+            <span
+              onClick={() => {
+                delect(id);
+              }}
+            >
+              删除
+            </span>
           </Space>
         );
       },
@@ -50,6 +59,19 @@ export default function Mark() {
     if (code === 0) {
       setMark(records);
     }
+  };
+  // 删除
+  const delect = (id) => {
+    Modal.confirm({
+      title: "提示",
+      icon: <ExclamationCircleOutlined />,
+      content: "是否确认删除",
+      okText: "确认",
+      cancelText: "取消",
+      onOk: async () => {
+        const { code } = await api.article.removeById.request({ id });
+      },
+    });
   };
   const jumpDtl = () => {
     navigate("/admin/mark/creat");
