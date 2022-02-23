@@ -32,7 +32,9 @@ export default function Admin() {
             <Menu.Item key="3">用户管理</Menu.Item>
           </SubMenu>
           <SubMenu key="sub2" icon={<DesktopOutlined />} title="文章管理">
-            <Menu.Item key="4">碎碎念</Menu.Item>
+            <Menu.Item key="4">
+              <Link to="/admin/say">碎碎念</Link>
+            </Menu.Item>
             <Menu.Item key="5">
               <Link to="/admin/mark">文档</Link>
             </Menu.Item>

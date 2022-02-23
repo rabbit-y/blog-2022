@@ -1,9 +1,9 @@
-import { useEffect, useState, createElement } from "react";
-import { List, Avatar, Space } from "antd";
-import { MessageOutlined, LikeOutlined } from "@ant-design/icons";
-import moment from "moment";
+import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
+import { Timeline } from "antd";
+import moment from "moment";
 import { api } from "@api/index";
+import IconFont from "../../component/Icon/index";
 import "./index.less";
 
 export default function Say() {
@@ -11,66 +11,50 @@ export default function Say() {
   const [list, setList] = useState([]);
   const [pageList, setPage] = useState({});
   useEffect(() => {
-    getList({ current: 1, size: 10 });
+    getList({ current: 1, size: 5 });
   }, []);
-  const getList = async (param) => {
+  const getList = async (param, type) => {
     const {
       code,
-      data: { records, total, size },
-    } = await api.mood.getList.request(param);
+      data: { records, total, size, current },
+    } = await api.mood.getList.request({ ...pageList, ...param });
     if (code === 0) {
-      setList(records);
-      setPage({ total, size });
+      if (type && type === "add") {
+        setList(list.concat(records));
+      } else {
+        setList(records);
+      }
+      setPage({ total, size, current });
     }
   };
-  const IconText = ({ icon, text }) => (
-    <Space>
-      {createElement(icon)}
-      {text}
-    </Space>
-  );
+  const more = () => {
+    getList({ current: pageList.current + 1 }, "add");
+  };
   return (
-    <div className="">
-      <List
-        itemLayout="vertical"
-        size="large"
-        pagination={{
-          onChange: (page) => {
-            getList({ current: page, size: 10 });
-          },
-          pageSize: pageList.size ? pageList.size : 10,
-          total: pageList.total,
-        }}
-        dataSource={list}
-        renderItem={(item) => (
-          <List.Item
-            key={item.title}
-            actions={[
-              <IconText
-                icon={LikeOutlined}
-                text={moment(item.createTime).fromNow()}
-                key="list-time"
-              />,
-              <IconText
-                icon={LikeOutlined}
-                text="156"
-                key="list-vertical-like-o"
-              />,
-              <IconText
-                icon={MessageOutlined}
-                text="2"
-                key="list-vertical-message"
-              />,
-            ]}
-          >
-            <List.Item.Meta
-              avatar={<Avatar src={USER.avatar} />}
-              title={USER.nickname}
-            />
-            <div dangerouslySetInnerHTML={{ __html: item.content }}></div>
-          </List.Item>
+    <div className="say">
+      <div>
+        {/* {USER.avatar} */}
+        {/* {USER.nickname} */}
+      </div>
+      <Timeline>
+        {list?.map((item, index) => {
+          return (
+            <Timeline.Item key={index} dot={<IconFont type="h-xiaoxiong" />}>
+              <div className="say-list-time">
+                {moment(item.createTime).format("YYYY-MM-DD HH:mm:ss")}
+              </div>
+              <div className="say-list-cont">
+                <div dangerouslySetInnerHTML={{ __html: item.content }}></div>
+              </div>
+            </Timeline.Item>
+          );
+        })}
+        {list.length < pageList.total && (
+          <Timeline.Item>
+            <span onClick={more}>more</span>
+          </Timeline.Item>
         )}
-      />
+      </Timeline>
     </div>
   );
 }
