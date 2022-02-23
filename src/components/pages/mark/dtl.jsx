@@ -5,6 +5,7 @@ import { marked } from "marked";
 import hljs from "highlight.js";
 import { api } from "@api/index";
 import IconFont from "@components/Icon/index";
+import Liked from "@components/Liked/index";
 
 import "highlight.js/styles/foundation.css";
 import "./index.less";
@@ -84,12 +85,12 @@ const Dtl = () => {
       </div>
       <div className="mark-dtl-support">
         <div>
-          <IconFont type="h-icon" />
+          <Liked />
           <p>(80)</p>
         </div>
       </div>
       {// 登录判断
-      user.name ? (
+      user.nickname ? (
         <div>
           <Divider plain>
             <span className="mark-dtl-tip">
@@ -118,6 +119,7 @@ const Dtl = () => {
               {...layout}
               form={form}
               onFinish={onFinish}
+              labelAlign="left"
               autoComplete="off"
             >
               {isLogin && (

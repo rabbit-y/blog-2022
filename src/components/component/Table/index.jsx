@@ -4,7 +4,7 @@ export default function MyTable({ columns, data, option }) {
     <Table
       bordered
       size="small"
-      key={data.id}
+      rowKey="id"
       columns={columns}
       dataSource={data}
       {...option}

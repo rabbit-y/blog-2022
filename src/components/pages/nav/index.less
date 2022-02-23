@@ -1,0 +1,44 @@
+
+
+.banner{
+  padding-top: 60px;
+  .title {
+    .title-name {
+      font: bold 48px/1.12 "Times New Roman", Georgia, Times, sans-serif;
+      font-family: titleFont;
+      color: @primary-color;
+    }
+    .title-dec {
+      margin-top: 6px;
+      font-family: titleFont;
+    }
+  }
+  .nav {
+    margin: 30px 0;
+    border-radius: 6px;
+    overflow: hidden;
+    background-color: @primary-color;
+    .ant-menu {
+      background-color: transparent;
+      text-align: center;
+      display: inline-block;
+      padding: 6px 0;
+      width: 100%;
+    }
+    .ant-menu-horizontal {
+      background-color: #f1f1f1;
+      border-bottom: 0px;
+      opacity: 0.6;
+      .ant-menu-item-selected::after,
+      .ant-menu-item-active::after,
+      .ant-menu-item::after,
+      .ant-menu-item:hover:after,
+      .ant-menu-submenu::after {
+        border-bottom: 0px;
+      }
+      .ant-menu-title-content {
+        font-size: 22px;
+      }
+    }
+  }
+}

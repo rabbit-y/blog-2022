@@ -20,16 +20,19 @@ export default function List() {
     const {
       code,
       data: { records },
-    } = await api.article.getList.request({ typeId: type });
+    } = await api.article.getList.request({ typeId: type ? type : "" });
     if (code === 0) {
       setMark(records);
-    } 
+    }
   };
   return (
     <div>
-      <div className="mark-title">
-        <PageHeader onBack={() => navigate(-1)} title={getTypeName(typeId)} />
-      </div>
+      {typeId && (
+        <div className="mark-title">
+          {/* title={getTypeName(typeId)} */}
+          <PageHeader onBack={() => navigate(-1)} />
+        </div>
+      )}
       <div className="mark-list">
         {mark?.map((item, index) => (
           <div className="mark-list-page h-card opacity8" key={index}>

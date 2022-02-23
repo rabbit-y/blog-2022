@@ -31,6 +31,7 @@ export default function Mark() {
     {
       title: "操作",
       key: "action",
+      dataIndex: "action",
       render: (text, record) => {
         const id = "/admin/mark/" + record.id;
         return (

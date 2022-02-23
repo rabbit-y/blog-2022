@@ -1,23 +1,26 @@
 import { lazy } from 'react';
+// {
+//   path: '/index',
+//   element: lazy(() => import("@pages/index/index"))
+// },
 export const RoutersList = [
   {
     path: '/index',
-    element: lazy(() => import("@pages/index/index"))
+    element: lazy(() => import("@pages/say/index"))
   },
   {
     path: 'mark',
     element: lazy(() => import("@pages/mark/index")),
     child: [{
+      path: '/mark',
+      element: lazy(() => import("@pages/mark/list"))
+    },{
       path: ':type',
       element: lazy(() => import("@pages/mark/list"))
     }, {
       path: ':type/:id',
       element: lazy(() => import("@pages/mark/dtl"))
     }]
-  },
-  {
-    path: '/say',
-    element: lazy(() => import("@pages/say/index"))
   },
   {
     path: '/bilibili',

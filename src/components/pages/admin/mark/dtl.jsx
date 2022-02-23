@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
-import { Form, Input, Button, Select, PageHeader } from "antd";
+import { Form, Input, Button, Select, PageHeader, message } from "antd";
 import Editor from "md-editor-rt";
 import { api } from "@api/index";
 import { useSelector } from "react-redux";
@@ -38,16 +38,24 @@ const Dtl = () => {
     }
   };
   const onFinish = async (e) => {
-    const { code } = (await id)
-      ? api.article.updateById.request({
-          ...e,
-          id,
-          content: text,
+    const { code } = await (id
+      ? api.article.updateById.request(null, {
+          data: {
+            ...e,
+            id,
+            content: text,
+          },
         })
-      : api.article.save.request({
-          ...e,
-          content: text,
-        });
+      : api.article.save.request(null, {
+          data: {
+            ...e,
+            content: text,
+          },
+        }));
+    if (code === 0) {
+      message.success("success");
+      navigate(-1);
+    }
   };
   return (
     <div className="mark-admin-dtl">
@@ -61,8 +69,8 @@ const Dtl = () => {
           </Form.Item>
           <Form.Item name="typeId" label="类型" rules={[{ required: true }]}>
             <Select allowClear>
-              {typeList?.map((item, index) => (
-                <Option value={item.typeId} key={index}>
+              {typeList?.map((item) => (
+                <Option value={item.typeId} key={item.typeId}>
                   {item.typeName}
                 </Option>
               ))}

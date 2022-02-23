@@ -4,7 +4,7 @@ import { MessageOutlined, LikeOutlined } from "@ant-design/icons";
 import moment from "moment";
 import { useSelector } from "react-redux";
 import { api } from "@api/index";
-// import "./index.less";
+import "./index.less";
 
 export default function Say() {
   const USER = useSelector((state) => state.types);
