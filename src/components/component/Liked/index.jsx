@@ -10,7 +10,7 @@ export default function Liked({ type = "false", fn }) {
   };
   return (
     <div
-      class={`h-liked ${active && "h-liked-active"}`}
+      className={`h-liked ${active && "h-liked-active"}`}
       onClick={classChange}
     ></div>
   );

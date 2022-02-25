@@ -11,7 +11,7 @@ export default function Say() {
   const [list, setList] = useState([]);
   const [pageList, setPage] = useState({});
   useEffect(() => {
-    getList({ current: 1, size: 5 });
+    getList({ current: 1, size: 6 });
   }, []);
   const getList = async (param, type) => {
     const {
@@ -39,21 +39,38 @@ export default function Say() {
       <Timeline>
         {list?.map((item, index) => {
           return (
-            <Timeline.Item key={index} dot={<IconFont type="h-xiaoxiong" />}>
+            <Timeline.Item
+              key={index}
+              dot={<IconFont type="h-xiaoxiong" style={{ fontSize: 20 }} />}
+            >
               <div className="say-list-time">
                 {moment(item.createTime).format("YYYY-MM-DD HH:mm:ss")}
               </div>
               <div className="say-list-cont">
                 <div dangerouslySetInnerHTML={{ __html: item.content }}></div>
               </div>
+              <div className="say-list-other">
+                <div>
+                  <IconFont type="h-icon" style={{ fontSize: 18 }} />
+                  <span> 24人点赞</span>
+                </div>
+              </div>
             </Timeline.Item>
           );
         })}
-        {list.length < pageList.total && (
-          <Timeline.Item>
-            <span onClick={more}>more</span>
-          </Timeline.Item>
-        )}
+        <Timeline.Item
+          dot={<IconFont type="h-xiaoxiong1" style={{ fontSize: 28 }} />}
+        >
+          {list.length < pageList.total ? (
+            <div className="say-list-more" onClick={more}>
+              ... 查看更多 ...
+            </div>
+          ) : (
+            <div className="say-list-more" onClick={more}>
+              没有更多啦！！！！！
+            </div>
+          )}
+        </Timeline.Item>
       </Timeline>
     </div>
   );
