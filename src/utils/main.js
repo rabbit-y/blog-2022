@@ -9,7 +9,8 @@ const { PontCore } = require('@api/pontCore')
 const axiosInstanceForDing = axios.create();
 // axios响应拦截
 axiosInstanceForDing.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest'
-axiosInstanceForDing.defaults.baseURL = '/api'
+const host = window.location.hostname!='localhost'
+host&&(axiosInstanceForDing.defaults.baseURL = '/api')
 axiosInstanceForDing.interceptors.response.use(
   response => {
     if (response.data.code === 0) {

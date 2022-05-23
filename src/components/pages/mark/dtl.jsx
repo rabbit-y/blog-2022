@@ -6,6 +6,7 @@ import hljs from "highlight.js";
 import { api } from "@api/index";
 import IconFont from "@components/Icon/index";
 import Liked from "@components/Liked/index";
+import moment from "moment";
 
 import "highlight.js/styles/foundation.css";
 import "./index.less";
@@ -74,7 +75,7 @@ const Dtl = () => {
         <h1>{dtl.title}</h1>
         <div className="mark-dtl-title">
           <IconFont type="h-shijian" />
-          {dtl.createTime}
+           {moment(dtl.createTime).format("YYYY-MM-DD HH:mm")}
           <Divider type="vertical" />
           <IconFont type="h-wenjianjia" />
           {dtl.typeName}
