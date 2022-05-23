@@ -1,10 +1,15 @@
 import { Row, Col } from "antd";
-import IconFont from "../../component/Icon/index";
 import { useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
+import IconFont from "../../component/Icon/index";
 import "./index.less";
 
 export default function Classify() {
   const typeList = useSelector((state) => state.types.articleCounts);
+  const navigate = useNavigate();
+  const getTypeList = (item) => {
+    navigate("/mark/" + item.typeId);
+  };
   return (
     <div className="classify">
       <div className="classify-title">
@@ -12,7 +17,13 @@ export default function Classify() {
         <b>分类</b>
       </div>
       {typeList?.map((item, index) => (
-        <div className="classify-list" key={index}>
+        <div
+          className="classify-list"
+          key={index}
+          onClick={() => {
+            getTypeList(item);
+          }}
+        >
           <Row>
             <Col flex={"auto"}>
               <div>{item.typeName ? item.typeName : "未分类"}</div>

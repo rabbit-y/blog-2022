@@ -1,23 +1,21 @@
 import { useEffect, useState } from "react";
-import { PageHeader, Divider, Pagination } from "antd";
-import { useParams, useNavigate } from "react-router-dom";
+import { Divider } from "antd";
+import { useNavigate, useParams } from "react-router-dom";
+import moment from "moment";
 import { api } from "@api/index";
 import IconFont from "@components/Icon/index";
-import moment from "moment";
-import { getTypeName } from "@/utils";
 
 import "./index.less";
 
 export default function List() {
   const navigate = useNavigate();
-  const searchParams = useParams();
+  const params = useParams();
   const [mark, setMark] = useState([]);
-  const [typeId, setTypeId] = useState();
   const [pageList, setPageList] = useState({ current: 1, size: 10 });
   useEffect(() => {
-    setTypeId(searchParams.type);
-    getList(pageList, "", searchParams.type);
-  }, [searchParams.type]);
+    getList(pageList, "", params.type);
+  }, [params]);
+  // 获取文档列表
   const getList = async (page, type = "", typeId = "") => {
     const {
       code,
@@ -38,12 +36,18 @@ export default function List() {
   };
   return (
     <div>
-      {typeId && (
-        <div className="mark-title">
-          {/* title={getTypeName(typeId)} */}
-          <PageHeader onBack={() => navigate(-1)} />
-        </div>
-      )}
+      <div className="mark-title">
+        {params.type && (
+          <div
+            className="mark-title-all"
+            onClick={() => {
+              navigate("/mark");
+            }}
+          >
+            点击返回全部
+          </div>
+        )}
+      </div>
       <div className="mark-list">
         {mark?.map((item, index) => (
           <div

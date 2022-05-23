@@ -40,7 +40,9 @@ export default function Admin() {
             </Menu.Item>
           </SubMenu>
           <SubMenu key="sub3" icon={<SettingOutlined />} title="参数管理">
-            <Menu.Item key="6">分类管理</Menu.Item>
+            <Menu.Item key="6">
+              <Link to="/admin/classify">分类管理</Link>
+            </Menu.Item>
           </SubMenu>
         </Menu>
       </Sider>

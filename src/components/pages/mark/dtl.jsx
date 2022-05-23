@@ -25,7 +25,7 @@ const Dtl = () => {
   const [html, setHtml] = useState("");
   marked.setOptions({
     renderer: new marked.Renderer(),
-    highlight: function(code) {
+    highlight: function (code) {
       return hljs.highlightAuto(code).value;
     },
     gfm: true,
@@ -54,10 +54,8 @@ const Dtl = () => {
   const onFinish = async (values) => {
     const { code } = await api.other.doLogin.request(values);
     if (code === 0) {
-      const {
-        code: userCode,
-        data: userData,
-      } = await api.other.getUserInfo.request();
+      const { code: userCode, data: userData } =
+        await api.other.getUserInfo.request();
       if (userCode === 0) {
         localStorage.setItem("h-userInfo", JSON.stringify(userData));
       }
@@ -75,7 +73,7 @@ const Dtl = () => {
         <h1>{dtl.title}</h1>
         <div className="mark-dtl-title">
           <IconFont type="h-shijian" />
-           {moment(dtl.createTime).format("YYYY-MM-DD HH:mm")}
+          {moment(dtl.createTime).format("YYYY-MM-DD HH:mm")}
           <Divider type="vertical" />
           <IconFont type="h-wenjianjia" />
           {dtl.typeName}
@@ -85,88 +83,90 @@ const Dtl = () => {
         </div>
       </div>
       <div className="mark-dtl-support">
-        <div>
+        {/* <div>
           <Liked />
           <p>(80)</p>
-        </div>
+        </div> */}
       </div>
-      {// 登录判断
-      user.nickname ? (
-        <div>
-          <Divider plain>
-            <span className="mark-dtl-tip">
-              <IconFont type="h-xiaoxiong" />
-              收到回复会有邮件提醒呦~
-            </span>
-          </Divider>
-          <div className="mark-user opacity8">
-            <div className="mark-user-msg">
-              <img src={user.avatar} alt="头像" />
-              <span>@ {user.nickname}</span>
+      {
+        // 登录判断
+        user.nickname ? (
+          <div>
+            <Divider plain>
+              <span className="mark-dtl-tip">
+                <IconFont type="h-xiaoxiong" />
+                收到回复会有邮件提醒呦~
+              </span>
+            </Divider>
+            <div className="mark-user opacity8">
+              <div className="mark-user-msg">
+                <img src={user.avatar} alt="头像" />
+                <span>@ {user.nickname}</span>
+              </div>
+              <div className="mark-user-comment"></div>
             </div>
-            <div className="mark-user-comment"></div>
           </div>
-        </div>
-      ) : (
-        <div>
-          <Divider plain>
-            <span className="mark-dtl-tip">
-              <IconFont type="h-xiaoxiong" />
-              登录后评论可及时收到回复邮件呦~
-            </span>
-          </Divider>
-          <div className="mark-login">
-            <Form
-              {...layout}
-              form={form}
-              onFinish={onFinish}
-              labelAlign="left"
-              autoComplete="off"
-            >
-              {isLogin && (
+        ) : (
+          <div>
+            <Divider plain>
+              <span className="mark-dtl-tip">
+                <IconFont type="h-xiaoxiong" />
+                登录后评论可及时收到回复邮件呦~
+              </span>
+            </Divider>
+            <div className="mark-login">
+              <Form
+                {...layout}
+                form={form}
+                onFinish={onFinish}
+                labelAlign="left"
+                autoComplete="off"
+              >
+                {isLogin && (
+                  <Form.Item
+                    name="name"
+                    label="昵称"
+                    rules={[{ required: true }]}
+                  >
+                    <Input />
+                  </Form.Item>
+                )}
                 <Form.Item
-                  name="name"
-                  label="昵称"
-                  rules={[{ required: true }]}
+                  name="email"
+                  label="邮箱"
+                  rules={[{ required: true, type: "email" }]}
                 >
                   <Input />
                 </Form.Item>
-              )}
-              <Form.Item
-                name="email"
-                label="邮箱"
-                rules={[{ required: true, type: "email" }]}
-              >
-                <Input />
-              </Form.Item>
-              <Form.Item label="密码" name="pwd" rules={[{ required: true }]}>
-                <Input.Password />
-              </Form.Item>
-              {isLogin && (
-                <Form.Item name="note" label="站点">
-                  <Input prefix="https://" suffix=".com" />
+                <Form.Item label="密码" name="pwd" rules={[{ required: true }]}>
+                  <Input.Password />
                 </Form.Item>
-              )}
-              <Form.Item
-                wrapperCol={{
-                  offset: 2,
-                  span: 8,
-                }}
-              >
-                <Button type="primary" htmlType="submit">
-                  {!isLogin ? "登录" : "注册"}
-                </Button>
-                <span
-                  className="mark-login-btn-item-tip"
-                  onClick={() => setIsLogin(!isLogin)}
+                {isLogin && (
+                  <Form.Item name="note" label="站点">
+                    <Input prefix="https://" suffix=".com" />
+                  </Form.Item>
+                )}
+                <Form.Item
+                  wrapperCol={{
+                    offset: 2,
+                    span: 8,
+                  }}
                 >
-                  {!isLogin ? "还没账号？去注册" : "已有账号？直接登录"}
-                </span>
-              </Form.Item>
-            </Form>
+                  <Button type="primary" htmlType="submit">
+                    {!isLogin ? "登录" : "注册"}
+                  </Button>
+                  <span
+                    className="mark-login-btn-item-tip"
+                    onClick={() => setIsLogin(!isLogin)}
+                  >
+                    {!isLogin ? "还没账号？去注册" : "已有账号？直接登录"}
+                  </span>
+                </Form.Item>
+              </Form>
+            </div>
           </div>
-        </div>
-      )}
+        )
+      }
     </div>
   );
 };

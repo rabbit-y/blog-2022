@@ -38,20 +38,16 @@ const Dtl = () => {
     }
   };
   const onFinish = async (e) => {
-    const { code } = await (id
-      ? api.article.updateById.request(null, {
-          data: {
-            ...e,
-            id,
-            content: text,
-          },
-        })
-      : api.article.save.request(null, {
-          data: {
-            ...e,
-            content: text,
-          },
-        }));
+    const { code } = await api.article[id ? "updateById" : "save"].request(
+      null,
+      {
+        data: {
+          ...e,
+          id,
+          content: text,
+        },
+      }
+    );
     if (code === 0) {
       message.success("success");
       navigate(-1);

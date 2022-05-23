@@ -1,16 +1,21 @@
 @font-face {
-  font-family: hFont;
-  src: url("https://cos.han96.com/blog/font/myfont2.ttf");
+  // font-family: hFont;
+  // src: url("https://cos.han96.com/blog/font/myfont2.ttf");
 }
 @font-face {
-  font-family: 'titleFont';
+  font-family: "titleFont";
   font-display: swap;
-  src: url('//at.alicdn.com/t/webfont_6i3v9twr36p.eot'); /* IE9*/
-  src: url('//at.alicdn.com/t/webfont_6i3v9twr36p.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
-  url('//at.alicdn.com/t/webfont_6i3v9twr36p.woff2') format('woff2'),
-  url('//at.alicdn.com/t/webfont_6i3v9twr36p.woff') format('woff'), /* chrome、firefox */
-  url('//at.alicdn.com/t/webfont_6i3v9twr36p.ttf') format('truetype'), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
-  url('//at.alicdn.com/t/webfont_6i3v9twr36p.svg#思源黑体-极细') format('svg'); /* iOS 4.1- */
+  src: url("//at.alicdn.com/t/webfont_6i3v9twr36p.eot"); /* IE9*/
+  src: url("//at.alicdn.com/t/webfont_6i3v9twr36p.eot?#iefix")
+      format("embedded-opentype"),
+    /* IE6-IE8 */ url("//at.alicdn.com/t/webfont_6i3v9twr36p.woff2")
+      format("woff2"),
+    url("//at.alicdn.com/t/webfont_6i3v9twr36p.woff") format("woff"),
+    /* chrome、firefox */ url("//at.alicdn.com/t/webfont_6i3v9twr36p.ttf")
+      format("truetype"),
+    /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
+      url("//at.alicdn.com/t/webfont_6i3v9twr36p.svg#思源黑体-极细")
+      format("svg"); /* iOS 4.1- */
 }
 body,
 h1 {
@@ -38,15 +43,17 @@ code {
 
 .ant-input,
 .ant-input-affix-wrapper {
-  background-color: #fff;
-  opacity: 0.6;
+  background-color: rgba(255, 255, 255, 0.6);
 }
 .ant-form-item-label > label {
   font-size: 18px;
 }
+.ant-timeline-item {
+  font-size: 18px;
+}
 
 // 公共
-pre{
+pre {
   background-color: #f5f5f5;
   padding: 20px;
   border-radius: 10px;
@@ -54,7 +61,7 @@ pre{
 .opacity8 {
   opacity: 0.8;
 }
-.h-card{
+.h-card {
   width: 100%;
   background-color: #fff;
   overflow: hidden;
@@ -66,16 +73,16 @@ pre{
 // 滚动条
 .layout::-webkit-scrollbar {
   /*滚动条整体样式*/
-  width : 8px;  /*高宽分别对应横竖滚动条的尺寸*/
+  width: 8px; /*高宽分别对应横竖滚动条的尺寸*/
   height: 1px;
 }
 .layout::-webkit-scrollbar-thumb {
   /*滚动条里面小方块*/
   border-radius: 8px;
-  box-shadow   : inset 0 0 5px rgba(0, 0, 0, 0.2);
-  background   : #989898;
+  box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
+  background: #989898;
 }
 .layout::-webkit-scrollbar-track {
   /*滚动条里面轨道*/
-  background   : transparent;
+  background: transparent;
 }

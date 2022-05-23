@@ -8,7 +8,6 @@ import {
 } from "react-router-dom";
 import { Row, Col, Menu } from "antd";
 
-
 import { RoutersList, AdminRoutersList } from "@/router/router";
 
 import AboutMe from "@pages/aboutMe/index";
@@ -16,6 +15,7 @@ import Footer from "@pages/footer/index";
 import Classify from "@pages/classify/index";
 import Nav from "@pages/nav/index";
 import Loading from "@components/Loading/index";
+import Login from "@pages/login/index";
 import "./index.less";
 
 const Admin = lazy(() => import("@pages/admin/index"));
@@ -115,6 +115,14 @@ const App = () => {
             );
           })}
         </Route>
+        <Route
+          path="/login"
+          element={
+            <Suspense fallback={<Loading />}>
+              <Login />
+            </Suspense>
+          }
+        ></Route>
       </Routes>
     </Router>
   );

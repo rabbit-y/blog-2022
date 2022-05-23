@@ -1,6 +1,13 @@
-.mark-title{
+.mark-title {
   margin-bottom: 20px;
-  .ant-page-header-heading-title{
+  .mark-title-all {
+    cursor: pointer;
+    color: @primary-color;
+  }
+  .mark-title-type {
+    color: @primary-color;
+  }
+  .ant-page-header-heading-title {
     color: @primary-color;
   }
 }
@@ -18,6 +25,9 @@
     }
     .mark-dtl-cont {
       margin-top: 20px;
+      img {
+        max-width: 100%;
+      }
     }
   }
   .mark-dtl-support {
@@ -74,32 +84,32 @@
     }
   }
 }
-.mark-list{
-    .mark-list-page {
-      margin-bottom: 18px;
-      padding: 20px;
-      .mark-list-page-title {
+.mark-list {
+  .mark-list-page {
+    margin-bottom: 18px;
+    padding: 20px;
+    .mark-list-page-title {
+      font-weight: bold;
+      font-size: 30px;
+    }
+    .mark-list-page-dec {
+      line-height: 1.87;
+      text-align: justify;
+    }
+    .mark-list-page-msg {
+      line-height: 48px;
+      vertical-align: middle;
+      font-size: 16px;
+      span {
+        margin-right: 8px;
         font-weight: bold;
-        font-size: 25px;
-      }
-      .mark-list-page-dec {
-        line-height: 1.77;
-        text-align: justify;
-      }
-      .mark-list-page-msg {
-        line-height: 48px;
-        vertical-align: middle;
-        font-size: 16px;
-        span {
-          margin-right: 8px;
-          font-weight: bold;
-        }
       }
     }
+  }
 }
-.mark-list-more{
+.mark-list-more {
   text-align: center;
-  div{
+  div {
     display: inline-block;
     background-color: @primary-color;
     opacity: 0.6;

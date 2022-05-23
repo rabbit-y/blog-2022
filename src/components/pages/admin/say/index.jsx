@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
-import { Row, Col, Divider, message, Button, Pagination } from "antd";
+import { Row, Col, Divider, message, Button, Pagination, Modal } from "antd";
+import { ExclamationCircleOutlined } from "@ant-design/icons";
 import BraftEditor from "braft-editor";
 import ColorPicker from "braft-extensions/dist/color-picker";
 import moment from "moment";
@@ -41,22 +42,33 @@ export default function Say() {
     getList({ current: page });
   };
   const save = async (e) => {
-    const { code } = await (id
-      ? api.mood.updateById.request(null, {
-          data: {
-            id,
-            content: editorState.toHTML(),
-          },
-        })
-      : api.mood.save.request(null, {
-          data: {
-            content: editorState.toHTML(),
-          },
-        }));
+    const { code } = await api.mood[id ? "updateById" : "save"].request(null, {
+      data: {
+        id,
+        content: editorState.toHTML(),
+      },
+    });
     if (code === 0) {
       message.success("success");
       getList({ current: 1, size: 5 });
     }
+  };
+
+  // 删除
+  const delect = (id) => {
+    Modal.confirm({
+      title: "提示",
+      icon: <ExclamationCircleOutlined />,
+      content: "是否确认删除",
+      okText: "确认",
+      cancelText: "取消",
+      onOk: async () => {
+        const { code } = await api.mood.removeById.request({ id });
+        if (code === 0) {
+          getList();
+        }
+      },
+    });
   };
   return (
     <div className="admin-say">
@@ -98,6 +110,13 @@ export default function Say() {
                         }}
                       >
                         编辑
+                      </span>
+                      <span
+                        onClick={() => {
+                          delect(item.id);
+                        }}
+                      >
+                        删除
                       </span>
                     </div>
                   </Divider>

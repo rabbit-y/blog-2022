@@ -58,19 +58,15 @@ export default function Say() {
             </Timeline.Item>
           );
         })}
-        <Timeline.Item
-          dot={<IconFont type="h-xiaoxiong1" style={{ fontSize: 28 }} />}
-        >
-          {list.length < pageList.total ? (
+        {list.length < pageList.total && (
+          <Timeline.Item
+            dot={<IconFont type="h-xiaoxiong1" style={{ fontSize: 28 }} />}
+          >
             <div className="say-list-more" onClick={more}>
               ... 查看更多 ...
             </div>
-          ) : (
-            <div className="say-list-more" onClick={more}>
-              没有更多啦！！！！！
-            </div>
-          )}
-        </Timeline.Item>
+          </Timeline.Item>
+        )}
       </Timeline>
     </div>
   );

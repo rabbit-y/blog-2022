@@ -1,15 +1,18 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Tag, Space, Button, Modal } from "antd";
 import { Link, useNavigate } from "react-router-dom";
+import moment from "moment";
 import MyTable from "@components/Table/index";
 import { api } from "@api/index";
 import { ExclamationCircleOutlined } from "@ant-design/icons";
-import { useEffect } from "react";
-import moment from "moment";
 import "./index.less";
 export default function Mark() {
   const navigate = useNavigate();
   const [mark, setMark] = useState([]);
+  const [pagination, setPagination] = useState({
+    defaultPageSize: 18,
+    size: 18,
+  });
   const columns = [
     {
       title: "标题",
@@ -39,7 +42,7 @@ export default function Mark() {
             <Link to={id}>修改</Link>
             <span
               onClick={() => {
-                delect(id);
+                delect(record.id);
               }}
             >
               删除
@@ -52,13 +55,17 @@ export default function Mark() {
   useEffect(() => {
     getList();
   }, []);
-  const getList = async (type) => {
+  const getList = async (e) => {
     const {
       code,
-      data: { records },
-    } = await api.article.getList.request({ typeId: type });
+      data: { records, total, current },
+    } = await api.article.getList.request({
+      ...pagination,
+      current: e ? e : 1,
+    });
     if (code === 0) {
       setMark(records);
+      setPagination({ ...pagination, total, current });
     }
   };
   // 删除
@@ -71,6 +78,9 @@ export default function Mark() {
       cancelText: "取消",
       onOk: async () => {
         const { code } = await api.article.removeById.request({ id });
+        if (code == 0) {
+          getList(1);
+        }
       },
     });
   };
@@ -83,6 +93,12 @@ export default function Mark() {
         columns={columns}
         data={mark}
         option={{
+          pagination: {
+            ...pagination,
+            onChange: (page, pageSize) => {
+              getList(page);
+            },
+          },
           title: () => (
             <div>
               <Button type="primary" onClick={jumpDtl}>

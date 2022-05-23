@@ -1,8 +1,5 @@
 import { lazy } from 'react';
-// {
-//   path: '/index',
-//   element: lazy(() => import("@pages/index/index"))
-// },
+
 export const RoutersList = [
   {
     path: '/index',
@@ -14,7 +11,7 @@ export const RoutersList = [
     child: [{
       path: '/mark',
       element: lazy(() => import("@pages/mark/list"))
-    },{
+    }, {
       path: ':type',
       element: lazy(() => import("@pages/mark/list"))
     }, {
@@ -49,6 +46,14 @@ export const AdminRoutersList = [
     }, {
       path: '/admin/mark/:id',
       element: lazy(() => import("@pages/admin/mark/dtl"))
+    }]
+  },
+  {
+    path: 'classify',
+    element: lazy(() => import("@pages/admin/classify/index")),
+    child: [{
+      path: '/admin/classify',
+      element: lazy(() => import("@pages/admin/classify/list"))
     }]
   }
 ]
