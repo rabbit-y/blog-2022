@@ -14,17 +14,44 @@ module.exports = {
 
   ROTER: [
     {
-      key: 'index',
-      path: '/index',
-      name: '首页'
+      key: '/index',
+      label: '首页'
+    }, {
+      key: '/mark',
+      label: '通往学习的大门',
+    }, {
+      key: '/bilibili',
+      label: '追番',
+    }
+  ],
+  ADMINOTER: [
+    {
+      key: '/admin',
+      label: '首页'
+    }, {
+      key: 'profile',
+      label: '用户管理',
+      children: [{ label: '站长资料', key: '/admin/profile' }]
     }, {
       key: 'mark',
-      path: '/mark',
-      name: '通往学习的大门',
+      label: '文档',
+      children: [
+        { label: '碎碎念', key: '/admin/say' },
+        { label: '文档', key: '/admin/mark' }
+      ]
     }, {
-      key: 'bilibili',
-      path: '/bilibili',
-      name: '追番',
+      key: 'classify',
+      label: '参数管理',
+      children: [
+        { label: '分类管理', key: '/admin/classify' }
+      ]
+    }
+  ],
+  ABOUTLINK: [
+    {
+      name: 'gitee',
+      icon: 'h-gitee',
+      url: 'https://gitee.com/han96'
     }
   ]
 

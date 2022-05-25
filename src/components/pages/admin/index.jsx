@@ -1,19 +1,27 @@
 import { Layout, Menu } from "antd";
-import {
-  DesktopOutlined,
-  HomeOutlined,
-  SettingOutlined,
-  UserOutlined,
-} from "@ant-design/icons";
-import { useState } from "react";
-import { Link, Outlet } from "react-router-dom";
+import { useState, useEffect } from "react";
+import { useNavigate, useLocation, Outlet } from "react-router-dom";
+import { useSelector, useDispatch } from "react-redux";
+import { setRouterKey } from "../../../store";
+import { ADMINOTER } from "@utils/variable";
 import "./index.less";
 
 const { Content, Sider } = Layout;
-const { SubMenu } = Menu;
 
 export default function Admin() {
   const [collapsed, setCollapsed] = useState(false);
+  const navigate = useNavigate();
+  const location = useLocation();
+  const routerKey = useSelector((state) => state.routerKey);
+  const dispatch = useDispatch();
+  useEffect(() => {
+    dispatch(setRouterKey(location.pathname));
+  }, []);
+  // 导航跳转
+  const menuClick = ({ key }) => {
+    navigate(key);
+    dispatch(setRouterKey(key));
+  };
   const onCollapse = () => {
     setCollapsed(!collapsed);
   };
@@ -21,30 +29,13 @@ export default function Admin() {
     <Layout id="admin" style={{ minHeight: "100vh" }}>
       <Sider collapsible collapsed={collapsed} onCollapse={onCollapse}>
         <div className="logo" />
-        <Menu theme="dark" defaultSelectedKeys={["1"]} mode="inline">
-          <Menu.Item key="1" icon={<HomeOutlined />}>
-            <Link to="/admin">首页</Link>
-          </Menu.Item>
-          <SubMenu key="sub1" icon={<UserOutlined />} title="用户管理">
-            <Menu.Item key="2">
-              <Link to="/admin/profile">站长资料</Link>
-            </Menu.Item>
-            <Menu.Item key="3">用户管理</Menu.Item>
-          </SubMenu>
-          <SubMenu key="sub2" icon={<DesktopOutlined />} title="文章管理">
-            <Menu.Item key="4">
-              <Link to="/admin/say">碎碎念</Link>
-            </Menu.Item>
-            <Menu.Item key="5">
-              <Link to="/admin/mark">文档</Link>
-            </Menu.Item>
-          </SubMenu>
-          <SubMenu key="sub3" icon={<SettingOutlined />} title="参数管理">
-            <Menu.Item key="6">
-              <Link to="/admin/classify">分类管理</Link>
-            </Menu.Item>
-          </SubMenu>
-        </Menu>
+        <Menu
+          theme="dark"
+          mode="inline"
+          selectedKeys={[routerKey]}
+          items={ADMINOTER}
+          onClick={menuClick}
+        />
       </Sider>
       <Layout>
         <Content style={{ margin: "0 16px" }}>

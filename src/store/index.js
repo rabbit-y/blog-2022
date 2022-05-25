@@ -21,12 +21,13 @@ const AppSlice = createSlice({
   initialState: {
     // 初始值
     types: [],
+    // 首页导航当前选中判断
+    routerKey: '/index'
   },
   reducers: {
-    // 这里的属性会自动的导出为actions，在组件中可以直接通过dispatch进行触发
-    // updateTypes(state, { payload }) {
-    //   state.types = payload;
-    // },
+    setRouterKey(state, { payload }) {
+      state.routerKey = payload
+    }
   },
   extraReducers: {
     [fetchTypes.fulfilled]: (state, { payload }) => {
@@ -35,12 +36,8 @@ const AppSlice = createSlice({
   },
 });
 
-export const { updateTypes } = AppSlice.actions;
+export const { setRouterKey } = AppSlice.actions;
 
 export default configureStore({
   reducer: AppSlice.reducer,
 });
-
-// 页面如此使用
-// import { useDispatch } from 'react-redux';
-// dispatch(updateTypes(data))

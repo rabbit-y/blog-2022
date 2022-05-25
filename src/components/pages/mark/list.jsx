@@ -36,8 +36,8 @@ export default function List() {
   };
   return (
     <div>
-      <div className="mark-title">
-        {params.type && (
+      {params.type && (
+        <div className="mark-title">
           <div
             className="mark-title-all"
             onClick={() => {
@@ -46,8 +46,8 @@ export default function List() {
           >
             点击返回全部
           </div>
-        )}
-      </div>
+        </div>
+      )}
       <div className="mark-list">
         {mark?.map((item, index) => (
           <div

@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { PageHeader, Divider, Form, Input, Button } from "antd";
+import { Divider, Form, Input, Button } from "antd";
 import { useParams, useNavigate } from "react-router-dom";
 import Editor from "md-editor-rt";
 import hljs from "highlight.js";
@@ -50,11 +50,13 @@ const Dtl = () => {
   };
   return (
     <div className="mark-dtl">
-      <div className="mark-title">
-        <PageHeader
-          onBack={() => navigate(-1)}
-          title={dtl.typeName ? dtl.typeName : "返回"}
-        />
+      <div
+        className="mark-title"
+        onClick={() => {
+          navigate(-1);
+        }}
+      >
+        返回
       </div>
       <div className="mark-dtl-all">
         <h1>{dtl.title}</h1>
@@ -67,7 +69,7 @@ const Dtl = () => {
         </div>
         <div className="mark-dtl-cont">
           <Editor
-            editorClass="mark-markdown-cls"
+            editorClass="mark-markdown-cls mark-dtl-editor"
             previewOnly="true"
             modelValue={html}
             previewTheme="github"

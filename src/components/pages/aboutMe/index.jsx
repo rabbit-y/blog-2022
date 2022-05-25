@@ -1,5 +1,6 @@
 import IconFont from "../../component/Icon/index";
 import { useSelector } from "react-redux";
+import { ABOUTLINK } from "@utils/variable";
 import "./index.less";
 
 export default function About() {
@@ -14,7 +15,16 @@ export default function About() {
         <div>{USER.other && JSON.parse(USER.other).dec}</div>
       </div>
       <div className="about-link">
-        <IconFont type="h-gitee" />
+        {ABOUTLINK.map((item) => (
+          <div
+            key={item.name}
+            onClick={() => {
+              window.open(item.url);
+            }}
+          >
+            <IconFont type={item.icon} />
+          </div>
+        ))}
       </div>
     </div>
   );
