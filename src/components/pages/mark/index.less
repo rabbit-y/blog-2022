@@ -1,21 +1,24 @@
-.mark-title {
-  margin-bottom: 20px;
-  .mark-title-all {
-    cursor: pointer;
-    color: @primary-color;
-  }
-  .mark-title-type {
-    color: @primary-color;
-  }
-}
 .mark-dtl {
+  position: relative;
+  .mark-title {
+    margin-bottom: 20px;
+    font-size: 18px;
+    position: absolute;
+    left: 0;
+    top: 10px;
+    color: @primary-color;
+    cursor: pointer;
+  }
+
   .mark-dtl-all {
     h1 {
       font-size: 34px;
+      text-align: center;
     }
     .mark-dtl-title {
       font-size: 18px;
       padding: 12px 0;
+      text-align: center;
       span {
         margin-right: 10px;
       }

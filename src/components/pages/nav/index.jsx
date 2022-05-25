@@ -14,7 +14,8 @@ const Nav = () => {
   const routerKey = useSelector((state) => state.routerKey);
   const dispatch = useDispatch();
   useEffect(() => {
-    dispatch(setRouterKey(location.pathname));
+    const key = "/" + location.pathname.split("/")[1];
+    dispatch(setRouterKey(key));
   }, []);
   // 导航跳转
   const menuClick = ({ key }) => {
