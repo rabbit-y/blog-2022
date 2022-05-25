@@ -49,12 +49,12 @@ export default function Say() {
               <div className="say-list-cont">
                 <div dangerouslySetInnerHTML={{ __html: item.content }}></div>
               </div>
-              <div className="say-list-other">
+              {/* <div className="say-list-other">
                 <div>
                   <IconFont type="h-icon" style={{ fontSize: 18 }} />
                   <span> 24人点赞</span>
                 </div>
-              </div>
+              </div> */}
             </Timeline.Item>
           );
         })}
