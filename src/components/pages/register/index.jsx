@@ -3,6 +3,7 @@ import { api } from "@api/index";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import { MailOutlined, LockOutlined, UserOutlined } from "@ant-design/icons";
+import { STATION } from "@utils/variable";
 
 import "./index.less";
 
@@ -20,6 +21,7 @@ const Register = () => {
   return (
     <div className="login">
       <div className="login-box">
+        <div className="login-name">{STATION.name}</div>
         <Form
           form={form}
           onFinish={onFinish}

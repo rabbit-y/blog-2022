@@ -1,14 +1,20 @@
 .login {
-  background-color: #f7f7;
+  background-color: @primary-color;
   height: 100vh;
-  padding-top: 20vh;
+  padding-top: 16vh;
   .login-box {
-    background-color: rgb(255, 255, 255);
+    background-color: rgba(255, 255, 255);
     margin: 0 auto;
     width: 400px;
     padding: 30px;
     border-radius: 20px;
     text-align: center;
+    .login-name {
+      font: bold 40px/1.12 "Times New Roman", Georgia, Times, sans-serif;
+      font-family: titleFont;
+      color: @primary-color;
+      padding-bottom: 30px;
+    }
     .login-tip {
       padding: 10px 0;
     }

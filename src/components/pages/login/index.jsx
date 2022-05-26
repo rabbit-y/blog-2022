@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import { MailOutlined, LockOutlined } from "@ant-design/icons";
 import emitter from "@utils/emitter";
+import { STATION } from "@utils/variable";
 
 import "./index.less";
 
@@ -27,6 +28,7 @@ const Login = () => {
   return (
     <div className="login">
       <div className="login-box">
+        <div className="login-name">{STATION.name}</div>
         <Form
           form={form}
           onFinish={onFinish}

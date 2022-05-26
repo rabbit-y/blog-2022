@@ -37,15 +37,13 @@ export default function List() {
   return (
     <div>
       {params.type && (
-        <div className="mark-title">
-          <div
-            className="mark-title-all"
-            onClick={() => {
-              navigate("/mark");
-            }}
-          >
-            点击返回全部
-          </div>
+        <div
+          className="mark-title"
+          onClick={() => {
+            navigate("/mark");
+          }}
+        >
+          点击返回全部
         </div>
       )}
       <div className="mark-list">
