@@ -1,4 +1,4 @@
-import { Suspense, lazy } from "react";
+import { Suspense, lazy, useEffect } from "react";
 import {
   HashRouter as Router,
   Route,
@@ -6,7 +6,7 @@ import {
   Navigate,
   Link,
 } from "react-router-dom";
-import { Row, Col, Menu } from "antd";
+import { Row, Col } from "antd";
 
 import { RoutersList, AdminRoutersList } from "@/router/router";
 

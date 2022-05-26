@@ -72,7 +72,7 @@ export default function Say() {
   };
   return (
     <div className="admin-say">
-      <Row>
+      <Row wrap={false}>
         <Col flex="500px">
           <div className="admin-say-btn">
             <Button type="primary" onClick={newEditor}>

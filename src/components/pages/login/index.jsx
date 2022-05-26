@@ -3,6 +3,7 @@ import { api } from "@api/index";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import { MailOutlined, LockOutlined } from "@ant-design/icons";
+import emitter from "@utils/emitter";
 
 import "./index.less";
 
@@ -18,6 +19,7 @@ const Login = () => {
         await api.other.getUserInfo.request();
       if (userCode === 0) {
         localStorage.setItem("h-userInfo", JSON.stringify(userData));
+        emitter.emit("login");
         navigate(-1);
       }
     }

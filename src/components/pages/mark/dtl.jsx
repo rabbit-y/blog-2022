@@ -1,27 +1,28 @@
 import { useState, useEffect } from "react";
-import { Divider, Form, Input, Button } from "antd";
+import { Divider, Row, Col } from "antd";
 import { useParams, useNavigate } from "react-router-dom";
 import Editor from "md-editor-rt";
 import { api } from "@api/index";
 import IconFont from "@components/Icon/index";
-import Liked from "@components/Liked/index";
 import moment from "moment";
+import BraftEditor from "braft-editor";
+import ColorPicker from "braft-extensions/dist/color-picker";
 
+import "braft-extensions/dist/color-picker.css";
 import "md-editor-rt/lib/style.css";
+import "braft-editor/dist/index.css";
 import "./index.less";
 
-const layout = {
-  labelCol: { span: 2 },
-  wrapperCol: { span: 10 },
-};
+BraftEditor.use(ColorPicker());
 const Dtl = () => {
-  const [form] = Form.useForm();
   const searchParams = useParams();
   const navigate = useNavigate();
-  const [isLogin, setIsLogin] = useState(false);
   const [user, setUser] = useState({});
   const [dtl, setDtl] = useState({});
   const [html, setHtml] = useState("");
+  const [editorState, setEditorState] = useState(
+    BraftEditor.createEditorState(null)
+  );
   useEffect(() => {
     const userInfo = localStorage.getItem("h-userInfo");
     setUser(userInfo ? JSON.parse(userInfo) : {});
@@ -35,7 +36,6 @@ const Dtl = () => {
       setDtl(data);
     }
   };
-
   return (
     <div className="mark-dtl">
       <div
@@ -64,12 +64,7 @@ const Dtl = () => {
           />
         </div>
       </div>
-      <div className="mark-dtl-support">
-        {/* <div>
-          <Liked />
-          <p>(80)</p>
-        </div> */}
-      </div>
+      <div className="mark-dtl-support"></div>
       <div>
         <Divider plain>
           <span className="mark-dtl-tip">
@@ -77,12 +72,33 @@ const Dtl = () => {
             收到回复会有邮件提醒呦~
           </span>
         </Divider>
-        <div className="mark-user opacity8">
-          <div className="mark-user-msg">
-            <img src={user?.avatar} alt="头像" />
-            <span>@ {user?.nickname}</span>
-          </div>
-          <div className="mark-user-comment"></div>
+        <div className="mark-user">
+          <Row wrap={false}>
+            <Col flex="none">
+              <div
+                className="mark-user-msg"
+                onClick={() => {
+                  navigate("/login");
+                }}
+              >
+                <img
+                  src={
+                    user?.avatar
+                      ? user?.avatar
+                      : "https://cos.han96.com/blog/headers/3"
+                  }
+                  alt="头像"
+                />
+                <div>{user?.nickname ? "@ " + user?.nickname : "未登录"}</div>
+              </div>
+            </Col>
+            <Col flex="atuo">
+              <div className="mark-user-comment">
+                <BraftEditor value={editorState} onChange={setEditorState} />
+                <div className="mark-user-comment-btn">发布评论</div>
+              </div>
+            </Col>
+          </Row>
         </div>
       </div>
     </div>
