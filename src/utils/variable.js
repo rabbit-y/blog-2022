@@ -1,15 +1,10 @@
 module.exports = {
-  ICON_URL: '//at.alicdn.com/t/font_3116948_wvxi0250y4s.js',
+  ICON_URL: '//at.alicdn.com/t/font_3116948_7fy7fumk4v6.js',
 
   STATION: {
-    name: '花呗の碎碎念',
+    name: '花贝の碎碎念',
     dec: 'The tough road often leads to the top. 艰难的道路经常通往高处',
     putOnRecord: '京ICP备2021005859号'
-  },
-  USER: {
-    name: '@Blue',
-    header: 'https://img2.baidu.com/it/u=395719964,2145680590&fm=26&fmt=auto',
-    dec: '一个社恐的人'
   },
 
   ROTER: [

@@ -386,33 +386,14 @@
         "description": "Basic Error Controller",
         "interfaces": [
           {
-            "description": "error",
-            "name": "error",
+            "description": "errorHtml",
+            "name": "errorHtml",
             "method": "get",
             "path": "/error",
             "response": {
-              "typeArgs": [
-                {
-                  "typeArgs": [],
-                  "typeName": "",
-                  "isDefsType": false,
-                  "templateIndex": -1,
-                  "compileTemplateKeyword": "#/definitions/",
-                  "enum": [],
-                  "typeProperties": []
-                },
-                {
-                  "typeArgs": [],
-                  "typeName": "object",
-                  "isDefsType": false,
-                  "templateIndex": -1,
-                  "compileTemplateKeyword": "#/definitions/",
-                  "enum": [],
-                  "typeProperties": []
-                }
-              ],
-              "typeName": "ObjectMap",
-              "isDefsType": false,
+              "typeArgs": [],
+              "typeName": "ModelAndView",
+              "isDefsType": true,
               "templateIndex": -1,
               "compileTemplateKeyword": "#/definitions/",
               "enum": [],
@@ -421,33 +402,14 @@
             "parameters": []
           },
           {
-            "description": "error",
+            "description": "errorHtml",
             "name": "putError",
             "method": "put",
             "path": "/error",
             "response": {
-              "typeArgs": [
-                {
-                  "typeArgs": [],
-                  "typeName": "",
-                  "isDefsType": false,
-                  "templateIndex": -1,
-                  "compileTemplateKeyword": "#/definitions/",
-                  "enum": [],
-                  "typeProperties": []
-                },
-                {
-                  "typeArgs": [],
-                  "typeName": "object",
-                  "isDefsType": false,
-                  "templateIndex": -1,
-                  "compileTemplateKeyword": "#/definitions/",
-                  "enum": [],
-                  "typeProperties": []
-                }
-              ],
-              "typeName": "ObjectMap",
-              "isDefsType": false,
+              "typeArgs": [],
+              "typeName": "ModelAndView",
+              "isDefsType": true,
               "templateIndex": -1,
               "compileTemplateKeyword": "#/definitions/",
               "enum": [],
@@ -456,33 +418,14 @@
             "parameters": []
           },
           {
-            "description": "error",
+            "description": "errorHtml",
             "name": "postError",
             "method": "post",
             "path": "/error",
             "response": {
-              "typeArgs": [
-                {
-                  "typeArgs": [],
-                  "typeName": "",
-                  "isDefsType": false,
-                  "templateIndex": -1,
-                  "compileTemplateKeyword": "#/definitions/",
-                  "enum": [],
-                  "typeProperties": []
-                },
-                {
-                  "typeArgs": [],
-                  "typeName": "object",
-                  "isDefsType": false,
-                  "templateIndex": -1,
-                  "compileTemplateKeyword": "#/definitions/",
-                  "enum": [],
-                  "typeProperties": []
-                }
-              ],
-              "typeName": "ObjectMap",
-              "isDefsType": false,
+              "typeArgs": [],
+              "typeName": "ModelAndView",
+              "isDefsType": true,
               "templateIndex": -1,
               "compileTemplateKeyword": "#/definitions/",
               "enum": [],
@@ -491,33 +434,14 @@
             "parameters": []
           },
           {
-            "description": "error",
+            "description": "errorHtml",
             "name": "deleteError",
             "method": "delete",
             "path": "/error",
             "response": {
-              "typeArgs": [
-                {
-                  "typeArgs": [],
-                  "typeName": "",
-                  "isDefsType": false,
-                  "templateIndex": -1,
-                  "compileTemplateKeyword": "#/definitions/",
-                  "enum": [],
-                  "typeProperties": []
-                },
-                {
-                  "typeArgs": [],
-                  "typeName": "object",
-                  "isDefsType": false,
-                  "templateIndex": -1,
-                  "compileTemplateKeyword": "#/definitions/",
-                  "enum": [],
-                  "typeProperties": []
-                }
-              ],
-              "typeName": "ObjectMap",
-              "isDefsType": false,
+              "typeArgs": [],
+              "typeName": "ModelAndView",
+              "isDefsType": true,
               "templateIndex": -1,
               "compileTemplateKeyword": "#/definitions/",
               "enum": [],
@@ -526,33 +450,14 @@
             "parameters": []
           },
           {
-            "description": "error",
+            "description": "errorHtml",
             "name": "optionsError",
             "method": "options",
             "path": "/error",
             "response": {
-              "typeArgs": [
-                {
-                  "typeArgs": [],
-                  "typeName": "",
-                  "isDefsType": false,
-                  "templateIndex": -1,
-                  "compileTemplateKeyword": "#/definitions/",
-                  "enum": [],
-                  "typeProperties": []
-                },
-                {
-                  "typeArgs": [],
-                  "typeName": "object",
-                  "isDefsType": false,
-                  "templateIndex": -1,
-                  "compileTemplateKeyword": "#/definitions/",
-                  "enum": [],
-                  "typeProperties": []
-                }
-              ],
-              "typeName": "ObjectMap",
-              "isDefsType": false,
+              "typeArgs": [],
+              "typeName": "ModelAndView",
+              "isDefsType": true,
               "templateIndex": -1,
               "compileTemplateKeyword": "#/definitions/",
               "enum": [],
@@ -561,33 +466,14 @@
             "parameters": []
           },
           {
-            "description": "error",
+            "description": "errorHtml",
             "name": "headError",
             "method": "head",
             "path": "/error",
             "response": {
-              "typeArgs": [
-                {
-                  "typeArgs": [],
-                  "typeName": "",
-                  "isDefsType": false,
-                  "templateIndex": -1,
-                  "compileTemplateKeyword": "#/definitions/",
-                  "enum": [],
-                  "typeProperties": []
-                },
-                {
-                  "typeArgs": [],
-                  "typeName": "object",
-                  "isDefsType": false,
-                  "templateIndex": -1,
-                  "compileTemplateKeyword": "#/definitions/",
-                  "enum": [],
-                  "typeProperties": []
-                }
-              ],
-              "typeName": "ObjectMap",
-              "isDefsType": false,
+              "typeArgs": [],
+              "typeName": "ModelAndView",
+              "isDefsType": true,
               "templateIndex": -1,
               "compileTemplateKeyword": "#/definitions/",
               "enum": [],
@@ -596,33 +482,14 @@
             "parameters": []
           },
           {
-            "description": "error",
+            "description": "errorHtml",
             "name": "patchError",
             "method": "patch",
             "path": "/error",
             "response": {
-              "typeArgs": [
-                {
-                  "typeArgs": [],
-                  "typeName": "",
-                  "isDefsType": false,
-                  "templateIndex": -1,
-                  "compileTemplateKeyword": "#/definitions/",
-                  "enum": [],
-                  "typeProperties": []
-                },
-                {
-                  "typeArgs": [],
-                  "typeName": "object",
-                  "isDefsType": false,
-                  "templateIndex": -1,
-                  "compileTemplateKeyword": "#/definitions/",
-                  "enum": [],
-                  "typeProperties": []
-                }
-              ],
-              "typeName": "ObjectMap",
-              "isDefsType": false,
+              "typeArgs": [],
+              "typeName": "ModelAndView",
+              "isDefsType": true,
               "templateIndex": -1,
               "compileTemplateKeyword": "#/definitions/",
               "enum": [],
@@ -631,33 +498,14 @@
             "parameters": []
           },
           {
-            "description": "error",
+            "description": "errorHtml",
             "name": "traceError",
             "method": "trace",
             "path": "/error",
             "response": {
-              "typeArgs": [
-                {
-                  "typeArgs": [],
-                  "typeName": "",
-                  "isDefsType": false,
-                  "templateIndex": -1,
-                  "compileTemplateKeyword": "#/definitions/",
-                  "enum": [],
-                  "typeProperties": []
-                },
-                {
-                  "typeArgs": [],
-                  "typeName": "object",
-                  "isDefsType": false,
-                  "templateIndex": -1,
-                  "compileTemplateKeyword": "#/definitions/",
-                  "enum": [],
-                  "typeProperties": []
-                }
-              ],
-              "typeName": "ObjectMap",
-              "isDefsType": false,
+              "typeArgs": [],
+              "typeName": "ModelAndView",
+              "isDefsType": true,
               "templateIndex": -1,
               "compileTemplateKeyword": "#/definitions/",
               "enum": [],
@@ -908,6 +756,44 @@
           }
         ],
         "name": "comment"
+      },
+      {
+        "description": "Elog Controller",
+        "interfaces": [
+          {
+            "description": "日志列表",
+            "name": "getList",
+            "method": "get",
+            "path": "/log",
+            "response": {
+              "typeArgs": [],
+              "typeName": "JsonResult",
+              "isDefsType": true,
+              "templateIndex": -1,
+              "compileTemplateKeyword": "#/definitions/",
+              "enum": [],
+              "typeProperties": []
+            },
+            "parameters": []
+          },
+          {
+            "description": "新增日志",
+            "name": "uploadLog",
+            "method": "post",
+            "path": "/log",
+            "response": {
+              "typeArgs": [],
+              "typeName": "JsonResult",
+              "isDefsType": true,
+              "templateIndex": -1,
+              "compileTemplateKeyword": "#/definitions/",
+              "enum": [],
+              "typeProperties": []
+            },
+            "parameters": []
+          }
+        ],
+        "name": "elog"
       },
       {
         "description": "Mood Controller",
@@ -1185,6 +1071,22 @@
             "name": "register",
             "method": "post",
             "path": "/reg",
+            "response": {
+              "typeArgs": [],
+              "typeName": "JsonResult",
+              "isDefsType": true,
+              "templateIndex": -1,
+              "compileTemplateKeyword": "#/definitions/",
+              "enum": [],
+              "typeProperties": []
+            },
+            "parameters": []
+          },
+          {
+            "description": "设置站长信息",
+            "name": "saveMaster",
+            "method": "post",
+            "path": "/saveMaster",
             "response": {
               "typeArgs": [],
               "typeName": "JsonResult",
@@ -2186,6 +2088,116 @@
       },
       {
         "name": "TheUserObject0",
+        "properties": [
+          {
+            "dataType": {
+              "typeArgs": [],
+              "typeName": "string",
+              "isDefsType": false,
+              "templateIndex": -1,
+              "compileTemplateKeyword": "#/definitions/",
+              "enum": [],
+              "typeProperties": []
+            },
+            "name": "avatar",
+            "required": false
+          },
+          {
+            "dataType": {
+              "typeArgs": [],
+              "typeName": "string",
+              "isDefsType": false,
+              "templateIndex": -1,
+              "compileTemplateKeyword": "#/definitions/",
+              "enum": [],
+              "typeProperties": []
+            },
+            "name": "blog",
+            "required": false
+          },
+          {
+            "dataType": {
+              "typeArgs": [],
+              "typeName": "string",
+              "isDefsType": false,
+              "templateIndex": -1,
+              "compileTemplateKeyword": "#/definitions/",
+              "enum": [],
+              "typeProperties": []
+            },
+            "name": "email",
+            "required": false
+          },
+          {
+            "dataType": {
+              "typeArgs": [],
+              "typeName": "number",
+              "isDefsType": false,
+              "templateIndex": -1,
+              "compileTemplateKeyword": "#/definitions/",
+              "enum": [],
+              "typeProperties": []
+            },
+            "name": "id",
+            "required": false
+          },
+          {
+            "dataType": {
+              "typeArgs": [],
+              "typeName": "string",
+              "isDefsType": false,
+              "templateIndex": -1,
+              "compileTemplateKeyword": "#/definitions/",
+              "enum": [],
+              "typeProperties": []
+            },
+            "name": "nickname",
+            "required": false
+          },
+          {
+            "dataType": {
+              "typeArgs": [],
+              "typeName": "string",
+              "isDefsType": false,
+              "templateIndex": -1,
+              "compileTemplateKeyword": "#/definitions/",
+              "enum": [],
+              "typeProperties": []
+            },
+            "name": "other",
+            "required": false
+          },
+          {
+            "dataType": {
+              "typeArgs": [],
+              "typeName": "string",
+              "isDefsType": false,
+              "templateIndex": -1,
+              "compileTemplateKeyword": "#/definitions/",
+              "enum": [],
+              "typeProperties": []
+            },
+            "name": "pwd",
+            "required": false
+          },
+          {
+            "dataType": {
+              "typeArgs": [],
+              "typeName": "string",
+              "isDefsType": false,
+              "templateIndex": -1,
+              "compileTemplateKeyword": "#/definitions/",
+              "enum": [],
+              "typeProperties": []
+            },
+            "name": "role",
+            "required": false
+          }
+        ],
+        "templateArgs": []
+      },
+      {
+        "name": "TheUserObject1",
         "properties": [
           {
             "dataType": {

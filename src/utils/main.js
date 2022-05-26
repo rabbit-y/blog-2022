@@ -1,7 +1,7 @@
 import axios from 'axios';
 import { message, Modal } from 'antd'
 import { ExclamationCircleOutlined } from '@ant-design/icons';
-import store, { fetchTypes } from '@/store';
+import store, { fetchTypes, getLogin } from '@/store';
 
 const { PontCore } = require('@api/pontCore')
 
@@ -54,3 +54,4 @@ pontCore.useFetch((url, fetchOption) => {
 
 // -------------------一些app全局的redux------------------------------
 store.dispatch(fetchTypes())
+store.dispatch(getLogin())

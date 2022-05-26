@@ -180,6 +180,32 @@ class TheUserObject0 {
   role = '';
 }
 
+class TheUserObject1 {
+  /** avatar */
+  avatar = '';
+
+  /** blog */
+  blog = '';
+
+  /** email */
+  email = '';
+
+  /** id */
+  id = undefined;
+
+  /** nickname */
+  nickname = '';
+
+  /** other */
+  other = '';
+
+  /** pwd */
+  pwd = '';
+
+  /** role */
+  role = '';
+}
+
 class View {
   /** contentType */
   contentType = '';
@@ -196,5 +222,6 @@ export const api = {
   TheTypeObject,
   TheUserObject,
   TheUserObject0,
+  TheUserObject1,
   View,
 };

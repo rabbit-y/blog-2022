@@ -254,6 +254,32 @@ declare namespace defs {
       role?: string;
     }
 
+    export class TheUserObject1 {
+      /** avatar */
+      avatar?: string;
+
+      /** blog */
+      blog?: string;
+
+      /** email */
+      email?: string;
+
+      /** id */
+      id?: number;
+
+      /** nickname */
+      nickname?: string;
+
+      /** other */
+      other?: string;
+
+      /** pwd */
+      pwd?: string;
+
+      /** role */
+      role?: string;
+    }
+
     export class View {
       /** contentType */
       contentType?: string;
@@ -385,13 +411,13 @@ declare namespace api {
    */
   export namespace basicError {
     /**
-     * error
+     * errorHtml
      * /error
      */
-    export namespace error {
+    export namespace errorHtml {
       export class Params {}
 
-      export type Response = ObjectMap<any, object>;
+      export type Response = defs.api.ModelAndView;
 
       export const init: Response;
 
@@ -399,13 +425,13 @@ declare namespace api {
     }
 
     /**
-     * error
+     * errorHtml
      * /error
      */
     export namespace putError {
       export class Params {}
 
-      export type Response = ObjectMap<any, object>;
+      export type Response = defs.api.ModelAndView;
 
       export const init: Response;
 
@@ -413,13 +439,13 @@ declare namespace api {
     }
 
     /**
-     * error
+     * errorHtml
      * /error
      */
     export namespace postError {
       export class Params {}
 
-      export type Response = ObjectMap<any, object>;
+      export type Response = defs.api.ModelAndView;
 
       export const init: Response;
 
@@ -427,13 +453,13 @@ declare namespace api {
     }
 
     /**
-     * error
+     * errorHtml
      * /error
      */
     export namespace deleteError {
       export class Params {}
 
-      export type Response = ObjectMap<any, object>;
+      export type Response = defs.api.ModelAndView;
 
       export const init: Response;
 
@@ -441,13 +467,13 @@ declare namespace api {
     }
 
     /**
-     * error
+     * errorHtml
      * /error
      */
     export namespace optionsError {
       export class Params {}
 
-      export type Response = ObjectMap<any, object>;
+      export type Response = defs.api.ModelAndView;
 
       export const init: Response;
 
@@ -455,13 +481,13 @@ declare namespace api {
     }
 
     /**
-     * error
+     * errorHtml
      * /error
      */
     export namespace headError {
       export class Params {}
 
-      export type Response = ObjectMap<any, object>;
+      export type Response = defs.api.ModelAndView;
 
       export const init: Response;
 
@@ -469,13 +495,13 @@ declare namespace api {
     }
 
     /**
-     * error
+     * errorHtml
      * /error
      */
     export namespace patchError {
       export class Params {}
 
-      export type Response = ObjectMap<any, object>;
+      export type Response = defs.api.ModelAndView;
 
       export const init: Response;
 
@@ -483,13 +509,13 @@ declare namespace api {
     }
 
     /**
-     * error
+     * errorHtml
      * /error
      */
     export namespace traceError {
       export class Params {}
 
-      export type Response = ObjectMap<any, object>;
+      export type Response = defs.api.ModelAndView;
 
       export const init: Response;
 
@@ -575,6 +601,39 @@ declare namespace api {
         /** id */
         id: any;
       }
+
+      export type Response = defs.api.JsonResult;
+
+      export const init: Response;
+
+      export function request(params: Params, options?: any): Promise<Response>;
+    }
+  }
+
+  /**
+   * Elog Controller
+   */
+  export namespace elog {
+    /**
+     * 日志列表
+     * /log
+     */
+    export namespace getList {
+      export class Params {}
+
+      export type Response = defs.api.JsonResult;
+
+      export const init: Response;
+
+      export function request(params: Params, options?: any): Promise<Response>;
+    }
+
+    /**
+     * 新增日志
+     * /log
+     */
+    export namespace uploadLog {
+      export class Params {}
 
       export type Response = defs.api.JsonResult;
 
@@ -726,6 +785,20 @@ declare namespace api {
      * /reg
      */
     export namespace register {
+      export class Params {}
+
+      export type Response = defs.api.JsonResult;
+
+      export const init: Response;
+
+      export function request(params: Params, options?: any): Promise<Response>;
+    }
+
+    /**
+     * 设置站长信息
+     * /saveMaster
+     */
+    export namespace saveMaster {
       export class Params {}
 
       export type Response = defs.api.JsonResult;
