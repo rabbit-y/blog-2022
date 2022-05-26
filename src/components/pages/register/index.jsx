@@ -45,7 +45,7 @@ const Register = () => {
             <Link to="/login">已有账号？去登录</Link>
           </div>
           <Button type="primary" htmlType="submit" block>
-            登录
+            注册
           </Button>
         </Form>
         <div className="login-tip">

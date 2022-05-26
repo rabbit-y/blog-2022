@@ -41,7 +41,7 @@ export default function Say() {
           return (
             <Timeline.Item
               key={index}
-              dot={<IconFont type="h-xiaoxiong" style={{ fontSize: 20 }} />}
+              dot={<IconFont type="h-claw" style={{ fontSize: 20 }} />}
             >
               <div className="say-list-time">
                 {moment(item.createTime).format("YYYY-MM-DD HH:mm:ss")}
@@ -60,7 +60,7 @@ export default function Say() {
         })}
         {list.length < pageList.total && (
           <Timeline.Item
-            dot={<IconFont type="h-xiaoxiong1" style={{ fontSize: 28 }} />}
+            dot={<IconFont type="h-claw1" style={{ fontSize: 28 }} />}
           >
             <div className="say-list-more" onClick={more}>
               ... 查看更多 ...

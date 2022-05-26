@@ -2,11 +2,12 @@ import { useState, useEffect } from "react";
 import { Divider, Row, Col } from "antd";
 import { useParams, useNavigate } from "react-router-dom";
 import Editor from "md-editor-rt";
-import { api } from "@api/index";
-import IconFont from "@components/Icon/index";
 import moment from "moment";
 import BraftEditor from "braft-editor";
 import ColorPicker from "braft-extensions/dist/color-picker";
+import { api } from "@api/index";
+import { useSelector } from "react-redux";
+import IconFont from "@components/Icon/index";
 
 import "braft-extensions/dist/color-picker.css";
 import "md-editor-rt/lib/style.css";
@@ -17,6 +18,7 @@ BraftEditor.use(ColorPicker());
 const Dtl = () => {
   const searchParams = useParams();
   const navigate = useNavigate();
+  const masterInfo = useSelector((state) => state.types);
   const [user, setUser] = useState({});
   const [dtl, setDtl] = useState({});
   const [html, setHtml] = useState("");
@@ -64,11 +66,36 @@ const Dtl = () => {
           />
         </div>
       </div>
-      <div className="mark-dtl-support"></div>
+      <div className="mark-dtl-CC opacity6 h-card">
+        <div>
+          版权属于：<a href={location.href}>@{masterInfo.nickname}</a>
+        </div>
+        <div>
+          本文链接：<a href={location.href}>{location.href}</a>
+        </div>
+        <div>
+          作品采用采用{" "}
+          <a
+            href="https://creativecommons.org/licenses/by-nc-sa/4.0/"
+            target="_blank"
+          >
+            CC BY-NC-SA 4.0
+          </a>
+          许可协议，转载请注明来自
+          <a href={location.href}>@{masterInfo.nickname}</a>
+        </div>
+      </div>
+      <div className="mark-dtl-support">
+        <Row justify="center">
+          <Col span={4}>
+            <IconFont type="h-fenxiang" className="mark-fenxiang" />
+          </Col>
+        </Row>
+      </div>
       <div>
         <Divider plain>
           <span className="mark-dtl-tip">
-            <IconFont type="h-xiaoxiong" />
+            <IconFont type="h-claw" />
             收到回复会有邮件提醒呦~
           </span>
         </Divider>

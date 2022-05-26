@@ -1,5 +1,5 @@
 module.exports = {
-  ICON_URL: '//at.alicdn.com/t/font_3116948_1hn0mciayyl.js',
+  ICON_URL: '//at.alicdn.com/t/font_3116948_wvxi0250y4s.js',
 
   STATION: {
     name: '花呗の碎碎念',

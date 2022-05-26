@@ -34,7 +34,7 @@ export default function Index() {
       {say && (
         <>
           <div className="index-title">
-            <IconFont type="h-xiaoxiong1" />
+            <IconFont type="h-claw1" />
             <div>
               我想说
               <div>{moment(say.createTime).fromNow()}</div>
@@ -57,7 +57,7 @@ export default function Index() {
         </>
       )}
       <div className="index-title">
-        <IconFont type="h-xiaoxiong1" />
+        <IconFont type="h-claw1" />
         <div>我学了</div>
       </div>
       <div>

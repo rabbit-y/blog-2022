@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import { useNavigate, useLocation, Outlet } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { setRouterKey } from "../../../store";
+import { api } from "@api/index";
 import { ADMINOTER } from "@utils/variable";
 import "./index.less";
 
@@ -16,7 +17,12 @@ export default function Admin() {
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(setRouterKey(location.pathname));
+    loginCheck();
   }, []);
+  // 登录判断
+  const loginCheck = async () => {
+    await api.other.getUserInfo.request();
+  };
   // 导航跳转
   const menuClick = ({ key }) => {
     navigate(key);

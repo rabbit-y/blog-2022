@@ -3,7 +3,6 @@ import { api } from "@api/index";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import { MailOutlined, LockOutlined } from "@ant-design/icons";
-import emitter from "@utils/emitter";
 import { STATION } from "@utils/variable";
 
 import "./index.less";
@@ -11,7 +10,6 @@ import "./index.less";
 const Login = () => {
   const [form] = Form.useForm();
   const navigate = useNavigate();
-
   // 登陆
   const onFinish = async (values) => {
     const { code } = await api.other.doLogin.request(values);
@@ -20,7 +18,6 @@ const Login = () => {
         await api.other.getUserInfo.request();
       if (userCode === 0) {
         localStorage.setItem("h-userInfo", JSON.stringify(userData));
-        emitter.emit("login");
         navigate(-1);
       }
     }

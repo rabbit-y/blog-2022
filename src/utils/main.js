@@ -2,7 +2,7 @@ import axios from 'axios';
 import { message, Modal } from 'antd'
 import { ExclamationCircleOutlined } from '@ant-design/icons';
 import store, { fetchTypes } from '@/store';
-import emitter from '@utils/emitter'
+
 const { PontCore } = require('@api/pontCore')
 
 
@@ -18,13 +18,17 @@ axiosInstanceForDing.interceptors.response.use(
     if (response.data.code === 0) {
       return Promise.resolve(response.data);
     } else if (response.data.code === 401) {
+      const lHost = window.location.origin
       localStorage.setItem("h-userInfo", '')
       Modal.confirm({
         title: '登录提示',
         icon: <ExclamationCircleOutlined />,
         content: response.data.msg,
         onOk() {
-          window.location.href = '#/login'
+          window.location.href = lHost + '#/login'
+        },
+        onCancel() {
+          window.location.href = lHost + '#/index'
         }
       });
       return Promise.resolve('');
@@ -50,8 +54,3 @@ pontCore.useFetch((url, fetchOption) => {
 
 // -------------------一些app全局的redux------------------------------
 store.dispatch(fetchTypes())
-
-// -------------------------登录处理----------------------------------
-// emitter.on('login', () => {
-//   const userInfo = localStorage.getItem("h-userInfo")
-// })

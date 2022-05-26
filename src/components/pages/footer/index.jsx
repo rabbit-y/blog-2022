@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { BackTop } from "antd";
 import moment from "moment";
 import IconFont from "../../component/Icon/index";
 import { STATION } from "@utils/variable";
@@ -13,17 +14,28 @@ export default function Footer() {
   return (
     <div className="footer">
       <div>
-        @{moment().format("yyyy")}
-        <IconFont type="h-xiaoxiong" />
-        {STATION.name}
-        <IconFont type="h-xiaoxiong" />
-        {STATION.putOnRecord}
+        <a href={location.href}>
+          @2019-@{moment().format("yyyy")}
+          <IconFont type="h-claw" />
+          {STATION.name}
+        </a>
+      </div>
+      <div>
+        <a
+          href="https://beian.miit.gov.cn/#/Integrated/recordQuery"
+          target="_blank"
+        >
+          {STATION.putOnRecord}
+        </a>
       </div>
       <div>
         来自{cityInfo?.cname}
-        <IconFont type="h-xiaoxiong" />
+        <IconFont type="h-claw" />
         IP为{cityInfo?.cip}的小伙伴
       </div>
+      <BackTop target={() => document.getElementsByClassName("layout")[0]}>
+        <IconFont type="h-fanhuidingbu" className="footer-back" />
+      </BackTop>
     </div>
   );
 }
