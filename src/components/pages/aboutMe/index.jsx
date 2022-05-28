@@ -1,7 +1,6 @@
 import { Popover } from "antd";
 import { useSelector } from "react-redux";
 import { ABOUTLINK } from "@utils/variable";
-import IconFont from "../../component/Icon/index";
 import "./index.less";
 
 export default function About() {
@@ -25,7 +24,7 @@ export default function About() {
                 window.open(item.url);
               }}
             >
-              <IconFont type={item.icon} />
+              {item.icon}
             </div>
           ) : (
             <Popover
@@ -36,9 +35,7 @@ export default function About() {
                 </div>
               }
             >
-              <div className="about-link-btn">
-                <IconFont type={item.icon} />
-              </div>
+              <div className="about-link-btn">{item.icon}</div>
             </Popover>
           )
         )}
