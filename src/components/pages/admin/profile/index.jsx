@@ -13,7 +13,7 @@ export default function Profile() {
   const [form] = Form.useForm();
   const [imageUrl, setImageUrl] = useState();
   useEffect(() => {
-    const arr = otherArr(JSON.parse(info.other));
+    const arr = info.other ? otherArr(JSON.parse(info.other)) : [];
     const newInfo = { ...info, others: arr };
     form.setFieldsValue(newInfo);
     setImageUrl(info.avatar);

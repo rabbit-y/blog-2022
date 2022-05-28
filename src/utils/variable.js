@@ -1,5 +1,5 @@
 module.exports = {
-  ICON_URL: '//at.alicdn.com/t/font_3116948_7fy7fumk4v6.js',
+  ICON_URL: '//at.alicdn.com/t/font_3116948_xpcvu2a7pw.js',
 
   STATION: {
     name: '花贝の碎碎念',
@@ -43,10 +43,36 @@ module.exports = {
     }
   ],
   ABOUTLINK: [
+
+    {
+      name: 'wechat',
+      icon: 'h-wechat',
+      image: 'https://cos.han96.com/blog/headers/wechat.png',
+    },
+    {
+      name: 'qq',
+      icon: 'h-qq',
+      image: 'https://cos.han96.com/blog/headers/qq.png'
+    },
+    {
+      name: 'xiaochengxu',
+      icon: 'h-xiaochengxu',
+      image: 'https://cos.han96.com/blog/headers/xcx.jpeg'
+    },
     {
       name: 'gitee',
       icon: 'h-gitee',
       url: 'https://gitee.com/han96'
+    },
+    {
+      name: 'csdn',
+      icon: 'h-csdn',
+      url: 'https://blog.csdn.net/YanH_an'
+    },
+    {
+      name: 'bilibili',
+      icon: 'h-bilibili',
+      url: 'https://space.bilibili.com/458066744'
     }
   ]
 

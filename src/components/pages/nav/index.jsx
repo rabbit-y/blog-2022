@@ -5,7 +5,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { setRouterKey, setLogin } from "../../../store";
 import IconFont from "../../component/Icon/index";
 
-import { STATION, ROTER } from "@utils/variable";
+import { ROTER } from "@utils/variable";
 
 import "./index.less";
 
@@ -13,6 +13,7 @@ const Nav = () => {
   const navigate = useNavigate();
   const location = useLocation();
   const routerKey = useSelector((state) => state.routerKey);
+  const info = useSelector((state) => state.info);
   const login = useSelector((state) => state.login);
   const dispatch = useDispatch();
   const [userInfo, setUserInfo] = useState({});
@@ -36,9 +37,9 @@ const Nav = () => {
     <div className="banner">
       <div className="title">
         <div className="title-left">
-          <div className="title-name">{STATION.name}</div>
+          <div className="title-name">{info.stationName}</div>
           <div className="title-dec">
-            {STATION.dec}
+            {info.stationDec}
             <div className="title-dec-login">
               {login ? (
                 <div>

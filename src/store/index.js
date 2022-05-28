@@ -31,6 +31,7 @@ const AppSlice = createSlice({
     login: false,
     // 初始值
     types: [],
+    info: {},
     // 首页导航当前选中判断
     routerKey: '/index'
   },
@@ -45,6 +46,7 @@ const AppSlice = createSlice({
   extraReducers: {
     [fetchTypes.fulfilled]: (state, { payload }) => {
       state.types = payload;
+      state.info = JSON.parse(payload.other)
     },
     [getLogin.fulfilled]: (state, { payload }) => {
       state.login = payload

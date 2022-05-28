@@ -3,13 +3,14 @@ import { api } from "@api/index";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import { MailOutlined, LockOutlined, UserOutlined } from "@ant-design/icons";
-import { STATION } from "@utils/variable";
+import { useSelector } from "react-redux";
 
 import "./index.less";
 
 const Register = () => {
   const [form] = Form.useForm();
   const navigate = useNavigate();
+  const info = useSelector((state) => state.info);
 
   // 注册
   const onFinish = async (values) => {
@@ -21,7 +22,7 @@ const Register = () => {
   return (
     <div className="login">
       <div className="login-box">
-        <div className="login-name">{STATION.name}</div>
+        <div className="login-name">{info.name}</div>
         <Form
           form={form}
           onFinish={onFinish}

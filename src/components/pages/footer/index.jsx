@@ -1,13 +1,14 @@
 import { useEffect, useState } from "react";
 import { BackTop } from "antd";
 import moment from "moment";
+import { useSelector } from "react-redux";
 import IconFont from "../../component/Icon/index";
-import { STATION } from "@utils/variable";
 
 import "./index.less";
 
 export default function Footer() {
   const [cityInfo, setCityInfo] = useState();
+  const info = useSelector((state) => state.info);
   useEffect(() => {
     setCityInfo(window.cityInfo);
   }, []);
@@ -17,7 +18,7 @@ export default function Footer() {
         <a href={location.href}>
           @2019-@{moment().format("yyyy")}
           <IconFont type="h-claw" />
-          {STATION.name}
+          {info.stationName}
         </a>
       </div>
       <div>
@@ -25,7 +26,7 @@ export default function Footer() {
           href="https://beian.miit.gov.cn/#/Integrated/recordQuery"
           target="_blank"
         >
-          {STATION.putOnRecord}
+          {info.stationPutOnRecord}
         </a>
       </div>
       <div>

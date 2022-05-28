@@ -3,7 +3,7 @@ import { api } from "@api/index";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import { MailOutlined, LockOutlined } from "@ant-design/icons";
-import { STATION } from "@utils/variable";
+import { useSelector } from "react-redux";
 import emitter from "@utils/emitter";
 
 import "./index.less";
@@ -11,6 +11,7 @@ import "./index.less";
 const Login = () => {
   const [form] = Form.useForm();
   const navigate = useNavigate();
+  const info = useSelector((state) => state.info);
   // 登陆
   const onFinish = async (values) => {
     const { code } = await api.other.doLogin.request(values);
@@ -27,7 +28,7 @@ const Login = () => {
   return (
     <div className="login">
       <div className="login-box">
-        <div className="login-name">{STATION.name}</div>
+        <div className="login-name">{info.name}</div>
         <Form
           form={form}
           onFinish={onFinish}
