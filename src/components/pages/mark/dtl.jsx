@@ -86,13 +86,13 @@ const Dtl = () => {
         </div>
       </div>
       <div className="mark-dtl-support">
-        <Row justify="center">
+        {/* <Row justify="center">
           <Col span={4}>
             <IconFont type="h-fenxiang" className="mark-fenxiang" />
           </Col>
-        </Row>
+        </Row> */}
       </div>
-      <div>
+      {/* <div>
         <Divider plain>
           <span className="mark-dtl-tip">
             <IconFont type="h-claw" />
@@ -127,7 +127,7 @@ const Dtl = () => {
             </Col>
           </Row>
         </div>
-      </div>
+      </div> */}
     </div>
   );
 };

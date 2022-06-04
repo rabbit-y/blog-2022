@@ -11,6 +11,11 @@ export const ROTER = [
     label: "通往学习的大门",
     icon: <IconFont type="h-caihong" />,
   },
+  // {
+  //   key: "/comment",
+  //   label: "飞机票",
+  //   icon: <IconFont type="h-caihong" />,
+  // },
   {
     key: "/bilibili",
     label: "追番",

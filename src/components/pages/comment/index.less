@@ -1,0 +1,36 @@
+.comment {
+  .comment-user {
+    background-color: rgba(255, 255, 255, 0.6);
+    padding: 20px;
+    border-radius: 20px;
+    .comment-user-msg {
+      text-align: center;
+      cursor: pointer;
+      img {
+        width: 80px;
+        height: 80px;
+      }
+      div {
+        font-size: 18px;
+        margin-top: 20px;
+        text-align: center;
+        color: @primary-color;
+      }
+    }
+    .comment-user-comment {
+      border: 1px solid @primary-color;
+      margin-left: 20px;
+      height: 400px;
+      border-radius: 20px;
+      position: relative;
+      overflow: hidden;
+      .comment-user-comment-btn {
+        position: absolute;
+        right: 20px;
+        bottom: 20px;
+        color: @primary-color;
+        cursor: pointer;
+      }
+    }
+  }
+}
