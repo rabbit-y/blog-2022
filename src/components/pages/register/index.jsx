@@ -22,7 +22,7 @@ const Register = () => {
   return (
     <div className="login">
       <div className="login-box">
-        <div className="login-name">{info.name}</div>
+        <div className="login-name">{info.stationName}</div>
         <Form
           form={form}
           onFinish={onFinish}
