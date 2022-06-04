@@ -39,7 +39,7 @@ const Nav = () => {
           <div className="title-name">{info.stationName}</div>
           <div className="title-dec">
             {info.stationDec}
-            <div className="title-dec-login">
+            {/* <div className="title-dec-login">
               {login ? (
                 <div>
                   <IconFont type="h-xiangsu_mao" style={{ marginRight: 6 }} />
@@ -57,7 +57,7 @@ const Nav = () => {
                   登录
                 </div>
               )}
-            </div>
+            </div> */}
           </div>
         </div>
       </div>
