@@ -2,7 +2,7 @@ import { lazy } from 'react';
 
 export const RoutersList = [
   {
-    path: '/index',
+    path: '/say',
     element: lazy(() => import("@pages/say/index"))
   },
   {

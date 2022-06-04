@@ -67,7 +67,7 @@ const App = () => {
                               ))}
                             </Route>
                           ))}
-                          <Route path="/" element={<Navigate to="/index" />} />
+                          <Route path="/" element={<Navigate to="/mark" />} />
                         </Routes>
                       </div>
                     </Col>

@@ -2,13 +2,13 @@ import IconFont from "@/components/component/Icon/index";
 
 export const ROTER = [
   {
-    key: "/index",
-    label: "首页",
+    key: "/mark",
+    label: "通往学习的大门",
     icon: <IconFont type="h-xiangsu_mao" />,
   },
   {
-    key: "/mark",
-    label: "通往学习的大门",
+    key: "/say",
+    label: "碎碎念",
     icon: <IconFont type="h-caihong" />,
   },
   // {

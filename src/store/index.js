@@ -33,7 +33,7 @@ const AppSlice = createSlice({
     types: [],
     info: {},
     // 首页导航当前选中判断
-    routerKey: '/index'
+    routerKey: '/mark'
   },
   reducers: {
     setRouterKey(state, { payload }) {
