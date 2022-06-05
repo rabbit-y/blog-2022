@@ -28,9 +28,11 @@ export const getLogin = createAsyncThunk(
 const AppSlice = createSlice({
   name: "app", // 命名空间
   initialState: {
+    // 登录状态
     login: false,
     // 初始值
     types: [],
+    // 站长信息
     info: {},
     // 首页导航当前选中判断
     routerKey: '/mark'

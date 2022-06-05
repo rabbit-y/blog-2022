@@ -10,7 +10,7 @@ export default function About() {
       <div className="about-header">
         <img src={user.avatar} alt="头像" />
       </div>
-      <div className="about-user">
+      <div className="about-user h-text-shadow">
         <span>{user.nickname}</span>
         <div>{user.other && JSON.parse(user.other).dec}</div>
       </div>

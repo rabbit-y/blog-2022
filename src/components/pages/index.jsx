@@ -1,10 +1,9 @@
-import { Suspense, lazy, useEffect } from "react";
+import { Suspense, lazy } from "react";
 import {
   HashRouter as Router,
   Route,
   Routes,
   Navigate,
-  Link,
 } from "react-router-dom";
 import { Row, Col } from "antd";
 
@@ -16,6 +15,7 @@ import { setLogin } from "../../store";
 import AboutMe from "@pages/aboutMe/index";
 import Footer from "@pages/footer/index";
 import Classify from "@pages/classify/index";
+import Friend from "@pages/friend/index";
 import Nav from "@pages/nav/index";
 import Loading from "@components/Loading/index";
 import Login from "@pages/login/index";
@@ -78,6 +78,9 @@ const App = () => {
                         </div>
                         <div>
                           <Classify />
+                        </div>
+                        <div>
+                          <Friend />
                         </div>
                       </div>
                     </Col>

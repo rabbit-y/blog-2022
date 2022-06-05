@@ -12,13 +12,13 @@ export default function Classify() {
   };
   return (
     <div className="classify">
-      <div className="classify-title">
-        <IconFont type="h-wenjianjia" />
+      <div className="classify-title h-text-shadow">
+        <IconFont type="h-a-kuzhuangkushuaiqishuashuaibiaoqingxiaolian" />
         <b>分类</b>
       </div>
       {typeList?.map((item, index) => (
         <div
-          className="classify-list"
+          className="classify-list h-text-shadow"
           key={index}
           onClick={() => {
             getTypeList(item);
