@@ -55,5 +55,6 @@
   "devDependencies": {
     "compression-webpack-plugin": "^9.2.0",
     "shx": "^0.3.4"
-  }
+  },
+  "homepage":"/"
 }
