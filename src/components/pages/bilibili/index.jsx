@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { Row, Col, Pagination } from "antd";
 import axios from "axios";
 import moment from "moment";
+import { scroll } from "@utils";
 
 import "./index.less";
 
@@ -58,6 +59,7 @@ const Bilibili = () => {
           current={current.pn}
           onChange={(page) => {
             getList(page);
+            scroll(0, 0);
           }}
           total={current.total}
           defaultPageSize={12}

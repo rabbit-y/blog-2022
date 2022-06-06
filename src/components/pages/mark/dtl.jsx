@@ -8,6 +8,7 @@ import ColorPicker from "braft-extensions/dist/color-picker";
 import { api } from "@api/index";
 import { useSelector } from "react-redux";
 import IconFont from "@components/Icon/index";
+import { scroll } from "@utils";
 
 import "braft-extensions/dist/color-picker.css";
 import "md-editor-rt/lib/style.css";
@@ -30,6 +31,9 @@ const Dtl = () => {
     setUser(userInfo ? JSON.parse(userInfo) : {});
     getDtl(searchParams.id);
   }, [searchParams.id]);
+  useEffect(() => {
+    scroll(0, 0);
+  });
   // 获取文章内容
   const getDtl = async (id) => {
     const { code, data } = await api.article.getById.request({ id });

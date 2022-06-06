@@ -28,14 +28,11 @@ export const getLogin = createAsyncThunk(
 const AppSlice = createSlice({
   name: "app", // 命名空间
   initialState: {
-    // 登录状态
-    login: false,
-    // 初始值
-    types: [],
-    // 站长信息
-    info: {},
-    // 首页导航当前选中判断
-    routerKey: '/mark'
+    login: false,// 登录状态
+    types: [],// 分类初始值
+    info: {}, // 站长信息
+    routerKey: '/mark',// 首页导航当前选中判断
+    markListTop: 0 //列表初始位置
   },
   reducers: {
     setRouterKey(state, { payload }) {
@@ -43,6 +40,10 @@ const AppSlice = createSlice({
     },
     setLogin(state, { payload }) {
       state.login = payload
+    },
+    setMarkListTop(state, { payload }) {
+      console.log(payload)
+      state.markListTop = payload
     }
   },
   extraReducers: {
@@ -56,7 +57,7 @@ const AppSlice = createSlice({
   },
 });
 
-export const { setRouterKey, setLogin } = AppSlice.actions;
+export const { setRouterKey, setLogin, setMarkListTop } = AppSlice.actions;
 
 export default configureStore({
   reducer: AppSlice.reducer,

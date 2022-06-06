@@ -3,7 +3,7 @@ import { useSelector } from "react-redux";
 import { Timeline } from "antd";
 import moment from "moment";
 import { api } from "@api/index";
-import IconFont from "../../component/Icon/index";
+import IconFont from "@components/Icon/index";
 import "./index.less";
 
 export default function Say() {

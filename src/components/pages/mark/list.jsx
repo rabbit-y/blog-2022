@@ -1,22 +1,32 @@
 import { useEffect, useState } from "react";
-import { Divider } from "antd";
 import { useNavigate, useParams } from "react-router-dom";
+import { Divider, Pagination } from "antd";
 import moment from "moment";
+
+import { useDispatch, useSelector } from "react-redux";
+import { setMarkListTop } from "@/store";
+
 import { api } from "@api/index";
 import IconFont from "@components/Icon/index";
+import { scroll } from "@utils";
 
 import "./index.less";
 
 export default function List() {
   const navigate = useNavigate();
+  const dispatch = useDispatch();
+  const topList = useSelector(({ markListTop }) => markListTop);
   const params = useParams();
   const [mark, setMark] = useState([]);
-  const [pageList, setPageList] = useState({ current: 1, size: 10 });
+  const [pageList, setPageList] = useState({ current: 1, size: 6 });
   useEffect(() => {
-    getList(pageList, "", params.type);
+    getList(pageList, params.type);
   }, [params]);
+  useEffect(() => {
+    scroll(0, topList);
+  }, []);
   // 获取文档列表
-  const getList = async (page, type = "", typeId = "") => {
+  const getList = async (page, typeId = "") => {
     const {
       code,
       data: { records, total, current },
@@ -26,13 +36,14 @@ export default function List() {
       ...page,
     });
     if (code === 0) {
-      if (type && type === "add") {
-        setMark(mark.concat(records));
-      } else {
-        setMark(records);
-      }
+      setMark(records);
       setPageList({ ...pageList, total, current });
     }
+  };
+  const jumpDtl = (type, id) => {
+    navigate("/mark/" + type + "/" + id);
+    const top = document.documentElement.scrollTop;
+    dispatch(setMarkListTop(top));
   };
   return (
     <div>
@@ -52,7 +63,7 @@ export default function List() {
             className="mark-list-page h-card opacity8"
             key={index}
             onClick={() => {
-              navigate("/mark/" + item.typeId + "/" + item.id);
+              jumpDtl(item.typeId, item.id);
             }}
           >
             <div className="mark-list-page-title">{item.title}</div>
@@ -67,17 +78,15 @@ export default function List() {
           </div>
         ))}
       </div>
-      {mark.length < pageList.total && (
-        <div className="mark-list-more">
-          <div
-            onClick={() => {
-              getList({ current: pageList.current + 1 }, "add");
-            }}
-          >
-            more
-          </div>
-        </div>
-      )}
+      <Pagination
+        current={pageList.current}
+        total={pageList.total}
+        pageSize={pageList.size}
+        onChange={(page) => {
+          getList({ current: page });
+          scroll(0, 0);
+        }}
+      />
     </div>
   );
 }

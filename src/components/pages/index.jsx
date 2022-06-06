@@ -1,14 +1,10 @@
 import { Suspense, lazy } from "react";
-import {
-  HashRouter as Router,
-  Route,
-  Routes,
-  Navigate,
-} from "react-router-dom";
+import { Route, Routes, Navigate } from "react-router-dom";
 import { Row, Col } from "antd";
 
 import { RoutersList, AdminRoutersList } from "@/router/router";
 import { useDispatch } from "react-redux";
+
 import emitter from "@utils/emitter";
 import { setLogin } from "../../store";
 
@@ -31,120 +27,118 @@ const App = () => {
     dispatch(setLogin(true));
   });
   return (
-    <Router>
-      <Routes>
-        <Route
-          path="*"
-          element={
-            <Suspense fallback={<Loading />}>
-              <div className="layout">
-                <div className="layout-row">
-                  <Nav />
-                  <Row wrap={false}>
-                    <Col flex="auto">
-                      <div className="content">
-                        <Routes>
-                          {RoutersList.map((item, index) => (
-                            <Route
-                              path={item.path}
-                              key={index}
-                              element={
-                                <Suspense fallback={<Loading />}>
-                                  <item.element />
-                                </Suspense>
-                              }
-                            >
-                              {item.child?.map((childItem, childIndex) => (
-                                <Route
-                                  path={childItem.path}
-                                  key={childIndex}
-                                  element={
-                                    <Suspense fallback={<Loading />}>
-                                      <childItem.element />
-                                    </Suspense>
-                                  }
-                                />
-                              ))}
-                            </Route>
-                          ))}
-                          <Route path="/" element={<Navigate to="/mark" />} />
-                        </Routes>
+    <Routes>
+      <Route
+        path="*"
+        element={
+          <Suspense fallback={<Loading />}>
+            <div className="layout">
+              <div className="layout-row">
+                <Nav />
+                <Row wrap={false}>
+                  <Col flex="auto">
+                    <div className="content">
+                      <Routes>
+                        {RoutersList.map((item, index) => (
+                          <Route
+                            path={item.path}
+                            key={index}
+                            element={
+                              <Suspense fallback={<Loading />}>
+                                <item.element />
+                              </Suspense>
+                            }
+                          >
+                            {item.child?.map((childItem, childIndex) => (
+                              <Route
+                                path={childItem.path}
+                                key={childIndex}
+                                element={
+                                  <Suspense fallback={<Loading />}>
+                                    <childItem.element />
+                                  </Suspense>
+                                }
+                              />
+                            ))}
+                          </Route>
+                        ))}
+                        <Route path="/" element={<Navigate to="/mark" />} />
+                      </Routes>
+                    </div>
+                  </Col>
+                  <Col flex="320px">
+                    <div className="sider">
+                      <div>
+                        <AboutMe />
                       </div>
-                    </Col>
-                    <Col flex="320px">
-                      <div className="sider">
-                        <div>
-                          <AboutMe />
-                        </div>
-                        <div>
-                          <Classify />
-                        </div>
-                        <div>
-                          <Friend />
-                        </div>
+                      <div>
+                        <Classify />
                       </div>
-                    </Col>
-                  </Row>
-                  <div className="foot">
-                    <Footer />
-                  </div>
+                      <div>
+                        <Friend />
+                      </div>
+                    </div>
+                  </Col>
+                </Row>
+                <div className="foot">
+                  <Footer />
                 </div>
               </div>
-            </Suspense>
-          }
-        ></Route>
-        <Route
-          path="/admin"
-          element={
-            <Suspense fallback={<Loading />}>
-              <Admin />
-            </Suspense>
-          }
-        >
-          {AdminRoutersList.map((item, index) => {
-            return (
-              <Route
-                path={item.path}
-                key={index}
-                element={
-                  <Suspense fallback={<Loading />}>
-                    <item.element />
-                  </Suspense>
-                }
-              >
-                {item.child?.map((childItem, childIndex) => (
-                  <Route
-                    path={childItem.path}
-                    key={childIndex}
-                    element={
-                      <Suspense fallback={<Loading />}>
-                        <childItem.element />
-                      </Suspense>
-                    }
-                  />
-                ))}
-              </Route>
-            );
-          })}
-        </Route>
-        <Route
-          path="/login"
-          element={
-            <Suspense fallback={<Loading />}>
-              <Login />
-            </Suspense>
-          }
-        ></Route>
-        <Route
-          path="/register"
-          element={
-            <Suspense fallback={<Loading />}>
-              <Register />
-            </Suspense>
-          }
-        ></Route>
-      </Routes>
-    </Router>
+            </div>
+          </Suspense>
+        }
+      ></Route>
+      <Route
+        path="/admin"
+        element={
+          <Suspense fallback={<Loading />}>
+            <Admin />
+          </Suspense>
+        }
+      >
+        {AdminRoutersList.map((item, index) => {
+          return (
+            <Route
+              path={item.path}
+              key={index}
+              element={
+                <Suspense fallback={<Loading />}>
+                  <item.element />
+                </Suspense>
+              }
+            >
+              {item.child?.map((childItem, childIndex) => (
+                <Route
+                  path={childItem.path}
+                  key={childIndex}
+                  element={
+                    <Suspense fallback={<Loading />}>
+                      <childItem.element />
+                    </Suspense>
+                  }
+                />
+              ))}
+            </Route>
+          );
+        })}
+      </Route>
+      <Route
+        path="/login"
+        element={
+          <Suspense fallback={<Loading />}>
+            <Login />
+          </Suspense>
+        }
+      ></Route>
+      <Route
+        path="/register"
+        element={
+          <Suspense fallback={<Loading />}>
+            <Register />
+          </Suspense>
+        }
+      ></Route>
+    </Routes>
   );
 };
 export default App;

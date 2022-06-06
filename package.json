@@ -12,6 +12,7 @@
     "braft-extensions": "^0.1.1",
     "craco-less": "^2.0.0",
     "highlight.js": "^11.5.1",
+    "lodash": "^4.17.21",
     "md-editor-rt": "^1.6.13",
     "mitt": "^3.0.0",
     "moment": "^2.29.1",
