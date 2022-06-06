@@ -42,7 +42,6 @@ const AppSlice = createSlice({
       state.login = payload
     },
     setMarkListTop(state, { payload }) {
-      console.log(payload)
       state.markListTop = payload
     }
   },
