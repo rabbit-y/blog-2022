@@ -4,7 +4,7 @@ export const ROTER = [
   {
     key: "/mark",
     label: "通往学习的大门",
-    icon: <IconFont type="h-xiangsu_mao" />,
+    icon: <IconFont type="h-caihong" />,
   },
   {
     key: "/say",
@@ -18,7 +18,7 @@ export const ROTER = [
   // },
   {
     key: "/plugins",
-    label: "推荐",
+    label: "工具",
     icon: <IconFont type="h-caihong" />,
   },
   {
