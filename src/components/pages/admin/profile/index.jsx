@@ -15,13 +15,21 @@ export default function Profile() {
   useEffect(() => {
     const otherObj = JSON.parse(info.other);
     const arr = info.other ? otherArr(otherObj) : [];
-    const newInfo = { ...info, others: arr, friend: otherObj.friend };
+    const newInfo = {
+      ...info,
+      others: arr,
+      friend: otherObj.friend,
+      plugins: otherObj.plugins,
+      website: otherObj.website,
+    };
     form.setFieldsValue(newInfo);
     setImageUrl(info.avatar);
   }, []);
   const onFinish = async (value) => {
     const newOther = othersObj(value.others);
     newOther.friend = value.friend;
+    newOther.plugins = value.plugins;
+    newOther.website = value.website;
     value.other = JSON.stringify(newOther);
     delete value.others;
     value.avatar = imageUrl;
@@ -34,7 +42,7 @@ export default function Profile() {
   const otherArr = (e) => {
     const arr = [];
     for (const item in e) {
-      if (item != "friend") {
+      if (item != "friend" || item != "plugins" || item != "website") {
         arr.push({ key: item, value: e[item] });
       }
     }
@@ -152,7 +160,97 @@ export default function Profile() {
                     onClick={() => add()}
                     icon={<PlusOutlined />}
                   >
-                    添加新扩展
+                    添加新友链
+                  </Button>
+                </Form.Item>
+              </>
+            )}
+          </Form.List>
+        </div>
+        <div className="profile-fd">
+          <Divider orientation="left">添加插件</Divider>
+          <Form.List name="plugins">
+            {(fields, { add, remove }) => (
+              <>
+                {fields.map(({ key, name }) => (
+                  <Space
+                    key={key}
+                    style={{
+                      display: "flex",
+                      marginBottom: 8,
+                    }}
+                    align="baseline"
+                  >
+                    <Form.Item label="名字" name={[name, "name"]}>
+                      <Input />
+                    </Form.Item>
+                    <Form.Item label="地址" name={[name, "url"]}>
+                      <Input />
+                    </Form.Item>
+                    <Form.Item label="标签" name={[name, "tab"]}>
+                      <Input />
+                    </Form.Item>
+                    <Form.Item label="描述" name={[name, "dec"]}>
+                      <Input.TextArea />
+                    </Form.Item>
+                    <Form.Item label="颜色" name={[name, "color"]}>
+                      <Input />
+                    </Form.Item>
+                    <MinusCircleOutlined onClick={() => remove(name)} />
+                  </Space>
+                ))}
+                <Form.Item>
+                  <Button
+                    type="dashed"
+                    onClick={() => add()}
+                    icon={<PlusOutlined />}
+                  >
+                    添加新插件
+                  </Button>
+                </Form.Item>
+              </>
+            )}
+          </Form.List>
+        </div>
+        <div className="profile-fd">
+          <Divider orientation="left">添加网站</Divider>
+          <Form.List name="website">
+            {(fields, { add, remove }) => (
+              <>
+                {fields.map(({ key, name }) => (
+                  <Space
+                    key={key}
+                    style={{
+                      display: "flex",
+                      marginBottom: 8,
+                    }}
+                    align="baseline"
+                  >
+                    <Form.Item label="名字" name={[name, "name"]}>
+                      <Input />
+                    </Form.Item>
+                    <Form.Item label="地址" name={[name, "url"]}>
+                      <Input />
+                    </Form.Item>
+                    <Form.Item label="标签" name={[name, "tab"]}>
+                      <Input />
+                    </Form.Item>
+                    <Form.Item label="描述" name={[name, "dec"]}>
+                      <Input.TextArea />
+                    </Form.Item>
+                    <Form.Item label="颜色" name={[name, "color"]}>
+                      <Input />
+                    </Form.Item>
+                    <MinusCircleOutlined onClick={() => remove(name)} />
+                  </Space>
+                ))}
+                <Form.Item>
+                  <Button
+                    type="dashed"
+                    onClick={() => add()}
+                    icon={<PlusOutlined />}
+                  >
+                    添加新网站
                   </Button>
                 </Form.Item>
               </>

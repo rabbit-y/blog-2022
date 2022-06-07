@@ -29,10 +29,10 @@ const AppSlice = createSlice({
   name: "app", // 命名空间
   initialState: {
     login: false,// 登录状态
+    routerKey: '/mark',// 首页导航当前选中判断
+    markListTop: 0, //列表初始位置
     types: [],// 分类初始值
     info: {}, // 站长信息
-    routerKey: '/mark',// 首页导航当前选中判断
-    markListTop: 0 //列表初始位置
   },
   reducers: {
     setRouterKey(state, { payload }) {

@@ -17,6 +17,11 @@ export const ROTER = [
   //   icon: <IconFont type="h-caihong" />,
   // },
   {
+    key: "/plugins",
+    label: "推荐",
+    icon: <IconFont type="h-caihong" />,
+  },
+  {
     key: "/bilibili",
     label: "追番",
     icon: <IconFont type="h-bilibili1" />,

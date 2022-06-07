@@ -20,6 +20,10 @@ export const RoutersList = [
     }]
   },
   {
+    path: '/plugins',
+    element: lazy(() => import("@pages/plugins/index"))
+  },
+  {
     path: '/comment',
     element: lazy(() => import("@pages/comment/index"))
   },
