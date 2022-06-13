@@ -795,6 +795,20 @@ declare namespace api {
     }
 
     /**
+     * 注册并登录
+     * /reg_login
+     */
+    export namespace doRegAndLogin {
+      export class Params {}
+
+      export type Response = defs.api.JsonResult;
+
+      export const init: Response;
+
+      export function request(params: Params, options?: any): Promise<Response>;
+    }
+
+    /**
      * 设置站长信息
      * /saveMaster
      */

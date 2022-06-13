@@ -1,45 +1,65 @@
 import { useState, useEffect } from "react";
-import { Divider, Row, Col } from "antd";
+import { Row, Col, Divider } from "antd";
 import { useParams, useNavigate } from "react-router-dom";
 import Editor from "md-editor-rt";
 import moment from "moment";
-import BraftEditor from "braft-editor";
-import ColorPicker from "braft-extensions/dist/color-picker";
 import { api } from "@api/index";
 import { useSelector } from "react-redux";
-import IconFont from "@components/Icon/index";
+import IconFont from "@components/Icon";
 import { scroll } from "@utils";
+import HComment from "@components/Comment";
+import config from "@utils/config";
 
-import "braft-extensions/dist/color-picker.css";
 import "md-editor-rt/lib/style.css";
-import "braft-editor/dist/index.css";
 import "./index.less";
 
-BraftEditor.use(ColorPicker());
 const Dtl = () => {
   const searchParams = useParams();
   const navigate = useNavigate();
   const masterInfo = useSelector((state) => state.types);
-  const [user, setUser] = useState({});
+  const [avatar] = useState(config.COS_URL + "blog/headers/3");
+  const [articleId, setArticleId] = useState();
   const [dtl, setDtl] = useState({});
   const [html, setHtml] = useState("");
-  const [editorState, setEditorState] = useState(
-    BraftEditor.createEditorState(null)
-  );
+  const [list, setList] = useState([]);
+  const [pageList, setPageList] = useState({ current: 1, size: 5 });
   useEffect(() => {
-    const userInfo = localStorage.getItem("h-userInfo");
-    setUser(userInfo ? JSON.parse(userInfo) : {});
     getDtl(searchParams.id);
-  }, [searchParams.id]);
-  useEffect(() => {
-    scroll(0, 0);
-  });
+    getCommentList(searchParams.id);
+    setArticleId(searchParams.id);
+    // scroll(0, 0);
+  }, []);
   // 获取文章内容
   const getDtl = async (id) => {
     const { code, data } = await api.article.getById.request({ id });
     if (code === 0) {
       setHtml(data.content);
       setDtl(data);
+    }
+  };
+  // 获取评论列表
+  const getCommentList = async (id) => {
+    const {
+      code,
+      data: { records, total, current },
+    } = await api.comment.getList.request({
+      current: 1,
+      size: 10,
+      replyArticleId: id,
+    });
+    if (code === 0) {
+      setList(records);
+      setPageList({ ...pageList, total, current });
+    }
+  };
+  // 发表评论
+  const saveComment = async (param, content, fn) => {
+    const { code } = await api.comment.save.request(null, {
+      data: { replyArticleId: articleId, ...param, content },
+    });
+    if (code === 0) {
+      getCommentList(articleId);
+      fn();
     }
   };
   return (
@@ -96,42 +116,39 @@ const Dtl = () => {
           </Col>
         </Row> */}
       </div>
-      {/* <div>
-        <Divider plain>
-          <span className="mark-dtl-tip">
-            <IconFont type="h-claw" />
-            收到回复会有邮件提醒呦~
-          </span>
-        </Divider>
-        <div className="mark-user">
-          <Row wrap={false}>
-            <Col flex="none">
-              <div
-                className="mark-user-msg"
-                onClick={() => {
-                  navigate("/login");
-                }}
-              >
+      <div className="mark-comment">
+        <HComment bindClick={saveComment} />
+        <div className="mark-comment-title">{pageList.total}条评论</div>
+        <div className="mark-comment-list">
+          {list?.map((item, index) => (
+            <Row
+              wrap={false}
+              gutter={[20]}
+              key={index}
+              className="mark-comment-item"
+            >
+              <Col flex="none">
                 <img
-                  src={
-                    user?.avatar
-                      ? user?.avatar
-                      : "https://cos.han96.com/blog/headers/3"
-                  }
-                  alt="头像"
+                  className="mark-comment-avatar"
+                  src={item.avatar ? item.avatar : avatar}
                 />
-                <div>{user?.nickname ? "@ " + user?.nickname : "未登录"}</div>
-              </div>
-            </Col>
-            <Col flex="atuo">
-              <div className="mark-user-comment">
-                <BraftEditor value={editorState} onChange={setEditorState} />
-                <div className="mark-user-comment-btn">发布评论</div>
-              </div>
-            </Col>
-          </Row>
+              </Col>
+              <Col flex="auto">
+                <div>
+                  <span className="mark-comment-name">{item.nickName}</span>
+                  <span className="mark-comment-time">
+                    {moment(item.createTime).startOf().fromNow()}
+                  </span>
+                </div>
+                <div
+                  className="mark-comment-content h-card"
+                  dangerouslySetInnerHTML={{ __html: item.content }}
+                ></div>
+              </Col>
+            </Row>
+          ))}
         </div>
-      </div> */}
+      </div>
     </div>
   );
 };

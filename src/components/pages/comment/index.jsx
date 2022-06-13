@@ -11,13 +11,10 @@ import "./index.less";
 
 BraftEditor.use(ColorPicker());
 export default function Comment() {
-  const [user, setUser] = useState({});
   const [editorState, setEditorState] = useState(
     BraftEditor.createEditorState(null)
   );
   useEffect(() => {
-    const userInfo = localStorage.getItem("h-userInfo");
-    setUser(userInfo ? JSON.parse(userInfo) : {});
     getList();
   }, []);
   const getList = async () => {
@@ -34,38 +31,5 @@ export default function Comment() {
   //     data:{}
   //   });
   // };
-  return (
-    <div className="comment">
-      <div>
-        <div className="comment-user">
-          <Row wrap={false}>
-            <Col flex="none">
-              <div
-                className="comment-user-msg"
-                onClick={() => {
-                  navigate("/login");
-                }}
-              >
-                <img
-                  src={
-                    user?.avatar
-                      ? user?.avatar
-                      : "https://cos.han96.com/blog/headers/3"
-                  }
-                  alt="头像"
-                />
-                <div>{user?.nickname ? "@ " + user?.nickname : "未登录"}</div>
-              </div>
-            </Col>
-            <Col flex="atuo">
-              <div className="comment-user-comment">
-                <BraftEditor value={editorState} onChange={setEditorState} />
-                <div className="comment-user-comment-btn">发布评论</div>
-              </div>
-            </Col>
-          </Row>
-        </div>
-      </div>
-    </div>
-  );
+  return <div className="comment"></div>;
 }

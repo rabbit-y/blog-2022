@@ -1,4 +1,5 @@
 import IconFont from "@/components/component/Icon/index";
+import config from "./config"
 
 export const ROTER = [
   {
@@ -55,17 +56,17 @@ export const ABOUTLINK = [
   {
     name: "wechat",
     icon: <IconFont type="h-wechat" />,
-    image: "https://cos.han96.com/blog/headers/wechat.png",
+    image: `${config.COS_URL}blog/headers/wechat.png`,
   },
   {
     name: "qq",
     icon: <IconFont type="h-qq" />,
-    image: "https://cos.han96.com/blog/headers/qq.png",
+    image: `${config.COS_URL}blog/headers/qq.png`,
   },
   {
     name: "xiaochengxu",
     icon: <IconFont type="h-xiaochengxu" />,
-    image: "https://cos.han96.com/blog/headers/xcx.jpeg",
+    image: `${config.COS_URL}blog/headers/xcx.jpeg`,
   },
   {
     name: "gitee",

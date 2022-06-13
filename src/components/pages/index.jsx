@@ -3,10 +3,6 @@ import { Route, Routes, Navigate } from "react-router-dom";
 import { Row, Col } from "antd";
 
 import { RoutersList, AdminRoutersList } from "@/router/router";
-import { useDispatch } from "react-redux";
-
-import emitter from "@utils/emitter";
-import { setLogin } from "../../store";
 
 import AboutMe from "@pages/aboutMe/index";
 import Footer from "@pages/footer/index";
@@ -22,10 +18,6 @@ import "./index.less";
 const Admin = lazy(() => import("@pages/admin/index"));
 
 const App = () => {
-  const dispatch = useDispatch();
-  emitter.on("login", () => {
-    dispatch(setLogin(true));
-  });
   return (
     <Routes>
       <Route

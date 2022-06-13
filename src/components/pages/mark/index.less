@@ -53,55 +53,40 @@
       animation: icon_jump 1s linear infinite;
     }
   }
-  .mark-dtl-tip {
-    color: @primary-color;
-    font-size: 14px;
-    span {
-      font-size: 20px;
-      vertical-align: middle;
-      margin-right: 10px;
-    }
-  }
-  .mark-login {
-    .mark-login-btn-item-tip {
-      margin-left: 10px;
-    }
-  }
-  .mark-user {
-    background-color: rgba(255, 255, 255, 0.6);
-    padding: 20px;
-    border-radius: 20px;
-    .mark-user-msg {
+  .mark-comment {
+    .mark-comment-title {
+      line-height: 60px;
       text-align: center;
-      cursor: pointer;
-      img {
-        width: 80px;
-        height: 80px;
-      }
-      div {
-        font-size: 18px;
-        margin-top: 20px;
-        text-align: center;
-        color: @primary-color;
-      }
+      font-size: 20px;
+      font-weight: bold;
     }
-    .mark-user-comment {
-      border: 1px solid @primary-color;
-      margin-left: 20px;
-      height: 400px;
-      border-radius: 20px;
-      position: relative;
-      overflow: hidden;
-      .mark-user-comment-btn {
-        position: absolute;
-        right: 20px;
-        bottom: 20px;
-        color: @primary-color;
-        cursor: pointer;
+    .mark-comment-list {
+      .mark-comment-item {
+        margin-bottom: 30px;
+      }
+      .mark-comment-avatar {
+        width: 60px;
+        height: 60px;
+        border-radius: 10px;
+      }
+      .mark-comment-name {
+        font-weight: bold;
+        font-size: 18px;
+      }
+      .mark-comment-time {
+        padding-left: 30px;
+        font-size: 12px;
+      }
+      .mark-comment-content {
+        padding: 8px;
+        margin-top: 5px;
+        display: inline-block;
+        width: auto;
       }
     }
   }
 }
+
 .mark-list {
   .mark-list-page {
     margin-bottom: 18px;

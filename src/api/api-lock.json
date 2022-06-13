@@ -1083,6 +1083,22 @@
             "parameters": []
           },
           {
+            "description": "注册并登录",
+            "name": "doRegAndLogin",
+            "method": "post",
+            "path": "/reg_login",
+            "response": {
+              "typeArgs": [],
+              "typeName": "JsonResult",
+              "isDefsType": true,
+              "templateIndex": -1,
+              "compileTemplateKeyword": "#/definitions/",
+              "enum": [],
+              "typeProperties": []
+            },
+            "parameters": []
+          },
+          {
             "description": "设置站长信息",
             "name": "saveMaster",
             "method": "post",
