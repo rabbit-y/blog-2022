@@ -32,16 +32,12 @@ export default function Say() {
   };
   return (
     <div className="say">
-      <div>
-        {/* {USER.avatar} */}
-        {/* {USER.nickname} */}
-      </div>
       <Timeline>
         {list?.map((item, index) => {
           return (
             <Timeline.Item
               key={index}
-              dot={<IconFont type="h-claw" style={{ fontSize: 20 }} />}
+              dot={<IconFont type="h-xiangsu_mao" style={{ fontSize: 26 }} />}
             >
               <div className="say-list-time">
                 {moment(item.createTime).format("YYYY-MM-DD HH:mm:ss")}
