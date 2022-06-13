@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter } from "react-router-dom";
+import { AliveScope } from 'react-activation'
 import { ConfigProvider } from 'antd';
 import moment from 'moment';
 import 'moment/locale/zh-cn';
@@ -26,7 +27,9 @@ ReactDOM.render(
   <ConfigProvider locale={zhCN}>
     <Provider store={store}>
       <BrowserRouter>
-        <App />
+        <AliveScope>
+          <App />
+        </AliveScope>
       </BrowserRouter>
     </Provider>
   </ConfigProvider>,

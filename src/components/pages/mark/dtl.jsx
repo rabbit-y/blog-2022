@@ -27,7 +27,7 @@ const Dtl = () => {
     getDtl(searchParams.id);
     getCommentList(searchParams.id);
     setArticleId(searchParams.id);
-    // scroll(0, 0);
+    scroll(0, 0);
   }, []);
   // 获取文章内容
   const getDtl = async (id) => {

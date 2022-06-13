@@ -20,7 +20,7 @@ const AppSlice = createSlice({
   name: "app", // 命名空间
   initialState: {
     routerKey: '/mark',// 首页导航当前选中判断
-    markListTop: 0, //列表初始位置
+    markListPage: {}, //列表初始位置
     types: [],// 分类初始值
     info: {}, // 站长信息
   },
@@ -28,8 +28,8 @@ const AppSlice = createSlice({
     setRouterKey(state, { payload }) {
       state.routerKey = payload
     },
-    setMarkListTop(state, { payload }) {
-      state.markListTop = payload
+    setMarkListPage(state, { payload }) {
+      state.markListPage = payload
     }
   },
   extraReducers: {
@@ -40,7 +40,7 @@ const AppSlice = createSlice({
   },
 });
 
-export const { setRouterKey, setMarkListTop } = AppSlice.actions;
+export const { setRouterKey, setMarkListPage } = AppSlice.actions;
 
 export default configureStore({
   reducer: AppSlice.reducer,

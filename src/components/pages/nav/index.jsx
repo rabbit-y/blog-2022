@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import { Menu } from "antd";
 import { useSelector, useDispatch } from "react-redux";
-import { setRouterKey, setMarkListTop } from "@/store";
+import { setRouterKey } from "@/store";
 import { ROTER } from "@utils/variable";
 import { scroll } from "@utils";
 
@@ -24,7 +24,6 @@ const Nav = () => {
     dispatch(setRouterKey(key));
     // 滚动处理
     scroll(0, 0);
-    dispatch(setMarkListTop(0));
   };
   // 退出登录
   const logout = () => {
