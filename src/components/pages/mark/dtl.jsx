@@ -19,6 +19,7 @@ const Dtl = () => {
   const masterInfo = useSelector((state) => state.types);
   const [avatar] = useState(config.COS_URL + "blog/headers/3");
   const [articleId, setArticleId] = useState();
+  const [show, setShow] = useState(false);
   const [dtl, setDtl] = useState({});
   const [html, setHtml] = useState("");
   const [list, setList] = useState([]);
@@ -84,10 +85,36 @@ const Dtl = () => {
         <div className="mark-dtl-cont">
           <Editor
             editorClass="mark-markdown-cls mark-dtl-editor"
+            editorId="my-editor"
             previewOnly="true"
             modelValue={html}
             previewTheme="github"
           />
+          {!show ? (
+            <div
+              className="my-editor-catalog"
+              onClick={() => {
+                setShow(true);
+              }}
+            >
+              目录
+            </div>
+          ) : (
+            <div className="my-editor-catalog">
+              <span
+                className="my-editor-catalog-btn"
+                onClick={() => {
+                  setShow(false);
+                }}
+              >
+                收起目录
+              </span>
+              <Editor.Catalog
+                editorId="my-editor"
+                scrollElement={document.documentElement}
+              />
+            </div>
+          )}
         </div>
       </div>
       <div className="mark-dtl-CC opacity6 h-card">

@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import KeepAlive from "react-activation";
-import { Divider, Pagination } from "antd";
+import { Divider, Pagination, Tag } from "antd";
 import moment from "moment";
 
 import { useDispatch, useSelector } from "react-redux";
@@ -13,9 +13,11 @@ import { scroll } from "@utils";
 
 import "./index.less";
 
+const { CheckableTag } = Tag;
 export default function List() {
   const navigate = useNavigate();
   const dispatch = useDispatch();
+  const typeList = useSelector((state) => state.types.articleCounts);
   const page = useSelector((state) => state.markListPage);
   const params = useParams();
   const [mark, setMark] = useState([]);
@@ -46,16 +48,27 @@ export default function List() {
   return (
     <KeepAlive when={true} saveScrollPosition="screen">
       <div>
-        {params.type && (
-          <div
-            className="mark-title"
-            onClick={() => {
+        <div className="mark-classify">
+          <CheckableTag
+            checked={!params.type}
+            onChange={() => {
               navigate("/mark");
             }}
           >
-            点击返回全部
-          </div>
-        )}
+            全部
+          </CheckableTag>
+          {typeList.map((tag) => (
+            <CheckableTag
+              key={tag.typeId}
+              checked={params.type == tag.typeId}
+              onChange={() => {
+                navigate("/mark/" + tag.typeId);
+              }}
+            >
+              {tag.typeName}
+            </CheckableTag>
+          ))}
+        </div>
         <div className="mark-list">
           {mark?.map((item, index) => (
             <div
