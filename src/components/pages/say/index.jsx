@@ -11,7 +11,7 @@ export default function Say() {
   const [list, setList] = useState([]);
   const [pageList, setPage] = useState({});
   useEffect(() => {
-    getList({ current: 1, size: 6 });
+    getList({ current: 1, size: 10 });
   }, []);
   const getList = async (param, type) => {
     const {
