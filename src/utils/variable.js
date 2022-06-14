@@ -4,12 +4,12 @@ import config from "./config"
 export const ROTER = [
   {
     key: "/mark",
-    label: "通往学习的大门",
+    label: "首页",
     icon: <IconFont type="h-caihong" />,
   },
   {
     key: "/say",
-    label: "碎碎念",
+    label: "日常",
     icon: <IconFont type="h-caihong" />,
   },
   // {
@@ -20,6 +20,11 @@ export const ROTER = [
   {
     key: "/plugins",
     label: "工具",
+    icon: <IconFont type="h-caihong" />,
+  },
+  {
+    key: "/me",
+    label: "关于我",
     icon: <IconFont type="h-caihong" />,
   },
   {
