@@ -8,6 +8,7 @@ import AboutMe from "@pages/aboutMe/index";
 import Footer from "@pages/footer/index";
 import Classify from "@pages/classify/index";
 import Friend from "@pages/friend/index";
+import Listen from "@pages/listen/index";
 import Nav from "@pages/nav/index";
 import Loading from "@components/Loading/index";
 import Login from "@pages/login/index";
@@ -60,15 +61,10 @@ const App = () => {
                   </Col>
                   <Col flex="320px">
                     <div className="sider">
-                      <div>
-                        <AboutMe />
-                      </div>
-                      <div>
-                        <Classify />
-                      </div>
-                      <div>
-                        <Friend />
-                      </div>
+                      <AboutMe />
+                      <Classify />
+                      <Friend />
+                      <Listen />
                     </div>
                   </Col>
                 </Row>

@@ -9,8 +9,8 @@ export default function Friend() {
     window.open(e);
   };
   return (
-    <div className="friend">
-      <div className="friend-title h-text-shadow">
+    <div className="friend h-text-card ">
+      <div className="friend-title h-text-title">
         <IconFont type="h-a-aiqingxihuansebiaoqingxiaolian" />
         <b>想推荐</b>
         <div className="friend-title-dec">输出很多知识或很漂亮独特的博客</div>

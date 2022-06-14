@@ -11,8 +11,8 @@ export default function Classify() {
     navigate("/mark/" + item.typeId);
   };
   return (
-    <div className="classify">
-      <div className="classify-title h-text-shadow">
+    <div className="classify h-text-card ">
+      <div className="classify-title h-text-title">
         <IconFont type="h-a-kuzhuangkushuaiqishuashuaibiaoqingxiaolian" />
         <b>分类</b>
       </div>
