@@ -3,214 +3,26 @@
 
 <head>
   <meta charset="utf-8" />
-  <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+  <meta name="description" content="蟹蟹你在茫茫互联网中捞到了我！关于我的一切点进来看看吧！" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="theme-color" content="#000000" />
-  <meta name="description" content="Web site created using create-react-app" />
   <meta name="baidu-site-verification" content="code-S16xwd3KUR" />
-  <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
-  <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+  <!-- 用于配置浏览器页签+地址栏的颜色(仅支持安卓手机浏览器) -->
+  <meta name="theme-color" content="1DA57A" />
+  <!-- 适配手机端 -->
+  <meta name="viewport"
+    content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0" />
+  <!-- 用于指定网页添加到手机主屏幕后的图标 -->
+  <link rel="apple-touch-icon" href="%PUBLIC_URL%/header.jpeg" />
+  <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+  <!-- 应用加壳时的配置文件 -->
+  <!-- <link rel="manifest" href="%PUBLIC_URL%/manifest.json" /> -->
   <title>花贝の博客｜一个有点社恐的前端开发从业者</title>
-  <style>
-    .index-loader-box {
-      height: 100vh;
-      width: 100%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background-color: #008b8b;
-    }
-
-    .index-loader {
-      display: grid;
-      grid-template-columns: 1fr 1fr 1fr;
-      grid-gap: 8px;
-    }
-
-    .index-loader div {
-      width: 60px;
-      height: 60px;
-      position: relative;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      background-color: #66cdaa;
-      border-radius: 50%;
-    }
-
-    .index-loader div:before,
-    .index-loader div:after {
-      content: '';
-      width: 60px;
-      height: 60px;
-      position: absolute;
-      border-radius: 50%;
-    }
-
-    .index-loader div:before {
-      background-color: #ffdab9;
-      animation: scale-1 2400ms linear infinite;
-    }
-
-    .index-loader div:after {
-      background-color: #66cdaa;
-      animation: scale-2 2400ms linear infinite;
-    }
-
-    .index-loader div:nth-child(2):before,
-    .index-loader div:nth-child(2):after {
-      animation-delay: 300ms;
-    }
-
-    .index-loader div:nth-child(3):before,
-    .index-loader div:nth-child(3):after {
-      animation-delay: 600ms;
-    }
-
-    .index-loader div:nth-child(4):before,
-    .index-loader div:nth-child(4):after {
-      animation-delay: 900ms;
-    }
-
-    .index-loader div:nth-child(5):before,
-    .index-loader div:nth-child(5):after {
-      animation-delay: 1200ms;
-    }
-
-    .index-loader div:nth-child(6):before,
-    .index-loader div:nth-child(6):after {
-      animation-delay: 1500ms;
-    }
-
-    .index-loader div:nth-child(7):before,
-    .index-loader div:nth-child(7):after {
-      animation-delay: 1800ms;
-    }
-
-    .index-loader div:nth-child(8):before,
-    .index-loader div:nth-child(8):after {
-      animation-delay: 2100ms;
-    }
-
-    .index-loader div:nth-child(9):before,
-    .index-loader div:nth-child(9):after {
-      animation-delay: 2400ms;
-    }
-
-    @-moz-keyframes scale-1 {
-      0% {
-        transform: scale(0);
-        z-index: 2;
-      }
-
-      50%,
-      100% {
-        transform: scale(1);
-      }
-    }
-
-    @-webkit-keyframes scale-1 {
-      0% {
-        transform: scale(0);
-        z-index: 2;
-      }
-
-      50%,
-      100% {
-        transform: scale(1);
-      }
-    }
-
-    @-o-keyframes scale-1 {
-      0% {
-        transform: scale(0);
-        z-index: 2;
-      }
-
-      50%,
-      100% {
-        transform: scale(1);
-      }
-    }
-
-    @keyframes scale-1 {
-      0% {
-        transform: scale(0);
-        z-index: 2;
-      }
-
-      50%,
-      100% {
-        transform: scale(1);
-      }
-    }
-
-    @-moz-keyframes scale-2 {
-
-      0%,
-      50% {
-        transform: scale(0);
-      }
-
-      100% {
-        transform: scale(1);
-      }
-    }
-
-    @-webkit-keyframes scale-2 {
-
-      0%,
-      50% {
-        transform: scale(0);
-      }
-
-      100% {
-        transform: scale(1);
-      }
-    }
-
-    @-o-keyframes scale-2 {
-
-      0%,
-      50% {
-        transform: scale(0);
-      }
-
-      100% {
-        transform: scale(1);
-      }
-    }
-
-    @keyframes scale-2 {
-
-      0%,
-      50% {
-        transform: scale(0);
-      }
-
-      100% {
-        transform: scale(1);
-      }
-    }
-  </style>
 </head>
 
 <body>
   <noscript>You need to enable JavaScript to run this app.</noscript>
   <div id="root">
-    <div class="index-loader-box">
-      <div class="index-loader">
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-        <div></div>
-      </div>
-    </div>
+
   </div>
 </body>
 

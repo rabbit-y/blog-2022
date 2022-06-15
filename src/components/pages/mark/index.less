@@ -104,7 +104,10 @@
 }
 
 .mark-classify {
-  padding-bottom: 30px;
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  overflow-y: auto;
+  white-space: nowrap;
 }
 .mark-list {
   .mark-list-page {
@@ -127,6 +130,14 @@
         margin-right: 8px;
         font-weight: bold;
       }
+    }
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .mark-comment {
+    .h-comment {
+      display: none;
     }
   }
 }

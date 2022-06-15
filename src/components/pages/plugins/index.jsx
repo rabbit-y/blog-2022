@@ -10,8 +10,8 @@ export default function Plugins() {
   };
   return (
     <div className="plugins">
-      <Row>
-        <Col span={12}>
+      <Row gutter={[20, 20]}>
+        <Col lg={{ span: 12 }} xs={{ span: 24 }}>
           <div className="plugins-left">
             <div className="plugins-title">插件、工具</div>
             {plugins?.map((item, index) => (
@@ -33,7 +33,7 @@ export default function Plugins() {
             ))}
           </div>
         </Col>
-        <Col span={12}>
+        <Col lg={{ span: 12 }} xs={{ span: 24 }}>
           <div className="plugins-rt">
             <div className="plugins-title">实用网站</div>
             {website?.map((item, index) => (

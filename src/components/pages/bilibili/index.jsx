@@ -32,7 +32,7 @@ const Bilibili = () => {
     <div>
       <Row justify="start" gutter={[36, 24]}>
         {myList?.map((item, index) => (
-          <Col key={index} span={6}>
+          <Col key={index} xs={{ span: 12 }} lg={{ span: 6 }}>
             <div
               className="bili-list"
               onClick={() => {

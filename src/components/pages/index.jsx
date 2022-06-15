@@ -59,7 +59,7 @@ const App = () => {
                       </Routes>
                     </div>
                   </Col>
-                  <Col flex="320px">
+                  <Col flex="320px" className="h-media">
                     <div className="sider">
                       <AboutMe />
                       <Classify />
@@ -76,6 +76,8 @@ const App = () => {
           </Suspense>
         }
       ></Route>
+
+      {/* 独立 */}
       <Route
         path="/admin"
         element={
