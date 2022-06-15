@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Row, Col, Divider } from "antd";
+import { Row, Col, Divider, Skeleton } from "antd";
 import { useParams, useNavigate } from "react-router-dom";
 import Editor from "md-editor-rt";
 import moment from "moment";
@@ -20,6 +20,7 @@ const Dtl = () => {
   const [avatar] = useState(config.COS_URL + "blog/headers/3");
   const [articleId, setArticleId] = useState();
   const [show, setShow] = useState(false);
+  const [editorShow, setEditorShow] = useState(false);
   const [dtl, setDtl] = useState({});
   const [html, setHtml] = useState("");
   const [list, setList] = useState([]);
@@ -83,12 +84,17 @@ const Dtl = () => {
           {dtl.typeName}
         </div>
         <div className="mark-dtl-cont">
+          {!editorShow && <Skeleton active paragraph={{ rows: 10 }} />}
           <Editor
-            editorClass="mark-markdown-cls mark-dtl-editor"
+            className="mark-markdown-cls mark-dtl-editor"
             editorId="my-editor"
-            previewOnly="true"
             modelValue={html}
             previewTheme="github"
+            onHtmlChanged={() => {
+              console.log(123);
+              setEditorShow(true);
+            }}
+            previewOnly
           />
           {!show ? (
             <div
