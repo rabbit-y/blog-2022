@@ -17,7 +17,7 @@ import Register from "@pages/register/index";
 import "./index.less";
 
 const Admin = lazy(() => import("@pages/admin/index"));
-consle.log("分支测试1");
+
 const App = () => {
   return (
     <Routes>
