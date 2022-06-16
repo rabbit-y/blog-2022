@@ -1,5 +1,5 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import { createRoot } from 'react-dom/client';
 import { BrowserRouter } from "react-router-dom";
 import { AliveScope } from 'react-activation'
 import { ConfigProvider } from 'antd';
@@ -23,7 +23,8 @@ ConfigProvider.config({
   },
 });
 
-ReactDOM.render(
+const root = createRoot(document.getElementById('root'));
+root.render(
   <ConfigProvider locale={zhCN}>
     <Provider store={store}>
       <BrowserRouter>
@@ -32,6 +33,5 @@ ReactDOM.render(
         </AliveScope>
       </BrowserRouter>
     </Provider>
-  </ConfigProvider>,
-  document.getElementById('root')
+  </ConfigProvider>
 );
