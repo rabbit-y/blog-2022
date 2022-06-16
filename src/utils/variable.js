@@ -12,6 +12,11 @@ export const ROTER = [
     label: "日常",
     icon: <IconFont type="h-caihong" />,
   },
+  {
+    key: "/time",
+    label: "建站",
+    icon: <IconFont type="h-caihong" />,
+  },
   // {
   //   key: "/comment",
   //   label: "飞机票",
@@ -90,7 +95,7 @@ export const LISTENLIST = [
     artist: "姚六一",
     url: "http://music.163.com/song/media/outer/url?id=1815085049.mp3",
     cover:
-      "http://p2.music.126.net/J9_j9s2faIKwn6oqwQV2Rw==/109951166153759329.jpg?param=130y130",
+      "https://p2.music.126.net/J9_j9s2faIKwn6oqwQV2Rw==/109951166153759329.jpg?param=130y130",
   }, {
     name: "哪里都是你",
     artist: "队长",
@@ -103,3 +108,28 @@ export const LISTENLIST = [
     cover: "https://p2.music.126.net/h5VzzM2EYJfAT3VuRvkNZg==/109951167355045086.jpg?param=130y130"
   }
 ]
+export const TIMELINE = [{
+  time: '2022-06-15',
+  content: '优化手机端查看体验，增加媒体查询响应式设计，优化详情页骨架屏'
+}, {
+  time: '2022-06-14',
+  content: '添加APlayer音乐播放器，添加关于我页面，添加文档目录功能'
+}, {
+  time: '2022-06-13',
+  content: '添加文档一级评论功能,修复文档列表缓存问题'
+}, {
+  time: '2022-06-07',
+  content: '添加友链功能，添加插件网站推荐页面'
+}, {
+  time: '2022-05-26',
+  content: '添加站长相关资料，修改文档详情markdowm预览插件'
+}, {
+  time: '2022-02-23',
+  content: '日常功能调整'
+}, {
+  time: '2022-02-22 ',
+  content: '添加文档删除、更新等功能'
+}, {
+  time: '2022-01-04',
+  content: '博客整体架构'
+}]

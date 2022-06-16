@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
-import { Timeline } from "antd";
+import { Divider, Row, Col } from "antd";
 import moment from "moment";
 import { api } from "@api/index";
 import IconFont from "@components/Icon/index";
@@ -11,7 +11,7 @@ export default function Say() {
   const [list, setList] = useState([]);
   const [pageList, setPage] = useState({});
   useEffect(() => {
-    getList({ current: 1, size: 10 });
+    getList({ current: 1, size: 14 });
   }, []);
   const getList = async (param, type) => {
     const {
@@ -32,38 +32,32 @@ export default function Say() {
   };
   return (
     <div className="say">
-      <Timeline>
-        {list?.map((item, index) => {
-          return (
-            <Timeline.Item
-              key={index}
-              dot={<IconFont type="h-xiangsu_mao" style={{ fontSize: 26 }} />}
-            >
-              <div className="say-list-time">
-                {moment(item.createTime).format("YYYY-MM-DD HH:mm:ss")}
-              </div>
-              <div className="say-list-cont">
-                <div dangerouslySetInnerHTML={{ __html: item.content }}></div>
-              </div>
-              {/* <div className="say-list-other">
-                <div>
-                  <IconFont type="h-icon" style={{ fontSize: 18 }} />
-                  <span> 24人点赞</span>
+      <div className="say-list">
+        <Row gutter={[20, 20]}>
+          {list?.map((item, index) => {
+            return (
+              <Col key={index} xs={{ span: 24 }} lg={{ span: 8 }}>
+                <div className="say-list-item h-card">
+                  <div className="say-list-tip">
+                    <div></div>
+                  </div>
+                  <div className="say-list-time">
+                    {moment(item.createTime).format("YYYY-MM-DD HH:mm:ss")}
+                  </div>
+                  <div dangerouslySetInnerHTML={{ __html: item.content }}></div>
                 </div>
-              </div> */}
-            </Timeline.Item>
-          );
-        })}
-        {list.length < pageList.total && (
-          <Timeline.Item
-            dot={<IconFont type="h-claw1" style={{ fontSize: 28 }} />}
-          >
-            <div className="say-list-more" onClick={more}>
-              ... 查看更多 ...
-            </div>
-          </Timeline.Item>
-        )}
-      </Timeline>
+              </Col>
+            );
+          })}
+        </Row>
+      </div>
+      {list.length < pageList.total && (
+        <Divider>
+          <div className="say-list-more" onClick={more}>
+            查看更多
+          </div>
+        </Divider>
+      )}
     </div>
   );
 }

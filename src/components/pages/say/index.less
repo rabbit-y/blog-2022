@@ -1,25 +1,23 @@
 .say {
-  .ant-timeline-item-head-custom {
-    top: 8.5px;
-  }
-  .say-list-time {
-    margin-bottom: 10px;
-    background-color: @primary-color;
-    display: inline-block;
-    color: #fff;
-    padding: 2px 10px;
-    border-radius: 4px;
-    opacity: 0.6;
-    font-size: 14px;
-  }
-  .say-list-cont {
-    padding-top: 14px;
-    padding-bottom: 20px;
-  }
-  .say-list-other {
-    display: flex;
-    div {
-      font-size: 12px;
+  .say-list {
+    .say-list-item {
+      padding: 16px;
+      margin-bottom: 10px;
+      .say-list-tip {
+        text-align: center;
+        div {
+          width: 20px;
+          height: 20px;
+          border-radius: 50%;
+          border: 1px solid @primary-color;
+          display: inline-block;
+        }
+      }
+      .say-list-time {
+        font-size: 14px;
+        padding-bottom: 30px;
+        text-align: center;
+      }
     }
   }
   .say-list-more {
