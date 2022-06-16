@@ -109,6 +109,9 @@ export const LISTENLIST = [
   }
 ]
 export const TIMELINE = [{
+  time: '2022-06-16',
+  content: '更换统计方式，优化目录显示方式，更改日常展现方式（还是不满意...）'
+}, {
   time: '2022-06-15',
   content: '优化手机端查看体验，增加媒体查询响应式设计，优化详情页骨架屏'
 }, {

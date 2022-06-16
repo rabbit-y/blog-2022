@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Row, Col, Divider, Skeleton } from "antd";
+import { Row, Col, Divider, Skeleton, Drawer } from "antd";
 import { useParams, useNavigate } from "react-router-dom";
 import Editor from "md-editor-rt";
 import moment from "moment";
@@ -66,13 +66,22 @@ const Dtl = () => {
   };
   return (
     <div className="mark-dtl">
-      <div
-        className="mark-title"
-        onClick={() => {
-          navigate(-1);
-        }}
-      >
-        <div>返回列表</div>
+      <div className="mark-dtl-btn">
+        <div
+          onClick={() => {
+            navigate(-1);
+          }}
+        >
+          返回
+        </div>
+        <Divider />
+        <div
+          onClick={() => {
+            setShow(!show);
+          }}
+        >
+          目录
+        </div>
       </div>
       <div className="mark-dtl-all">
         <h1>{dtl.title}</h1>
@@ -91,36 +100,24 @@ const Dtl = () => {
             modelValue={html}
             previewTheme="github"
             onHtmlChanged={() => {
-              console.log(123);
               setEditorShow(true);
             }}
             previewOnly
           />
-          {!show ? (
-            <div
-              className="my-editor-catalog"
-              onClick={() => {
-                setShow(true);
-              }}
-            >
-              目录
-            </div>
-          ) : (
-            <div className="my-editor-catalog">
-              <span
-                className="my-editor-catalog-btn"
-                onClick={() => {
-                  setShow(false);
-                }}
-              >
-                收起目录
-              </span>
-              <Editor.Catalog
-                editorId="my-editor"
-                scrollElement={document.documentElement}
-              />
-            </div>
-          )}
+          <Drawer
+            title="目录"
+            placement="right"
+            onClose={() => {
+              setShow(false);
+            }}
+            visible={show}
+            mask={false}
+          >
+            <Editor.Catalog
+              editorId="my-editor"
+              scrollElement={document.documentElement}
+            />
+          </Drawer>
         </div>
       </div>
       <div className="mark-dtl-CC opacity6 h-card">
