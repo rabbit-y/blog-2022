@@ -13,7 +13,7 @@ import Nav from "@pages/nav/index";
 import Loading from "@components/Loading/index";
 import Login from "@pages/login/index";
 import Register from "@pages/register/index";
-
+consle.log("分支测试");
 import "./index.less";
 
 const Admin = lazy(() => import("@pages/admin/index"));
