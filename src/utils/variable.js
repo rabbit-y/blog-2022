@@ -109,6 +109,9 @@ export const LISTENLIST = [
   }
 ]
 export const TIMELINE = [{
+  time: '2022-06-17',
+  content: '修复KeepAlive导致带参数的路由白页问题'
+}, {
   time: '2022-06-16',
   content: '更换统计方式，优化目录显示方式，更改日常展现方式（还是不满意...）'
 }, {
