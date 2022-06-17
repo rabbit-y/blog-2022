@@ -139,3 +139,56 @@ export const TIMELINE = [{
   time: '2022-01-04',
   content: '博客整体架构'
 }]
+export const JSLIST = [{
+  name: 'Html5',
+  dec: '常用的就那么几个',
+  percent: '80'
+}, {
+  name: 'Css3',
+  dec: 'Css+Less+Sass',
+  percent: '80'
+}, {
+  name: 'JavaScript',
+  dec: '基础知识',
+  percent: '70'
+}, {
+  name: 'jQuery',
+  dec: 'Js的简单用法',
+  percent: '90'
+}, {
+  name: 'TypeScript',
+  dec: 'Js语法糖(变得更像java了)',
+  percent: '30'
+}, {
+  name: 'React',
+  dec: 'hooks+router+redux',
+  percent: '70'
+}, {
+  name: 'Vue',
+  dec: 'vue3',
+  percent: '50'
+}, {
+  name: 'UI框架',
+  dec: 'Antd+BootStrap+LayUI+ElementUI',
+  percent: '30'
+}, {
+  name: '微信小程序',
+  dec: '原生+Taro+uni-app',
+  percent: '70'
+}, {
+  name: '代码管理工具',
+  dec: 'Git+svn',
+  percent: '60'
+}, {
+  name: '包管理工具',
+  dec: 'npm+pnpm+yarn',
+  percent: '60'
+}, {
+  name: '构建工具',
+  dec: 'webpack+babel+rollup',
+  percent: '30'
+}, {
+  name: '数据可视化',
+  dec: 'EChart+antv g2',
+  percent: '40'
+}]

@@ -5,8 +5,6 @@ import {
 } from "@reduxjs/toolkit";
 import { api } from "@api/index";
 
-// 使用Redux Toolkit 简化了编写 Redux。(https://blog.csdn.net/heroboyluck/article/details/113787326)
-
 // 异步请求数据Action
 export const fetchTypes = createAsyncThunk(
   "app/fetchTypes",
