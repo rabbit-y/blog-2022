@@ -46,8 +46,8 @@ export default function List() {
     navigate("/mark/" + type + "/" + id);
   };
   return (
-    <KeepAlive when={true} saveScrollPosition="screen">
-      <div>
+    <div>
+      <KeepAlive when={true} id={params.type} saveScrollPosition="screen">
         <div className="mark-classify">
           <CheckableTag
             checked={!params.type}
@@ -99,7 +99,7 @@ export default function List() {
             scroll(0, 0);
           }}
         />
-      </div>
-    </KeepAlive>
+      </KeepAlive>
+    </div>
   );
 }
