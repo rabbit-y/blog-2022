@@ -1,7 +1,7 @@
-import { Divider, Tag, Col, Row } from "antd";
+import { Divider, Tag, Progress, Card } from "antd";
 import moment from "moment";
 import "./index.less";
-
+import { JSLIST } from "@utils/variable";
 const Me = () => {
   return (
     <div className="me">
@@ -52,19 +52,26 @@ const Me = () => {
           </div>
         </div>
       </div>
-      {/* <div className="me-list">
+      <div className="me-list">
         <Divider orientation="center" plain>
           花贝的技术站
         </Divider>
         <div className="me-content">
-          <Row>
-            <Col span={6}>JavaScript</Col>
-            <Col span={6}>React</Col>
-            <Col span={6}>Vue</Col>
-            <Col span={6}>jQuery</Col>
-          </Row>
+          <Card>
+            {JSLIST?.map((item, index) => (
+              <Card.Grid key={index}>
+                <div>
+                  <div>
+                    <Progress percent={item.percent} steps={5} />
+                  </div>
+                  <div className="me-content-name">{item.name}</div>
+                  <div className="me-content-dec">{item.dec}</div>
+                </div>
+              </Card.Grid>
+            ))}
+          </Card>
         </div>
-      </div> */}
+      </div>
     </div>
   );
 };
