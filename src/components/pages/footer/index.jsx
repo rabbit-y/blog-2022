@@ -34,7 +34,7 @@ export default function Footer() {
         <IconFont type="h-claw" />
         IP为{cityInfo?.cip}的小伙伴
       </div>
-      <BackTop target={() => document.getElementsByClassName("layout")[0]}>
+      <BackTop>
         <IconFont type="h-fanhuidingbu" className="footer-back" />
       </BackTop>
     </div>

@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Divider, Row, Col, Form, Input, Button, message } from "antd";
+import { Divider, Row, Col, Form, Input, Button, message, Tag } from "antd";
 import { MailOutlined, HomeOutlined, UserOutlined } from "@ant-design/icons";
 import BraftEditor from "braft-editor";
 import "braft-editor/dist/index.css";
@@ -7,8 +7,9 @@ import "braft-editor/dist/index.css";
 import config from "@utils/config";
 
 import "./index.less";
-export default function HComment({ bindClick }) {
+export default function HComment({ bindClick, className, reply, onClose }) {
   const [form] = Form.useForm();
+  const [editorInstance, setEditorInstance] = useState();
   const [avatar, setAvatar] = useState(config.COS_URL + "blog/headers/3");
   const [content, setContent] = useState(BraftEditor.createEditorState(null));
   const controls = [
@@ -59,9 +60,10 @@ export default function HComment({ bindClick }) {
     const userObj = form.getFieldsValue();
     userObj.avatar = avatar;
     localStorage.setItem("h-userInfo", JSON.stringify(userObj));
+    editorInstance.clearEditorContent();
   };
   return (
-    <div className="h-comment">
+    <div className={`h-comment ${className}`}>
       <Divider plain>
         <span className="h-comment-tip">
           在「昵称」处填写QQ号，Enther获取「头像」和「QQ邮箱」
@@ -116,6 +118,7 @@ export default function HComment({ bindClick }) {
                     autoSize={{ minRows: 6, maxRows: 6 }}
                   /> */}
                   <BraftEditor
+                    ref={(instance) => setEditorInstance(instance)}
                     className="h-comment-editor"
                     controls={controls}
                     value={content}
@@ -124,20 +127,24 @@ export default function HComment({ bindClick }) {
                 </Form.Item>
               </Col>
               <Col span={24}>
-                <div className="h-comment-btn">
-                  <Button
-                    type="primary"
-                    onClick={() => {
-                      bindClick(
-                        form.getFieldValue(),
-                        content.toHTML(),
-                        saveSuccess
-                      );
-                    }}
-                  >
-                    发布
-                  </Button>
-                </div>
+                {reply.nickName && (
+                  <Tag closable onClose={onClose}>
+                    回复 @{reply.nickName}
+                  </Tag>
+                )}
+                <Button
+                  className="h-comment-btn"
+                  type="primary"
+                  onClick={() => {
+                    bindClick(
+                      form.getFieldValue(),
+                      content.toHTML(),
+                      saveSuccess
+                    );
+                  }}
+                >
+                  发布
+                </Button>
               </Col>
             </Row>
           </Form>
