@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Row, Col, Divider, Skeleton, Drawer } from "antd";
+import { Row, Col, Divider, Skeleton, Drawer, message, Pagination } from "antd";
 import { useParams, useNavigate } from "react-router-dom";
 import Editor from "md-editor-rt";
 import moment from "moment";
@@ -24,7 +24,8 @@ const Dtl = () => {
   const [dtl, setDtl] = useState({});
   const [html, setHtml] = useState("");
   const [list, setList] = useState([]);
-  const [pageList, setPageList] = useState({ current: 1, size: 5 });
+  const [pageList, setPageList] = useState({ current: 1, size: 30 });
+  const [reply, setReply] = useState({});
   useEffect(() => {
     getDtl(searchParams.id);
     getCommentList(searchParams.id);
@@ -44,11 +45,7 @@ const Dtl = () => {
     const {
       code,
       data: { records, total, current },
-    } = await api.comment.getList.request({
-      current: 1,
-      size: 10,
-      replyArticleId: id,
-    });
+    } = await api.comment.getList.request({ ...pageList, replyArticleId: id });
     if (code === 0) {
       setList(records);
       setPageList({ ...pageList, total, current });
@@ -56,12 +53,29 @@ const Dtl = () => {
   };
   // 发表评论
   const saveComment = async (param, content, fn) => {
+    const params = reply.nickName
+      ? { ...reply, replyCmId: reply.id, ...param }
+      : param;
+    delete params.id;
+    const str = reply.nickName
+      ? `<div style='font-size:12px'>回复 <a style='padding-rigth:20px'>@${reply.nickName}</a></div>`
+      : "";
     const { code } = await api.comment.save.request(null, {
-      data: { replyArticleId: articleId, ...param, content },
+      data: {
+        replyArticleId: articleId,
+        ...params,
+        content: str + content,
+      },
     });
     if (code === 0) {
+      message.success("发布成功");
       getCommentList(articleId);
+      setReply({});
       fn();
+      document.getElementById("goCommentList").scrollIntoView({
+        block: "start",
+        behavior: "smooth",
+      });
     }
   };
   return (
@@ -147,9 +161,8 @@ const Dtl = () => {
         </Row> */}
       </div>
       <div className="mark-comment">
-        <HComment bindClick={saveComment} />
         <div className="mark-comment-title">{pageList.total}条评论</div>
-        <div className="mark-comment-list">
+        <div className="mark-comment-list" id="goCommentList">
           {list?.map((item, index) => (
             <Row
               wrap={false}
@@ -164,19 +177,45 @@ const Dtl = () => {
                 />
               </Col>
               <Col flex="auto">
-                <div>
-                  <span className="mark-comment-name">{item.nickName}</span>
-                  <span className="mark-comment-time">
-                    {moment(item.createTime).startOf().fromNow()}
-                  </span>
+                <div className="mark-comment-reply">
+                  <div className="mark-comment-reply-top">
+                    <span className="mark-comment-name">{item.nickName}</span>
+                    <span className="mark-comment-time">
+                      {moment(item.createTime).startOf().fromNow()}
+                    </span>
+                    <a
+                      className="mark-comment-btn"
+                      onClick={() => {
+                        setReply({
+                          ...item,
+                        });
+                        document.getElementById("goComment").scrollIntoView({
+                          block: "start",
+                          behavior: "smooth",
+                        });
+                      }}
+                    >
+                      回复
+                    </a>
+                  </div>
+                  <div
+                    className="mark-comment-content"
+                    dangerouslySetInnerHTML={{ __html: item.content }}
+                  ></div>
                 </div>
-                <div
-                  className="mark-comment-content h-card"
-                  dangerouslySetInnerHTML={{ __html: item.content }}
-                ></div>
               </Col>
             </Row>
           ))}
+          <div id="goComment">
+            <HComment
+              bindClick={saveComment}
+              reply={reply}
+              className="mark-comment-comment"
+              onClose={() => {
+                setReply({});
+              }}
+            />
+          </div>
         </div>
       </div>
     </div>
