@@ -39,7 +39,8 @@ export default function Say() {
               <Col key={index} xs={{ span: 24 }} lg={{ span: 8 }}>
                 <div className="say-list-item h-card">
                   <div className="say-list-tip">
-                    <div></div>
+                    {/* <div></div> */}
+                    📌
                   </div>
                   <div className="say-list-time">
                     {moment(item.createTime).format("YYYY-MM-DD HH:mm:ss")}
