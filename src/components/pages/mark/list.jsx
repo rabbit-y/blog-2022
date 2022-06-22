@@ -22,24 +22,29 @@ export default function List() {
   const params = useParams();
   const [mark, setMark] = useState([]);
   const [pageList, setPageList] = useState({ current: 1, size: 6 });
-
   useEffect(() => {
-    getList(page ? page : pageList, params.type);
-  }, [params]);
+    let paramObj = page.current ? page : pageList;
+    if ((page.typeChange || params.type) && page.typeChange != params.type) {
+      paramObj = { ...paramObj, current: 1 };
+    }
+    getList(paramObj, params.type);
+  }, [params.type]);
   // 获取文档列表
   const getList = async (page, typeId = "") => {
-    const {
-      code,
-      data: { records, total, current },
-    } = await api.article.getList.request({
+    const paramObj = {
       typeId: typeId,
       ...pageList,
       ...page,
-    });
+    };
+    const {
+      code,
+      data: { records, total, current },
+    } = await api.article.getList.request(paramObj);
     if (code === 0) {
+      const obj = { ...pageList, total, current };
       setMark(records);
-      setPageList({ ...pageList, total, current });
-      dispatch(setMarkListPage({ ...pageList, total, current }));
+      setPageList(obj);
+      dispatch(setMarkListPage({ ...obj, typeChange: paramObj.typeId }));
     }
   };
   const jumpDtl = (type, id) => {

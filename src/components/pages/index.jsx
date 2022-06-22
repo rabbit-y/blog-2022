@@ -1,6 +1,6 @@
 import { Suspense, lazy } from "react";
 import { Route, Routes, Navigate } from "react-router-dom";
-import { Row, Col } from "antd";
+import { Row, Col, Spin } from "antd";
 
 import { RoutersList, AdminRoutersList } from "@/router/router";
 
@@ -10,7 +10,6 @@ import Classify from "@pages/classify/index";
 import Friend from "@pages/friend/index";
 import Listen from "@pages/listen/index";
 import Nav from "@pages/nav/index";
-import Loading from "@components/Loading/index";
 import Login from "@pages/login/index";
 import Register from "@pages/register/index";
 import "./index.less";
@@ -23,7 +22,7 @@ const App = () => {
       <Route
         path="*"
         element={
-          <Suspense fallback={<Loading />}>
+          <Suspense fallback={<Spin />}>
             <div className="layout">
               <div className="layout-row">
                 <Nav />
@@ -36,7 +35,7 @@ const App = () => {
                             path={item.path}
                             key={index}
                             element={
-                              <Suspense fallback={<Loading />}>
+                              <Suspense fallback={<Spin />}>
                                 <item.element />
                               </Suspense>
                             }
@@ -46,7 +45,7 @@ const App = () => {
                                 path={childItem.path}
                                 key={childIndex}
                                 element={
-                                  <Suspense fallback={<Loading />}>
+                                  <Suspense fallback={<Spin />}>
                                     <childItem.element />
                                   </Suspense>
                                 }
@@ -80,7 +79,7 @@ const App = () => {
       <Route
         path="/admin"
         element={
-          <Suspense fallback={<Loading />}>
+          <Suspense fallback={<Spin />}>
             <Admin />
           </Suspense>
         }
@@ -91,7 +90,7 @@ const App = () => {
               path={item.path}
               key={index}
               element={
-                <Suspense fallback={<Loading />}>
+                <Suspense fallback={<Spin />}>
                   <item.element />
                 </Suspense>
               }
@@ -101,7 +100,7 @@ const App = () => {
                   path={childItem.path}
                   key={childIndex}
                   element={
-                    <Suspense fallback={<Loading />}>
+                    <Suspense fallback={<Spin />}>
                       <childItem.element />
                     </Suspense>
                   }
@@ -114,7 +113,7 @@ const App = () => {
       <Route
         path="/login"
         element={
-          <Suspense fallback={<Loading />}>
+          <Suspense fallback={<Spin />}>
             <Login />
           </Suspense>
         }
@@ -122,7 +121,7 @@ const App = () => {
       <Route
         path="/register"
         element={
-          <Suspense fallback={<Loading />}>
+          <Suspense fallback={<Spin />}>
             <Register />
           </Suspense>
         }
