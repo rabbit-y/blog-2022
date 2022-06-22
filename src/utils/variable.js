@@ -13,6 +13,11 @@ export const ROTER = [
     icon: <IconFont type="h-caihong" />,
   },
   {
+    key: "/me",
+    label: "关于我",
+    icon: <IconFont type="h-caihong" />,
+  },
+  {
     key: "/time",
     label: "建站",
     icon: <IconFont type="h-caihong" />,
@@ -25,11 +30,6 @@ export const ROTER = [
   {
     key: "/plugins",
     label: "工具",
-    icon: <IconFont type="h-caihong" />,
-  },
-  {
-    key: "/me",
-    label: "关于我",
     icon: <IconFont type="h-caihong" />,
   },
   {
