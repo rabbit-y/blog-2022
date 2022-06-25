@@ -109,6 +109,9 @@ export const LISTENLIST = [
   }
 ]
 export const TIMELINE = [{
+  time: '2022-06-25',
+  content: '整体样式大改，添加留言以及评论回复功能'
+}, {
   time: '2022-06-20',
   content: '添加文章评论回复功能'
 }, {
