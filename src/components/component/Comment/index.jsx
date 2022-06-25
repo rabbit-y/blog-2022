@@ -7,7 +7,12 @@ import "braft-editor/dist/index.css";
 import config from "@utils/config";
 
 import "./index.less";
-export default function HComment({ bindClick, className, reply, onClose }) {
+export default function HComment({
+  bindClick,
+  className = "",
+  reply,
+  onClose,
+}) {
   const [form] = Form.useForm();
   const [editorInstance, setEditorInstance] = useState();
   const [avatar, setAvatar] = useState(config.COS_URL + "blog/headers/3");
@@ -64,11 +69,13 @@ export default function HComment({ bindClick, className, reply, onClose }) {
   };
   return (
     <div className={`h-comment ${className}`}>
-      <Divider plain>
-        <span className="h-comment-tip">
-          在「昵称」处填写QQ号，Enther获取「头像」和「QQ邮箱」
-        </span>
-      </Divider>
+      <div className="h-comment-divider">
+        <Divider orientation="right" orientationMargin="0">
+          <span className="h-comment-tip">
+            在「昵称」处填写QQ号，Enther获取「头像」和「QQ邮箱」
+          </span>
+        </Divider>
+      </div>
       <Row wrap={false} gutter={[20, 20]}>
         <Col flex="none">
           <img className="h-comment-img" src={avatar} />
@@ -127,9 +134,9 @@ export default function HComment({ bindClick, className, reply, onClose }) {
                 </Form.Item>
               </Col>
               <Col span={24}>
-                {reply.nickName && (
+                {reply?.nickName && (
                   <Tag closable onClose={onClose}>
-                    回复 @{reply.nickName}
+                    回复 @{reply?.nickName}
                   </Tag>
                 )}
                 <Button

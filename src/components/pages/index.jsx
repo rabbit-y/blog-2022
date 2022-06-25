@@ -7,7 +7,7 @@ import { RoutersList, AdminRoutersList } from "@/router/router";
 import AboutMe from "@pages/aboutMe/index";
 import Footer from "@pages/footer/index";
 import Classify from "@pages/classify/index";
-import Friend from "@pages/friend/index";
+// import Friend from "@pages/friend/index";
 import Listen from "@pages/listen/index";
 import Nav from "@pages/nav/index";
 import Login from "@pages/login/index";
@@ -61,7 +61,7 @@ const App = () => {
                     <div className="sider">
                       <AboutMe />
                       <Classify />
-                      <Friend />
+                      {/* <Friend /> */}
                       <Listen />
                     </div>
                   </Col>

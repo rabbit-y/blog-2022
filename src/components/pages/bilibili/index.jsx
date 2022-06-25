@@ -56,6 +56,7 @@ const Bilibili = () => {
       </Row>
       <div className="bili-list-page">
         <Pagination
+          hideOnSinglePage
           current={current.pn}
           onChange={(page) => {
             getList(page);

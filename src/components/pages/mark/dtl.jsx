@@ -202,6 +202,43 @@ const Dtl = () => {
                     className="mark-comment-content"
                     dangerouslySetInnerHTML={{ __html: item.content }}
                   ></div>
+                  {item.children.length > 0 && (
+                    <div className="mark-comment-child">
+                      {item.children.map((items, indexs) => (
+                        <Row
+                          wrap={false}
+                          gutter={[20]}
+                          key={indexs}
+                          className="mark-comment-item"
+                        >
+                          <Col flex="none">
+                            <img
+                              className="mark-comment-avatar"
+                              src={items.avatar ? items.avatar : avatar}
+                            />
+                          </Col>
+                          <Col flex="auto">
+                            <div className="mark-comment-reply">
+                              <div className="mark-comment-reply-top">
+                                <span className="mark-comment-name">
+                                  {items.nickName}
+                                </span>
+                                <span className="mark-comment-time">
+                                  {moment(items.createTime).startOf().fromNow()}
+                                </span>
+                              </div>
+                              <div
+                                className="mark-comment-content"
+                                dangerouslySetInnerHTML={{
+                                  __html: items.content,
+                                }}
+                              ></div>
+                            </div>
+                          </Col>
+                        </Row>
+                      ))}
+                    </div>
+                  )}
                 </div>
               </Col>
             </Row>
