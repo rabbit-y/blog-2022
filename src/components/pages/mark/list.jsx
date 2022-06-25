@@ -96,6 +96,7 @@ export default function List() {
           ))}
         </div>
         <Pagination
+          hideOnSinglePage
           current={pageList.current}
           total={pageList.total}
           pageSize={pageList.size}

@@ -89,6 +89,7 @@ export default function Say() {
         <Col flex="auto" className="admin-say-list">
           {pageList?.total && (
             <Pagination
+              hideOnSinglePage
               pageSize={pageList.size}
               current={pageList.current}
               total={pageList.total}

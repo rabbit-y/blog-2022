@@ -6,7 +6,7 @@ import "./index.less";
 
 export default function Listen() {
   const cofig = {
-    theme: "#1DA57A",
+    theme: "#666",
     listFolded: true,
     listMaxHeight: "100px",
     lrcType: 3,

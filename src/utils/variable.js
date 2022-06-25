@@ -4,7 +4,7 @@ import config from "./config"
 export const ROTER = [
   {
     key: "/mark",
-    label: "首页",
+    label: "Home",
     icon: <IconFont type="h-caihong" />,
   },
   {
@@ -18,15 +18,15 @@ export const ROTER = [
     icon: <IconFont type="h-caihong" />,
   },
   {
+    key: "/comment",
+    label: "友人帐",
+    icon: <IconFont type="h-caihong" />,
+  },
+  {
     key: "/time",
     label: "建站",
     icon: <IconFont type="h-caihong" />,
   },
-  // {
-  //   key: "/comment",
-  //   label: "飞机票",
-  //   icon: <IconFont type="h-caihong" />,
-  // },
   {
     key: "/plugins",
     label: "工具",
@@ -109,9 +109,12 @@ export const LISTENLIST = [
   }
 ]
 export const TIMELINE = [{
+  time: '2022-06-25',
+  content: '整体样式大改，添加留言以及评论回复功能'
+}, {
   time: '2022-06-20',
   content: '添加文章评论回复功能'
-},{
+}, {
   time: '2022-06-17',
   content: '修复KeepAlive导致带参数的路由白页问题'
 }, {
