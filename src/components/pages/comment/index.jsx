@@ -45,6 +45,7 @@ export default function Comment() {
       data: {
         ...params,
         content: str + content,
+        replyArticleId: 0,
       },
     });
     if (code === 0) {
