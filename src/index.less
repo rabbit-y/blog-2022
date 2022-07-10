@@ -33,6 +33,23 @@ body {
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
+  position: relative;
+}
+// body::before {
+//   background-image: url("./image/dian.png");
+//   content: "";
+//   position: fixed;
+//   top: 0;
+//   bottom: 0;
+//   left: 0;
+//   right: 0;
+//   z-index: 3;
+//   background-attachment: fixed;
+// }
+body > * {
+  position: absolute;
+  width: 100%;
+  z-index: 10;
 }
 
 code {
@@ -46,10 +63,13 @@ code {
   border-top-color: rgb(170, 170, 170);
 }
 
-.ant-input,
 .ant-input-affix-wrapper {
   background-color: rgba(255, 255, 255, 0.6);
+  .ant-input {
+    background-color: transparent;
+  }
 }
+
 .ant-input-affix-wrapper {
   border-radius: @h-border-radius;
 }
