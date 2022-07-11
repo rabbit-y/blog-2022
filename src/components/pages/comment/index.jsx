@@ -132,7 +132,7 @@ export default function Comment() {
   };
   return (
     <div className="comment">
-      <div className="comment-dec h-card">
+      <div className="comment-dec h-content">
         <div>昵称: 花贝</div>
         <div>链接: https://han96.com</div>
         <div>头像: https://cos.han96.com/blog/upload/96211653576399721.jpg</div>

@@ -4,7 +4,7 @@ import "./index.less";
 import { JSLIST } from "@utils/variable";
 const Me = () => {
   return (
-    <div className="me">
+    <div className="me h-content">
       <div className="me-list">
         <Divider orientation="center" plain>
           花贝

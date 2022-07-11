@@ -66,9 +66,9 @@ const App = () => {
                     </div>
                   </Col>
                 </Row>
-                <div className="foot">
-                  <Footer />
-                </div>
+              </div>
+              <div className="foot">
+                <Footer />
               </div>
             </div>
           </Suspense>

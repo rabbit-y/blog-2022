@@ -14,10 +14,10 @@ export default function Time() {
           return (
             <Timeline.Item
               key={index}
-              dot={<IconFont type="h-xiangsu_mao" style={{ fontSize: 26 }} />}
+              // dot={<IconFont type="h-xiangsu_mao" style={{ fontSize: 26 }} />}
             >
               <div className="time-list-time">{item.time}</div>
-              <div className="time-list-cont">
+              <div className="h-card time-list-cont">
                 <div>{item.content}</div>
               </div>
             </Timeline.Item>

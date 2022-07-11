@@ -12,7 +12,7 @@ export default function Plugins() {
     <div className="plugins">
       <Row gutter={[20, 20]}>
         <Col lg={{ span: 12 }} xs={{ span: 24 }}>
-          <div className="plugins-left">
+          <div className="plugins-left h-card">
             <div className="plugins-title">插件、工具</div>
             {plugins?.map((item, index) => (
               <div
@@ -34,7 +34,7 @@ export default function Plugins() {
           </div>
         </Col>
         <Col lg={{ span: 12 }} xs={{ span: 24 }}>
-          <div className="plugins-rt">
+          <div className="plugins-rt h-card">
             <div className="plugins-title">实用网站</div>
             {website?.map((item, index) => (
               <div

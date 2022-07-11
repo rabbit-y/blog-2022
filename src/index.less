@@ -29,7 +29,8 @@ h1 {
   font-weight: 400;
 }
 body {
-  background-image: url("https://cos.han96.com/blog/style/background2");
+  // background-image: url("https://cos.han96.com/blog/style/background2");
+  background-image: url("http://han96.com/api/img");
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
@@ -37,6 +38,7 @@ body {
 }
 // body::before {
 //   background-image: url("./image/dian.png");
+//   backdrop-filter: blur(4px);
 //   content: "";
 //   position: fixed;
 //   top: 0;
@@ -64,7 +66,7 @@ code {
 }
 
 .ant-input-affix-wrapper {
-  background-color: rgba(255, 255, 255, 0.6);
+  background-color: rgba(255, 255, 255, 0.8);
   .ant-input {
     background-color: transparent;
   }
@@ -106,21 +108,29 @@ pre {
 }
 .h-card {
   width: 100%;
-  background-color: #fff;
   overflow: hidden;
   border-radius: @h-border-radius;
-  border: 1px solid rgba(34, 36, 38, 0.1);
+  // border: 1px solid rgba(34, 36, 38, 0.1);
   box-shadow: 0 1px 2px 0 rgb(34 36 38 / 15%);
+  backdrop-filter: blur(10px);
+  background-color: rgba(255, 255, 255, 0.8);
+}
+.h-content{
+  padding: 20px 40px; 
+  border-radius: @h-border-radius;
+  // backdrop-filter: blur(18px);
+  background-color: #fff;
 }
 .h-text-shadow {
-  text-shadow: 1px 0 0 #fff;
+  // text-shadow: 1px 0 0 #fff;
+    color: #333;
 }
 .h-text-card {
   padding-top: 30px;
   .h-text-title {
-    color: #6e7173;
     padding-bottom: 10px;
-    text-shadow: 1px 0 0 #fff;
+    // text-shadow: 1px 0 0 #fff;
+    color: #333;
     span {
       font-size: 32px;
       margin-right: 10px;

@@ -40,9 +40,15 @@ const Bilibili = () => {
               }}
             >
               <div className="bili-list-img">
-                <img
-                  src={"/bimg" + item.cover.slice(19) + "@198w_264h.webp"}
-                ></img>
+                <div
+                  className="bili-list-imgbg"
+                  style={{
+                    background: `url(/bimg${item.cover.slice(
+                      19
+                    )}@198w_264h.webp) 50% no-repeat`,
+                    backgroundSize: "cover",
+                  }}
+                ></div>
                 <div className="bili-list-img-ep">{item.new_ep.index_show}</div>
                 <div className="bili-list-img-type">
                   {item.season_type_name}

@@ -97,7 +97,7 @@ const Dtl = () => {
           目录
         </div>
       </div>
-      <div className="mark-dtl-all">
+      <div className="mark-dtl-all h-content">
         <h1>{dtl.title}</h1>
         <div className="mark-dtl-title">
           <IconFont type="h-shijian" />
@@ -134,7 +134,7 @@ const Dtl = () => {
           </Drawer>
         </div>
       </div>
-      <div className="mark-dtl-CC opacity6 h-card">
+      <div className="mark-dtl-CC h-card">
         <div>
           版权属于：<a href={location.href}>@{masterInfo.nickname}</a>
         </div>
