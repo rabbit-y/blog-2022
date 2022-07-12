@@ -35,7 +35,7 @@ export default function Friend() {
       >
         <Row>
           <Col>
-            <img src="https://img9.doubanio.com/view/subject/s/public/s33703494.jpg" />
+            <img src={config.COS_URL + "blog/headers/redbook"} />
           </Col>
           <Col>
             <div>javaScript高级程序设计</div>
