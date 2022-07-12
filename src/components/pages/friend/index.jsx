@@ -19,7 +19,7 @@ export default function Friend() {
       >
         <Row>
           <Col>
-            <img src={config.COS_URL + "blog/headers/3"} />
+            <img src={config.COS_URL + "blog/headers/4"} />
           </Col>
           <Col>
             <div>面试题</div>
@@ -30,15 +30,15 @@ export default function Friend() {
       <div
         className="friend-list h-text-shadow h-link-cur"
         onClick={() => {
-          window.open("https://dshvv.github.io/red-treasure-book/dist/");
+          window.open("https://rabbit-y.github.io/interview-book/");
         }}
       >
         <Row>
           <Col>
-            <img src="https://dshvv.github.io/red-treasure-book/dist/logo.svg" />
+            <img src="https://img9.doubanio.com/view/subject/s/public/s33703494.jpg" />
           </Col>
           <Col>
-            <div>js高级程序设计</div>
+            <div>javaScript高级程序设计</div>
             <div className="friend-list-dec">红宝书的漂亮版</div>
           </Col>
         </Row>
