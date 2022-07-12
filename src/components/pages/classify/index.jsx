@@ -14,7 +14,7 @@ export default function Classify() {
     <div className="classify h-text-card ">
       <div className="classify-title h-text-title">
         <IconFont type="h-a-kuzhuangkushuaiqishuashuaibiaoqingxiaolian" />
-        <b>分类</b>
+        <b>归档</b>
       </div>
       {typeList?.map((item, index) => (
         <div

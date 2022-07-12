@@ -36,7 +36,7 @@ const Me = () => {
           <div className="me-content-list">
             <Tag color="#666">前端技术</Tag>
             <span>
-              React 17.0 + React-Roter v6 + Antd，全部由自己搭建，
+              React 18.0 + React-Roter v6 + Antd，全部由自己搭建，
               <a href="https://gitee.com/han96/blog-2022" target="_blank">
                 点击查看源码
               </a>
