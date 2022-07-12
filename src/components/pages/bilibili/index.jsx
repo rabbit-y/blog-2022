@@ -1,27 +1,36 @@
 import { useEffect, useState } from "react";
-import { Row, Col, Pagination } from "antd";
+import { Row, Col, Pagination, Tag } from "antd";
 import axios from "axios";
 import moment from "moment";
 import { scroll } from "@utils";
 
 import "./index.less";
 
+const { CheckableTag } = Tag;
+const typeList = [
+  { name: "看过", status: 3 },
+  { name: "在看", status: 2 },
+  { name: "想看", status: 1 },
+];
 const Bilibili = () => {
   const [myList, setList] = useState([]);
   const [current, setCurrent] = useState({ pn: 1 });
+  const [status, setStatus] = useState(3);
   useEffect(() => {
     getList();
   }, []);
-  const getList = async (page) => {
+  const getList = async (page, follow_status) => {
     const {
       data: {
         code,
         data: { list, total, pn },
       },
     } = await axios.get(
-      `/bilibili/x/space/bangumi/follow/list?type=1&follow_status=0&ps=20&vmid=458066744&ts=${moment().format(
-        "X"
-      )}&pn=${page ? page : current.pn}`
+      `/bilibili/x/space/bangumi/follow/list?type=1&follow_status=${
+        follow_status ? follow_status : status
+      }&ps=20&vmid=458066744&ts=${moment().format("X")}&pn=${
+        page ? page : current.pn
+      }`
     );
     if (code === 0) {
       setList(list);
@@ -30,6 +39,20 @@ const Bilibili = () => {
   };
   return (
     <div>
+      <div className="bili-tag">
+        {typeList.map((tag) => (
+          <CheckableTag
+            key={tag.status}
+            checked={status == tag.status}
+            onChange={() => {
+              setStatus(tag.status);
+              getList(1, tag.status);
+            }}
+          >
+            {tag.name}
+          </CheckableTag>
+        ))}
+      </div>
       <Row justify="start" gutter={[36, 24]}>
         {myList?.map((item, index) => (
           <Col key={index} xs={{ span: 12 }} lg={{ span: 6 }}>
@@ -43,9 +66,10 @@ const Bilibili = () => {
                 <div
                   className="bili-list-imgbg"
                   style={{
-                    background: `url(/bimg${item.cover.slice(
+                    backgroundImage: `url(/bimg${item.cover.slice(
                       19
-                    )}@198w_264h.webp) 50% no-repeat`,
+                    )}@198w_264h.webp)`,
+                    backgroundRepeat: "no-repeat",
                     backgroundSize: "cover",
                   }}
                 ></div>

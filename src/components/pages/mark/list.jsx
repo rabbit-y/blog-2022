@@ -95,16 +95,18 @@ export default function List() {
             </div>
           ))}
         </div>
-        <Pagination
-          hideOnSinglePage
-          current={pageList.current}
-          total={pageList.total}
-          pageSize={pageList.size}
-          onChange={(page) => {
-            getList({ current: page });
-            scroll(0, 0);
-          }}
-        />
+        <div className="mark-page">
+          <Pagination
+            hideOnSinglePage
+            current={pageList.current}
+            total={pageList.total}
+            pageSize={pageList.size}
+            onChange={(page) => {
+              getList({ current: page });
+              scroll(0, 0);
+            }}
+          />
+        </div>
       </KeepAlive>
     </div>
   );
