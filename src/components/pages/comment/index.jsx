@@ -132,7 +132,7 @@ export default function Comment() {
   };
   return (
     <div className="comment">
-      <div className="comment-dec h-content">
+      <div className="comment-dec">
         <div>昵称: 花贝</div>
         <div>链接: https://han96.com</div>
         <div>头像: https://cos.han96.com/blog/upload/96211653576399721.jpg</div>
@@ -140,7 +140,7 @@ export default function Comment() {
         <div className="comment-dec-cont">
           <Texty enter={getEnter}>交换友链成为邻居吧</Texty>
         </div>
-        <div className="comment-friend">
+        <div className="comment-friend h-link-cur">
           <Card>
             {friends?.map((item, index) => (
               <Card.Grid
@@ -196,7 +196,7 @@ export default function Comment() {
                     {moment(item.createTime).startOf().fromNow()}
                   </span>
                   <a
-                    className="comment-list-btn"
+                    className="comment-list-btn h-link-cur"
                     onClick={() => {
                       setReply({
                         ...item,

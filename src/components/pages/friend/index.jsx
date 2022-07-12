@@ -12,7 +12,7 @@ export default function Friend() {
         {/* <div className="friend-title-dec">输出很多知识或很漂亮独特的博客</div> */}
       </div>
       <div
-        className="friend-list h-text-shadow"
+        className="friend-list h-text-shadow h-link-cur"
         onClick={() => {
           window.open("https://rabbit-y.github.io/interview-book/dist/");
         }}
@@ -28,7 +28,7 @@ export default function Friend() {
         </Row>
       </div>
       <div
-        className="friend-list h-text-shadow"
+        className="friend-list h-text-shadow h-link-cur"
         onClick={() => {
           window.open("https://dshvv.github.io/red-treasure-book/dist/");
         }}

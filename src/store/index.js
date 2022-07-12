@@ -17,7 +17,7 @@ export const fetchTypes = createAsyncThunk(
 const AppSlice = createSlice({
   name: "app", // 命名空间
   initialState: {
-    routerKey: '/mark',// 首页导航当前选中判断
+    routerKey: 'mark',// 首页导航当前选中判断
     markListPage: {}, //列表初始位置
     types: [],// 分类初始值
     info: {}, // 站长信息

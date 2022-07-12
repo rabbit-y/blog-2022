@@ -16,6 +16,9 @@
     /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
       url("//at.alicdn.com/t/webfont_35k80l1hbcv.svg#站酷小薇体") format("svg"); /* iOS 4.1- */
 }
+* {
+  cursor:url(./image/normal.cur),auto;
+}
 body,
 h1 {
   margin: 0;
@@ -36,24 +39,11 @@ body {
   background-attachment: fixed;
   position: relative;
 }
-// body::before {
-//   background-image: url("./image/dian.png");
-//   backdrop-filter: blur(4px);
-//   content: "";
-//   position: fixed;
-//   top: 0;
-//   bottom: 0;
-//   left: 0;
-//   right: 0;
-//   z-index: 3;
-//   background-attachment: fixed;
-// }
 body > * {
   position: absolute;
   width: 100%;
   z-index: 10;
 }
-
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
@@ -110,15 +100,12 @@ pre {
   width: 100%;
   overflow: hidden;
   border-radius: @h-border-radius;
-  // border: 1px solid rgba(34, 36, 38, 0.1);
   box-shadow: 0 1px 2px 0 rgb(34 36 38 / 15%);
-  backdrop-filter: blur(10px);
-  background-color: rgba(255, 255, 255, 0.8);
+  background-color: rgb(255, 255, 255);
 }
 .h-content{
   padding: 20px 40px; 
   border-radius: @h-border-radius;
-  // backdrop-filter: blur(18px);
   background-color: #fff;
 }
 .h-text-shadow {
@@ -129,8 +116,8 @@ pre {
   padding-top: 30px;
   .h-text-title {
     padding-bottom: 10px;
-    // text-shadow: 1px 0 0 #fff;
-    color: #333;
+    color: @h-color;
+    font-weight: bold;
     span {
       font-size: 32px;
       margin-right: 10px;
@@ -142,6 +129,9 @@ pre {
       font-weight: 400;
     }
   }
+}
+.h-link-cur > *{
+  cursor:url(./image/Link.cur),auto;
 }
 
 // 滚动条

@@ -19,7 +19,7 @@ export default function About() {
           item.url ? (
             <div
               key={item.name}
-              className="about-link-btn"
+              className="about-link-btn h-link-cur"
               onClick={() => {
                 window.open(item.url);
               }}

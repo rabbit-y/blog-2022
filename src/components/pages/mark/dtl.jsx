@@ -80,7 +80,7 @@ const Dtl = () => {
   };
   return (
     <div className="mark-dtl">
-      <div className="mark-dtl-btn">
+      <div className="mark-dtl-btn h-link-cur">
         <div
           onClick={() => {
             navigate(-1);
@@ -107,7 +107,7 @@ const Dtl = () => {
           {dtl.typeName}
         </div>
         <div className="mark-dtl-cont">
-          {!editorShow && <Skeleton active paragraph={{ rows: 10 }} />}
+          {!editorShow && <Skeleton active paragraph={{ rows: 15 }} />}
           <Editor
             className="mark-markdown-cls mark-dtl-editor"
             editorId="my-editor"
@@ -184,7 +184,7 @@ const Dtl = () => {
                       {moment(item.createTime).startOf().fromNow()}
                     </span>
                     <a
-                      className="mark-comment-btn"
+                      className="mark-comment-btn h-link-cur"
                       onClick={() => {
                         setReply({
                           ...item,

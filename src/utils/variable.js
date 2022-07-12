@@ -109,6 +109,9 @@ export const LISTENLIST = [
   }
 ]
 export const TIMELINE = [{
+  time: '2022-07-12',
+  content: '又大改样式啦，自建博客就是在于一直折腾呀'
+},{
   time: '2022-06-25',
   content: '整体样式大改，添加留言以及评论回复功能'
 }, {

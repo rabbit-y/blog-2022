@@ -6,6 +6,7 @@ import { setRouterKey } from "@/store";
 import { ROTER } from "@utils/variable";
 import { scroll } from "@utils";
 
+import cat2 from "@/image/cat2.png";
 import "./index.less";
 
 const Nav = () => {
@@ -37,6 +38,7 @@ const Nav = () => {
           <div className="title-dec">{info.stationDec}</div>
         </div>
       </div>
+      <img className="nav-img" src={cat2} />
       <div className="nav">
         <Menu
           mode="horizontal"

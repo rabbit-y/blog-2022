@@ -19,7 +19,7 @@ import './index.less';
 moment.locale('zh-cn');
 ConfigProvider.config({
   theme: {
-    primaryColor: '#63bbd0'
+    primaryColor: '#640125'
   },
 });
 

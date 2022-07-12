@@ -54,7 +54,7 @@ export default function Say() {
       </div>
       {list.length < pageList.total && (
         <Divider>
-          <div className="say-list-more" onClick={more}>
+          <div className="say-list-more h-link-cur" onClick={more}>
             查看更多
           </div>
         </Divider>

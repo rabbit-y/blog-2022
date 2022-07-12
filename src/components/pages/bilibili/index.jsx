@@ -19,7 +19,7 @@ const Bilibili = () => {
         data: { list, total, pn },
       },
     } = await axios.get(
-      `/bilibili/x/space/bangumi/follow/list?type=1&follow_status=0&ps=12&vmid=458066744&ts=${moment().format(
+      `/bilibili/x/space/bangumi/follow/list?type=1&follow_status=0&ps=20&vmid=458066744&ts=${moment().format(
         "X"
       )}&pn=${page ? page : current.pn}`
     );

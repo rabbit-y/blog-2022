@@ -18,7 +18,7 @@ export default function Classify() {
       </div>
       {typeList?.map((item, index) => (
         <div
-          className="classify-list h-text-shadow"
+          className="classify-list h-text-shadow h-link-cur"
           key={index}
           onClick={() => {
             getTypeList(item);

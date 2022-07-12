@@ -77,7 +77,7 @@ export default function List() {
         <div className="mark-list">
           {mark?.map((item, index) => (
             <div
-              className="mark-list-page h-card"
+              className="mark-list-page h-card h-link-cur"
               key={index}
               onClick={() => {
                 jumpDtl(item.typeId, item.id);

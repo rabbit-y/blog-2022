@@ -16,7 +16,7 @@ export default function Plugins() {
             <div className="plugins-title">插件、工具</div>
             {plugins?.map((item, index) => (
               <div
-                className="plugins-list"
+                className="plugins-list h-link-cur"
                 key={index}
                 onClick={() => {
                   herf(item.url);
