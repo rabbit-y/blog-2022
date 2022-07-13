@@ -21,7 +21,7 @@ export default function List() {
   const page = useSelector((state) => state.markListPage);
   const params = useParams();
   const [mark, setMark] = useState([]);
-  const [pageList, setPageList] = useState({ current: 1, size: 6 });
+  const [pageList, setPageList] = useState({ current: 1, size: 8 });
   useEffect(() => {
     let paramObj = page.current ? page : pageList;
     if ((page.typeChange || params.type) && page.typeChange != params.type) {
@@ -77,13 +77,12 @@ export default function List() {
         <div className="mark-list">
           {mark?.map((item, index) => (
             <div
-              className="mark-list-page h-card h-link-cur"
+              className="mark-list-page h-link-cur"
               key={index}
               onClick={() => {
                 jumpDtl(item.typeId, item.id);
               }}
             >
-              <div className="mark-list-page-title">{item.title}</div>
               <div className="mark-list-page-msg">
                 <IconFont type="h-shijian" />
                 {moment(item.createTime).format("YYYY-MM-DD HH:mm")}
@@ -91,7 +90,7 @@ export default function List() {
                 <IconFont type="h-wenjianjia" />
                 {item.typeName}
               </div>
-              <div className="mark-list-page-dec">{item.description}</div>
+              <div className="mark-list-page-title">{item.title}</div>
             </div>
           ))}
         </div>
