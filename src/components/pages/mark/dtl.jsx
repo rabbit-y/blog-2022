@@ -91,10 +91,10 @@ const Dtl = () => {
       <div className="mark-dtl-all h-content">
         <h1>{dtl.title}</h1>
         <div className="mark-dtl-title">
-          <IconFont type="h-shijian" />
+          <IconFont type="h-xiaoxiong" />
           {moment(dtl.createTime).format("YYYY-MM-DD HH:mm")}
           <Divider type="vertical" />
-          <IconFont type="h-wenjianjia" />
+          <IconFont type="h-xiaoxiong" />
           {dtl.typeName}
         </div>
         <div className="mark-dtl-cont">
