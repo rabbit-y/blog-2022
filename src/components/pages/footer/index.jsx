@@ -9,7 +9,7 @@ import "./index.less";
 
 export default function Footer() {
   const info = useSelector((state) => state.info);
-  const [ip, setIp] = useState({});
+  const [day, setDay] = useState({});
   useEffect(() => {
     getIp();
   }, []);
@@ -20,7 +20,6 @@ export default function Footer() {
       `https://www.mxnzp.com/api/ip/self?app_id=rgihdrm0kslojqvm&app_secret=WnhrK251TWlUUThqaVFWbG5OeGQwdz09`
     );
     if (code === 1) {
-      setIp(data);
       getDay(data.city);
     }
   };
@@ -28,7 +27,7 @@ export default function Footer() {
     const { data } = await axios.get(
       `https://www.tianqiapi.com/free/day?appid=56761788&appsecret=ti3hP8y9&city=${e}`
     );
-    console.log(data);
+    setDay(data);
   };
   return (
     <div className="footer">
@@ -46,6 +45,17 @@ export default function Footer() {
         >
           {info.stationPutOnRecord}
         </a>
+      </div>
+      <div className="footer-day">
+        hi~欢迎你来自<span>{day.city}</span>的朋友
+        <br />
+        今天是
+        <span>{day.date}</span>
+        <span>{day.week}</span>
+        <br />
+        今日<span>{day.wea}</span>
+        <span>{day.win}</span>
+        <span>{day.win_speed}</span>
       </div>
       <BackTop>
         <IconFont type="h-fanhuidingbu" className="footer-back" />

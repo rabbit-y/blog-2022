@@ -18,10 +18,30 @@
     box-sizing: content-box;
     border-radius: 50%;
   }
+  .footer-day{
+    position: fixed;
+    left: 20px;
+    bottom: 20px;
+    background:url(../../../image/day.png) 50% no-repeat;
+    width: 200px;
+    height: 200px;
+    background-size: cover;
+    padding-top: 80px;
+    font-size: 12px;
+    span{
+      color: @h-color;
+      font-size: 12px;
+      padding: 0 4px;
+      font-weight: bold;
+    }
+  }
 }
 
 @media screen and (max-width: 800px) {
   .footer {
     padding-left: 0px;
+    .footer-day{
+      display: none;
+    }
   }
 }
