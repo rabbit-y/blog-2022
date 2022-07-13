@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Row, Col, message, Pagination, Card, Avatar } from "antd";
+import { Row, Col, message, Pagination, Card, Avatar, Tag } from "antd";
 import { useSelector } from "react-redux";
 import Texty from "rc-texty";
 import moment from "moment";
@@ -133,10 +133,21 @@ export default function Comment() {
   return (
     <div className="comment">
       <div className="comment-dec">
-        <div>昵称: 花贝</div>
-        <div>链接: https://han96.com</div>
-        <div>头像: https://cos.han96.com/blog/upload/96211653576399721.jpg</div>
-        <div>描述: 一个社恐的前端开发从业者</div>
+        <div className="comment-dec-me">
+          <div>
+            <Tag color="#666">昵称</Tag>花贝
+          </div>
+          <div>
+            <Tag color="#666">链接</Tag>https://han96.com
+          </div>
+          <div>
+            <Tag color="#666">头像</Tag>
+            https://cos.han96.com/blog/upload/96211653576399721.jpg
+          </div>
+          <div>
+            <Tag color="#666">描述</Tag>一个社恐的前端开发从业者
+          </div>
+        </div>
         <div className="comment-dec-cont">
           <Texty enter={getEnter}>交换友链成为邻居吧</Texty>
         </div>
