@@ -53,7 +53,7 @@ export default function Footer() {
         <span>{day.date}</span>
         <span>{day.week}</span>
         <br />
-        今日<span>{day.wea}</span>
+        <span>{day.wea}</span>
         <span>{day.win}</span>
         <span>{day.win_speed}</span>
       </div>
