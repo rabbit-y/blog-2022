@@ -40,6 +40,29 @@
       #my-editor {
         background-color: unset;
       }
+      .mark-catalog{
+        width: 260px;
+        position: absolute;
+        right: -320px;
+        top: 0;
+        z-index: 20;
+        .mark-catalog-list{
+          background-color: #fff;
+          padding: 40px 20px;
+          padding-bottom: 80px;
+          border: 3px double @h-color;
+          border-radius: @h-border-radius;
+          .mark-catalog-title{
+            color: @h-color;
+            font-size: 20px;
+            font-weight: bold;
+            padding-bottom: 20px;
+          }
+        }
+        .md-catalog-link span:hover{
+          color: @h-color;
+        }
+      }
       img {
         max-width: 100%;
       }

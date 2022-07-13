@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Row, Col, Divider, Skeleton, Drawer, message, Pagination } from "antd";
+import { Row, Col, Divider, Skeleton, Anchor, message } from "antd";
 import { useParams, useNavigate } from "react-router-dom";
 import Editor from "md-editor-rt";
 import moment from "moment";
@@ -19,7 +19,6 @@ const Dtl = () => {
   const masterInfo = useSelector((state) => state.types);
   const [avatar] = useState(config.COS_URL + "blog/headers/3");
   const [articleId, setArticleId] = useState();
-  const [show, setShow] = useState(false);
   const [editorShow, setEditorShow] = useState(false);
   const [dtl, setDtl] = useState({});
   const [html, setHtml] = useState("");
@@ -88,14 +87,6 @@ const Dtl = () => {
         >
           返回
         </div>
-        <Divider />
-        <div
-          onClick={() => {
-            setShow(!show);
-          }}
-        >
-          目录
-        </div>
       </div>
       <div className="mark-dtl-all h-content">
         <h1>{dtl.title}</h1>
@@ -118,20 +109,17 @@ const Dtl = () => {
             }}
             previewOnly
           />
-          <Drawer
-            title="目录"
-            placement="right"
-            onClose={() => {
-              setShow(false);
-            }}
-            visible={show}
-            mask={false}
-          >
-            <Editor.Catalog
-              editorId="my-editor"
-              scrollElement={document.documentElement}
-            />
-          </Drawer>
+          <div className="mark-catalog">
+            <Anchor>
+              <div className="mark-catalog-list">
+                <div className="mark-catalog-title">目录</div>
+                <Editor.Catalog
+                  editorId="my-editor"
+                  scrollElement={document.documentElement}
+                />
+              </div>
+            </Anchor>
+          </div>
         </div>
       </div>
       <div className="mark-dtl-CC h-card">
@@ -142,7 +130,7 @@ const Dtl = () => {
           本文链接：<a href={location.href}>{location.href}</a>
         </div>
         <div>
-          作品采用采用{" "}
+          作品采用采用
           <a
             href="https://creativecommons.org/licenses/by-nc-sa/4.0/"
             target="_blank"
