@@ -1,7 +1,6 @@
 import { Row, Col } from "antd";
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import IconFont from "../../component/Icon/index";
 import "./index.less";
 
 export default function Classify() {
@@ -12,10 +11,6 @@ export default function Classify() {
   };
   return (
     <div className="classify h-text-card ">
-      <div className="classify-title h-text-title">
-        <IconFont type="h-a-kuzhuangkushuaiqishuashuaibiaoqingxiaolian" />
-        <b>归档</b>
-      </div>
       {typeList?.map((item, index) => (
         <div
           className="classify-list h-text-shadow h-link-cur"

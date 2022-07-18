@@ -167,19 +167,19 @@ export const JSLIST = [{
 }, {
   name: 'TypeScript',
   dec: 'Js语法糖(变得更像java了)',
-  percent: '30'
+  percent: '50'
 }, {
   name: 'React',
   dec: 'hooks+router+redux+next.js',
   percent: '70'
 }, {
   name: 'Vue',
-  dec: 'vue3',
-  percent: '50'
+  dec: 'vue3+router+pinia',
+  percent: '70'
 }, {
   name: 'UI框架',
   dec: 'Antd+BootStrap+LayUI+ElementUI',
-  percent: '30'
+  percent: '70'
 }, {
   name: '微信小程序',
   dec: '原生+Taro+uni-app',

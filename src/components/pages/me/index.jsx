@@ -6,9 +6,7 @@ const Me = () => {
   return (
     <div className="me">
       <div className="me-list">
-        <Divider orientation="center" plain>
-          花贝
-        </Divider>
+        <div className="me-title">🐱 关于花贝</div>
         <div className="me-content">
           <div className="me-content-list">
             <Tag color="#666">关于名字</Tag>
@@ -29,9 +27,7 @@ const Me = () => {
         </div>
       </div>
       <div className="me-list">
-        <Divider orientation="center" plain>
-          花贝的博客
-        </Divider>
+        <div className="me-title">🛖 关于本站</div>
         <div className="me-content">
           <div className="me-content-list">
             <Tag color="#666">前端技术</Tag>
@@ -53,9 +49,7 @@ const Me = () => {
         </div>
       </div>
       <div className="me-list">
-        <Divider orientation="center" plain>
-          花贝的技术站
-        </Divider>
+        <div className="me-title">💻 关于技术栈</div>
         <div className="me-content">
           <Card>
             {JSLIST?.map((item, index) => (

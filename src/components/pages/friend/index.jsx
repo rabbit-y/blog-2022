@@ -1,16 +1,10 @@
 import { Row, Col } from "antd";
-import IconFont from "../../component/Icon/index";
 import config from "@utils/config";
 import "./index.less";
 
 export default function Friend() {
   return (
     <div className="friend h-text-card ">
-      <div className="friend-title h-text-title">
-        <IconFont type="h-a-aiqingxihuansebiaoqingxiaolian" />
-        <b>想推荐</b>
-        {/* <div className="friend-title-dec">输出很多知识或很漂亮独特的博客</div> */}
-      </div>
       <div
         className="friend-list h-text-shadow h-link-cur"
         onClick={() => {

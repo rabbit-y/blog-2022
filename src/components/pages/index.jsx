@@ -51,9 +51,9 @@ const App = () => {
           <Col flex="320px" className="h-media">
             <div className="sider">
               <AboutMe />
+              <Listen />
               <Classify />
               <Friend />
-              <Listen />
             </div>
           </Col>
         </Row>

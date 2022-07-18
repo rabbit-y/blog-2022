@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Divider } from "antd";
+import { Divider, List, Avatar } from "antd";
 import moment from "moment";
 import { api } from "@api/index";
 import IconFont from "@components/Icon/index";
@@ -30,24 +30,21 @@ export default function Say() {
   };
   return (
     <div className="say">
-      <div className="say-list">
-        {list?.map((item, index) => {
-          return (
-            <div key={index} className="say-list-item">
-              <div className="say-list-tip"></div>
-              <div className="say-list-msg">
-                <div className="say-list-icon">
-                  <IconFont type="h-xiangsu_mao" />
-                </div>
-                <div className="say-list-time">
-                  {moment(item.createTime).fromNow()}
-                </div>
-              </div>
-              <div dangerouslySetInnerHTML={{ __html: item.content }}></div>
-            </div>
-          );
-        })}
-      </div>
+      <List
+        itemLayout="horizontal"
+        dataSource={list}
+        renderItem={(item) => (
+          <List.Item>
+            <List.Item.Meta
+              avatar={<IconFont type="h-xiangsu_mao" />}
+              description={moment(item.createTime).fromNow()}
+              title={
+                <div dangerouslySetInnerHTML={{ __html: item.content }}></div>
+              }
+            />
+          </List.Item>
+        )}
+      />
       {list.length < pageList.total && (
         <Divider>
           <div className="say-list-more h-link-cur" onClick={more}>
