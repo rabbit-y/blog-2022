@@ -24,10 +24,6 @@ export const RoutersList = [
     element: lazy(() => import("@pages/time/index"))
   },
   {
-    path: '/plugins',
-    element: lazy(() => import("@pages/plugins/index"))
-  },
-  {
     path: '/comment',
     element: lazy(() => import("@pages/comment/index"))
   }, {

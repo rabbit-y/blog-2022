@@ -28,38 +28,9 @@ export const ROTER = [
     icon: <IconFont type="h-caihong" />,
   },
   {
-    key: "/plugins",
-    label: "工具",
-    icon: <IconFont type="h-caihong" />,
-  },
-  {
     key: "/bilibili",
     label: "追番",
     icon: <IconFont type="h-bilibili1" />,
-  },
-]
-export const ADMINOTER = [
-  {
-    key: "/admin",
-    label: "首页",
-  },
-  {
-    key: "profile",
-    label: "用户管理",
-    children: [{ label: "站长资料", key: "/admin/profile" }],
-  },
-  {
-    key: "mark",
-    label: "文档",
-    children: [
-      { label: "碎碎念", key: "/admin/say" },
-      { label: "文档", key: "/admin/mark" },
-    ],
-  },
-  {
-    key: "classify",
-    label: "参数管理",
-    children: [{ label: "分类管理", key: "/admin/classify" }],
   },
 ]
 export const ABOUTLINK = [

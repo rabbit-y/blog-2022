@@ -6,7 +6,7 @@ import "./index.less";
 export default function About() {
   const user = useSelector((state) => state.types);
   return (
-    <div className="about">
+    <div className="about h-card-shadow">
       <div className="about-header">
         <img src={user.avatar} alt="头像" />
       </div>

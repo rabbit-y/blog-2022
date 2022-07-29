@@ -1,8 +1,7 @@
 import { useEffect, useState } from "react";
-import { Divider, List, Avatar } from "antd";
+import { Divider, Button } from "antd";
 import moment from "moment";
 import { api } from "@api/index";
-import IconFont from "@components/Icon/index";
 import "./index.less";
 
 export default function Say() {
@@ -30,25 +29,18 @@ export default function Say() {
   };
   return (
     <div className="say">
-      <List
-        itemLayout="horizontal"
-        dataSource={list}
-        renderItem={(item) => (
-          <List.Item>
-            <List.Item.Meta
-              avatar={<IconFont type="h-xiangsu_mao" />}
-              description={moment(item.createTime).fromNow()}
-              title={
-                <div dangerouslySetInnerHTML={{ __html: item.content }}></div>
-              }
-            />
-          </List.Item>
-        )}
-      />
+      {list?.map((item) => (
+        <div className="say-list">
+          <div className="say-list-time">
+            💕 {moment(item.createTime).fromNow()}
+          </div>
+          <div dangerouslySetInnerHTML={{ __html: item.content }}></div>
+        </div>
+      ))}
       {list.length < pageList.total && (
         <Divider>
           <div className="say-list-more h-link-cur" onClick={more}>
-            查看更多
+            <Button type="primary">查看更多</Button>
           </div>
         </Divider>
       )}

@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import KeepAlive from "react-activation";
-import { Divider, Pagination, Tag } from "antd";
+import { Divider, Pagination, Tag, Row, Col } from "antd";
 import moment from "moment";
 
 import { useDispatch, useSelector } from "react-redux";
@@ -53,59 +53,66 @@ export default function List() {
   return (
     <div>
       <KeepAlive when={true} id={params.type} saveScrollPosition="screen">
-        <div className="mark-classify">
-          <CheckableTag
-            checked={!params.type}
-            onChange={() => {
-              navigate("/mark");
-            }}
-          >
-            全部
-          </CheckableTag>
-          {typeList.map((tag) => (
+        <Row>
+          <Col flex="100px">
             <CheckableTag
-              key={tag.typeId}
-              checked={params.type == tag.typeId}
+              className="mark-classify"
+              checked={!params.type}
               onChange={() => {
-                navigate("/mark/" + tag.typeId);
+                navigate("/mark");
               }}
             >
-              {tag.typeName}
+              全部
             </CheckableTag>
-          ))}
-        </div>
-        <div className="mark-list">
-          {mark?.map((item, index) => (
-            <div
-              className="mark-list-page h-link-cur"
-              key={index}
-              onClick={() => {
-                jumpDtl(item.typeId, item.id);
-              }}
-            >
-              <div className="mark-list-page-msg">
-                <IconFont type="h-xiaoxiong" />
-                {moment(item.createTime).format("YYYY-MM-DD HH:mm")}
-                <Divider type="vertical" />
-                <IconFont type="h-xiaoxiong" />
-                {item.typeName}
-              </div>
-              <div className="mark-list-page-title">{item.title}</div>
+            {typeList.map((tag) => (
+              <CheckableTag
+                key={tag.typeId}
+                className="mark-classify"
+                checked={params.type == tag.typeId}
+                onChange={() => {
+                  navigate("/mark/" + tag.typeId);
+                }}
+              >
+                {tag.typeName} ({tag.total})
+              </CheckableTag>
+            ))}
+          </Col>
+
+          <Col flex="auto">
+            <div className="mark-list">
+              {mark?.map((item, index) => (
+                <div
+                  className="mark-list-page h-link-cur"
+                  key={index}
+                  onClick={() => {
+                    jumpDtl(item.typeId, item.id);
+                  }}
+                >
+                  <div className="mark-list-page-msg">
+                    <IconFont type="h-xiaoxiong" />
+                    {moment(item.createTime).format("YYYY-MM-DD HH:mm")}
+                    <Divider type="vertical" />
+                    <IconFont type="h-xiaoxiong" />
+                    {item.typeName}
+                  </div>
+                  <div className="mark-list-page-title">{item.title}</div>
+                </div>
+              ))}
             </div>
-          ))}
-        </div>
-        <div className="mark-page">
-          <Pagination
-            hideOnSinglePage
-            current={pageList.current}
-            total={pageList.total}
-            pageSize={pageList.size}
-            onChange={(page) => {
-              getList({ current: page });
-              scroll(0, 0);
-            }}
-          />
-        </div>
+            <div className="mark-page">
+              <Pagination
+                hideOnSinglePage
+                current={pageList.current}
+                total={pageList.total}
+                pageSize={pageList.size}
+                onChange={(page) => {
+                  getList({ current: page });
+                  scroll(0, 0);
+                }}
+              />
+            </div>
+          </Col>
+        </Row>
       </KeepAlive>
     </div>
   );

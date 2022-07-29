@@ -12,7 +12,7 @@ export default function Listen() {
     audio: LISTENLIST,
   };
   return (
-    <div className="listen h-text-card">
+    <div className="listen h-card-shadow">
       <div id="listenBox">
         <Aplayer {...cofig} />
       </div>

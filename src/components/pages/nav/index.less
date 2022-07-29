@@ -1,12 +1,8 @@
 .banner {
   position: relative;
   .title {
-    padding-bottom: 60px;
-    .title-name {
-      font: bold 48px/1.12 "Times New Roman", Georgia, Times, sans-serif;
-      font-family: titleFont;
-      color: @h-color;
-    }
+    padding-bottom: 40px;
+    
     .title-dec {
       margin-top: 6px;
       font-family: titleFont;
@@ -20,18 +16,32 @@
     width: 100px;
   }
   .nav {
-    margin: 30px 0;
     overflow: hidden;
-    border: 2px solid @h-color;
+    background-color: #fff;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 10;
+    line-height: 80px;
+    padding: 0 30px;
+    .logo {
+      font: bold 48px/1.12 "Times New Roman", Georgia, Times, sans-serif;
+      font-family: titleFont;
+      color: @h-color;
+      position: absolute;
+      left: 30px;
+      top: 0;
+      line-height: 80px;
+    }
     .ant-menu {
       background-color: transparent;
-      text-align: center;
+      text-align: right;
       display: inline-block;
       padding: 6px 0;
       width: 100%;
     }
     .ant-menu-horizontal {
-      background-color: #fff;
       border-bottom: 0px;
       .ant-menu-item-selected::after,
       .ant-menu-item-active::after,

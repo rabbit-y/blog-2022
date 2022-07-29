@@ -17,7 +17,7 @@ export default function Time() {
               // dot={<IconFont type="h-xiangsu_mao" style={{ fontSize: 26 }} />}
             >
               <div className="time-list-time">{item.time}</div>
-              <div className="h-card time-list-cont">
+              <div className="h-card time-list-cont h-card-shadow">
                 <div>{item.content}</div>
               </div>
             </Timeline.Item>

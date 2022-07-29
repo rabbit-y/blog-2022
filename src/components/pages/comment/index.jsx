@@ -76,7 +76,7 @@ export default function Comment() {
           </div>
         </div>
         <div className="comment-friend">
-          <Row>
+          <Row gutter={[20, 20]}>
             {friends?.map((item, index) => (
               <Col span={8} key={index}>
                 <Card

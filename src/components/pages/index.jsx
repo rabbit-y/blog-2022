@@ -6,9 +6,8 @@ import { RoutersList } from "@/router/router";
 
 import AboutMe from "@pages/aboutMe/index";
 import Footer from "@pages/footer/index";
-import Classify from "@pages/classify/index";
-import Friend from "@pages/friend/index";
 import Listen from "@pages/listen/index";
+import Welcome from "@pages/welcome/index";
 import Nav from "@pages/nav/index";
 import "./index.less";
 
@@ -18,6 +17,13 @@ const App = () => {
       <div className="layout-row">
         <Nav />
         <Row wrap={false}>
+          <Col flex="280px" className="h-media">
+            <div className="sider">
+              <AboutMe />
+              <Listen />
+              <Welcome />
+            </div>
+          </Col>
           <Col flex="auto">
             <div className="content">
               <Routes>
@@ -46,14 +52,6 @@ const App = () => {
                 ))}
                 <Route path="/" element={<Navigate to="/mark" />} />
               </Routes>
-            </div>
-          </Col>
-          <Col flex="320px" className="h-media">
-            <div className="sider">
-              <AboutMe />
-              <Listen />
-              <Classify />
-              <Friend />
             </div>
           </Col>
         </Row>

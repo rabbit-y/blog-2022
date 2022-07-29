@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Row, Col, Divider, Skeleton, Anchor, message } from "antd";
+import { Row, Col, Divider, Skeleton, Anchor, message, Button } from "antd";
 import { useParams, useNavigate } from "react-router-dom";
 import Editor from "md-editor-rt";
 import moment from "moment";
@@ -79,16 +79,15 @@ const Dtl = () => {
   };
   return (
     <div className="mark-dtl">
-      <div className="mark-dtl-btn h-link-cur">
+      <div className="mark-dtl-all h-content h-card-shadow">
         <div
+          className="mark-dtl-btn h-link-cur"
           onClick={() => {
             navigate(-1);
           }}
         >
-          返回
+          <Button type="primary">返回列表</Button>
         </div>
-      </div>
-      <div className="mark-dtl-all h-content">
         <h1>{dtl.title}</h1>
         <div className="mark-dtl-title">
           <IconFont type="h-xiaoxiong" />
@@ -122,7 +121,7 @@ const Dtl = () => {
           </div>
         </div>
       </div>
-      <div className="mark-dtl-CC h-card">
+      <div className="mark-dtl-CC">
         <div>
           版权属于：<a href={location.href}>@{masterInfo.nickname}</a>
         </div>
