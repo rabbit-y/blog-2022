@@ -54,30 +54,6 @@ export default function List() {
     <div>
       <KeepAlive when={true} id={params.type} saveScrollPosition="screen">
         <Row>
-          <Col flex="100px">
-            <CheckableTag
-              className="mark-classify"
-              checked={!params.type}
-              onChange={() => {
-                navigate("/mark");
-              }}
-            >
-              全部
-            </CheckableTag>
-            {typeList.map((tag) => (
-              <CheckableTag
-                key={tag.typeId}
-                className="mark-classify"
-                checked={params.type == tag.typeId}
-                onChange={() => {
-                  navigate("/mark/" + tag.typeId);
-                }}
-              >
-                {tag.typeName} ({tag.total})
-              </CheckableTag>
-            ))}
-          </Col>
-
           <Col flex="auto">
             <div className="mark-list">
               {mark?.map((item, index) => (
@@ -111,6 +87,30 @@ export default function List() {
                 }}
               />
             </div>
+          </Col>
+          <Col flex="200px">
+            <CheckableTag
+              className="mark-classify"
+              checked={!params.type}
+              onChange={() => {
+                navigate("/mark");
+              }}
+            >
+              全部
+            </CheckableTag>
+            {typeList.map((tag) => (
+              <div key={tag.typeId}>
+                <CheckableTag
+                  className="mark-classify"
+                  checked={params.type == tag.typeId}
+                  onChange={() => {
+                    navigate("/mark/" + tag.typeId);
+                  }}
+                >
+                  {tag.typeName} ({tag.total})
+                </CheckableTag>
+              </div>
+            ))}
           </Col>
         </Row>
       </KeepAlive>
