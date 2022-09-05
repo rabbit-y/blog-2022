@@ -65,10 +65,10 @@ export default function List() {
                   }}
                 >
                   <div className="mark-list-page-msg">
-                    <IconFont type="h-xiaoxiong" />
+                    <IconFont type="h-rili" />
                     {moment(item.createTime).format("YYYY-MM-DD HH:mm")}
                     <Divider type="vertical" />
-                    <IconFont type="h-xiaoxiong" />
+                    <IconFont type="h-gouwu" />
                     {item.typeName}
                   </div>
                   <div className="mark-list-page-title">{item.title}</div>

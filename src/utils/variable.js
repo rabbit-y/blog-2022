@@ -4,28 +4,28 @@ import config from "./config"
 export const ROTER = [
   {
     key: "/mark",
-    label: "Home",
-    icon: <IconFont type="h-caihong" />,
+    label: "首页",
+    icon: <IconFont type="h-a-fangzipixel_huaban1" />,
   },
   {
     key: "/say",
     label: "日常",
-    icon: <IconFont type="h-caihong" />,
+    icon: <IconFont type="h-a-xinfengpixel_huaban1" />,
   },
   {
     key: "/me",
     label: "关于我",
-    icon: <IconFont type="h-caihong" />,
+    icon: <IconFont type="h-a-dengpaopixel_huaban1" />,
   },
   {
     key: "/comment",
     label: "友人帐",
-    icon: <IconFont type="h-caihong" />,
+    icon: <IconFont type="h-a-lingdangpixel_huaban1" />,
   },
   {
     key: "/time",
     label: "建站",
-    icon: <IconFont type="h-caihong" />,
+    icon: <IconFont type="h-a-rilipixel_huaban1" />,
   },
   {
     key: "/bilibili",
