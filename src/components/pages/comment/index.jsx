@@ -12,6 +12,7 @@ export default function Comment() {
   const [list, setList] = useState([]);
   const [pageList, setPageList] = useState({ current: 1, size: 20 });
   const [reply, setReply] = useState({});
+  const avatar = "https://cos.han96.com/blog/headers/3";
   useEffect(() => {
     getList();
   }, []);
