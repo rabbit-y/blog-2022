@@ -1,6 +1,5 @@
 import { useEffect } from "react";
 import { Timeline } from "antd";
-import IconFont from "@components/Icon/index";
 import { TIMELINE } from "@utils/variable";
 import "./index.less";
 

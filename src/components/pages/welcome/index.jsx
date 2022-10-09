@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
+import IconFont from "@components/Icon/index";
 import "./index.less";
 
 export default function Welcome() {
@@ -23,7 +24,7 @@ export default function Welcome() {
         {day?.map((item, index) => (
           <div key={index}>
             <div>
-              <span>{item.date}</span>
+              <IconFont type="h-claw" /> <span>{item.date}</span>
             </div>
             <div>{item.title}</div>
           </div>
