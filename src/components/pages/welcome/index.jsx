@@ -3,42 +3,31 @@ import axios from "axios";
 import "./index.less";
 
 export default function Welcome() {
-  const [day, setDay] = useState({});
+  const [day, setDay] = useState([]);
   useEffect(() => {
-    getIp();
+    getDay();
   }, []);
-  const getIp = async () => {
-    const {
-      data: { code, data },
-    } = await axios.get(
-      `https://www.mxnzp.com/api/ip/self?app_id=rgihdrm0kslojqvm&app_secret=WnhrK251TWlUUThqaVFWbG5OeGQwdz09`
-    );
-    if (code === 1) {
-      getDay(data.city);
-    }
-  };
   const getDay = async (e) => {
-    const { data } = await axios.get(
-      `https://www.tianqiapi.com/free/day?appid=56761788&appsecret=ti3hP8y9&city=${e}`
-    );
-    setDay(data);
+    const {
+      data: { result },
+    } = await axios.get(`https://api.oick.cn/lishi/api.php`);
+    const dayList = [result[0]];
+    if (result.length > 1) {
+      dayList.push(result.at(-1));
+    }
+    setDay(dayList);
   };
   return (
     <div className="welcome h-card-shadow">
       <div className="welcome-day">
-        <div>
-          hi~欢迎你来自<span>{day.city}</span>的朋友
-        </div>
-        <div>
-          今天是
-          <span>{day.date}</span>
-          <span>{day.week}</span>
-        </div>
-        <div>
-          <span>{day.wea}</span>
-          <span>{day.win}</span>
-          <span>{day.win_speed}</span>
-        </div>
+        {day?.map((item, index) => (
+          <div key={index}>
+            <div>
+              <span>{item.date}</span>
+            </div>
+            <div>{item.title}</div>
+          </div>
+        ))}
       </div>
     </div>
   );
