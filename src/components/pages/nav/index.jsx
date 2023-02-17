@@ -1,8 +1,7 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
-import { Menu } from "antd";
-import axios from "axios";
 import { useSelector, useDispatch } from "react-redux";
+import { Menu } from "antd";
 import { setRouterKey } from "@/store";
 import { ROTER } from "@utils/variable";
 import { scroll } from "@utils";
@@ -15,7 +14,6 @@ const Nav = () => {
   const routerKey = useSelector((state) => state.routerKey);
   const info = useSelector((state) => state.info);
   const dispatch = useDispatch();
-  const [say, setSay] = useState("");
   useEffect(() => {
     const key = "/" + location.pathname.split("/")[1];
     dispatch(setRouterKey(key));

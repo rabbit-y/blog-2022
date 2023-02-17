@@ -1,4 +1,5 @@
-import { BackTop } from "antd";
+import { FloatButton } from "antd";
+import { SyncOutlined } from '@ant-design/icons'
 import { useSelector } from "react-redux";
 import moment from "moment";
 import IconFont from "../../component/Icon/index";
@@ -24,9 +25,10 @@ export default function Footer() {
           {info.stationPutOnRecord}
         </a>
       </div>
-      <BackTop>
-        <IconFont type="h-fanhuidingbu" className="footer-back" />
-      </BackTop>
+      <FloatButton.Group shape="circle"  style={{ right: 20 }}>
+        <FloatButton icon={<SyncOutlined />} onClick={()=>{window.location.reload()}}/>
+        <FloatButton.BackTop type='primary'/>
+      </FloatButton.Group>
     </div>
   );
 }

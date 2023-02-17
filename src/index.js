@@ -12,26 +12,23 @@ import App from '@/components/pages/index';
 import { Provider } from 'react-redux';
 import store from '@/store';
 
-
-import "antd/dist/antd.variable.min.css"
 import './index.less';
 
 moment.locale('zh-cn');
-ConfigProvider.config({
-  theme: {
-    primaryColor: '#74759b'
-  },
-});
 
 const root = createRoot(document.getElementById('root'));
 root.render(
-  <ConfigProvider locale={zhCN}>
-    <Provider store={store}>
-      <BrowserRouter>
+  <Provider store={store}>
+    <BrowserRouter>
+      <ConfigProvider locale={zhCN} theme={{
+        token: {
+          colorPrimary: '#74759b',
+        },
+      }}>
         <AliveScope>
           <App />
         </AliveScope>
-      </BrowserRouter>
-    </Provider>
-  </ConfigProvider>
+      </ConfigProvider>
+    </BrowserRouter>
+  </Provider>
 );

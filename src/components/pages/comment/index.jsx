@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Row, Col, message, Pagination, Avatar, Tag, Card } from "antd";
+import { Row, Col, message, Pagination, Avatar, Tag, Card, Tooltip } from "antd";
 import { useSelector } from "react-redux";
 import moment from "moment";
 import HComment from "@components/Comment";
@@ -81,13 +81,13 @@ export default function Comment() {
             {friends?.map((item, index) => (
               <Col span={8} key={index}>
                 <Card
-                  className="h-link-cur"
+                  className="h-link-cur comment-card"
+                  style={{backgroundImage:`url(${item.avatar})`}}
                   onClick={() => {
                     window.open(item.url);
                   }}
                 >
                   <Meta
-                    avatar={<Avatar src={item.avatar} />}
                     title={item.name}
                     description={item.dec}
                   />
@@ -117,10 +117,12 @@ export default function Comment() {
             className="comment-list-item"
           >
             <Col flex="none">
-              <img
-                className="comment-list-avatar"
-                src={item.avatar ? item.avatar : avatar}
-              />
+              <Tooltip placement="bottomLeft" title={item.blogUrl && `点击这里，去${item.nickName}那里看看吧～`} arrow={item.blogUrl}>
+                <Avatar onClick={() => {
+                  item.blogUrl && window.open(item.blogUrl)
+                }} shape="square" size={60}>{item.nickName}</Avatar>
+              </Tooltip>
+
             </Col>
             <Col flex="auto">
               <div className="comment-list-reply">
