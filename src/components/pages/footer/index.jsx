@@ -12,9 +12,10 @@ export default function Footer() {
     <div className="footer">
       <div>
         <a href={location.origin}>
-          @2019 - {moment().format("yyyy")}
-          <IconFont type="h-claw" />
-          {info.stationName}
+          @2019 - {moment().format("yyyy")} 
+          <span className="footerIcon">
+          <IconFont type="h-claw" />{info.stationName}
+          </span>
         </a>
       </div>
       <div>
