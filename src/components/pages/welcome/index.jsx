@@ -19,7 +19,7 @@ export default function Welcome() {
     setDay(dayList);
   };
   return (
-    <div className="welcome h-card-shadow">
+    day.length > 0 && <div className="welcome h-card-shadow">
       <div className="welcome-day">
         {day?.map((item, index) => (
           <div key={index}>
