@@ -2,288 +2,323 @@ type ObjectMap<Key extends string | number | symbol = any, Value = any> = {
   [key in Key]: Value;
 };
 
-declare namespace defs {
-  namespace api {
-    export class ArticleCountVOObject {
-      /** total */
-      total?: number;
+declare namespace api {
+  export class ArticleCountVODX {
+    /** total */
+    total?: number;
 
-      /** typeId */
-      typeId?: string;
+    /** typeId */
+    typeId?: string;
 
-      /** typeName */
-      typeName?: string;
-    }
+    /** typeName */
+    typeName?: string;
+  }
 
-    export class ArticleVOObject {
-      /** content */
-      content?: string;
+  export class ArticleDX {
+    /** content */
+    content?: string;
 
-      /** createTime */
-      createTime?: string;
+    /** createTime */
+    createTime?: string;
 
-      /** description */
-      description?: string;
+    /** description */
+    description?: string;
 
-      /** id */
-      id?: number;
+    /** id */
+    id?: number;
 
-      /** title */
-      title?: string;
+    /** title */
+    title?: string;
 
-      /** typeId */
-      typeId?: string;
+    /** typeId */
+    typeId?: string;
+  }
 
-      /** typeName */
-      typeName?: string;
-    }
+  export class ArticleVODX {
+    /** content */
+    content?: string;
 
-    export class JsonResult<T0 = any> {
-      /** code */
-      code?: number;
+    /** createTime */
+    createTime?: string;
 
-      /** data */
-      data?: defs.api.ArticleVOObject;
+    /** description */
+    description?: string;
 
-      /** msg */
-      msg?: string;
-    }
+    /** id */
+    id?: number;
 
-    export class ModelAndView {
-      /** empty */
-      empty?: boolean;
+    /** title */
+    title?: string;
 
-      /** model */
-      model?: object;
+    /** typeId */
+    typeId?: string;
 
-      /** modelMap */
-      modelMap?: ObjectMap<any, object>;
+    /** typeName */
+    typeName?: string;
+  }
 
-      /** reference */
-      reference?: boolean;
+  export class CommentDX {
+    /** 评论人头像 */
+    avatar?: string;
 
-      /** status */
-      status?:
-        | 'ACCEPTED'
-        | 'ALREADY_REPORTED'
-        | 'BAD_GATEWAY'
-        | 'BAD_REQUEST'
-        | 'BANDWIDTH_LIMIT_EXCEEDED'
-        | 'CHECKPOINT'
-        | 'CONFLICT'
-        | 'CONTINUE'
-        | 'CREATED'
-        | 'DESTINATION_LOCKED'
-        | 'EXPECTATION_FAILED'
-        | 'FAILED_DEPENDENCY'
-        | 'FORBIDDEN'
-        | 'FOUND'
-        | 'GATEWAY_TIMEOUT'
-        | 'GONE'
-        | 'HTTP_VERSION_NOT_SUPPORTED'
-        | 'IM_USED'
-        | 'INSUFFICIENT_SPACE_ON_RESOURCE'
-        | 'INSUFFICIENT_STORAGE'
-        | 'INTERNAL_SERVER_ERROR'
-        | 'I_AM_A_TEAPOT'
-        | 'LENGTH_REQUIRED'
-        | 'LOCKED'
-        | 'LOOP_DETECTED'
-        | 'METHOD_FAILURE'
-        | 'METHOD_NOT_ALLOWED'
-        | 'MOVED_PERMANENTLY'
-        | 'MOVED_TEMPORARILY'
-        | 'MULTIPLE_CHOICES'
-        | 'MULTI_STATUS'
-        | 'NETWORK_AUTHENTICATION_REQUIRED'
-        | 'NON_AUTHORITATIVE_INFORMATION'
-        | 'NOT_ACCEPTABLE'
-        | 'NOT_EXTENDED'
-        | 'NOT_FOUND'
-        | 'NOT_IMPLEMENTED'
-        | 'NOT_MODIFIED'
-        | 'NO_CONTENT'
-        | 'OK'
-        | 'PARTIAL_CONTENT'
-        | 'PAYLOAD_TOO_LARGE'
-        | 'PAYMENT_REQUIRED'
-        | 'PERMANENT_REDIRECT'
-        | 'PRECONDITION_FAILED'
-        | 'PRECONDITION_REQUIRED'
-        | 'PROCESSING'
-        | 'PROXY_AUTHENTICATION_REQUIRED'
-        | 'REQUESTED_RANGE_NOT_SATISFIABLE'
-        | 'REQUEST_ENTITY_TOO_LARGE'
-        | 'REQUEST_HEADER_FIELDS_TOO_LARGE'
-        | 'REQUEST_TIMEOUT'
-        | 'REQUEST_URI_TOO_LONG'
-        | 'RESET_CONTENT'
-        | 'SEE_OTHER'
-        | 'SERVICE_UNAVAILABLE'
-        | 'SWITCHING_PROTOCOLS'
-        | 'TEMPORARY_REDIRECT'
-        | 'TOO_EARLY'
-        | 'TOO_MANY_REQUESTS'
-        | 'UNAUTHORIZED'
-        | 'UNAVAILABLE_FOR_LEGAL_REASONS'
-        | 'UNPROCESSABLE_ENTITY'
-        | 'UNSUPPORTED_MEDIA_TYPE'
-        | 'UPGRADE_REQUIRED'
-        | 'URI_TOO_LONG'
-        | 'USE_PROXY'
-        | 'VARIANT_ALSO_NEGOTIATES';
+    /** 评论人博客地址 */
+    blogUrl?: string;
 
-      /** view */
-      view?: defs.api.View;
+    /** content */
+    content?: string;
 
-      /** viewName */
-      viewName?: string;
-    }
+    /** createTime */
+    createTime?: string;
 
-    export class MoodObject {
-      /** content */
-      content?: string;
+    /** 评论人邮箱 */
+    email?: string;
 
-      /** createTime */
-      createTime?: string;
+    /** id */
+    id?: number;
 
-      /** id */
-      id?: number;
-    }
+    /** 评论人昵称 */
+    nickName?: string;
 
-    export class TheArticleObject {
-      /** content */
-      content?: string;
+    /** replyArticleId */
+    replyArticleId?: number;
 
-      /** createTime */
-      createTime?: string;
+    /** 回复评论的id */
+    replyCmId?: number;
+  }
 
-      /** description */
-      description?: string;
+  export class ElogDX {
+    /** id */
+    id?: number;
 
-      /** id */
-      id?: number;
+    /** info */
+    info?: string;
+  }
 
-      /** title */
-      title?: string;
+  export class IPage<T0 = any> {
+    /** current */
+    current?: number;
 
-      /** typeId */
-      typeId?: string;
-    }
+    /** pages */
+    pages?: number;
 
-    export class TheCommentObject {
-      /** content */
-      content?: string;
+    /** records */
+    records: Array<T0>;
 
-      /** createTime */
-      createTime?: string;
+    /** size */
+    size?: number;
 
-      /** id */
-      id?: number;
+    /** total */
+    total?: number;
+  }
 
-      /** replyArticleId */
-      replyArticleId?: number;
+  export class JsonResult<T0 = any> {
+    /** code */
+    code?: number;
 
-      /** replyUserId */
-      replyUserId?: string;
-    }
+    /** data */
+    data: T0;
 
-    export class TheTypeObject {
-      /** description */
-      description?: string;
+    /** msg */
+    msg?: string;
+  }
 
-      /** id */
-      id?: number;
+  export class ModelAndView {
+    /** empty */
+    empty?: boolean;
 
-      /** name */
-      name?: string;
-    }
+    /** model */
+    model?: object;
 
-    export class TheUserObject {
-      /** articleCounts */
-      articleCounts?: Array<defs.api.ArticleCountVOObject>;
+    /** modelMap */
+    modelMap?: ObjectMap<any, object>;
 
-      /** avatar */
-      avatar?: string;
+    /** reference */
+    reference?: boolean;
 
-      /** blog */
-      blog?: string;
+    /** status */
+    status?:
+      | 'ACCEPTED'
+      | 'ALREADY_REPORTED'
+      | 'BAD_GATEWAY'
+      | 'BAD_REQUEST'
+      | 'BANDWIDTH_LIMIT_EXCEEDED'
+      | 'CHECKPOINT'
+      | 'CONFLICT'
+      | 'CONTINUE'
+      | 'CREATED'
+      | 'DESTINATION_LOCKED'
+      | 'EXPECTATION_FAILED'
+      | 'FAILED_DEPENDENCY'
+      | 'FORBIDDEN'
+      | 'FOUND'
+      | 'GATEWAY_TIMEOUT'
+      | 'GONE'
+      | 'HTTP_VERSION_NOT_SUPPORTED'
+      | 'IM_USED'
+      | 'INSUFFICIENT_SPACE_ON_RESOURCE'
+      | 'INSUFFICIENT_STORAGE'
+      | 'INTERNAL_SERVER_ERROR'
+      | 'I_AM_A_TEAPOT'
+      | 'LENGTH_REQUIRED'
+      | 'LOCKED'
+      | 'LOOP_DETECTED'
+      | 'METHOD_FAILURE'
+      | 'METHOD_NOT_ALLOWED'
+      | 'MOVED_PERMANENTLY'
+      | 'MOVED_TEMPORARILY'
+      | 'MULTIPLE_CHOICES'
+      | 'MULTI_STATUS'
+      | 'NETWORK_AUTHENTICATION_REQUIRED'
+      | 'NON_AUTHORITATIVE_INFORMATION'
+      | 'NOT_ACCEPTABLE'
+      | 'NOT_EXTENDED'
+      | 'NOT_FOUND'
+      | 'NOT_IMPLEMENTED'
+      | 'NOT_MODIFIED'
+      | 'NO_CONTENT'
+      | 'OK'
+      | 'PARTIAL_CONTENT'
+      | 'PAYLOAD_TOO_LARGE'
+      | 'PAYMENT_REQUIRED'
+      | 'PERMANENT_REDIRECT'
+      | 'PRECONDITION_FAILED'
+      | 'PRECONDITION_REQUIRED'
+      | 'PROCESSING'
+      | 'PROXY_AUTHENTICATION_REQUIRED'
+      | 'REQUESTED_RANGE_NOT_SATISFIABLE'
+      | 'REQUEST_ENTITY_TOO_LARGE'
+      | 'REQUEST_HEADER_FIELDS_TOO_LARGE'
+      | 'REQUEST_TIMEOUT'
+      | 'REQUEST_URI_TOO_LONG'
+      | 'RESET_CONTENT'
+      | 'SEE_OTHER'
+      | 'SERVICE_UNAVAILABLE'
+      | 'SWITCHING_PROTOCOLS'
+      | 'TEMPORARY_REDIRECT'
+      | 'TOO_EARLY'
+      | 'TOO_MANY_REQUESTS'
+      | 'UNAUTHORIZED'
+      | 'UNAVAILABLE_FOR_LEGAL_REASONS'
+      | 'UNPROCESSABLE_ENTITY'
+      | 'UNSUPPORTED_MEDIA_TYPE'
+      | 'UPGRADE_REQUIRED'
+      | 'URI_TOO_LONG'
+      | 'USE_PROXY'
+      | 'VARIANT_ALSO_NEGOTIATES';
 
-      /** email */
-      email?: string;
+    /** view */
+    view?: defs.api.View;
 
-      /** id */
-      id?: number;
+    /** viewName */
+    viewName?: string;
+  }
 
-      /** nickname */
-      nickname?: string;
+  export class MoodDX {
+    /** content */
+    content?: string;
 
-      /** other */
-      other?: string;
+    /** createTime */
+    createTime?: string;
 
-      /** pwd */
-      pwd?: string;
+    /** id */
+    id?: number;
+  }
 
-      /** role */
-      role?: string;
-    }
+  export class TypeDX {
+    /** description */
+    description?: string;
 
-    export class TheUserObject0 {
-      /** avatar */
-      avatar?: string;
+    /** id */
+    id?: number;
 
-      /** blog */
-      blog?: string;
+    /** name */
+    name?: string;
+  }
 
-      /** email */
-      email?: string;
+  export class UserDX {
+    /** articleCounts */
+    articleCounts?: Array<defs.api.ArticleCountVODX>;
 
-      /** id */
-      id?: number;
+    /** avatar */
+    avatar?: string;
 
-      /** nickname */
-      nickname?: string;
+    /** blog */
+    blog?: string;
 
-      /** other */
-      other?: string;
+    /** email */
+    email?: string;
 
-      /** pwd */
-      pwd?: string;
+    /** id */
+    id?: number;
 
-      /** role */
-      role?: string;
-    }
+    /** nickname */
+    nickname?: string;
 
-    export class TheUserObject1 {
-      /** avatar */
-      avatar?: string;
+    /** other */
+    other?: string;
 
-      /** blog */
-      blog?: string;
+    /** pwd */
+    pwd?: string;
 
-      /** email */
-      email?: string;
+    /** role */
+    role?: string;
+  }
 
-      /** id */
-      id?: number;
+  export class UserDX0 {
+    /** avatar */
+    avatar?: string;
 
-      /** nickname */
-      nickname?: string;
+    /** blog */
+    blog?: string;
 
-      /** other */
-      other?: string;
+    /** email */
+    email?: string;
 
-      /** pwd */
-      pwd?: string;
+    /** id */
+    id?: number;
 
-      /** role */
-      role?: string;
-    }
+    /** nickname */
+    nickname?: string;
 
-    export class View {
-      /** contentType */
-      contentType?: string;
-    }
+    /** other */
+    other?: string;
+
+    /** pwd */
+    pwd?: string;
+
+    /** role */
+    role?: string;
+  }
+
+  export class UserDX1 {
+    /** avatar */
+    avatar?: string;
+
+    /** blog */
+    blog?: string;
+
+    /** email */
+    email?: string;
+
+    /** id */
+    id?: number;
+
+    /** nickname */
+    nickname?: string;
+
+    /** other */
+    other?: string;
+
+    /** pwd */
+    pwd?: string;
+
+    /** role */
+    role?: string;
+  }
+
+  export class View {
+    /** contentType */
+    contentType?: string;
   }
 }
 
@@ -299,44 +334,46 @@ declare namespace api {
     export namespace getList {
       export class Params {
         /** content */
-        content?: any;
+        content?: string;
         /** countId */
-        countId?: any;
+        countId?: string;
         /** createTime */
-        createTime?: any;
+        createTime?: string;
         /** current */
-        current?: any;
+        current?: number;
         /** description */
-        description?: any;
+        description?: string;
         /** id */
-        id?: any;
+        id?: number;
         /** maxLimit */
-        maxLimit?: any;
+        maxLimit?: number;
         /** optimizeCountSql */
-        optimizeCountSql?: any;
+        optimizeCountSql?: boolean;
         /** asc */
-        asc?: any;
+        asc?: boolean;
         /** column */
-        column?: any;
+        column?: string;
         /** pages */
-        pages?: any;
+        pages?: number;
         /** records */
-        records?: any;
+        records?: Array<object>;
         /** searchCount */
-        searchCount?: any;
+        searchCount?: boolean;
         /** size */
-        size?: any;
+        size?: number;
         /** title */
-        title?: any;
+        title?: string;
         /** total */
-        total?: any;
+        total?: number;
         /** typeId */
-        typeId?: any;
+        typeId?: string;
         /** typeName */
-        typeName?: any;
+        typeName?: string;
       }
 
-      export type Response = defs.api.JsonResult;
+      export type Response = defs.api.JsonResult<
+        defs.api.IPage<defs.api.ArticleVODX>
+      >;
 
       export const init: Response;
 
@@ -350,11 +387,15 @@ declare namespace api {
     export namespace updateById {
       export class Params {}
 
-      export type Response = defs.api.JsonResult;
+      export type Response = defs.api.JsonResult<boolean>;
 
       export const init: Response;
 
-      export function request(params: Params, options?: any): Promise<Response>;
+      export function request(
+        params: Params,
+        body: defs.api.ArticleDX,
+        options?: any,
+      ): Promise<Response>;
     }
 
     /**
@@ -364,11 +405,15 @@ declare namespace api {
     export namespace save {
       export class Params {}
 
-      export type Response = defs.api.JsonResult;
+      export type Response = defs.api.JsonResult<boolean>;
 
       export const init: Response;
 
-      export function request(params: Params, options?: any): Promise<Response>;
+      export function request(
+        params: Params,
+        body: defs.api.ArticleDX,
+        options?: any,
+      ): Promise<Response>;
     }
 
     /**
@@ -378,10 +423,10 @@ declare namespace api {
     export namespace getById {
       export class Params {
         /** id */
-        id: any;
+        id: number;
       }
 
-      export type Response = defs.api.JsonResult<defs.api.ArticleVOObject>;
+      export type Response = defs.api.JsonResult<defs.api.ArticleVODX>;
 
       export const init: Response;
 
@@ -395,10 +440,10 @@ declare namespace api {
     export namespace removeById {
       export class Params {
         /** id */
-        id: any;
+        id: number;
       }
 
-      export type Response = defs.api.JsonResult;
+      export type Response = defs.api.JsonResult<boolean>;
 
       export const init: Response;
 
@@ -533,31 +578,17 @@ declare namespace api {
      */
     export namespace getList {
       export class Params {
-        /** countId */
-        countId?: any;
         /** current */
-        current?: any;
-        /** maxLimit */
-        maxLimit?: any;
-        /** optimizeCountSql */
-        optimizeCountSql?: any;
-        /** asc */
-        asc?: any;
-        /** column */
-        column?: any;
-        /** pages */
-        pages?: any;
-        /** records */
-        records?: any;
-        /** searchCount */
-        searchCount?: any;
+        current?: number;
         /** size */
-        size?: any;
-        /** total */
-        total?: any;
+        size?: number;
+        /** replyArticleId */
+        replyArticleId?: number;
       }
 
-      export type Response = defs.api.JsonResult;
+      export type Response = defs.api.JsonResult<
+        defs.api.IPage<defs.api.CommentDX>
+      >;
 
       export const init: Response;
 
@@ -571,11 +602,15 @@ declare namespace api {
     export namespace updateById {
       export class Params {}
 
-      export type Response = defs.api.JsonResult;
+      export type Response = defs.api.JsonResult<boolean>;
 
       export const init: Response;
 
-      export function request(params: Params, options?: any): Promise<Response>;
+      export function request(
+        params: Params,
+        body: defs.api.CommentDX,
+        options?: any,
+      ): Promise<Response>;
     }
 
     /**
@@ -585,11 +620,15 @@ declare namespace api {
     export namespace save {
       export class Params {}
 
-      export type Response = defs.api.JsonResult;
+      export type Response = defs.api.JsonResult<string>;
 
       export const init: Response;
 
-      export function request(params: Params, options?: any): Promise<Response>;
+      export function request(
+        params: Params,
+        body: defs.api.CommentDX,
+        options?: any,
+      ): Promise<Response>;
     }
 
     /**
@@ -599,10 +638,10 @@ declare namespace api {
     export namespace removeById {
       export class Params {
         /** id */
-        id: any;
+        id: number;
       }
 
-      export type Response = defs.api.JsonResult;
+      export type Response = defs.api.JsonResult<boolean>;
 
       export const init: Response;
 
@@ -621,7 +660,7 @@ declare namespace api {
     export namespace getList {
       export class Params {}
 
-      export type Response = defs.api.JsonResult;
+      export type Response = defs.api.JsonResult<Array<defs.api.ElogDX>>;
 
       export const init: Response;
 
@@ -635,11 +674,15 @@ declare namespace api {
     export namespace uploadLog {
       export class Params {}
 
-      export type Response = defs.api.JsonResult;
+      export type Response = defs.api.JsonResult<boolean>;
 
       export const init: Response;
 
-      export function request(params: Params, options?: any): Promise<Response>;
+      export function request(
+        params: Params,
+        body: ObjectMap<any, string>,
+        options?: any,
+      ): Promise<Response>;
     }
   }
 
@@ -654,12 +697,14 @@ declare namespace api {
     export namespace getList {
       export class Params {
         /** current */
-        current?: any;
+        current?: number;
         /** size */
-        size?: any;
+        size?: number;
       }
 
-      export type Response = defs.api.JsonResult<Array<defs.api.MoodObject>>;
+      export type Response = defs.api.JsonResult<
+        defs.api.IPage<defs.api.MoodDX>
+      >;
 
       export const init: Response;
 
@@ -673,11 +718,15 @@ declare namespace api {
     export namespace updateById {
       export class Params {}
 
-      export type Response = defs.api.JsonResult;
+      export type Response = defs.api.JsonResult<boolean>;
 
       export const init: Response;
 
-      export function request(params: Params, options?: any): Promise<Response>;
+      export function request(
+        params: Params,
+        body: defs.api.MoodDX,
+        options?: any,
+      ): Promise<Response>;
     }
 
     /**
@@ -687,11 +736,15 @@ declare namespace api {
     export namespace save {
       export class Params {}
 
-      export type Response = defs.api.JsonResult;
+      export type Response = defs.api.JsonResult<boolean>;
 
       export const init: Response;
 
-      export function request(params: Params, options?: any): Promise<Response>;
+      export function request(
+        params: Params,
+        body: defs.api.MoodDX,
+        options?: any,
+      ): Promise<Response>;
     }
 
     /**
@@ -701,10 +754,10 @@ declare namespace api {
     export namespace getById {
       export class Params {
         /** id */
-        id: any;
+        id: number;
       }
 
-      export type Response = defs.api.JsonResult<defs.api.MoodObject>;
+      export type Response = defs.api.JsonResult<defs.api.MoodDX>;
 
       export const init: Response;
 
@@ -718,10 +771,10 @@ declare namespace api {
     export namespace removeById {
       export class Params {
         /** id */
-        id: any;
+        id: number;
       }
 
-      export type Response = defs.api.JsonResult;
+      export type Response = defs.api.JsonResult<boolean>;
 
       export const init: Response;
 
@@ -748,18 +801,52 @@ declare namespace api {
     }
 
     /**
+     * 随机获取一张二次元图片
+     * /img
+     */
+    export namespace getImg {
+      export class Params {
+        /** type */
+        type: string;
+      }
+
+      export type Response = any;
+
+      export const init: Response;
+
+      export function request(params: Params, options?: any): Promise<Response>;
+    }
+
+    /**
+     * 随机获取一张二次元图片
+     * /img/{type}
+     */
+    export namespace getImgByType {
+      export class Params {
+        /** type */
+        type: string;
+      }
+
+      export type Response = any;
+
+      export const init: Response;
+
+      export function request(params: Params, options?: any): Promise<Response>;
+    }
+
+    /**
      * 登录
      * /login
      */
     export namespace doLogin {
       export class Params {
         /** email */
-        email: any;
+        email: string;
         /** pwd */
-        pwd: any;
+        pwd: string;
       }
 
-      export type Response = defs.api.JsonResult;
+      export type Response = defs.api.JsonResult<string>;
 
       export const init: Response;
 
@@ -773,7 +860,7 @@ declare namespace api {
     export namespace getMasterInfo {
       export class Params {}
 
-      export type Response = defs.api.JsonResult<defs.api.TheUserObject>;
+      export type Response = defs.api.JsonResult<defs.api.UserDX>;
 
       export const init: Response;
 
@@ -787,11 +874,15 @@ declare namespace api {
     export namespace register {
       export class Params {}
 
-      export type Response = defs.api.JsonResult;
+      export type Response = defs.api.JsonResult<string>;
 
       export const init: Response;
 
-      export function request(params: Params, options?: any): Promise<Response>;
+      export function request(
+        params: Params,
+        body: ObjectMap<any, string>,
+        options?: any,
+      ): Promise<Response>;
     }
 
     /**
@@ -801,11 +892,15 @@ declare namespace api {
     export namespace doRegAndLogin {
       export class Params {}
 
-      export type Response = defs.api.JsonResult;
+      export type Response = defs.api.JsonResult<string>;
 
       export const init: Response;
 
-      export function request(params: Params, options?: any): Promise<Response>;
+      export function request(
+        params: Params,
+        body: ObjectMap<any, string>,
+        options?: any,
+      ): Promise<Response>;
     }
 
     /**
@@ -815,11 +910,15 @@ declare namespace api {
     export namespace saveMaster {
       export class Params {}
 
-      export type Response = defs.api.JsonResult;
+      export type Response = defs.api.JsonResult<boolean>;
 
       export const init: Response;
 
-      export function request(params: Params, options?: any): Promise<Response>;
+      export function request(
+        params: Params,
+        body: defs.api.UserDX0,
+        options?: any,
+      ): Promise<Response>;
     }
 
     /**
@@ -833,7 +932,11 @@ declare namespace api {
 
       export const init: Response;
 
-      export function request(params: Params, options?: any): Promise<Response>;
+      export function request(
+        params: Params,
+        body: ObjectMap<any, string>,
+        options?: any,
+      ): Promise<Response>;
     }
 
     /**
@@ -857,11 +960,15 @@ declare namespace api {
     export namespace uploadFile {
       export class Params {}
 
-      export type Response = defs.api.JsonResult;
+      export type Response = defs.api.JsonResult<string>;
 
       export const init: Response;
 
-      export function request(params: Params, options?: any): Promise<Response>;
+      export function request(
+        params: Params,
+        body: string,
+        options?: any,
+      ): Promise<Response>;
     }
 
     /**
@@ -871,7 +978,7 @@ declare namespace api {
     export namespace getUserInfo {
       export class Params {}
 
-      export type Response = defs.api.JsonResult<defs.api.TheUserObject>;
+      export type Response = defs.api.JsonResult<defs.api.UserDX>;
 
       export const init: Response;
 
@@ -890,7 +997,7 @@ declare namespace api {
     export namespace getList {
       export class Params {}
 
-      export type Response = defs.api.JsonResult<Array<defs.api.TheTypeObject>>;
+      export type Response = defs.api.JsonResult<Array<defs.api.TypeDX>>;
 
       export const init: Response;
 
@@ -904,11 +1011,15 @@ declare namespace api {
     export namespace updateById {
       export class Params {}
 
-      export type Response = defs.api.JsonResult;
+      export type Response = defs.api.JsonResult<boolean>;
 
       export const init: Response;
 
-      export function request(params: Params, options?: any): Promise<Response>;
+      export function request(
+        params: Params,
+        body: defs.api.TypeDX,
+        options?: any,
+      ): Promise<Response>;
     }
 
     /**
@@ -918,11 +1029,15 @@ declare namespace api {
     export namespace save {
       export class Params {}
 
-      export type Response = defs.api.JsonResult;
+      export type Response = defs.api.JsonResult<boolean>;
 
       export const init: Response;
 
-      export function request(params: Params, options?: any): Promise<Response>;
+      export function request(
+        params: Params,
+        body: defs.api.TypeDX,
+        options?: any,
+      ): Promise<Response>;
     }
 
     /**
@@ -932,10 +1047,10 @@ declare namespace api {
     export namespace getById {
       export class Params {
         /** id */
-        id: any;
+        id: number;
       }
 
-      export type Response = defs.api.JsonResult<defs.api.TheTypeObject>;
+      export type Response = defs.api.JsonResult<defs.api.TypeDX>;
 
       export const init: Response;
 
@@ -949,10 +1064,10 @@ declare namespace api {
     export namespace removeById {
       export class Params {
         /** id */
-        id: any;
+        id: number;
       }
 
-      export type Response = defs.api.JsonResult;
+      export type Response = defs.api.JsonResult<boolean>;
 
       export const init: Response;
 

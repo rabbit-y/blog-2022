@@ -69,14 +69,16 @@ var PontCoreManager = /** @class */ (function () {
     );
     var paramStr = Object.keys(params)
       .map(function (key) {
-        return params[key] === undefined ? '' : key + '=' + params[key];
+        return params[key] === undefined
+          ? ''
+          : ''.concat(key, '=').concat(params[key]);
       })
       .filter(function (id) {
         return id;
       })
       .join('&');
     if (paramStr) {
-      return url + '?' + paramStr;
+      return ''.concat(url, '?').concat(paramStr);
     }
     return url;
   };

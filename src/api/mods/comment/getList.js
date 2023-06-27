@@ -6,28 +6,12 @@ import * as defs from '../../baseClass';
 import { PontCore } from '../../pontCore';
 
 export class Params {
-  /** countId */
-  countId;
   /** current */
   current;
-  /** maxLimit */
-  maxLimit;
-  /** optimizeCountSql */
-  optimizeCountSql;
-  /** asc */
-  asc;
-  /** column */
-  column;
-  /** pages */
-  pages;
-  /** records */
-  records;
-  /** searchCount */
-  searchCount;
   /** size */
   size;
-  /** total */
-  total;
+  /** replyArticleId */
+  replyArticleId;
 }
 
 export const init = new defs.api.JsonResult();

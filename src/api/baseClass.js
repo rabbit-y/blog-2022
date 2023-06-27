@@ -1,4 +1,4 @@
-class ArticleCountVOObject {
+class ArticleCountVODX {
   /** total */
   total = undefined;
 
@@ -9,7 +9,27 @@ class ArticleCountVOObject {
   typeName = '';
 }
 
-class ArticleVOObject {
+class ArticleDX {
+  /** content */
+  content = '';
+
+  /** createTime */
+  createTime = '';
+
+  /** description */
+  description = '';
+
+  /** id */
+  id = undefined;
+
+  /** title */
+  title = '';
+
+  /** typeId */
+  typeId = '';
+}
+
+class ArticleVODX {
   /** content */
   content = '';
 
@@ -32,12 +52,66 @@ class ArticleVOObject {
   typeName = '';
 }
 
+class CommentDX {
+  /** 评论人头像 */
+  avatar = '';
+
+  /** 评论人博客地址 */
+  blogUrl = '';
+
+  /** content */
+  content = '';
+
+  /** createTime */
+  createTime = '';
+
+  /** 评论人邮箱 */
+  email = '';
+
+  /** id */
+  id = undefined;
+
+  /** 评论人昵称 */
+  nickName = '';
+
+  /** replyArticleId */
+  replyArticleId = undefined;
+
+  /** 回复评论的id */
+  replyCmId = undefined;
+}
+
+class ElogDX {
+  /** id */
+  id = undefined;
+
+  /** info */
+  info = '';
+}
+
+class IPage {
+  /** current */
+  current = undefined;
+
+  /** pages */
+  pages = undefined;
+
+  /** records */
+  records = [];
+
+  /** size */
+  size = undefined;
+
+  /** total */
+  total = undefined;
+}
+
 class JsonResult {
   /** code */
   code = undefined;
 
   /** data */
-  data = new ArticleVOObject();
+  data = new ArticleVODX();
 
   /** msg */
   msg = '';
@@ -66,7 +140,7 @@ class ModelAndView {
   viewName = '';
 }
 
-class MoodObject {
+class MoodDX {
   /** content */
   content = '';
 
@@ -77,44 +151,7 @@ class MoodObject {
   id = undefined;
 }
 
-class TheArticleObject {
-  /** content */
-  content = '';
-
-  /** createTime */
-  createTime = '';
-
-  /** description */
-  description = '';
-
-  /** id */
-  id = undefined;
-
-  /** title */
-  title = '';
-
-  /** typeId */
-  typeId = '';
-}
-
-class TheCommentObject {
-  /** content */
-  content = '';
-
-  /** createTime */
-  createTime = '';
-
-  /** id */
-  id = undefined;
-
-  /** replyArticleId */
-  replyArticleId = undefined;
-
-  /** replyUserId */
-  replyUserId = '';
-}
-
-class TheTypeObject {
+class TypeDX {
   /** description */
   description = '';
 
@@ -125,7 +162,7 @@ class TheTypeObject {
   name = '';
 }
 
-class TheUserObject {
+class UserDX {
   /** articleCounts */
   articleCounts = [];
 
@@ -154,7 +191,7 @@ class TheUserObject {
   role = '';
 }
 
-class TheUserObject0 {
+class UserDX0 {
   /** avatar */
   avatar = '';
 
@@ -180,7 +217,7 @@ class TheUserObject0 {
   role = '';
 }
 
-class TheUserObject1 {
+class UserDX1 {
   /** avatar */
   avatar = '';
 
@@ -212,16 +249,18 @@ class View {
 }
 
 export const api = {
-  ArticleCountVOObject,
-  ArticleVOObject,
+  ArticleCountVODX,
+  ArticleDX,
+  ArticleVODX,
+  CommentDX,
+  ElogDX,
+  IPage,
   JsonResult,
   ModelAndView,
-  MoodObject,
-  TheArticleObject,
-  TheCommentObject,
-  TheTypeObject,
-  TheUserObject,
-  TheUserObject0,
-  TheUserObject1,
+  MoodDX,
+  TypeDX,
+  UserDX,
+  UserDX0,
+  UserDX1,
   View,
 };

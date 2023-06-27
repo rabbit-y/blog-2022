@@ -9,10 +9,11 @@ export class Params {}
 
 export const init = new defs.api.JsonResult();
 
-export function request(params, options = {}) {
+export function request(params, body, options = {}) {
   return PontCore.fetch(PontCore.getUrl('/sendVerifyCode', params, 'POST'), {
     method: 'POST',
 
+    body,
     ...options,
   });
 }
