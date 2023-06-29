@@ -114,7 +114,7 @@ export default function HComment({ bindClick, className = '', reply, onClose }) 
                   <BraftEditor
                     ref={(instance) => setEditorInstance(instance)}
                     className="h-comment-editor"
-                    controls={controls}
+                    // controls={controls}
                     value={content}
                     onChange={setContent}
                   />

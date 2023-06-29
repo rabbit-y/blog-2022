@@ -30,12 +30,6 @@
     "pont": "pont start",
     "ssr": "nodemon server/app.js"
   },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
-  },
   "browserslist": {
     "production": [
       ">0.2%",
