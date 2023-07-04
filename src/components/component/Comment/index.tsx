@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Divider, Row, Col, Form, Input, Button, message, Tag } from 'antd';
 import { MailOutlined, HomeOutlined, UserOutlined } from '@ant-design/icons';
-import BraftEditor from 'braft-editor';
+import BraftEditor, { ControlType } from 'braft-editor';
 import { COS_URL } from '@utils/config';
 import 'braft-editor/dist/index.css';
 
@@ -10,7 +10,7 @@ export default function HComment({ bindClick, className = '', reply, onClose }) 
   const [editorInstance, setEditorInstance] = useState(null);
   const [avatar, setAvatar] = useState(COS_URL + 'blog/headers/3');
   const [content, setContent] = useState(BraftEditor.createEditorState(null));
-  const controls = [
+  const controls: ControlType[] = [
     'text-color',
     'bold',
     'italic',
@@ -114,7 +114,7 @@ export default function HComment({ bindClick, className = '', reply, onClose }) 
                   <BraftEditor
                     ref={(instance) => setEditorInstance(instance)}
                     className="h-comment-editor"
-                    // controls={controls}
+                    controls={controls}
                     value={content}
                     onChange={setContent}
                   />

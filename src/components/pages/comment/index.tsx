@@ -3,6 +3,7 @@ import { Row, Col, message, Pagination, Avatar, Tag, Card, Tooltip } from 'antd'
 import { useSelector } from 'react-redux';
 import dayjs from 'dayjs';
 import HComment from '@components/Comment';
+import CommentList from '@components/CommentList';
 import { api } from '@api/index';
 
 const { Meta } = Card;
@@ -100,93 +101,7 @@ export default function Comment() {
           }}
         />
       </div>
-      <div className="comment-list" id="goCommentList">
-        <div className="comment-list-title">{pageList?.total}条留言</div>
-        {list?.map((item, index) => (
-          <Row wrap={false} gutter={[20, 20]} key={index} className="comment-list-item">
-            <Col flex="none">
-              <Tooltip
-                placement="bottomLeft"
-                title={item.blogUrl && `点击这里，去${item.nickName}那里看看吧～`}
-                arrow={item.blogUrl}
-              >
-                <Avatar
-                  onClick={() => {
-                    item.blogUrl && window.open(item.blogUrl);
-                  }}
-                  shape="square"
-                  size={60}
-                >
-                  {item.nickName}
-                </Avatar>
-              </Tooltip>
-            </Col>
-            <Col flex="auto">
-              <div className="comment-list-reply">
-                <div className="comment-list-reply-top">
-                  <span className="comment-list-name">{item.nickName}</span>
-                  <span className="comment-list-time">{dayjs(item.createTime).fromNow()}</span>
-                  <a
-                    className="comment-list-btn h-link-cur"
-                    onClick={() => {
-                      setReply({
-                        ...item,
-                      });
-                      document.getElementById('goComment').scrollIntoView({
-                        block: 'start',
-                        behavior: 'smooth',
-                      });
-                    }}
-                  >
-                    回复
-                  </a>
-                </div>
-                <div className="comment-list-content" dangerouslySetInnerHTML={{ __html: item.content }}></div>
-                {item.children.length > 0 && (
-                  <div className="comment-list-child">
-                    {item.children?.map((items, indexs) => (
-                      <Row wrap={false} gutter={[20, 20]} key={indexs} className="comment-list-item">
-                        <Col flex="none">
-                          <img className="comment-list-avatar" src={items.avatar ?? avatar} />
-                        </Col>
-                        <Col flex="auto">
-                          <div className="comment-list-reply">
-                            <div className="comment-list-reply-top">
-                              <span className="comment-list-name">{items.nickName}</span>
-                              <span className="comment-list-time">{dayjs(items.createTime).fromNow()}</span>
-                            </div>
-                            <div
-                              className="comment-list-content"
-                              dangerouslySetInnerHTML={{
-                                __html: items.content,
-                              }}
-                            ></div>
-                          </div>
-                        </Col>
-                      </Row>
-                    ))}
-                  </div>
-                )}
-              </div>
-            </Col>
-          </Row>
-        ))}
-        <div className="comment-page">
-          <Pagination
-            hideOnSinglePage
-            current={pageList.current}
-            total={pageList.total}
-            pageSize={pageList.size}
-            onChange={(page) => {
-              getList(page);
-              document.getElementById('goComment').scrollIntoView({
-                block: 'start',
-                behavior: 'smooth',
-              });
-            }}
-          />
-        </div>
-      </div>
+      <CommentList pageList={pageList} list={list} setReply={setReply} hasPage getList={getList} />
     </div>
   );
 }

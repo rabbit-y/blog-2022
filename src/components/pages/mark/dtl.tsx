@@ -5,6 +5,7 @@ import { MdPreview, MdCatalog } from 'md-editor-rt';
 import dayjs from 'dayjs';
 import { useSelector } from 'react-redux';
 import IconFont from '@components/Icon';
+import CommentList from '@components/CommentList';
 import { scroll } from '@utils/index';
 import { COS_URL } from '@utils/config';
 import { api } from '@api/index';
@@ -103,14 +104,14 @@ const Dtl = () => {
               setEditorShow(true);
             }}
           />
-          <div className="mark-catalog">
+          {/* <div className="mark-catalog">
             <Anchor>
               <div className="mark-catalog-list">
                 <div className="mark-catalog-title">目录</div>
                 <MdCatalog editorId="my-editor" scrollElement={document.documentElement} />
               </div>
             </Anchor>
-          </div>
+          </div> */}
         </div>
       </div>
       <div className="mark-dtl-CC">
@@ -129,77 +130,18 @@ const Dtl = () => {
           <a href={location.href}>@{masterInfo?.nickname}</a>
         </div>
       </div>
-      <div className="mark-comment">
-        <div className="mark-comment-title">{pageList.total}条评论</div>
-        <div className="mark-comment-list" id="goCommentList">
-          {list?.map((item, index) => (
-            <Row wrap={false} gutter={[20, 20]} key={index} className="mark-comment-item">
-              <Col flex="none">
-                <img className="mark-comment-avatar" src={item.avatar ? item.avatar : avatar} />
-              </Col>
-              <Col flex="auto">
-                <div className="mark-comment-reply">
-                  <div className="mark-comment-reply-top">
-                    <span className="mark-comment-name">{item.nickName}</span>
-                    <span className="mark-comment-time">{dayjs(item.createTime).fromNow()}</span>
-                    <a
-                      className="mark-comment-btn h-link-cur"
-                      onClick={() => {
-                        setReply({
-                          ...item,
-                        });
-                        document.getElementById('goComment').scrollIntoView({
-                          block: 'start',
-                          behavior: 'smooth',
-                        });
-                      }}
-                    >
-                      回复
-                    </a>
-                  </div>
-                  <div className="mark-comment-content" dangerouslySetInnerHTML={{ __html: item.content }}></div>
-                  {item.children.length > 0 && (
-                    <div className="mark-comment-child">
-                      {item.children.map((items, indexs) => (
-                        <Row wrap={false} gutter={[20, 20]} key={indexs} className="mark-comment-item">
-                          <Col flex="none">
-                            <img className="mark-comment-avatar" src={items.avatar ? items.avatar : avatar} />
-                          </Col>
-                          <Col flex="auto">
-                            <div className="mark-comment-reply">
-                              <div className="mark-comment-reply-top">
-                                <span className="mark-comment-name">{items.nickName}</span>
-                                <span className="mark-comment-time">{dayjs(items.createTime).fromNow()}</span>
-                              </div>
-                              <div
-                                className="mark-comment-content"
-                                dangerouslySetInnerHTML={{
-                                  __html: items.content,
-                                }}
-                              ></div>
-                            </div>
-                          </Col>
-                        </Row>
-                      ))}
-                    </div>
-                  )}
-                </div>
-              </Col>
-            </Row>
-          ))}
-          <div id="goComment">
-            <Suspense fallback={<Spin />}>
-              <HComment
-                bindClick={saveComment}
-                reply={reply}
-                className="mark-comment-comment"
-                onClose={() => {
-                  setReply({});
-                }}
-              />
-            </Suspense>
-          </div>
-        </div>
+      <CommentList pageList={pageList} list={list} setReply={setReply} />
+      <div id="goComment">
+        <Suspense fallback={<Spin />}>
+          <HComment
+            bindClick={saveComment}
+            reply={reply}
+            className="mark-comment-comment"
+            onClose={() => {
+              setReply({});
+            }}
+          />
+        </Suspense>
       </div>
     </div>
   );
