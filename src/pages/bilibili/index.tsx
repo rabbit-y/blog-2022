@@ -24,7 +24,7 @@ const Bilibili = () => {
         data: { list, total, pn },
       },
     } = await axios.get(
-      `/bilibili/x/space/bangumi/follow/list?type=1&follow_status=${follow_status}&ps=20&vmid=458066744&ts=${dayjs().format(
+      `/bili/x/space/bangumi/follow/list?type=1&follow_status=${follow_status}&ps=20&vmid=458066744&ts=${dayjs().format(
         'X',
       )}&pn=${page}`,
     );
