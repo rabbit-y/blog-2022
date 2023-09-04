@@ -1,18 +1,16 @@
 import { useEffect, useState } from 'react';
-import { Row, Col, message, Pagination, Avatar, Tag, Card, Tooltip } from 'antd';
+import { Row, Col, message, Tag, Avatar, Typography } from 'antd';
 import { useSelector } from 'react-redux';
-import dayjs from 'dayjs';
 import HComment from '@components/Comment';
 import CommentList from '@components/CommentList';
 import { api } from '@api/index';
 
-const { Meta } = Card;
+const { Text } = Typography;
 export default function Comment() {
   const friends = useSelector(({ info }) => info.friend);
   const [list, setList] = useState([]);
   const [pageList, setPageList] = useState<Page>({ current: 1, size: 20 });
   const [reply, setReply] = useState<ReplyDtl>();
-  const avatar = 'https://cos.han96.com/blog/headers/3';
   useEffect(() => {
     getList();
   }, []);
@@ -57,51 +55,57 @@ export default function Comment() {
   };
   return (
     <div className="comment">
-      <div className="comment-dec">
-        <div className="comment-dec-me">
-          <div>
-            <Tag color="#666">昵称</Tag>花贝
+      <div className="comment-box">
+        <div className="comment-dec">
+          <div className="comment-dec-me">
+            <div>
+              <b>const</b>
+              <div>name =</div>'花贝'
+            </div>
+            <div>
+              <b>const</b>
+              <div>link =</div>'https://han96.com'
+            </div>
+            <div>
+              <b>const</b>
+              <div>header =</div>'https://cos.han96.com/blog/upload/96211653576399721.jpg'
+            </div>
+            <div>
+              <b>const</b>
+              <div>dec =</div>'一个社恐的前端开发从业者'
+            </div>
           </div>
-          <div>
-            <Tag color="#666">链接</Tag>https://han96.com
-          </div>
-          <div>
-            <Tag color="#666">头像</Tag>
-            https://cos.han96.com/blog/upload/96211653576399721.jpg
-          </div>
-          <div>
-            <Tag color="#666">描述</Tag>一个社恐的前端开发从业者
+          <div className="comment-friend">
+            <Row gutter={[20, 20]}>
+              {friends?.map((item, index) => (
+                <Col span={6} key={index}>
+                  <div
+                    className="comment-card h-card-shadow"
+                    onClick={() => {
+                      window.open(item.url);
+                    }}
+                  >
+                    <Avatar size={60} src={item.avatar} />
+                    <div className="comment-card-name">{item.name}</div>
+                    <Text type="secondary">{item.dec}</Text>
+                  </div>
+                </Col>
+              ))}
+            </Row>
           </div>
         </div>
-        <div className="comment-friend">
-          <Row gutter={[20, 20]}>
-            {friends?.map((item, index) => (
-              <Col span={8} key={index}>
-                <Card
-                  className="h-link-cur comment-card"
-                  style={{ backgroundImage: `url(${item.avatar})` }}
-                  onClick={() => {
-                    window.open(item.url);
-                  }}
-                >
-                  <Meta title={item.name} description={item.dec} />
-                </Card>
-              </Col>
-            ))}
-          </Row>
+        <div id="goComment">
+          <HComment
+            bindClick={saveComment}
+            reply={reply}
+            className="comment-list-comment"
+            onClose={() => {
+              setReply({});
+            }}
+          />
         </div>
+        <CommentList pageList={pageList} list={list} setReply={setReply} hasPage getList={getList} />
       </div>
-      <div id="goComment">
-        <HComment
-          bindClick={saveComment}
-          reply={reply}
-          className="comment-list-comment"
-          onClose={() => {
-            setReply({});
-          }}
-        />
-      </div>
-      <CommentList pageList={pageList} list={list} setReply={setReply} hasPage getList={getList} />
     </div>
   );
 }

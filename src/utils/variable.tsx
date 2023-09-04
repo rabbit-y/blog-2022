@@ -1,36 +1,36 @@
-import IconFont from '@/components/component/Icon/index';
+import IconFont from '@/components/Icon/index';
 import { COS_URL } from './config';
 
 export const ROTER = [
   {
+    key: '/',
+    label: 'HOME',
+    // icon: <IconFont type="h-a-fangzipixel_huaban1" />,
+  },
+  {
     key: '/mark',
-    label: '首页',
-    icon: <IconFont type="h-a-fangzipixel_huaban1" />,
+    label: 'BLOG',
+    // icon: <IconFont type="h-a-fangzipixel_huaban1" />,
   },
   {
     key: '/say',
-    label: '日常',
-    icon: <IconFont type="h-a-xinfengpixel_huaban1" />,
+    label: 'DAILY',
+    // icon: <IconFont type="h-a-xinfengpixel_huaban1" />,
   },
   {
     key: '/me',
-    label: '关于我',
-    icon: <IconFont type="h-a-dengpaopixel_huaban1" />,
+    label: 'ABOUT',
+    // icon: <IconFont type="h-a-dengpaopixel_huaban1" />,
   },
   {
     key: '/comment',
     label: '友人帐',
-    icon: <IconFont type="h-a-lingdangpixel_huaban1" />,
+    // icon: <IconFont type="h-a-lingdangpixel_huaban1" />,
   },
-  // {
-  //   key: "/time",
-  //   label: "建站",
-  //   icon: <IconFont type="h-a-rilipixel_huaban1" />,
-  // },
   {
     key: '/bilibili',
     label: '追番',
-    icon: <IconFont type="h-bilibili1" />,
+    // icon: <IconFont type="h-bilibili1" />,
   },
 ];
 export const ABOUTLINK = [

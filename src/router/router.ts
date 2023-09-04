@@ -6,22 +6,8 @@ export const RoutersList = [
     element: lazy(() => import('@pages/say/index')),
   },
   {
-    path: 'mark',
+    path: '/mark',
     element: lazy(() => import('@pages/mark/index')),
-    child: [
-      {
-        path: '/mark',
-        element: lazy(() => import('@pages/mark/list')),
-      },
-      {
-        path: ':type',
-        element: lazy(() => import('@pages/mark/list')),
-      },
-      {
-        path: ':type/:id',
-        element: lazy(() => import('@pages/mark/dtl')),
-      },
-    ],
   },
   {
     path: '/comment',
