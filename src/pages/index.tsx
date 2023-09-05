@@ -1,9 +1,10 @@
 import { Suspense, lazy } from 'react';
 import { Route, Routes } from 'react-router-dom';
-import { Spin, FloatButton } from 'antd';
+import { FloatButton } from 'antd';
 import { SyncOutlined } from '@ant-design/icons';
 import { RoutersList } from '@/router/router';
 import Nav from '@pages/nav/index';
+import Loading from '@components/Loading';
 const Home = lazy(() => import('@pages/home/index'));
 
 const App = () => {
@@ -15,7 +16,7 @@ const App = () => {
           <Route
             path="/"
             element={
-              <Suspense fallback={<Spin />}>
+              <Suspense fallback={<Loading />}>
                 <Home />
               </Suspense>
             }
@@ -31,7 +32,7 @@ const App = () => {
                         path={item.path}
                         key={index}
                         element={
-                          <Suspense fallback={<Spin />}>
+                          <Suspense fallback={<Loading />}>
                             <item.element />
                           </Suspense>
                         }

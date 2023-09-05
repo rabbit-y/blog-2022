@@ -3,9 +3,10 @@ import { Row, Col, message, Tag, Avatar, Typography } from 'antd';
 import { useSelector } from 'react-redux';
 import HComment from '@components/Comment';
 import CommentList from '@components/CommentList';
+import Icon from '@components/Icon';
 import { api } from '@api/index';
 
-const { Text } = Typography;
+const { Text, Paragraph } = Typography;
 export default function Comment() {
   const friends = useSelector(({ info }) => info.friend);
   const [list, setList] = useState([]);
@@ -58,21 +59,37 @@ export default function Comment() {
       <div className="comment-box">
         <div className="comment-dec">
           <div className="comment-dec-me">
-            <div>
+            <div className="comment-dec-me-item">
+              <Icon type="h-a-xinfengpixel_huaban1" />
               <b>const</b>
-              <div>name =</div>'花贝'
+              <Tag>name</Tag>
+              <Paragraph className="comment-dec-me-p" copyable>
+                花贝
+              </Paragraph>
             </div>
-            <div>
+            <div className="comment-dec-me-item">
+              <Icon type="h-a-xinfengpixel_huaban1" />
               <b>const</b>
-              <div>link =</div>'https://han96.com'
+              <Tag>link</Tag>
+              <Paragraph className="comment-dec-me-p" copyable>
+                https://han96.com
+              </Paragraph>
             </div>
-            <div>
+            <div className="comment-dec-me-item">
+              <Icon type="h-a-xinfengpixel_huaban1" />
               <b>const</b>
-              <div>header =</div>'https://cos.han96.com/blog/upload/96211653576399721.jpg'
+              <Tag>avatar</Tag>
+              <Paragraph className="comment-dec-me-p" copyable>
+                https://cos.han96.com/blog/headers/avatar.jpg
+              </Paragraph>
             </div>
-            <div>
+            <div className="comment-dec-me-item">
+              <Icon type="h-a-xinfengpixel_huaban1" />
               <b>const</b>
-              <div>dec =</div>'一个社恐的前端开发从业者'
+              <Tag>descr</Tag>
+              <Paragraph className="comment-dec-me-p" copyable>
+                一个社恐的前端开发从业者
+              </Paragraph>
             </div>
           </div>
           <div className="comment-friend">

@@ -7,7 +7,9 @@ import 'braft-editor/dist/index.css';
 
 export default function HComment({ bindClick, className = '', reply, onClose }) {
   const [form] = Form.useForm();
+  const userName = Form.useWatch('nickName', form);
   const [editorInstance, setEditorInstance] = useState(null);
+  const [loading, setLoading] = useState(false);
   const [avatar, setAvatar] = useState(COS_URL + 'blog/headers/3');
   const [content, setContent] = useState(BraftEditor.createEditorState(null));
   const controls: ControlType[] = [
@@ -59,6 +61,7 @@ export default function HComment({ bindClick, className = '', reply, onClose }) 
     userObj.avatar = avatar;
     localStorage.setItem('h-userInfo', JSON.stringify(userObj));
     editorInstance.clearEditorContent();
+    setLoading(false);
   };
   return (
     <div className={`h-comment ${className}`}>
@@ -107,10 +110,6 @@ export default function HComment({ bindClick, className = '', reply, onClose }) 
             <Row>
               <Col span={24}>
                 <Form.Item wrapperCol={{ span: 24 }} name="content">
-                  {/* <Input.TextArea
-                    placeholder="在「昵称」处填写QQ号，Enther获取「头像」和「QQ邮箱」"
-                    autoSize={{ minRows: 6, maxRows: 6 }}
-                  /> */}
                   <BraftEditor
                     ref={(instance) => setEditorInstance(instance)}
                     className="h-comment-editor"
@@ -129,7 +128,11 @@ export default function HComment({ bindClick, className = '', reply, onClose }) 
                 <Button
                   className="h-comment-btn"
                   type="primary"
+                  loading={loading}
+                  disabled={!userName}
                   onClick={() => {
+                    form.validateFields();
+                    setLoading(true);
                     bindClick(form.getFieldsValue(), content.toHTML(), saveSuccess);
                   }}
                 >

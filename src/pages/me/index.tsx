@@ -13,15 +13,15 @@ const Me = () => {
           </div>
           <div className="me-content">
             <div className="me-content-list">
-              <Tag color="#666">关于名字</Tag>
+              <span className="me-content-list-title">关于名字</span>
               <span>花贝是家里小猫咪的名字，借来用用～</span>
             </div>
             <div className="me-content-list">
-              <Tag color="#666">当前位置</Tag>
+              <span className="me-content-list-title">关于位置</span>
               <span>{moment('2018-6').fromNow(true)}北漂生活，现在只想躺平</span>
             </div>
             <div className="me-content-list">
-              <Tag color="#666">工作经历</Tag>
+              <span className="me-content-list-title">关于工作</span>
               <span>从事前端开发工程师{moment('2018-6').fromNow(true)}，非专业对口</span>
             </div>
           </div>
@@ -32,7 +32,7 @@ const Me = () => {
           </div>
           <div className="me-content">
             <div className="me-content-list">
-              <Tag color="#666">前端技术</Tag>
+              <span className="me-content-list-title">关于前端</span>
               <span>
                 React 18.0 + React-Roter v6 + Antd，全部由自己搭建，
                 <a href="https://gitee.com/han96/blog-2022" target="_blank">
@@ -41,33 +41,13 @@ const Me = () => {
               </span>
             </div>
             <div className="me-content-list">
-              <Tag color="#666">后端技术</Tag>
+              <span className="me-content-list-title">关于后端</span>
               <span>Java + MySQL，全部由男盆友搭建</span>
             </div>
             <div className="me-content-list">
-              <Tag color="#666">关于服务</Tag>
+              <span className="me-content-list-title">关于服务</span>
               <span>腾讯云服务器 + 腾讯云COS + 腾讯云域名 + 阿里云数据库</span>
             </div>
-          </div>
-        </div>
-        <div className="me-list">
-          <div className="me-title">
-            <IconFont type="h-tree" /> 关于技术栈
-          </div>
-          <div className="me-content">
-            <Card>
-              {JSLIST?.map((item, index) => (
-                <Card.Grid key={index}>
-                  <div>
-                    <div>
-                      <Progress percent={item.percent} steps={5} />
-                    </div>
-                    <div className="me-content-name">{item.name}</div>
-                    <div className="me-content-dec">{item.dec}</div>
-                  </div>
-                </Card.Grid>
-              ))}
-            </Card>
           </div>
         </div>
       </div>
